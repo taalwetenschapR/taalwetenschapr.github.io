@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Onderzoeksontwerp en Beschrijvende Statistiek - Practica</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./_practica/practicum1.html" rel="next">
+<link href="./distributies.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./practica.html">Practica</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Onderzoeksontwerp en Beschrijvende Statistiek</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welkom</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inleiding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bewerken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grafieken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factoren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numeriek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Numerieke variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distributies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distributies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./practica.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Practica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./_practica/practicum1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhoudsopgave</h2>
+   
+  <ul class="collapse">
+  <li><a href="#hoe-haal-je-het-meeste-uit-een-practicum" id="toc-hoe-haal-je-het-meeste-uit-een-practicum" class="nav-link active" data-scroll-target="#hoe-haal-je-het-meeste-uit-een-practicum">Hoe haal je het meeste uit een practicum?</a></li>
+  <li><a href="#wat-heb-je-nodig" id="toc-wat-heb-je-nodig" class="nav-link" data-scroll-target="#wat-heb-je-nodig">Wat heb je nodig?</a></li>
+  <li><a href="#aan-de-slag" id="toc-aan-de-slag" class="nav-link" data-scroll-target="#aan-de-slag">Aan de slag</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-practica" class="quarto-section-identifier">Practica</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Zoals gezegd, coderen leren je alleen door het zelf te doen. Tijdens de cursus is er dan ook elke week een practicum waarin je aan de slag gaat met data en <code>R</code>. Op deze pagina vind je algemene informatie over de werkwijze bij de practica. Lees dit goed door voor het eerste practicum.</p>
+<section id="hoe-haal-je-het-meeste-uit-een-practicum" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="hoe-haal-je-het-meeste-uit-een-practicum">Hoe haal je het meeste uit een practicum?</h2>
+<p>Tijdens de practica lopen de docent en studentassistent rond om vragen te beantwoorden. Je haalt dus het meeste uit een practicum door vragen te stellen. Hiervoor moet je natuurlijk wel vragen hebben. Een goede voorbereiding is hierbij de sleutel. We zien maar al te vaak dat studenten onvoorbereid op het practicum komen en ter plekke de documenten openen. Het resultaat is dat ze aan het eind van het practicum nog met de eerste opdrachten bezig zijn en niet aan de latere opdrachten toekomen, die vaak moeilijker zijn. Die opdrachten moet je dan zonder hulp maken. Verstandiger is het dus om goed voorbereid op het practicum te komen. Hoe bereid je je goed voor?</p>
+<ul>
+<li>Bestudeer de opgegeven hoofdstukken ter voorbereiding op het practicum. Zie hiervoor ook het overzicht in <a href="#tbl-voorbereiding">Tabel&nbsp;<span>1</span></a>;</li>
+<li>Maak voor jezelf een overzicht van de functies die in de hoofdstukken worden besproken. Voeg deze toe aan je eigen codeboek;</li>
+<li>Lees de practicumopdrachten door en bedenk welke functies je bij iedere opdracht zou kunnen gebruiken. Noteer deze bij de opdracht of in een apart document;</li>
+<li>Maak een scriptbestand aan voor het practicum (zie hieronder) en werk al wat code uit. Kijk tegen welke problemen je aanloopt en stel hier vragen over op het practicum.</li>
+</ul>
+<div id="tbl-voorbereiding" class="anchored page-columns page-full">
+<table class="table">
+
+<colgroup>
+<col style="width: 29%">
+<col style="width: 29%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Practicum</th>
+<th>Onderwerp</th>
+<th>Voorbereiding</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Werken met data in R</td>
+<td>hoofdstukken <a href="intro.html"><span>1</span></a>, <a href="R.html"><span>2</span></a> en <a href="data.html"><span>3</span></a></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Bewerken van data</td>
+<td><a href="bewerken.html"><span>Hoofdstuk&nbsp;4</span></a></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Grafieken maken met <code>ggplot</code></td>
+<td><a href="grafieken.html"><span>Hoofdstuk&nbsp;5</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-table-caption margin-caption">Tabel&nbsp;1: voorbereiding per practicum</div></div>
+</section>
+<section id="wat-heb-je-nodig" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="wat-heb-je-nodig">Wat heb je nodig?</h2>
+<p>Je werkt binnen <code>RStudio</code>. Zorg dat dit programma samen met <code>R</code> geïnstalleerd is op je computer (zie <a href="R.html#sec-RStudio">sectie&nbsp;<span>2.1</span></a>). We werken voor alle practica in hetzelfde <code>R</code>-project <code>OBS_practica.Rproj</code>. Download hiervoor het bestand <code>OBS_practica.zip</code> van Brightspace en pak dat uit op je eigen computer. Zet deze map op een handige locatie op je computer (bijv. in de map voor de cursus <code>OBS</code>). Je vindt in de map de volgende bestanden:</p>
+<ul>
+<li><p><code>OBS_practica.Rproj</code>: hierin staat informatie voor <code>RStudio</code> over wat er allemaal bij de practica hoort.</p></li>
+<li><p>een map <code>datasets</code>: hierin vind je de databestanden die bij de practica in deze cursus gebruikt worden (uitgezonderd die voor de opdrachten). Zie het bestand <code>ReadMe.txt</code> voor meer informatie.</p></li>
+<li><p>een map <code>templates_scripts_quarto</code>: hierin vind je drie templates die je kunt gebruiken bij het uitwerken van je code voor een practicum. Zie het bestand <code>ReadMe.txt</code> voor meer informatie.</p></li>
+<li><p><code>voornaam_achternaam_script_Practicum1.R</code>: voor Practicum 1 hebben we al een script aangemaakt waarin je de practicumopdracht kunt maken. Dit is het document waarin je verschillende commando’s kunt uitwerken en vervolgens laten uitvoeren door <code>R</code>. Voor de volgende practica moet je dit zelf doen door een van de templates te kopiëren uit de map <code>templates_scripts_quarto</code>. Verander voor je begint de naam van het bestand door je eigen voor- en achternaam en het cijfer van het betreffende practicum in te vullen (dus bijv. <code>peter_deswart_script_Practicum1.R</code>).</p></li>
+</ul>
+</section>
+<section id="aan-de-slag" class="level2 unnumbered page-columns page-full">
+<h2 class="unnumbered anchored" data-anchor-id="aan-de-slag">Aan de slag</h2>
+<p>Je begint elk practicum door het bestand <code>OBS_practica.Rproj</code> te openen (en dus niet het programma <code>RStudio</code>). Wen jezelf dit aan. Op deze manier heb je namelijk meteen toegang tot alle relevante bestanden. Het scheelt je een hoop foutmeldingen (en daarvan komen er nog genoeg). Om aan de slag te gaan, open je dus de aangemaakte folder voor de cursus (bijv. <code>OBS</code>) en dubbelklik je op <code>OBS_practica.Rproj</code>. <code>RStudio</code> opent dan en je kunt gaan werken aan de practicumopdrachten. Klik in het window rechtsonder (met de tab Files open) op <code>voornaam_achternaam_script_Practicum1.R</code> (dat je als het goed is al hebt aangepast naar je eigen naam). Let op: zorg dat je voor ieder practicum een nieuw script aanmaakt op basis van het templaat waarin je je eigen naam en het cijfer van het practicum aanpast. Wanneer je het script opent vanuit <code>RStudio</code>, zal het zichtbaar worden in een window linksboven in <code>RStudio</code>. In het script kun je je code gaan schrijven (denk aan de richtlijnen uit <a href="data.html#sec-voorbeeldscript">Sectie&nbsp;<span>3.3</span></a>). De code kun je uitvoeren door met de cursor op de betreffende regel te gaan staan of een deel ervan te selecteren en vervolgens op ‘Run’ te klikken. Je kunt hier ook de toetscombinatie <code>Ctrl + Enter</code> (<code>Cmd + enter</code> op Mac) voor gebruiken (zie ook sectie 1.15 in het boek van <span class="citation" data-cites="Winter2019">Winter (<a href="index.html#ref-Winter2019" role="doc-biblioref">2019</a>)</span> voor andere handige shortcuts die je kunt gebruiken). Het resultaat van de actie wordt dan zichtbaar in de <code>R</code>-console (linksonder in RStudio). Je kunt ook commentaar toevoegen in je script: alles op een regel na een <code>\#</code> wordt niet door <code>R</code> uitgevoerd.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-Winter2019" class="csl-entry" role="listitem">
+Winter, B. (2019). <em>Statistics for Linguists: An Introduction Using <span>R</span></em>. Routledge. <a href="https://doi.org/10.4324/9781315165547">https://doi.org/10.4324/9781315165547</a>
+</div></div><p>RStudio weet dat je met een <code>R</code>-script bezig bent en zal soms</p>
+<ul>
+<li><p>suggesties geven voor te gebruiken functies;</p></li>
+<li><p>dingen die het herkent een kleurtje geven;</p></li>
+<li><p>spontaan dingen aanvullen, zoals haakjes;</p></li>
+<li><p>in de kantlijn een markering zetten als er iets niet lijkt te kloppen.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Let op">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Let op
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sla je script regelmatig op, zodat je geen code kwijtraakt. Klik hiervoor op het floppy-disk-symbool of gebruik de sneltoetsen <code>Ctrl + S</code>/<code>cmd + S</code>.</p>
+</div>
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./distributies.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distributies</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./_practica/practicum1.html" class="pagination-link">
+        <span class="nav-page-text">Practicum 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

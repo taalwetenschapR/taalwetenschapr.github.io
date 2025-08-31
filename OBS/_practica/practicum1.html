@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Onderzoeksontwerp en Beschrijvende Statistiek - Practicum 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../practica.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practica.html">Practica</a></li><li class="breadcrumb-item"><a href="../_practica/practicum1.html">Practicum 1</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Onderzoeksontwerp en Beschrijvende Statistiek</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welkom</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inleiding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bewerken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../grafieken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../factoren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numeriek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Numerieke variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distributies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../practica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Practicum 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhoudsopgave</h2>
+   
+  <ul class="collapse">
+  <li><a href="#werken-met-data-in-r" id="toc-werken-met-data-in-r" class="nav-link active" data-scroll-target="#werken-met-data-in-r">Werken met data in R</a>
+  <ul class="collapse">
+  <li><a href="#leerdoelen" id="toc-leerdoelen" class="nav-link" data-scroll-target="#leerdoelen">Leerdoelen</a></li>
+  <li><a href="#voorbereiding" id="toc-voorbereiding" class="nav-link" data-scroll-target="#voorbereiding">Voorbereiding</a></li>
+  <li><a href="#introductie" id="toc-introductie" class="nav-link" data-scroll-target="#introductie">Introductie</a></li>
+  </ul></li>
+  <li><a href="#het-inlezen-van-de-data" id="toc-het-inlezen-van-de-data" class="nav-link" data-scroll-target="#het-inlezen-van-de-data">Het inlezen van de data</a></li>
+  <li><a href="#het-verkennen-van-de-data" id="toc-het-verkennen-van-de-data" class="nav-link" data-scroll-target="#het-verkennen-van-de-data">Het verkennen van de data</a>
+  <ul class="collapse">
+  <li><a href="#eerste-zes-rijen-zichtbaar-maken" id="toc-eerste-zes-rijen-zichtbaar-maken" class="nav-link" data-scroll-target="#eerste-zes-rijen-zichtbaar-maken">Eerste zes rijen zichtbaar maken</a></li>
+  <li><a href="#aantal-rijen-en-kolommen" id="toc-aantal-rijen-en-kolommen" class="nav-link" data-scroll-target="#aantal-rijen-en-kolommen">Aantal rijen en kolommen</a></li>
+  <li><a href="#de-functie-view" id="toc-de-functie-view" class="nav-link" data-scroll-target="#de-functie-view">De functie <code>View()</code></a></li>
+  <li><a href="#namen-van-de-variabelen" id="toc-namen-van-de-variabelen" class="nav-link" data-scroll-target="#namen-van-de-variabelen">Namen van de variabelen</a></li>
+  <li><a href="#meetniveaus-van-de-variabelen" id="toc-meetniveaus-van-de-variabelen" class="nav-link" data-scroll-target="#meetniveaus-van-de-variabelen">Meetniveaus van de variabelen</a></li>
+  <li><a href="#details-van-variabelen-opvragen" id="toc-details-van-variabelen-opvragen" class="nav-link" data-scroll-target="#details-van-variabelen-opvragen">Details van variabelen opvragen</a></li>
+  </ul></li>
+  <li><a href="#bewerken-van-de-data" id="toc-bewerken-van-de-data" class="nav-link" data-scroll-target="#bewerken-van-de-data">Bewerken van de data</a>
+  <ul class="collapse">
+  <li><a href="#aanpassen-van-het-type-van-een-variabele" id="toc-aanpassen-van-het-type-van-een-variabele" class="nav-link" data-scroll-target="#aanpassen-van-het-type-van-een-variabele">Aanpassen van het type van een variabele</a></li>
+  <li><a href="#toevoegen-namen-van-levels" id="toc-toevoegen-namen-van-levels" class="nav-link" data-scroll-target="#toevoegen-namen-van-levels">Toevoegen namen van levels</a></li>
+  <li><a href="#nieuwe-variabele-proportie_correct_voormeting-toevoegen" id="toc-nieuwe-variabele-proportie_correct_voormeting-toevoegen" class="nav-link" data-scroll-target="#nieuwe-variabele-proportie_correct_voormeting-toevoegen">Nieuwe variabele <code>proportie_correct_voormeting</code> toevoegen</a></li>
+  <li><a href="#nieuwe-variabele-verschil_metingen-toevoegen" id="toc-nieuwe-variabele-verschil_metingen-toevoegen" class="nav-link" data-scroll-target="#nieuwe-variabele-verschil_metingen-toevoegen">Nieuwe variabele <code>verschil_metingen</code> toevoegen</a></li>
+  <li><a href="#nieuwe-variabele-leeftijd-toevoegen" id="toc-nieuwe-variabele-leeftijd-toevoegen" class="nav-link" data-scroll-target="#nieuwe-variabele-leeftijd-toevoegen">Nieuwe variabele <code>leeftijd</code> toevoegen</a></li>
+  <li><a href="#een-grafiek-maken" id="toc-een-grafiek-maken" class="nav-link" data-scroll-target="#een-grafiek-maken">Een grafiek maken</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Practicum 1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="werken-met-data-in-r" class="level1 unnumbered">
+<h1 class="unnumbered">Werken met data in R</h1>
+<section id="leerdoelen" class="level2">
+<h2 class="anchored" data-anchor-id="leerdoelen">Leerdoelen</h2>
+<ul>
+<li><p>Kennismaken met (data in) <code>R</code></p></li>
+<li><p>Inlezen van databestanden voor bewerking in <code>R</code></p></li>
+<li><p>Bewerken van variabelen in <code>R</code></p></li>
+</ul>
+</section>
+<section id="voorbereiding" class="level2">
+<h2 class="anchored" data-anchor-id="voorbereiding">Voorbereiding</h2>
+<p>Lees hoofdstukken <a href="../intro.html"><span>1</span></a> t/m <a href="../data.html"><span>3</span></a> uit het dictaat. De benodigde <code>R</code>-functies zijn te vinden in het dictaat. Functies die niet in het dictaat besproken worden, worden gegeven in de opdracht. Lees ook de algemene richtlijnen voor practica door.</p>
+</section>
+<section id="introductie" class="level2">
+<h2 class="anchored" data-anchor-id="introductie">Introductie</h2>
+<p>Een taalwetenschapper wil weten of training met een computerprogramma helpt bij het leren van vaste uitdrukkingen door tweedetaalleerders van het Nederlands ten opzichte van een klassikale methode. Het voordeel van het computerprogramma is dat deelnemers gedetailleerde feedback krijgen, terwijl dit klassikaal een stuk moeilijker is. De onderzoeker verwacht daarom dat mensen die met het computerprogramma oefenen meer Nederlandse uitdrukkingen kennen, dan mensen die hebben gewerkt via een klassikale methode.</p>
+<p>Om dit te onderzoeken werden Duitse leerders van het Nederlands onderworpen aan een voormeting (pre-test) om hun kennis van Nederlandse uitdrukkingen te testen. Vervolgens werd de groep participanten in tweeën verdeeld. Groep 1 mocht oefenen met het computerprogramma, terwijl groep 2 klassikaal ging oefenen met uitdrukkingen. Na een week van oefenen werden de deelnemers opnieuw getest op hun kennis van uitdrukkingen. In deze practicumopdracht ga je werken met de data van deze onderzoeker.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Let op">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Let op
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sla je script regelmatig op, zodat je geen code kwijtraakt. Klik hiervoor op het floppy-disk-symbool of gebruik de sneltoetsen <code>Ctrl + S</code>/<code>cmd + S</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Probeer het eerst zelf!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Probeer het eerst zelf!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bij de opdrachten vind je naast een beschrijving van de vraag ook een Hint en de Code. Dit om je te helpen als je even niet verder komt. Hoe verleidelijk het ook is om meteen naar het antwoord te gaan, doe dit niet. Houd je aan de volgorde: probeer het eerst zelf, lukt dat niet gebruik de hint, mocht je dan nog vastzitten en er echt niet uitkomen ga dan pas naar het antwoord. Dit gaat je op de lange termijn ontzettend helpen.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="het-inlezen-van-de-data" class="level1">
+<h1>Het inlezen van de data</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Zorg het bestand <code>Dataset.txt</code> wordt ingelezen in <code>R</code> als datatabel en beschikbaar is voor verwerking onder de naam <code>uitdrukkingen</code>. Als het goed is zul je in het venster <code>Environment</code>, rechtsboven in RStudio, nu een kopje <code>Data</code> vinden met daaronder het dataframe <code>uitdrukkingen</code>.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Gebruik de functie <code>read_delim()</code>, zie <a href="../data.html#sec-data-inlezen">sectie&nbsp;<span>3.2</span></a>. Zorg wel dat je het package <code>tidyverse</code> hebt geladen (en dat het geïnstalleerd is, zie <a href="../R.html#sec-packages">sectie&nbsp;<span>2.3</span></a>.</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aanroepen package tidyverse</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Inlezen van de data uit het bestand Dataset.txt uit de map datasets (N.B. deze code gaat ervan uit dat je het bestand Dataset.txt niet naar de hoofdmap hebt gekopieerd)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>uitdrukkingen <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"datasets/Dataset.txt"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="het-verkennen-van-de-data" class="level1">
+<h1>Het verkennen van de data</h1>
+<p>Nu we de data beschikbaar hebben als datatabel in <code>R</code>, kunnen we ons gaan richten op de inhoud: hoe zien de data er precies uit?</p>
+<section id="eerste-zes-rijen-zichtbaar-maken" class="level2">
+<h2 class="anchored" data-anchor-id="eerste-zes-rijen-zichtbaar-maken">Eerste zes rijen zichtbaar maken</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Maak de eerste zes rijen van het databestand zichtbaar om te kijken hoe de data eruitzien.</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Gebruik de functie <code>head()</code>, zie <a href="../data.html#sec-variabelennamen">sectie&nbsp;<span>3.2.1</span></a>.</p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eerste zes rijen zichtbaar maken</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">head</span>(uitdrukkingen)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  Proefpersoon Geslacht Groep Geboortejaar PercentageCorrect_Voormeting
+         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;        &lt;dbl&gt;                        &lt;dbl&gt;
+1            1 M            1         1988                           20
+2            2 V            2         1992                           36
+3            3 M            1         1995                           15
+4            4 M            2         1997                           55
+5            5 V            1         1987                           43
+6            6 V            2         1999                           11
+# ℹ 1 more variable: PercentageCorrect_Nameting &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="aantal-rijen-en-kolommen" class="level2">
+<h2 class="anchored" data-anchor-id="aantal-rijen-en-kolommen">Aantal rijen en kolommen</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Hoeveel rijen (observaties) en kolommen (variabelen) telt de dataset? Gebruik hiervoor de relevante <code>R</code>-functies</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Gebruik de functies <code>nrow()</code> en <code>ncol()</code>, zie <a href="../data.html#sec-datatabellen">sectie&nbsp;<span>3.1</span></a>.</p>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aantal rijen en kolommen vaststellen</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">ncol</span>(uitdrukkingen)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">nrow</span>(uitdrukkingen)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="de-functie-view" class="level2">
+<h2 class="anchored" data-anchor-id="de-functie-view">De functie <code>View()</code></h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>Een andere manier om de dataset zichtbaar te maken is via de functie <code>View()</code>.Deze functie is echter alleen te gebruiken in <code>RStudio</code>. Maak de dataset zichtbaar met deze functie.</p>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Dataset zichtbaar maken</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#View(uitdrukkingen)</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="namen-van-de-variabelen" class="level2">
+<h2 class="anchored" data-anchor-id="namen-van-de-variabelen">Namen van de variabelen</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Antwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>De namen van de variabelen in de aangeleverde dataset voldoen niet aan onze richtlijnen. Wat is het probleem?</p>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>Zie <a href="../data.html#sec-variabelennamen">Secties&nbsp;<span>3.2.1</span></a>.</p>
+</div>
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
+<p>De namen maken geen gebruik van <em>snake_case</em>. Er worden hoofdletters gebruikt en soms worden inhoudswoorden aan elkaar geschreven.</p>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<p>Pas de namen van de variabelen de datatabel aan zodat ze voldoen aan onze richtlijnen.</p>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<p>Je kunt dit handmatig doen met de functie <code>rename()</code> of met de functie <code>clean_names()</code> uit het package <code>janitor</code>. Zie <a href="../data.html#sec-variabelennamen">Sectie&nbsp;<span>3.2.1</span></a>.</p>
+</div>
+<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aanpassen namen variabelen</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>uitdrukkingen <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(uitdrukkingen)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># alternatief handmatig</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>uitdrukkingen <span class="ot">&lt;-</span> <span class="fu">rename</span>(<span class="at">.data =</span> uitdrukkingen,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">proefpersoon =</span> Proefpersoon,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">geslacht =</span> Geslacht,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groep =</span> Groep,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                        <span class="at">geboortejaar =</span> Geboortejaar,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                        <span class="at">percentage_correct_voormeting =</span> PercentageCorrect_Voormeting,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                        <span class="at">percentage_correct_nameting =</span> PercentageCorrect_Nameting</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>                        )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="meetniveaus-van-de-variabelen" class="level2">
+<h2 class="anchored" data-anchor-id="meetniveaus-van-de-variabelen">Meetniveaus van de variabelen</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Opdracht</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<p>Beschrijf de meetniveaus van alle variabelen in het databestand en geef kort aan waarom je voor de betreffende meetniveaus gekozen hebt.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="details-van-variabelen-opvragen" class="level2">
+<h2 class="anchored" data-anchor-id="details-van-variabelen-opvragen">Details van variabelen opvragen</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<p>Gebruik de functie <code>str()</code> om de details van de variabelen in het databestand op te vragen. Op deze manier kun je zien van welk type de variabelen volgens <code>R</code> zijn. Kloppen deze door <code>R</code> toegekende typen met de meetniveaus uit de vorige vraag?</p>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<p>Zie <a href="../data.html#tbl-datatypes">Tabel&nbsp;<span>3.1</span></a>. Zie ook secties 1.5-1.9 uit SfL voor de verschillende type variabelen in <code>R</code>.</p>
+</div>
+<div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Details variabelen opvragen</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">str</span>(uitdrukkingen)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [10 × 6] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ proefpersoon                 : num [1:10] 1 2 3 4 5 6 7 8 9 10
+ $ geslacht                     : chr [1:10] "M" "V" "M" "M" ...
+ $ groep                        : num [1:10] 1 2 1 2 1 2 1 2 1 2
+ $ geboortejaar                 : num [1:10] 1988 1992 1995 1997 1987 ...
+ $ percentage_correct_voormeting: num [1:10] 20 36 15 55 43 11 18 29 25 33
+ $ percentage_correct_nameting  : num [1:10] 60 46 88 75 81 55 69 45 83 78
+ - attr(*, "spec")=
+  .. cols(
+  ..   Proefpersoon = col_double(),
+  ..   Geslacht = col_character(),
+  ..   Groep = col_double(),
+  ..   Geboortejaar = col_double(),
+  ..   PercentageCorrect_Voormeting = col_double(),
+  ..   PercentageCorrect_Nameting = col_double()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bewerken-van-de-data" class="level1">
+<h1>Bewerken van de data</h1>
+<p>Soms worden variabelen door <code>R</code> niet herkend als het juiste type, of soms ontbreekt er informatie of wil je zelf nieuwe variabelen toevoegen. Gelukkig heb je de mogelijkheid om deze informatie in <code>R</code> aan te passen of toe te voegen. Let wel op dat dit goed gaat, want anders kun je bij latere analyses in de problemen komen.</p>
+<section id="aanpassen-van-het-type-van-een-variabele" class="level2">
+<h2 class="anchored" data-anchor-id="aanpassen-van-het-type-van-een-variabele">Aanpassen van het type van een variabele</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-3" role="tab" aria-controls="tabset-9-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<p>Verander de variabele <code>proefpersoon</code> in een <code>factor</code>, zodat het door <code>R</code> als een categoriale variabele herkend wordt. Doe hetzelfde voor de variabelen <code>groep</code> en <code>geslacht</code>.</p>
+</div>
+<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<p>Gebruik de functie <code>mutate()</code> in combinatie met <code>as.factor()</code>, zie <a href="../data.html#sec-variabele-aanpassen">sectie&nbsp;<span>3.2.2</span></a>.</p>
+</div>
+<div id="tabset-9-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aanpassen datatype variabelen</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>uitdrukkingen <span class="ot">&lt;-</span> <span class="fu">mutate</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.data =</span> uitdrukkingen,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">proefpersoon =</span> <span class="fu">as.factor</span>(proefpersoon),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">groep =</span> <span class="fu">as.factor</span>(groep),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">geslacht =</span> <span class="fu">as.factor</span>(geslacht)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Controleren</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(uitdrukkingen)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [10 × 6] (S3: tbl_df/tbl/data.frame)
+ $ proefpersoon                 : Factor w/ 10 levels "1","2","3","4",..: 1 2 3 4 5 6 7 8 9 10
+ $ geslacht                     : Factor w/ 2 levels "M","V": 1 2 1 1 2 2 2 2 1 2
+ $ groep                        : Factor w/ 2 levels "1","2": 1 2 1 2 1 2 1 2 1 2
+ $ geboortejaar                 : num [1:10] 1988 1992 1995 1997 1987 ...
+ $ percentage_correct_voormeting: num [1:10] 20 36 15 55 43 11 18 29 25 33
+ $ percentage_correct_nameting  : num [1:10] 60 46 88 75 81 55 69 45 83 78</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="toevoegen-namen-van-levels" class="level2">
+<h2 class="anchored" data-anchor-id="toevoegen-namen-van-levels">Toevoegen namen van levels</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-3" role="tab" aria-controls="tabset-10-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
+<p>Voeg nu de bijbehorende namen van de levels aan de variabele <code>groep</code> toe: <code>computer</code> en <code>klassikaal</code>.</p>
+</div>
+<div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
+<p>Gebruik de functie <code>fct_recode()</code>, zie <a href="../data.html#sec-variabele-aanpassen">Sectie&nbsp;<span>3.2.2</span></a>.</p>
+</div>
+<div id="tabset-10-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toevoegen van namen aan levels</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>uitdrukkingen <span class="ot">&lt;-</span> <span class="fu">mutate</span>(uitdrukkingen,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">groep =</span> <span class="fu">fct_recode</span>(groep,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">computer =</span> <span class="st">"1"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">klassikaal =</span> <span class="st">"2"</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                                           )</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                        )</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Controleren</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(uitdrukkingen)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [10 × 6] (S3: tbl_df/tbl/data.frame)
+ $ proefpersoon                 : Factor w/ 10 levels "1","2","3","4",..: 1 2 3 4 5 6 7 8 9 10
+ $ geslacht                     : Factor w/ 2 levels "M","V": 1 2 1 1 2 2 2 2 1 2
+ $ groep                        : Factor w/ 2 levels "computer","klassikaal": 1 2 1 2 1 2 1 2 1 2
+ $ geboortejaar                 : num [1:10] 1988 1992 1995 1997 1987 ...
+ $ percentage_correct_voormeting: num [1:10] 20 36 15 55 43 11 18 29 25 33
+ $ percentage_correct_nameting  : num [1:10] 60 46 88 75 81 55 69 45 83 78</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="nieuwe-variabele-proportie_correct_voormeting-toevoegen" class="level2">
+<h2 class="anchored" data-anchor-id="nieuwe-variabele-proportie_correct_voormeting-toevoegen">Nieuwe variabele <code>proportie_correct_voormeting</code> toevoegen</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-3" role="tab" aria-controls="tabset-11-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
+<p>De variabele <code>percentage_correct_voormeting</code> geeft het aantal goede antwoorden op de voormeting weer als een percentage. Maak een nieuwe variabele <code>proportie_correct_coormeting</code> waarin het aantal goede antwoorden wordt weergegeven als een proportie. Wat is volgens <code>R</code> het type van deze nieuwe variabele? Leg uit waarom <code>R</code> voor dit type kiest.</p>
+</div>
+<div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
+<p>Zowel percentage als proportie geven het deel van een geheel weer. Het verschil is dat een percentage loopt van 0-100 en een proportie van 0-1. Voor het aanmaken van nieuwe variabelen gebruiken we de functie <code>mutate()</code>, zie <a href="../data.html#sec-variabele-aanpassen">Sectie&nbsp;<span>3.2.2</span></a>.</p>
+</div>
+<div id="tabset-11-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toevoegen variabele met proportie</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>uitdrukkingen <span class="ot">&lt;-</span> <span class="fu">mutate</span>(uitdrukkingen,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">proportie_correct_voormeting =</span> percentage_correct_voormeting<span class="sc">/</span><span class="dv">100</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                       )</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Controleren type van de variabele</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(uitdrukkingen)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [10 × 7] (S3: tbl_df/tbl/data.frame)
+ $ proefpersoon                 : Factor w/ 10 levels "1","2","3","4",..: 1 2 3 4 5 6 7 8 9 10
+ $ geslacht                     : Factor w/ 2 levels "M","V": 1 2 1 1 2 2 2 2 1 2
+ $ groep                        : Factor w/ 2 levels "computer","klassikaal": 1 2 1 2 1 2 1 2 1 2
+ $ geboortejaar                 : num [1:10] 1988 1992 1995 1997 1987 ...
+ $ percentage_correct_voormeting: num [1:10] 20 36 15 55 43 11 18 29 25 33
+ $ percentage_correct_nameting  : num [1:10] 60 46 88 75 81 55 69 45 83 78
+ $ proportie_correct_voormeting : num [1:10] 0.2 0.36 0.15 0.55 0.43 0.11 0.18 0.29 0.25 0.33</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="nieuwe-variabele-verschil_metingen-toevoegen" class="level2">
+<h2 class="anchored" data-anchor-id="nieuwe-variabele-verschil_metingen-toevoegen">Nieuwe variabele <code>verschil_metingen</code> toevoegen</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-3" role="tab" aria-controls="tabset-12-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
+<p>Maak nu een nieuwe variabele in het databestand met de naam <code>verschil_metingen</code>. Deze variabele moet het verschil weergeven tussen de nameting en de voormeting.</p>
+</div>
+<div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
+<p>Ook hierbij kun je de functie <code>mutate()</code> gebruiken, zie <a href="../data.html#sec-variabele-aanpassen">Sectie&nbsp;<span>3.2.2</span></a>.</p>
+</div>
+<div id="tabset-12-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variabele verschil_metingen aanmaken</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>uitdrukkingen <span class="ot">&lt;-</span> <span class="fu">mutate</span>(uitdrukkingen,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">verschil_metingen =</span> percentage_correct_nameting <span class="sc">-</span> percentage_correct_voormeting</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                       )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="nieuwe-variabele-leeftijd-toevoegen" class="level2">
+<h2 class="anchored" data-anchor-id="nieuwe-variabele-leeftijd-toevoegen">Nieuwe variabele <code>leeftijd</code> toevoegen</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-3" role="tab" aria-controls="tabset-13-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
+<p>Een van de variabelen in het databestand is <code>geboortejaar</code>. Voeg een nieuwe variabele <code>leeftijd</code> toe aan het databestand. Het experiment is afgenomen in 2017. Bereken automatisch de leeftijd op basis van het geboortejaar van de participanten met behulp van <code>R</code>.</p>
+</div>
+<div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
+<p>En ook dit kan met de functie <code>mutate()</code>, zie <a href="../data.html#sec-variabele-aanpassen">Sectie&nbsp;<span>3.2.2</span></a>.</p>
+</div>
+<div id="tabset-13-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toevoegen variabele leeftijd</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a> uitdrukkingen <span class="ot">&lt;-</span> <span class="fu">mutate</span>(uitdrukkingen,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">leeftijd =</span> <span class="dv">2017</span> <span class="sc">-</span> geboortejaar</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                         )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="een-grafiek-maken" class="level2">
+<h2 class="anchored" data-anchor-id="een-grafiek-maken">Een grafiek maken</h2>
+<p>Laten we de functionaliteit van het <code>tidyverse</code> meteen ook maar gebruiken om een grafiek te maken. We maken een grafiek waarin we het percentage correct op de nameting uitzetten tegen dat van de voormeting en we geven elk datapunt een kleur afhankelijk van de groep waartoe deze behoort. We gebruiken hiervoor <code>ggplot2</code>, het populairste onderdeel van <code>tidyverse</code> waar je in de rest van de cursus nog veel over gaat leren (vanaf <a href="../grafieken.html"><span>Hoofdstuk&nbsp;5</span></a>).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-3" role="tab" aria-controls="tabset-14-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
+<p>Hieronder vind je een deel van de code om de grafiek te maken, alleen de variabelen ontbreken nog. Kopieer onderstaande code, voeg de variabelen op de juiste puntjes (…) in en voer de code uit. Bekijk het resultaat: zie je verschil tussen de twee groepen?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#deel van de code voor een grafiek waarin percentage_correct_nameting wordt uitgezet tegen percentage_correct_voormeting</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>uitdrukkingen <span class="sc">%&gt;%</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ..., </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> ..., </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> ...)) <span class="sc">+</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
+<p>In deze grafiek zetten we variabele Y uit tegen variabele X. De kleur willen we laten variëren per groep waartoe de leerder behoort.</p>
+</div>
+<div id="tabset-14-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#code voor een grafiek waarin percentage_correct_nameting wordt uitgezet tegen percentage_correct_voormeting</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>uitdrukkingen <span class="sc">%&gt;%</span> </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> percentage_correct_voormeting, </span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentage_correct_nameting, </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> groep)) <span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practicum1_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../practica.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practica</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

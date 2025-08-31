@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Onderzoeksontwerp en Beschrijvende Statistiek - 2&nbsp; R en RStudio</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./data.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Onderzoeksontwerp en Beschrijvende Statistiek</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welkom</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inleiding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bewerken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grafieken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factoren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numeriek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Numerieke variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distributies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distributies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./practica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./_practica/practicum1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhoudsopgave</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-RStudio" id="toc-sec-RStudio" class="nav-link active" data-scroll-target="#sec-RStudio"><span class="header-section-number">2.1</span> Werken met R en RStudio</a></li>
+  <li><a href="#functies" id="toc-functies" class="nav-link" data-scroll-target="#functies"><span class="header-section-number">2.2</span> Functies</a></li>
+  <li><a href="#sec-packages" id="toc-sec-packages" class="nav-link" data-scroll-target="#sec-packages"><span class="header-section-number">2.3</span> Packages</a></li>
+  <li><a href="#verder-leren" id="toc-verder-leren" class="nav-link" data-scroll-target="#verder-leren">Verder leren</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-R-RStudio" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In deze cursus leer je om data-analyses uit te voeren met <code>R</code>. <code>R</code> is een programmeertaal om data-analyse (datavisualisaties, statistische analyses) mee uit te voeren. In feite is het een grote verzameling functies die je kunt inzetten om data te analyseren. Net als elke taal kent ook <code>R</code> bepaalde regels (de grammatica van de taal). Leren werken met <code>R</code> betekent dus dat je je die regels eigen moet maken.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Na afloop van dit hoofdstuk:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>ben je bekend met de opbouw van het programma RStudio;</li>
+<li>kun je bestaande functies in <code>R</code> toepassen;</li>
+<li>kun je packages installeren en aanroepen zodat je de functies in de packages kunt gebruiken.</li>
+</ul>
+</div>
+</div>
+<section id="sec-RStudio" class="level2 page-columns page-full" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-RStudio"><span class="header-section-number">2.1</span> Werken met R en RStudio</h2>
+<div class="page-columns page-full"><p>Het softwarepakket <code>R</code> is tegenwoordig de standaard voor data-analyse in taalkundig onderzoek. Het grote voordeel van <code>R</code> is dat veel professionele onderzoekers steeds weer nieuwe pakketten maken voor specifieke statistische of data-analytische functies.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Daarnaast is het gratis te downloaden voor verschillende computerplatforms. Je kunt <code>R</code> downloaden als programma op je computer. Je kunt direct in het programma <code>R</code> werken. Als je het opent, krijg je een scherm te zien, de <em>console</em>, waarin je code kunt typen. Wij gebruiken echter het programma <code>RStudio</code>, dat een wat fijnere gebruikersinterface levert dan <code>R</code> zelf, en dus wat vriendelijker is voor (beginnende) gebruikers.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Bodo Winter geeft in sectie 0.2 van <span class="citation" data-cites="Winter2019">Winter (<a href="index.html#ref-Winter2019" role="doc-biblioref">2019</a>)</span> nog een aantal belangrijke voordelen.</p><div id="ref-Winter2019" class="csl-entry" role="listitem">
+Winter, B. (2019). <em>Statistics for Linguists: An Introduction Using <span>R</span></em>. Routledge. <a href="https://doi.org/10.4324/9781315165547">https://doi.org/10.4324/9781315165547</a>
+</div></li></div></div>
+<p>Op de computers in het ESC horen <code>R</code> en <code>RStudio</code> al aanwezig te zijn. Om het op je eigen computer te installeren: ga naar <a href="https://posit.co/download/rstudio-desktop/#download" class="uri">https://posit.co/download/rstudio-desktop/#download</a> en kies het installatieprogramma dat bij jouw computer past. Als je R nog niet hebt, installeer dat dan ook, vanaf die pagina of anders via <a href="https://cran.rstudio.com" class="uri">https://cran.rstudio.com</a> of <a href="http://cran.r-project.org" class="uri">http://cran.r-project.org</a>.</p>
+<p>Wanneer je <code>RStudio</code> opent, opent zich een programma met een aantal vensters (3 of 4), zoals je kunt zien in <a href="#fig-RStudio">Figuur&nbsp;<span>2.1</span></a>. Linksonder vind je de console van <code>R</code> (wanneer je vanuit het programma <code>R</code> zou werken, krijg je alleen dit venster te zien). Dat is waar alle code die je gaat maken zal worden uitgevoerd. Linksboven zie je een script met daarin 1 regel code. In het script kun je als in een kladblok code schrijven en die vervolgens uitproberen door deze naar de console te sturen. Dit doe je door de relevante code te selecteren en op <code>ctrl + Enter</code> (<code>Cmd + Enter</code> op een Mac) te drukken. Wanneer je je cursor op een regel hebt staan, wordt op deze manier alle code op die regel (en bijbehorende regels) uitgevoerd.</p>
+<div id="fig-RStudio" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="_pictures/RStudio.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;2.1: De vensters van het programma <em>RStudio</em></figcaption>
+</figure>
+</div>
+<p>Het venster rechtsboven geeft een overzicht van alle data (datatabellen en vectoren, zie het volgende hoofdstuk) die voor <code>R</code> beschikbaar zijn om bewerkingen op uit te voeren. Dit venster is nu nog leeg. Hetzelfde geldt voor het venster rechtsonder. Dit venster kun je gebruiken om gemaakte grafieken (<em>plots</em>) te bekijken, inzicht te krijgen in je bestanden en ook de packages die je hebt geïnstalleerd (zie hieronder). Niet onbelangrijk: hier vind je ook de help-functie.</p>
+<p>Omdat het waarschijnlijker makkelijker is om een overzicht te krijgen van RStudio met bewegend beeld kun je deze video <a href="https://youtu.be/FIrsOBy5k58" class="uri">https://youtu.be/FIrsOBy5k58</a> bekijken voor een korte rondleiding.</p>
+</section>
+<section id="functies" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="functies"><span class="header-section-number">2.2</span> Functies</h2>
+<p>Zoals gezegd is <code>R</code> in feite een grote verzameling functies die je kunt inzetten om data te analyseren. <strong>Functies</strong> koppelen een bepaalde <em>input</em> aan een bepaalde <em>output</em>. Neem bijvoorbeeld de functie <code>seq()</code>: gegeven een beginpunt, een eindpunt en een stapgrootte geeft deze functie je een reeks getallen. In onderstaand voorbeeld is het beginpunt gegeven als 1, het eindpunt als 10 en de stapgrootte als 1. Het resultaat is een reeks gehele getallen van 1 tot 10.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">1</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+</div>
+<p>Wanneer we de stapgrootte veranderen naar 2, krijgen we niet 10 getallen maar 5 (alle oneven getallen onder de 10).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">2</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 3 5 7 9</code></pre>
+</div>
+</div>
+<p>Veranderen we vervolgens ook het beginpunt naar 2 dan krijgen we 5 even getallen:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">2</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">2</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  2  4  6  8 10</code></pre>
+</div>
+</div>
+<p>Deze voorbeelden laten zien dat de uitkomst (<em>output</em>) van de functie dus volledig wordt bepaald door wat je erin stopt (de <em>input</em>). De functie <code>seq()</code> vraag om drie argumenten <code>from</code>, <code>to</code> en <code>by</code>. Ieder argument heeft in principe een vaste plek in de functie. Wanneer we die vaste volgorde aanhouden kunnen we de namen van de argumenten weglaten:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">1</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+</div>
+<p>Wanneer je bekend raakt met bepaalde functies, zul je er op gegeven moment waarschijnlijk voor kiezen om de namen van de argumenten weg te laten. Dit scheelt namelijk veel typewerk. Het maakt je code mogelijk wel minder leesbaar voor buitenstaanders (en voor jezelf). In dit dictaat zullen we in de meeste gevallen bij het eerste gebruik van een functie de argumenten bij naam noemen, om ze bij vervolgd gebruik weg te laten.</p>
+<p>Wanneer we de namen wel gebruiken, kunnen we er ook voor kiezen om de argumenten in een andere volgorde neer te zetten. Door de namen weet <code>R</code> toch wat we bedoelen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">by =</span> <span class="dv">1</span>, <span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+</div>
+<p>Laten we de namen weg en gebruiken we een andere volgorde, krijgen we een andere output:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">10</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>In dit geval interpreteert <code>R</code> de argumenten in de standaardvolgorde.</p>
+<p>Het is voor elke functie dus belangrijk om te weten wat de benodigde argumenten zijn en in welke volgorde ze worden verwacht. De argumenten staan altijd tussen <code>()</code> achter de functienaam en worden gescheiden door een komma. Tussen de naam van het argument en de waarde die je wilt meegeven zet je een <code>=</code>-teken.</p>
+<table class="table">
+<caption>De anatomie van een functie</caption>
+<thead>
+<tr class="header">
+<th>functienaam(argument1, argument2, argument3)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>seq(from = , to = , by = )</code></td>
+</tr>
+</tbody>
+</table>
+<p>Wanneer je wilt achterhalen hoe de structuur van een functie in elkaar zit, kun je de help-functie in <code>R</code> gebruiken. Door een vraagteken voor de functienaam te zetten, verschijnt in RStudio rechtsonder informatie over de functie.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">seq</span>()</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Je zult zien dat veel functies naast de verplichte argumenten ook <em>default</em> argumenten hebben. Dit zijn argumenten die een standaardwaarde hebben en dus niet door de gebruiker hoeven te worden gegeven, maar die je eventueel wel zou kunnen aanpassen.</p>
+<p>Niet alle functies hebben argumenten met een naam. De functie <code>c()</code> waarmee we dingen kunnen samenvoegen tot een geheel is bijvoorbeeld een veelgebruikte functie zonder argumentnamen:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Nederland"</span>, <span class="dv">1988</span>, <span class="st">"plek 1"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Nederland" "1988"      "plek 1"   </code></pre>
+</div>
+</div>
+<p>Deze functie <code>c()</code> kun je ook gebruiken om meerdere waarden als argument van een functie mee te geven. Neem als voorbeeld de functie <code>round()</code>. Deze functie rondt getallen af op een aangegeven aantal decimalen (<em>digits</em>). In onderstaand voorbeeld wordt er afgerond op twee decimalen:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">4.246</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.25</code></pre>
+</div>
+</div>
+<p>Met <code>c()</code> is het mogelijk om meerdere getallen tegelijk te laten afronden (in dit geval op 1 decimaal):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(<span class="fl">4.246</span>, <span class="fl">5.628</span>, <span class="fl">9.463</span>), <span class="dv">1</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.2 5.6 9.5</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+codeboek
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In deze cursus leer je werken met zo’n 100 veelgebruikte functies in <code>R</code>. Het is belangrijk om voor jezelf een goed overzicht te houden van deze functies. Werk hier actief aan door een eigen codeboek aan te maken.</p>
+</div>
+</div>
+</section>
+<section id="sec-packages" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-packages"><span class="header-section-number">2.3</span> Packages</h2>
+<p><code>R</code> komt standaard met een hele verzameling aan functies die je kunt gebruiken. Dit noemen we ook wel <code>base R</code>. Soms wil je echter meer. In dat geval kun je gebruik maken van zogenaamde aanvullende <strong>packages</strong>. Een package is een verzameling functies die meestal gemaakt zijn om één bepaalde taak goed uit te kunnen voeren, bijv. het maken van grafieken of het analyseren van teksten. Om deze te kunnen gebruiken moet je deze packages eerst installeren op je computer en vervolgens ook aanroepen in je R-sessie. Tijdens deze cursus zullen we veelvuldig gebruik maken van het package <code>tidyverse</code>. Dat is eigenlijk een verzameling packages die helpen bij verschillende onderdelen van data-analyse. Het <code>tidyverse</code> is inmiddels zo succesvol geworden dat het een soort dialect binnen de programmeertaal <code>R</code> is geworden. Wanneer je het package <code>tidyverse</code> installeert en aanroept dan roep je meteen alle packages die daaronder vallen ook aan.</p>
+<p>Packages installeer je met behulp van de functie <code>install.packages()</code>. Tussen de haken zet je de naam van het package tussen aanhalingstekens.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>N.B. je hoeft een package maar één keer op je computer te installeren. Zet daarom, nadat je de installatie hebt voltooid, een <code>#</code> voor de regel met <code>install.packages()</code> of verwijder de regel met deze code. Als je de regel laat staan kan dat later problemen opleveren. Door de <code>#</code> zal R de regel negeren wanneer je het script nog een keer uitvoert. In RStudio kun je in het window rechtsonder onder het tabblad <em>packages</em> zien welke packages er geïnstalleerd zijn op jouw computer. Je vindt daar ook een optie om packages te installeren.</p>
+<p>Een package installeer je dus maar één keer, maar om de functies in het package te kunnen gebruiken moet je het package wel elke <code>R</code>-sessie opnieuw activeren. Dit doe je met behulp van de functie <code>library()</code> waarin je de naam van het te gebruiken package invult zonder aanhalingstekens. Dit moet je dus elke keer uitvoeren aan het begin van een nieuwe <code>R</code>-sessie, anders zal <code>R</code> klagen de functies uit het package niet te kennen. Om de functies uit het <code>tidyverse</code> te kunnen gebruiken, type je dus:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Je kunt deze functie voor meerdere packages achter elkaar uitvoeren. Let hierbij wel op dat de volgorde waarin je de packages aanroept een effect kan hebben. Wanneer er in verschillende packages een functie met dezelfde naam zit, dan zal de <code>R</code> de functie gebruiken zoals die in het laatst aangeroepen package gedefinieerd is. De functie in het eerder aangeroepen package zal dan <em>gemaskeerd</em> worden. <code>R</code> geeft je hier ook een waarschuwing over. Wanneer je uit een geïnstalleerd package maar één specifieke functie wilt gebruiken, dan kun je dit probleem omzeilen door het package niet aan te roepen met <code>library()</code>, maar door de notatie <code>packagenaam::functienaam</code> te gebruiken:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In het bovenstaande voorbeeld kun je de functie <code>clean_names</code> uit het package <code>janitor</code> gebruiken zonder dat alle andere functies uit het package actief worden en mogelijk functies uit andere packages maskeren. Je moet het package hiervoor natuurlijk wel geïnstalleerd hebben op je computer.</p>
+<p>Het is verstandig om aan het begin van elk <code>R</code>-script een blokje te maken waarin je alle benodigde packages aanroept met <code>library()</code>. Dit is vooral ook handig voor lezers van je script. Die weten dan meteen wat ze kunnen verwachten en welke packages ze eventueel nog moeten installeren.</p>
+</section>
+<section id="verder-leren" class="level2 unnumbered page-columns page-full">
+<h2 class="unnumbered anchored" data-anchor-id="verder-leren">Verder leren</h2>
+<ul>
+<li>In Hoofdstuk 1 van SfL <span class="citation" data-cites="Winter2019">(<a href="index.html#ref-Winter2019" role="doc-biblioref">Winter, 2019</a>)</span> wordt de basis van <code>R</code> (<code>base R</code>) verder uitgelegd. Ter voorbereiding op het eerste practicum is het prettig om vast wat commando’s te proberen uit dit hoofdstuk. Maak hiervoor een nieuw script aan in <code>RStudio</code> (via het menu <code>File &gt; New File &gt; R Script</code> of de sneltoetsen <code>Ctrl + Shift + N</code> (<code>Cmd + Shift + N</code> op een Mac)).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Werk om een gevoel te krijgen bij hoe <code>R</code> werkt, nu hoofdstuk 1 door t/m sectie 1.4. Typ de commando’s in de grijze vakken over en voer ze uit. In sectie 1.2 doe je dit direct in de R-console, vanaf sectie 1.3 (en in alle volgende practica!) in een script. Zie sectie 1.15 voor handige shortcuts die je hierbij kunt gebruiken. Controleer steeds of je dezelfde output krijgt als in het boek. Toegegeven, het letterlijk overtypen van de commando’s uit het boek voelt misschien een beetje raar, maar het is dé manier om gevoel te krijgen bij hoe R werkt en waar je op moet letten (zie ook sectie 1.16 voor belangrijke adviezen op dit gebied). In de practica krijg je nog tijd genoeg om het allemaal zelf uit te vinden.</li>
+</ul>
+
+
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Je kunt eventueel ook <a href="https://rdrr.io/snippets" class="uri">https://rdrr.io/snippets</a> gebruiken voor het uitvoeren van R-code, mocht de installatie op je eigen computer niet werken. We kunnen dan tijdens een practicum proberen <code>R</code> en <code>RStudio</code> werkend te krijgen op je computer.</p></li></div>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inleiding</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./data.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

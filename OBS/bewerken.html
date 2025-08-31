@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Onderzoeksontwerp en Beschrijvende Statistiek - 4&nbsp; Data Bewerken</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./grafieken.html" rel="next">
+<link href="./data.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bewerken.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Onderzoeksontwerp en Beschrijvende Statistiek</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welkom</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inleiding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bewerken.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grafieken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factoren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numeriek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Numerieke variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distributies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distributies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./practica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./_practica/practicum1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhoudsopgave</h2>
+   
+  <ul class="collapse">
+  <li><a href="#de-pipe-operator" id="toc-de-pipe-operator" class="nav-link active" data-scroll-target="#de-pipe-operator"><span class="header-section-number">4.1</span> de <em>pipe</em>-operator</a></li>
+  <li><a href="#sec-observaties" id="toc-sec-observaties" class="nav-link" data-scroll-target="#sec-observaties"><span class="header-section-number">4.2</span> Observaties uitlichten</a></li>
+  <li><a href="#sec-selecteren" id="toc-sec-selecteren" class="nav-link" data-scroll-target="#sec-selecteren"><span class="header-section-number">4.3</span> Variabelen selecteren</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">4.4</span> Missing values</a></li>
+  <li><a href="#sec-tellingen" id="toc-sec-tellingen" class="nav-link" data-scroll-target="#sec-tellingen"><span class="header-section-number">4.5</span> Simpele tellingen</a></li>
+  <li><a href="#verder-leren" id="toc-verder-leren" class="nav-link" data-scroll-target="#verder-leren">Verder leren</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-Data-Bewerken" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In het vorige hoofdstuk heb je geleerd hoe je databestanden kunt inlezen in <code>R</code>. Databestanden komen in een gegeven formaat. Wanneer je data-analyse gaat doen is het handig als je het databestand kunt aanpassen naar jouw wensen. Soms wil je bijvoorbeeld maar een deel van de data analyseren of nieuwe variabelen toevoegen. Je moet als het ware ‘leren spelen’ met data. In dit hoofdstuk maak je kennis met een aantal functies uit het <code>tidyverse</code> die je daarbij kunnen helpen.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Na afloop van dit hoofdstuk:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>kun je op een relaxte manier omgaan met errors.</li>
+<li>Opslaan van data in een databestand</li>
+<li>Filteren, splitsen, sorteren en samenvoegen van data</li>
+<li>Maken van simpele numerieke samenvattingen van data</li>
+<li>Bekend raken met de belangrijkste ‘werkwoorden’ uit het Tidyverse: <code>filter()</code>, <code>arrange()</code>, <code>select()</code>, <code>mutate()</code>, <code>summarize()</code>, <code>group_by()</code> en de pipe operator <code>%&gt;%</code>.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+codeboek
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In deze cursus leer je werken met zo’n 100 veelgebruikte functies in <code>R</code>. Het is belangrijk om voor jezelf een goed overzicht te houden van deze functies. Werk hier actief aan door een eigen codeboek aan te maken. Voeg tijdens of na afloop van het bestuderen van dit hoofdstuk de codes toe aan jouw codeboek.</p>
+</div>
+</div>
+<section id="de-pipe-operator" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="de-pipe-operator"><span class="header-section-number">4.1</span> de <em>pipe</em>-operator</h2>
+<p>In het <code>tidyverse</code> zit een hele verzameling aan werkwoorden die je kunt gebruiken om bewerkingen op je data uit te voeren. Deze werkwoorden hebben gemeenschappelijk dat ze altijd een bewerking uitvoeren op een datatabel (<code>tibble</code>) en (meestal) weer een nieuwe datatabel opleveren. In het vorige hoofdstuk hebben we bijvoorbeeld <code>distinct()</code> gezien. Dit ‘werkwoord’ geeft van een variabele in een datatabel de unieke waarden terug.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(<span class="at">.data =</span> wordbank_datasets, language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 42 × 1
+   language             
+   &lt;fct&gt;                
+ 1 British Sign Language
+ 2 Cantonese            
+ 3 Croatian             
+ 4 Danish               
+ 5 English (American)   
+ 6 French (Quebecois)   
+ 7 German               
+ 8 Hebrew               
+ 9 Italian              
+10 Mandarin (Beijing)   
+# ℹ 32 more rows</code></pre>
+</div>
+</div>
+<p>De datatabel waarop de bewerking wordt uitgevoerd (hier: <code>wordbank_datasets</code>) staat altijd als eerste argument van de functie genoemd. Om de code overzichtelijker te maken en om het mogelijk te maken om meerdere operaties na elkaar uit te voeren bestaat de <em>pipe</em>-operator <code>%&gt;%</code>. Deze operator maakt het mogelijk om de datatabel uit de functie-aanroep te halen en ervoor te zetten:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 42 × 1
+   language             
+   &lt;fct&gt;                
+ 1 British Sign Language
+ 2 Cantonese            
+ 3 Croatian             
+ 4 Danish               
+ 5 English (American)   
+ 6 French (Quebecois)   
+ 7 German               
+ 8 Hebrew               
+ 9 Italian              
+10 Mandarin (Beijing)   
+# ℹ 32 more rows</code></pre>
+</div>
+</div>
+<p>Deze code doet hetzelfde als de eerdere variant waarbij we de datatabel nog op de eerste plek benoemden. Onderliggend is dit namelijk precies wat <code>R</code> voor je doet, wanneer je de pipe gebruikt:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>de <em>pipe</em>-operator</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>x %&gt;% functie(y)</code> wordt <code>functie(.data = x, y)</code></td>
+</tr>
+</tbody>
+</table>
+<p>Het is even wennen maar de pipe operator <code>%&gt;%</code> is een ontzettend handige toevoeging aan je gereedschapskist. Met deze operator kun je namelijk heel makkelijk verschillende operaties aan elkaar plakken zonder dat je data tussendoor een nieuwe naam hoeft te geven. Je kunt de pipe lezen als ‘pak datatabel <span class="math inline">\(x\)</span> en pas functie <span class="math inline">\(f\)</span> erop toe’. Aangezien de output van de functies doorgaans een nieuwe datatabel oplevert kun je de output van een functie weer met een pipe doorzetten naar een volgende. Je kunt de pipe dan lezen als <code>en doe dan dit</code>. De pipe maakt het eenvoudiger om je code van links naar rechts te lezen in plaats van binnen naar buiten.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">functie1</span>() <span class="sc">%&gt;%</span> <span class="fu">functie2</span>()</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Wij schrijven de pipe als <code>%&gt;%</code>, omdat deze manier ook gehanteerd wordt in de overige literatuur die we gebruiken in deze cursus. De nieuwste versie van <code>tidyverse</code> schrijft de pipe als <code>|&gt;</code>. In ons geval zijn deze twee schrijfwijzen equivalent, maar wij gebruiken in het dictaat en uitwerkingen dus <code>%&gt;%</code>.</p>
+</section>
+<section id="sec-observaties" class="level2 page-columns page-full" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sec-observaties"><span class="header-section-number">4.2</span> Observaties uitlichten</h2>
+<section id="filter" class="level3 page-columns page-full" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="filter"><span class="header-section-number">4.2.1</span> <code>filter()</code></h3>
+<p>Het komt vaak voor dat je maar een deel van de data wilt bekijken. De functie <code>filter()</code> kun je gebruiken om een selectie te maken van de observaties die je wilt gaan bekijken. In de datatabel <code>wordbank_datasets</code> komen bijvoorbeeld twee typen vragenlijsten voor (variabele: <code>form_type</code>): vragenlijsten van type <code>WG</code> wat staat voor <em>Words &amp; Gestures</em> zijn afgenomen bij ouders van babies en vragenlijsten van type <code>WS</code> wat staat voor <em>Words &amp; Sentences</em> zijn afgenomen bij ouders van peuters. Wanneer we onze analyse nu willen beperken tot alleen de vragenlijsten afgenomen bij babies kunnen we dit met <code>filter()</code> aangeven:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(form_type <span class="sc">==</span> <span class="st">"WS"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 48 × 9
+   instrument_id language           form  form_type age_min age_max has_grammar
+   &lt;fct&gt;         &lt;fct&gt;              &lt;fct&gt; &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1 2             Cantonese          WS    WS             16      30           0
+ 2 4             Croatian           WS    WS             16      30           0
+ 3 6             Danish             WS    WS             16      36           1
+ 4 8             English (American) WS    WS             16      30           1
+ 5 10            French (Quebecois) WS    WS             16      30           1
+ 6 11            German             WS    WS             18      30           0
+ 7 13            Hebrew             WS    WS             25      36           1
+ 8 15            Italian            WS    WS             18      36           0
+ 9 17            Mandarin (Beijing) TC    WS             17      30           0
+10 18            Mandarin (Beijing) WS    WS             16      30           0
+# ℹ 38 more rows
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>De conditie <code>form_type == "WS"</code> binnen <code>filter()</code> moeten we lezen als ‘behoud de observaties waarbij <code>form_type</code> gelijk is aan <code>WS</code>’. We zien dat 48 van de 89 vragenlijst in de oorspronkelijke dataset aan deze conditie voldoen. Wanneer we met alleen deze data willen verder werken dan zouden we ervoor kunnen kiezen om deze weg te schrijven naar een nieuwe datatabel (met de inmiddels bekende operator <code>&lt;-</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wordbank_WS <span class="ot">&lt;-</span> wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(form_type <span class="sc">==</span> <span class="st">"WS"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>De functie <code>filter()</code> werkt met condities waaraan voldaan moet worden. Afhankelijk van het type variabele kunnen die een andere vorm aannemen. Bij factoren zal het doorgaans gaan om het al dan niet gelijk zijn aan een bepaald level (<code>==</code>: gelijk aan, <code>!=</code>: is niet gelijk aan) waarbij de naam van het level tussen aanhalingstekens moet staan. Bij numerieke variabelen kan er ook gekeken worden of een getal groter (<code>&gt;</code>) of kleiner (<code>&lt;</code>) is dan een bepaalde waarde. Willen we bijvoorbeeld alleen kijken naar datasets waarin de babies maximaal 18 maanden oud zijn dan kunnen we de variabele <code>age_max</code> beperken:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age_max <span class="sc">&lt;=</span> <span class="dv">18</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 31 × 9
+   instrument_id language           form  form_type age_min age_max has_grammar
+   &lt;fct&gt;         &lt;fct&gt;              &lt;fct&gt; &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1 3             Croatian           WG    WG              8      16           0
+ 2 7             English (American) WG    WG              8      18           0
+ 3 9             French (Quebecois) WG    WG              8      16           0
+ 4 16            Mandarin (Beijing) IC    WG             12      16           0
+ 5 21            Russian            WG    WG              8      18           0
+ 6 23            Slovak             WG    WG              8      16           0
+ 7 25            Spanish (Mexican)  WG    WG              8      18           0
+ 8 27            Swedish            WG    WG              8      16           0
+ 9 29            Turkish            WG    WG              8      16           0
+10 38            Kigiriama          WG    WG              8      15           0
+# ℹ 21 more rows
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>De condities in <code>filter()</code> moeten een waarheidswaarde (<code>true</code>, <code>false</code>) opleveren. De operatoren die hierbij gebruikt kunnen worden zie je in <a href="#tbl-booleans">Tabel&nbsp;<span>4.1</span></a>. Dit worden ook wel <strong>booleans</strong> genoemd.</p>
+<div id="tbl-booleans" class="anchored page-columns page-full">
+<table class="table">
+
+<colgroup>
+<col style="width: 23%">
+<col style="width: 37%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>operator</th>
+<th>te lezen als</th>
+<th>voorbeeld</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>==</td>
+<td>is gelijk aan</td>
+<td><code>form_type == "WS"</code></td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>is niet gelijk aan</td>
+<td><code>form_type != "WS"</code></td>
+</tr>
+<tr class="odd">
+<td>%in%</td>
+<td>komt voor in de vector</td>
+<td><code>language %in% c("Dutch", "German")</code></td>
+</tr>
+<tr class="even">
+<td>&lt;</td>
+<td>kleiner dan</td>
+<td><code>age_max &lt; 19</code></td>
+</tr>
+<tr class="odd">
+<td>&lt;=</td>
+<td>kleiner dan of gelijk aan</td>
+<td><code>age_max &lt;= 18</code></td>
+</tr>
+<tr class="even">
+<td>&gt;</td>
+<td>groter dan</td>
+<td><code>age_min &gt; 3</code></td>
+</tr>
+<tr class="odd">
+<td>&gt;=</td>
+<td>groter dan of gelijk aan</td>
+<td><code>age_min &gt;= 2</code></td>
+</tr>
+<tr class="even">
+<td>between()</td>
+<td>tussen</td>
+<td><code>between(age_min, 2, 10)</code></td>
+</tr>
+<tr class="odd">
+<td>is.na()</td>
+<td>is een missing value</td>
+<td><code>is.na(form_type)</code></td>
+</tr>
+<tr class="even">
+<td>!is.na()</td>
+<td>is geen missing value</td>
+<td><code>!is.na(form_type)</code></td>
+</tr>
+<tr class="odd">
+<td>!</td>
+<td>niet, keert de waarheidswaarde om</td>
+<td><code>!age_max &lt;= 18</code></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-table-caption margin-caption">Tabel&nbsp;4.1: boolean operatoren in R</div></div>
+<p>Het is ook mogelijk om meerdere condities te combineren. Dat kan op dezelfde variabele of op meerdere variabelen. Hiervoor kun je de logische operatoren <code>&amp;</code> ‘en (beide condities moeten waar zijn)’, <code>|</code> ‘of (een van beide of beiden condities moeten waar zijn)’ of <code>xor()</code> ‘exclusief of (een van beide maar niet beide condities moeten waar zijn)’. In plaats van <code>&amp;</code> kun je de condities ook scheiden door een komma. Als we dus filteren op de WS-vragenlijsten van babies van maximaal 18 maanden, hebben we twee opties:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(form_type <span class="sc">==</span> <span class="st">"WS"</span> <span class="sc">&amp;</span> age_max <span class="sc">&lt;=</span> <span class="dv">18</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 9
+  instrument_id language       form    form_type age_min age_max has_grammar
+  &lt;fct&gt;         &lt;fct&gt;          &lt;fct&gt;   &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+1 85            Arabic (Saudi) WS      WS              8      16           1
+2 86            Arabic (Saudi) WSOther WS              8      16           1
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(form_type <span class="sc">==</span> <span class="st">"WS"</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>         age_max <span class="sc">&lt;=</span> <span class="dv">18</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 9
+  instrument_id language       form    form_type age_min age_max has_grammar
+  &lt;fct&gt;         &lt;fct&gt;          &lt;fct&gt;   &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+1 85            Arabic (Saudi) WS      WS              8      16           1
+2 86            Arabic (Saudi) WSOther WS              8      16           1
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="slice" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="slice"><span class="header-section-number">4.2.2</span> <code>slice()</code></h3>
+<p>Met de verschillende <code>slice</code>-functies kun je bepaalde rijen zichtbaar maken op basis van hun positie in de datatabel of een minimale of maximale waarde op een variabele.</p>
+<p>Wanneer we de eerste of laatste rijen zichtbaar willen maken gebruiken we <code>slice_head()</code> of <code>slice_tail()</code>. Het argument <code>n</code> geeft hierbij aan hoeveel rijen je zichtbaar wilt maken:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 9
+  instrument_id language             form  form_type age_min age_max has_grammar
+  &lt;fct&gt;         &lt;fct&gt;                &lt;fct&gt; &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+1 1             British Sign Langua… WG    WG              8      36           0
+2 2             Cantonese            WS    WS             16      30           0
+3 3             Croatian             WG    WG              8      16           0
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_tail</span>(<span class="at">n =</span> <span class="dv">2</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 9
+  instrument_id language form  form_type age_min age_max has_grammar
+  &lt;fct&gt;         &lt;fct&gt;    &lt;fct&gt; &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+1 93            Japanese WG    WG              8      18           1
+2 94            Japanese WS    WS             16      36           1
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>De functie <code>slice()</code> is een algemenere functie waarin je de nummers van de rijen in de datatabel als argument meegeeft:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 9
+  instrument_id language           form  form_type age_min age_max has_grammar
+  &lt;fct&gt;         &lt;fct&gt;              &lt;fct&gt; &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+1 10            French (Quebecois) WS    WS             16      30           1
+2 11            German             WS    WS             18      30           0
+3 12            Hebrew             WG    WG             11      25           0
+4 13            Hebrew             WS    WS             25      36           1
+5 14            Italian            WG    WG              7      24           0
+6 15            Italian            WS    WS             18      36           0
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Met <code>slice_min()</code> en <code>slice_max()</code> kun je de rijen selecteren met de minimale of maximale waarde op een variabele. Ook hier kun je met <code>n</code> aangeven hoeveel. Wanneer meerdere rijen hier dezelfde waarde hebben kun je meer rijen krijgen dan het gevraagde aantal</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(age_max)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 9
+  instrument_id language          form     form_type age_min age_max has_grammar
+  &lt;fct&gt;         &lt;fct&gt;             &lt;fct&gt;    &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+1 32            English (British) TEDS Th… WS             34      47           1
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(age_min,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 41 × 9
+   instrument_id language            form  form_type age_min age_max has_grammar
+   &lt;fct&gt;         &lt;fct&gt;               &lt;fct&gt; &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1 14            Italian             WG    WG              7      24           0
+ 2 1             British Sign Langu… WG    WG              8      36           0
+ 3 3             Croatian            WG    WG              8      16           0
+ 4 5             Danish              WG    WG              8      20           0
+ 5 7             English (American)  WG    WG              8      18           0
+ 6 9             French (Quebecois)  WG    WG              8      16           0
+ 7 19            Norwegian           WG    WG              8      20           0
+ 8 21            Russian             WG    WG              8      18           0
+ 9 23            Slovak              WG    WG              8      16           0
+10 25            Spanish (Mexican)   WG    WG              8      18           0
+# ℹ 31 more rows
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Wil je random een aantal observaties uit je datatabel halen dan kun je <code>slice_sample()</code> gebruiken. Deze functie zal iedere keer een ander resultaat geven. Het is dan voor de reproduceerbaarheid verstandig om aan het begin van je script (of voordat je de functie aanroept) een <em>random seed</em> aan te maken met de functie <code>set.seed()</code>. Wanneer iemand anders deze functie met hetzelfde getal uitboert, zal die dezelfde resultaten krijgen. Dit geldt dus ook voor jezelf, wanneer je het script meerdere keren of op een later moment uitvoert.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">25</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 9
+  instrument_id language           form    form_type age_min age_max has_grammar
+  &lt;fct&gt;         &lt;fct&gt;              &lt;fct&gt;   &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+1 7             English (American) WG      WG              8      18           0
+2 24            Slovak             WS      WS             17      36           1
+3 65            Dutch              Swingl… WG              8      36           1
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-selecteren" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sec-selecteren"><span class="header-section-number">4.3</span> Variabelen selecteren</h2>
+<p>We hebben nu steeds gekeken hoe je observaties (rijen) kunt uitlichten uit een dataset. Hetzelfde kunnen we ook doen met variabelen. De functie <code>select()</code> is hierbij de belangrijkste functie. Aan deze functie geven we de variabelen mee die we willen behouden in een vervolgstap. Stel we willen in onze dataset <code>wordbank_datasets</code> alleen verder met de variabelen <code>instrument_id</code> en <code>language</code>. We voegen dan deze variabelen gescheiden door een <code>,</code> toe aan de functie <code>select()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(instrument_id, language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 2
+   instrument_id language             
+   &lt;fct&gt;         &lt;fct&gt;                
+ 1 1             British Sign Language
+ 2 2             Cantonese            
+ 3 3             Croatian             
+ 4 4             Croatian             
+ 5 5             Danish               
+ 6 6             Danish               
+ 7 7             English (American)   
+ 8 8             English (American)   
+ 9 9             French (Quebecois)   
+10 10            French (Quebecois)   
+# ℹ 79 more rows</code></pre>
+</div>
+</div>
+<p>Let erop dat je in dit geval deze verandering alleen tijdelijk hebt gemaakt. Het is nu nog niet zo dat je de variabele definitief hebt verwijderd uit de datatabel. Om dat voor elkaar te krijgen zul je de actie toe moeten schrijven aan een naam met de operator <code>&lt;-</code>, zoals we al vaker hebben gezien.</p>
+<p>Wanneer je meerdere opeenvolgende variabelen wilt toevoegen kun je gebruik maken van de operator <code>:</code>, die je moet lezen als ‘t/m’. Deze operator is te combineren met <code>,</code> als je daarnaast ook nog extra variabelen wilt toevoegen die verderop in de dataset voorkomen. Dit scheelt je typewerk.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(instrument_id, language, form_type<span class="sc">:</span>has_grammar)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 6
+   instrument_id language              form_type age_min age_max has_grammar
+   &lt;fct&gt;         &lt;fct&gt;                 &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1 1             British Sign Language WG              8      36           0
+ 2 2             Cantonese             WS             16      30           0
+ 3 3             Croatian              WG              8      16           0
+ 4 4             Croatian              WS             16      30           0
+ 5 5             Danish                WG              8      20           0
+ 6 6             Danish                WS             16      36           1
+ 7 7             English (American)    WG              8      18           0
+ 8 8             English (American)    WS             16      30           1
+ 9 9             French (Quebecois)    WG              8      16           0
+10 10            French (Quebecois)    WS             16      30           1
+# ℹ 79 more rows</code></pre>
+</div>
+</div>
+<p>Soms is het handiger om niet de variabelen die je wilt behouden, maar juist die variabelen die je niet wilt behouden te noemen. Hiervoor kun je de operator <code>-</code> gebruiken voor de naam van de variabele die je niet meer wilt gebruiken. Dus bijvoorbeeld om de variabele <code>form</code> uit te sluiten gebruiken we:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span> form)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 8
+   instrument_id language              form_type age_min age_max has_grammar
+   &lt;fct&gt;         &lt;fct&gt;                 &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1 1             British Sign Language WG              8      36           0
+ 2 2             Cantonese             WS             16      30           0
+ 3 3             Croatian              WG              8      16           0
+ 4 4             Croatian              WS             16      30           0
+ 5 5             Danish                WG              8      20           0
+ 6 6             Danish                WS             16      36           1
+ 7 7             English (American)    WG              8      18           0
+ 8 8             English (American)    WS             16      30           1
+ 9 9             French (Quebecois)    WG              8      16           0
+10 10            French (Quebecois)    WS             16      30           1
+# ℹ 79 more rows
+# ℹ 2 more variables: unilemma_coverage &lt;dbl&gt;, age_range &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Door de pipe kunnen we <code>select()</code> combineren de eerder geïntroduceerde werkwoorden om de dataset tegelijkertijd ook in te perken op basis van observaties. Zo kunnen we <code>select()</code> combineren met <code>filter()</code>, bijvoorbeeld om een dataset te maken met de eerste drie variabelen met alleen vragenlijsten van type WS:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(form_type <span class="sc">==</span> <span class="st">"WS"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(instrument_id, language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 48 × 2
+   instrument_id language          
+   &lt;fct&gt;         &lt;fct&gt;             
+ 1 2             Cantonese         
+ 2 4             Croatian          
+ 3 6             Danish            
+ 4 8             English (American)
+ 5 10            French (Quebecois)
+ 6 11            German            
+ 7 13            Hebrew            
+ 8 15            Italian           
+ 9 17            Mandarin (Beijing)
+10 18            Mandarin (Beijing)
+# ℹ 38 more rows</code></pre>
+</div>
+</div>
+<p>In principe maakt het niet uit in welke volgorde we <code>select()</code> en <code>filter()</code> zetten. In sommige gevallen kan dit wel cruciaal zijn, zoals in dit voorbeeld. Als je wilt filteren op basis van een variabele (hier <code>form_type</code>), dan moet je natuurlijk niet eerst de dataset zo inperken dat die variabele niet meer aanwezig is, want dan krijg je een error. Denk dus altijd goed na welke gevolgen de volgorde van je functies kan hebben.</p>
+</section>
+<section id="missing-values" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">4.4</span> Missing values</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>     instrument_id language form_type age_range
+[1,]         FALSE    FALSE     FALSE      TRUE
+[2,]         FALSE    FALSE     FALSE      TRUE
+[3,]         FALSE    FALSE     FALSE      TRUE</code></pre>
+</div>
+</div>
+<p>Onze voorbeelddataset <code>wordbank_datasets</code> is een complete dataset. Voor elke observatie zijn er voor alle variabelen waarden aanwezig. Dit is lang niet altijd het geval. Vaak is het zo dat er datapunten ontbreken. Een waarde voor een bepaalde variabele kan niet beschikbaar zijn, bijvoorbeeld doordat deze niet te achterhalen was, niet is uitgevraagd of dat er iets mis is gegaan in de dataverwerking. Ontbrekende waarden noemen we ook wel <em>missing values</em>. Deze worden in <code>R</code> gemarkeerd als <code>NA</code> voor ‘not available’. Er is veel te vertellen over <em>missing values</em>. We beperken ons hier ertoe dat je je bewust moet zijn van het bestaan van <em>missing values</em>. Het is dus verstandig om bij elke dataset voor de relevante variabelen die je mee wilt nemen in je analyse na te gaan of er ontbrekende waarden aanwezig zijn en deze eventueel te verwijderen. op deze manier voorkom je vaak problemen die later kunnen ontstaan.</p>
+<p>Ter illustratie hebben we een dataset <code>wordbank_dataset_NA</code> gemaakt waaraan observaties zijn toegevoegd met een <em>missing value</em> op de variabele <code>age_range</code>. We kunnen de functie <code>is.na()</code> gebruiken (zie <a href="#tbl-booleans">Tabel&nbsp;<span>4.1</span></a>) om deze observaties zichtbaar te maken:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(age_range))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  instrument_id language form_type age_range
+  &lt;fct&gt;         &lt;fct&gt;    &lt;fct&gt;         &lt;dbl&gt;
+1 999           Irish    WS               NA
+2 9999          Dutch    WS               NA
+3 99999         Croatian WG               NA</code></pre>
+</div>
+</div>
+<p>We zien inderdaad in de kolom <code>age_range</code> drie keer <code>NA</code> verschijnen. De ontkenning <code>!is.na()</code> kunnen we gebruiken in combinatie met <code>filter()</code> om deze observaties uit de dataset te verwijderen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(age_range))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 4
+   instrument_id language              form_type age_range
+   &lt;fct&gt;         &lt;fct&gt;                 &lt;fct&gt;         &lt;dbl&gt;
+ 1 1             British Sign Language WG               28
+ 2 2             Cantonese             WS               14
+ 3 3             Croatian              WG                8
+ 4 4             Croatian              WS               14
+ 5 5             Danish                WG               12
+ 6 6             Danish                WS               20
+ 7 7             English (American)    WG               10
+ 8 8             English (American)    WS               14
+ 9 9             French (Quebecois)    WG                8
+10 10            French (Quebecois)    WS               14
+# ℹ 79 more rows</code></pre>
+</div>
+</div>
+<p>Zoals eerder gezien, kunnen we hier ook meerdere variabelenamen invoeren gescheiden door een <code>,</code>. Een alternatieve functie is <code>drop_na()</code> die zoals de naam als zegt de observaties verwijderd die een ontbrekende waarde hebben op de variabele die als argument wordt meegegeven:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(age_range)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 4
+   instrument_id language              form_type age_range
+   &lt;fct&gt;         &lt;fct&gt;                 &lt;fct&gt;         &lt;dbl&gt;
+ 1 1             British Sign Language WG               28
+ 2 2             Cantonese             WS               14
+ 3 3             Croatian              WG                8
+ 4 4             Croatian              WS               14
+ 5 5             Danish                WG               12
+ 6 6             Danish                WS               20
+ 7 7             English (American)    WG               10
+ 8 8             English (American)    WS               14
+ 9 9             French (Quebecois)    WG                8
+10 10            French (Quebecois)    WS               14
+# ℹ 79 more rows</code></pre>
+</div>
+</div>
+<p>Zoals altijd, om deze wijziging blijvend te maken moeten we de datatabel weer toeschrijven aan een naam met <code>&lt;-</code>.</p>
+</section>
+<section id="sec-tellingen" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="sec-tellingen"><span class="header-section-number">4.5</span> Simpele tellingen</h2>
+<p>Wanneer je begint te werken met een dataset wil je allereerst een goed beeld krijgen van de data. Nadat je eventueel de naam en het type van een of meerdere variabelen hebt aangepast (zie <a href="data.html"><span>Hoofdstuk&nbsp;3</span></a>), is het handig om tellingen te maken van relevante variabelen. Dit geeft je een idee van wat je kan verwachten en of er bijvoorbeeld dubbelingen in de data zitten. We kunnen hiervoor de functie <code>count()</code> gebruiken. We geven als argument de naam van de variabele mee waarin we geïnteresseerd zijn, in dit geval <code>language</code>. Deze functie geeft een tabel waarin het aantal voorkomens staat vermeld in de kolom <code>n</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 42 × 2
+   language                   n
+   &lt;fct&gt;                  &lt;int&gt;
+ 1 American Sign Language     5
+ 2 Arabic (Saudi)             3
+ 3 British Sign Language      1
+ 4 Cantonese                  1
+ 5 Catalan                    2
+ 6 Croatian                   3
+ 7 Czech                      1
+ 8 Danish                     2
+ 9 Dutch                      8
+10 English (American)         4
+# ℹ 32 more rows</code></pre>
+</div>
+</div>
+<p>We kunnen de tellingen in <code>n</code> met <code>arrange()</code> ordenen van klein naar groot …</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(n)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 42 × 2
+   language                  n
+   &lt;fct&gt;                 &lt;int&gt;
+ 1 British Sign Language     1
+ 2 Cantonese                 1
+ 3 Czech                     1
+ 4 English (Australian)      1
+ 5 English (Irish)           1
+ 6 Estonian                  1
+ 7 German                    1
+ 8 Greek (Cypriot)           1
+ 9 Hungarian                 1
+10 Spanish (Argentinian)     1
+# ℹ 32 more rows</code></pre>
+</div>
+</div>
+<p>… of met toevoeging van <code>desc()</code> van groot naar klein:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language) <span class="sc">%&gt;%</span> </span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 42 × 2
+   language                   n
+   &lt;fct&gt;                  &lt;int&gt;
+ 1 Dutch                      8
+ 2 American Sign Language     5
+ 3 English (American)         4
+ 4 English (British)          4
+ 5 Finnish                    4
+ 6 Arabic (Saudi)             3
+ 7 Croatian                   3
+ 8 Korean                     3
+ 9 Mandarin (Beijing)         3
+10 Catalan                    2
+# ℹ 32 more rows</code></pre>
+</div>
+</div>
+<p>De functie <code>count()</code> is zelfs ook toe te passen op numerieke variabelen</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(age_range) <span class="sc">%&gt;%</span> </span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 16 × 2
+   age_range     n
+       &lt;dbl&gt; &lt;int&gt;
+ 1        20    20
+ 2         8    16
+ 3        14    13
+ 4        28     8
+ 5        10     7
+ 6         7     6
+ 7        12     5
+ 8        18     4
+ 9        13     3
+10        NA     3
+11        19     2
+12         4     1
+13         9     1
+14        11     1
+15        15     1
+16        17     1</code></pre>
+</div>
+</div>
+<p>We zien in bovenstaande output dat <em>missing values</em> ook worden geteld. Zoals eerder gezegd, het is dus verstandig deze eerst te verwijderen:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(age_range) <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(age_range) <span class="sc">%&gt;%</span> </span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 2
+   age_range     n
+       &lt;dbl&gt; &lt;int&gt;
+ 1        20    20
+ 2         8    16
+ 3        14    13
+ 4        28     8
+ 5        10     7
+ 6         7     6
+ 7        12     5
+ 8        18     4
+ 9        13     3
+10        19     2
+11         4     1
+12         9     1
+13        11     1
+14        15     1
+15        17     1</code></pre>
+</div>
+</div>
+<p>Soms wil je al iets meer de diepte in met je analyse. Stel je wilt kijken naar voorkomens van een variabele binnen verschillende niveaus van een andere variabele. Je kunt dan gebruikmaken van <code>group_by()</code>. Wanneer we de variabele <code>form_type</code> meegeven als argument dan krijgen we tellingen die weergeven hoe vaak elke taal voorkomt per type vragenlijst (‘WG’ en ‘WS’):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(form_type) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 72 × 3
+# Groups:   form_type [2]
+   form_type language                   n
+   &lt;fct&gt;     &lt;fct&gt;                  &lt;int&gt;
+ 1 WG        American Sign Language     2
+ 2 WG        Arabic (Saudi)             1
+ 3 WG        British Sign Language      1
+ 4 WG        Catalan                    1
+ 5 WG        Croatian                   2
+ 6 WG        Danish                     1
+ 7 WG        Dutch                      5
+ 8 WG        English (American)         2
+ 9 WG        English (British)          2
+10 WG        Finnish                    2
+# ℹ 62 more rows</code></pre>
+</div>
+</div>
+<p>Je kunt bovenstaand resultaat ook krijgen door beide variabelen mee te geven aan <code>group_by</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(form_type, language) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 72 × 3
+# Groups:   form_type, language [72]
+   form_type language                   n
+   &lt;fct&gt;     &lt;fct&gt;                  &lt;int&gt;
+ 1 WG        American Sign Language     2
+ 2 WG        Arabic (Saudi)             1
+ 3 WG        British Sign Language      1
+ 4 WG        Catalan                    1
+ 5 WG        Croatian                   2
+ 6 WG        Danish                     1
+ 7 WG        Dutch                      5
+ 8 WG        English (American)         2
+ 9 WG        English (British)          2
+10 WG        Finnish                    2
+# ℹ 62 more rows</code></pre>
+</div>
+</div>
+<p>Wanneer je iets anders dan tellingen wilt in combinatie met <code>group_by()</code>, bijvoorbeeld een gemiddelde berekenen, dan moet je deze functie combineren met <code>summarize()</code> (of <code>summarise()</code>). Binnen <code>summarize()</code> geef je dan aan wat je wilt dat <code>R</code> voor je berekent. Als we bijvoorbeeld de gemiddelde <code>age_range</code> per type vragenlijst willen bepalen, kunnen we de volgende code gebruiken:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(age_range) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(form_type) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_age_range =</span> <span class="fu">mean</span>(age_range))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  form_type mean_age_range
+  &lt;fct&gt;              &lt;dbl&gt;
+1 WG                  11.8
+2 WS                  17.2</code></pre>
+</div>
+</div>
+<p>We gebruiken hiervoor de functie <code>mean()</code> om het gemiddelde te berekenen. Binnen <code>summarize()</code> geven we hierbij aan hoe we de variabele waarin het gemiddelde wordt opgeslagen willen noemen. Dit doen we voor het <code>=</code>-teken. Let op dat je wel eerst de <em>missing values</em> verwijdert, want anders geeft de functie <code>mean()</code> <code>NA</code>s als resultaat, aangezien er van een reeks getallen met een <code>NA</code> geen gemiddelde kan worden berekend.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(form_type) <span class="sc">%&gt;%</span> </span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_age_range =</span> <span class="fu">mean</span>(age_range))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  form_type mean_age_range
+  &lt;fct&gt;              &lt;dbl&gt;
+1 WG                    NA
+2 WS                    NA</code></pre>
+</div>
+</div>
+<p>Bij de functie <code>mean()</code> kun je overigens ook in de functie zelf aangeven dat je <em>missing values</em> niet mee wilt nemen in de berekening:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(form_type) <span class="sc">%&gt;%</span> </span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_age_range =</span> <span class="fu">mean</span>(age_range, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  form_type mean_age_range
+  &lt;fct&gt;              &lt;dbl&gt;
+1 WG                  11.8
+2 WS                  17.2</code></pre>
+</div>
+</div>
+<p>Door het argument <code>na.rm</code> de waarde <code>TRUE</code> (of afgekort <code>T</code>) te geven worden <code>NA</code>s niet meegenomen. Wanneer je binnen <code>summarize()</code> een telling wilt toevoegen dan maak je gebruik van <code>n()</code> i.p.v. <code>count()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset_NA <span class="sc">%&gt;%</span> </span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(form_type) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_age_range =</span> <span class="fu">mean</span>(age_range, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  form_type mean_age_range     n
+  &lt;fct&gt;              &lt;dbl&gt; &lt;int&gt;
+1 WG                  11.8    42
+2 WS                  17.2    50</code></pre>
+</div>
+</div>
+<p>In <a href="numeriek.html"><span>Hoofdstuk&nbsp;7</span></a> vind je meer voorbeelden van functies die je binnen <code>summarize()</code> kunt gebruiken.</p>
+</section>
+<section id="verder-leren" class="level2 unnumbered page-columns page-full">
+<h2 class="unnumbered anchored" data-anchor-id="verder-leren">Verder leren</h2>
+<ul>
+<li>In hoofdstuk 2 (t/m 2.6) uit <span class="citation" data-cites="Winter2019">Winter (<a href="index.html#ref-Winter2019" role="doc-biblioref">2019</a>)</span> worden de belangrijkste <code>tidyverse</code>-functies besproken met andere voorbeelden.</li>
+<li>In <a href="https://r4ds.hadley.nz/data-transform.html">hoofdstuk 3</a> van <span class="citation" data-cites="R4DS">Wickham et al. (<a href="index.html#ref-R4DS" role="doc-biblioref">2023</a>)</span> vind je een uitgebreidere beschrijving van de functies die in dit hoofdstuk aan bod zijn gekomen.</li>
+<li>het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">dplyr cheatsheet</a> geeft een overzicht van de werking van de functies.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="ref-Winter2019" class="csl-entry" role="listitem">
+Winter, B. (2019). <em>Statistics for Linguists: An Introduction Using <span>R</span></em>. Routledge. <a href="https://doi.org/10.4324/9781315165547">https://doi.org/10.4324/9781315165547</a>
+</div><div id="ref-R4DS" class="csl-entry" role="listitem">
+Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em><span>R</span> for Data Science</em> (2de dr.). O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>
+</div></div><p>Nu zou je in staat moeten zijn Practicum 2 te maken.</p>
+
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./data.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./grafieken.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

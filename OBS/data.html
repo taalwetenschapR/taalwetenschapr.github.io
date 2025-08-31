@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Onderzoeksontwerp en Beschrijvende Statistiek - 3&nbsp; Data in R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./bewerken.html" rel="next">
+<link href="./R.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Onderzoeksontwerp en Beschrijvende Statistiek</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welkom</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inleiding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bewerken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grafieken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factoren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numeriek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Numerieke variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distributies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distributies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./practica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./_practica/practicum1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhoudsopgave</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-datatabellen" id="toc-sec-datatabellen" class="nav-link active" data-scroll-target="#sec-datatabellen"><span class="header-section-number">3.1</span> Datatabellen en vectoren</a></li>
+  <li><a href="#sec-data-inlezen" id="toc-sec-data-inlezen" class="nav-link" data-scroll-target="#sec-data-inlezen"><span class="header-section-number">3.2</span> Data inlezen</a></li>
+  <li><a href="#sec-voorbeeldscript" id="toc-sec-voorbeeldscript" class="nav-link" data-scroll-target="#sec-voorbeeldscript"><span class="header-section-number">3.3</span> Voorbeeldscript</a></li>
+  <li><a href="#omgaan-met-errors" id="toc-omgaan-met-errors" class="nav-link" data-scroll-target="#omgaan-met-errors"><span class="header-section-number">3.4</span> Omgaan met errors</a></li>
+  <li><a href="#verder-leren" id="toc-verder-leren" class="nav-link" data-scroll-target="#verder-leren">Verder leren</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-data-R" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Voor data-analyse hebben we data nodig. Datasets bevinden zich soms in packages, maar vaker moet je ze inlezen vanuit een extern databestand. In dit hoofdstuk bekijken welke soorten dataformaten we in <code>R</code> tegenkomen en hoe we data in <code>R</code> kunnen inlezen.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Na afloop van dit hoofdstuk:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>kun je werken met twee prominente dataformaten in <code>R</code>: datatabellen (<code>tibble</code>) en vectoren;</li>
+<li>kun je data uit externe databestanden inlezen als een datatabel in <code>R</code>;</li>
+<li>kun je de naam van een variabele aanpassen;</li>
+<li>kun je het datatype van een variabele vaststellen en aanpassen;</li>
+<li>kun je code en een codescript goed vormgeven;</li>
+<li>kun je op een relaxte manier omgaan met errors.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+codeboek
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In deze cursus leer je werken met zo’n 100 veelgebruikte functies in <code>R</code>. Het is belangrijk om voor jezelf een goed overzicht te houden van deze functies. Werk hier actief aan door een eigen codeboek aan te maken. Voeg tijdens of na afloop van het bestuderen van dit hoofdstuk de codes toe aan jouw codeboek.</p>
+</div>
+</div>
+<section id="sec-datatabellen" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-datatabellen"><span class="header-section-number">3.1</span> Datatabellen en vectoren</h2>
+<div class="page-columns page-full"><p>We kunnen data in <code>R</code> in verschillende formaten tegenkomen. Tijdens deze cursus krijgen we vooral te maken met datatabellen en vectoren. Een <strong>datatabel</strong> wordt in <code>tidyverse</code> een <code>tibble</code> genoemd en gaat in <code>R</code> ook wel door het leven onder de naam <code>data.frame</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Een datatabel bestaat uit rijen (de observaties) en kolommen (de variabelen) en doet daarmee erg denken aan een gewone tabel of spreadsheet zoals je dat misschien wel kent uit bijvoorbeeld Excel.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Het <code>tidyverse</code> is voor een groot deel ontwikkeld door de Nieuw-Zeelander Hadley Wickham. Het woord <code>tibble</code> schijnt te verwijzen naar de manier waarop in Nieuw-Zeeland <code>table</code> wordt uitgesproken.</p></li></div></div>
+<div class="page-columns page-full"><p>Hieronder vind je een voorbeeld van een tibble met data uit het package <code>wordbankr</code>. Dit package geeft toegang tot <em>Wordbank</em> een grote database met daarin informatie over hoe de woordenschat van kinderen zich ontwikkelt in verschillende talen.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Voor een uitgebreide beschrijving van deze data, zie de website van het <em>Wordbank Project</em>: <a href="https://wordbank.stanford.edu/" class="uri">https://wordbank.stanford.edu/</a></p></li></div></div>
+<p>De data in deze database zijn verzameld aan de hand van de <em>MacArthur-Bates Communicative Development Inventory</em> (MB-CDI), een vragenlijst waarin ouders aangeven welke woorden hun kind op welke leeftijd kent. Informatie over alle beschikbare versies van deze vragenlijst in verschillende talen hebben we opgeslagen in de <code>tibble</code> met de naam <code>wordbank_datasets</code>.</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 8
+   instrument_id language            form  form_type age_min age_max has_grammar
+           &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1             1 British Sign Langu… WG    WG              8      36           0
+ 2             2 Cantonese           WS    WS             16      30           0
+ 3             3 Croatian            WG    WG              8      16           0
+ 4             4 Croatian            WS    WS             16      30           0
+ 5             5 Danish              WG    WG              8      20           0
+ 6             6 Danish              WS    WS             16      36           1
+ 7             7 English (American)  WG    WG              8      18           0
+ 8             8 English (American)  WS    WS             16      30           1
+ 9             9 French (Quebecois)  WG    WG              8      16           0
+10            10 French (Quebecois)  WS    WS             16      30           1
+# ℹ 79 more rows
+# ℹ 1 more variable: unilemma_coverage &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Je kunt de inhoud van een datatabel bekijken door de naam van de tabel uit te voeren. Bij een <code>tibble</code> krijg je standaard de eerste tien rijen te zien. Het aantal kolommen (variabelen) dat je te zien krijgt is afhankelijk van de grootte van je scherm. Bovenaan de <code>tibble</code> kun je zien om hoeveel rijen en kolommen het gaat (hier 89 x 8). Onderaan wordt je verteld hoeveel rijen en welke variabelen er niet getoond zijn (hier bijvoorbeeld 79 rijen). Je kunt het aantal rijen en variabelen ook zichtbaar maken met de functies <code>nrow()</code> en <code>ncol()</code> respectievelijk.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(wordbank_datasets)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 89</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(wordbank_datasets)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+<p>Wil je de gehele datatabel zien (afgeraden bij heel grote bestanden) dan kun je de functie <code>View()</code> gebruiken. Er zal dan een tabblad geopend worden in RStudio waarin je de datatabel kunt bekijken.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(wordbank_datasets)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>De weergave van de <code>tibble</code> in <code>R</code> vertelt je ook iets over de manier waarop <code>R</code> de variabelen uit de <code>tibble</code> ziet. Onder de namen van de variabelen (de bovenste regel) vind je namelijk tussen vishaken <code>&lt;&gt;</code> het type dat <code>R</code> heeft toegekend op basis van de datapunten in de variabele. Zo heeft de variabele <code>language</code> het type <code>chr</code> voor <em>character</em> (tekst) toegewezen gekregen en de variabele <code>age_min</code> het type <code>int</code> voor <em>integer</em> (geheel getal). <a href="#tbl-datatypes">Tabel&nbsp;<span>3.1</span></a> geeft een overzicht van een aantal veel voorkomende datatypes van variabelen in <code>R</code>.</p>
+<div id="tbl-datatypes" class="anchored page-columns page-full">
+<table class="table">
+
+<colgroup>
+<col style="width: 23%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>soort</th>
+<th>naam in R</th>
+<th>afkorting in R</th>
+<th>voorbeeld</th>
+<th>meetniveau</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tekst, string</td>
+<td>character</td>
+<td>char, chr</td>
+<td>“a”, “woord”</td>
+<td>nominaal</td>
+</tr>
+<tr class="even">
+<td>boolean, waarheidswaarde</td>
+<td>logical</td>
+<td>logi, lgl</td>
+<td><code>TRUE</code>, <code>FALSE</code></td>
+<td>nominaal</td>
+</tr>
+<tr class="odd">
+<td>factor</td>
+<td>factor</td>
+<td>fct</td>
+<td><code>Duits</code>, <code>Engels</code></td>
+<td>nominaal</td>
+</tr>
+<tr class="even">
+<td>geordende factor</td>
+<td>ordered factor</td>
+<td>ord</td>
+<td><code>laag</code>, <code>hoog</code></td>
+<td>ordinaal</td>
+</tr>
+<tr class="odd">
+<td>getal</td>
+<td>numeric, double</td>
+<td>num, dbl</td>
+<td>1, 2.5, 3.14</td>
+<td>numeriek</td>
+</tr>
+<tr class="even">
+<td>geheel getal</td>
+<td>integer</td>
+<td>int</td>
+<td>1, 2, 100</td>
+<td>numeriek</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-table-caption margin-caption">Tabel&nbsp;3.1: een aantal veel voorkomende datatypes in R</div></div>
+<p>Naast de datatabel zijn <strong>vectoren</strong> een veel voorkomende dataformaat in R. Een vector is een geordend rijtje van elementen van hetzelfde type. Een variabele uit een datatabel kunnen we bijvoorbeeld omzetten naar een vector met de functie <code>pull()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>languages <span class="ot">&lt;-</span> <span class="fu">pull</span>(wordbank_datasets, language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Bovenstaande code wijst door het gebruik van de operator <code>&lt;-</code> de inhoud van de variabele <code>language</code> toe aan een vector met de naam <code>languages</code>. Je kunt hier zelf vrijwel elke naam kiezen. Het is verstandig om namen te kiezen die betekenisvol zijn voor jezelf (ook nog als je je code een tijd later weer leest) of voor iemand anders die je code bekijkt. Namen als <code>dataset1</code>, <code>datasetdef</code> en <code>datasetechtdefinitief</code> zijn dus niet zo handig. Daarnaast is het voor de leesbaarheid fijn om consistent te zijn: gebruik alleen kleine letters (<em>snake case</em>) en scheid inhoudswoorden met een underscore <code>_</code>, dus bijv. <code>wordbank_datasets</code>.</p>
+<p>Het resultaat van het uitvoeren van <code>pull()</code> is een vector met de naam <code>languages</code> met daarin de 89 namen van talen. Deze vector zal in RStudio in het venster rechtsboven onder het tabblad <em>Environment</em> verschijnen onder het kopje <em>Values</em>. In de <em>Environment</em> vind je een overzicht van alle datatabellen en vectoren die voor <code>R</code> toegankelijk zijn. Je kunt de namen van deze databronnen gebruiken in de code die je schrijft. Zo kunnen we de naam <code>languages</code> nu gebruiken als argument van functies. Laten we eerst kijken wat er in de vector zit. Hiervoor typen we alleen de naam van de vector:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>languages</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "British Sign Language"  "Cantonese"              "Croatian"              
+ [4] "Croatian"               "Danish"                 "Danish"                
+ [7] "English (American)"     "English (American)"     "French (Quebecois)"    
+[10] "French (Quebecois)"     "German"                 "Hebrew"                
+[13] "Hebrew"                 "Italian"                "Italian"               
+[16] "Mandarin (Beijing)"     "Mandarin (Beijing)"     "Mandarin (Beijing)"    
+[19] "Norwegian"              "Norwegian"              "Russian"               
+[22] "Russian"                "Slovak"                 "Slovak"                
+[25] "Spanish (Mexican)"      "Spanish (Mexican)"      "Swedish"               
+[28] "Swedish"                "Turkish"                "Turkish"               
+[31] "English (British)"      "English (British)"      "American Sign Language"
+[34] "American Sign Language" "American Sign Language" "American Sign Language"
+[37] "Greek (Cypriot)"        "Kigiriama"              "Kigiriama"             
+[40] "Kiswahili"              "Kiswahili"              "Czech"                 
+[43] "English (Australian)"   "English (British)"      "Latvian"               
+[46] "Latvian"                "Korean"                 "Korean"                
+[49] "French (French)"        "French (French)"        "Spanish (European)"    
+[52] "Spanish (European)"     "Portuguese (European)"  "Portuguese (European)" 
+[55] "Mandarin (Taiwanese)"   "Mandarin (Taiwanese)"   "English (Irish)"       
+[58] "Irish"                  "Finnish"                "Dutch"                 
+[61] "Dutch"                  "Dutch"                  "Dutch"                 
+[64] "Dutch"                  "Dutch"                  "Dutch"                 
+[67] "Hungarian"              "Spanish (Argentinian)"  "American Sign Language"
+[70] "Spanish (Chilean)"      "Spanish (Peruvian)"     "Spanish (Peruvian)"    
+[73] "Persian"                "Persian"                "Finnish"               
+[76] "English (American)"     "English (American)"     "English (British)"     
+[79] "Arabic (Saudi)"         "Arabic (Saudi)"         "Arabic (Saudi)"        
+[82] "Estonian"               "Catalan"                "Korean"                
+[85] "Finnish"                "Finnish"                "Catalan"               
+[88] "Japanese"               "Japanese"              </code></pre>
+</div>
+</div>
+<p>Het gaat hier om een opsomming van alle talen die voorkomen in de dataset <code>wordbank_datasets</code>. Het aantal elementen in de vector kunnen we vaststellen met de functie <code>length()</code> en het datatype van de vector met de functie <code>class()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(languages)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 89</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(languages)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>Het gaat hier dus om een character vector die bestaat uit 89 elementen. Het type (de <em>class</em>) van de vector wordt toegepast op alle elementen in de vector ook als er oorspronkelijk elementen in zijn gestopt van een verschillend type (bijv. woorden en getallen). Dit zien we bijvoorbeeld als we aan <code>R</code> vragen wat het type is van onze eerder met de functie <code>c()</code> gemaakte vector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ek_1988 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Nederland"</span>, <span class="dv">1988</span>, <span class="st">"plek 1"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ek_1988)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>Ondanks dat we een getal hebben toegevoegd aan onze vector is het type van de vector als geheel toch <em>character</em>. Wanneer we de vector laten zien, dan valt ook op dat er rond het oorspronkelijk getal 1988 nu aanhalingstekens staan. Het wordt door <code>R</code> dus gezien als een woord.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>ek_1988</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Nederland" "1988"      "plek 1"   </code></pre>
+</div>
+</div>
+</section>
+<section id="sec-data-inlezen" class="level2 page-columns page-full" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-data-inlezen"><span class="header-section-number">3.2</span> Data inlezen</h2>
+<p>Data om te analyseren zijn vaak opgeslagen in databestanden. Deze bestanden kunnen een verschillend formaat (extensie) hebben. Veel voorkomende formaten (in deze cursus) zijn tekstbestanden (<code>.txt</code>) en csv-bestanden (<code>.csv</code>). CSV staat voor ‘comma separated values’ en geeft aan dat de waarden van variabelen (‘de cellen’ in een spreadsheet) van elkaar gescheiden zijn door scheidingstekens. Zoals de naam doet vermoeden is de komma hier het te verwachten scheidingsteken, maar verwarrend genoeg kan dit ook een puntkomma zijn (zie <a href="#fig-csv2">Figuur&nbsp;<span>3.1</span></a>). Welk scheidingsteken wordt gebruikt hangt onder anderen af van de instellingen van je computer. Het is dus van belang om goed te bekijken met wat voor een bestand je te maken hebt voor je het gaat inlezen en ook na het inlezen goed te controleren of dit goed is gegaan.</p>
+<div id="fig-csv2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="_pictures/data_in_csv.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;3.1: CSV-bestand met puntkomma als scheidingsteken</figcaption>
+</figure>
+</div>
+<p>Externe databestanden zul je eerst moeten inlezen in R voor je ermee kunt gaan werken. Hiervoor bestaan gelukkig verschillende functies in R, gespecificeerd voor het soort bestand waarmee je werkt. Die functies beginnen doorgaans met <code>read</code>. Binnen het <code>tidyverse</code> gebruiken we <code>read</code>-functies gevolgd door een underscore (<code>read_</code>). Deze functies lezen een specifiek soort databestand in als een <code>tibble</code>. Zo is er voor csv-bestanden een functie <code>read_csv</code> voor bestanden met een komma als scheidingsteken en een <code>read_csv2</code> voor bestanden met een puntkomma als scheidingsteken. De functie <code>read_delim()</code> (voor <em>read in delimited data file</em>) is de algemene functie om databestanden in te lezen, waaronder tekstbestanden, en <code>read_csv()</code> en <code>read_csv2()</code> zijn specifieke versies hiervan waarbij het type delimiter (het scheidingsteken) is vastgelegd (dus <code>read_csv()</code> is onderliggend <code>read_delim(file = , delim = ",")</code>). Type maar eens ‘read_’ in je R-script en RStudio zal automatisch alle opties geven zowel binnen baseR als binnen het <code>tidyverse</code> (zie <a href="#fig-readr">Figuur&nbsp;<span>3.2</span></a>). Aan jou de taak om de juiste functie te vinden bij je databestand. Wanneer je werkt in een <code>R</code>-project zal de <code>read_()</code>-functie gaan zoeken in de map van het <code>R</code>-project (zie box <em>Waar staat je databestand?</em> verderop).</p>
+<p>Soms is het handig om een in <code>R</code>-gecreëerde dataset op te slaan naar een databestand, zodat je het later of in een ander programma kunt gebruiken. Het opslaan van databestanden in <code>R</code> is eenvoudig. Er bestaat voor elke <code>read_</code>-functie namelijk een tegenhanger die begint met <code>write_</code>, bijv. <code>write_csv</code>. Wanneer je werkt in een <code>R</code>-project, hoef je de locatie wederom niet te specificeren. <code>RStudio</code> slaat het bestand automatisch op in de map van je project.</p>
+<div id="fig-readr" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="_pictures/read_r.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;3.2: automatische aanvulopties in RStudio</figcaption>
+</figure>
+</div>
+<p>Het is belangrijk om altijd goed te controleren of het inlezen van je databestand is gelukt. Heb je inderdaad het aantal observaties en kolommen (variabelen) dat je verwacht. Zo niet, dan is er iets misgegaan. In onderstaand voorbeeld lezen we bijvoorbeeld het databestand <code>wordbank_datasets.csv</code> in met de functie <code>read_csv2()</code>, terwijl de datapunten niet gescheiden zijn door een puntkomma, maar door een komma (en dus <code>read_csv()</code> nodig is). Het resultaat laat zien dat we in plaats van 8 variabelen (en dus 8 kolommen), maar 1 variabele (1 kolom) hebben waarin alle informatie is samengepropt.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="at">file =</span> <span class="st">"_datasets/wordbank_datasets.csv"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 89 Columns: 1
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ";"
+chr (1): instrument_id,language,form,form_type,age_min,age_max,has_grammar,u...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 1
+   instrument_id,language,form,form_type,age_min,age_max,has_grammar,unilemma_…¹
+   &lt;chr&gt;                                                                        
+ 1 1,British Sign Language,WG,WG,8,36,0,0.95                                    
+ 2 2,Cantonese,WS,WS,16,30,0,0.95                                               
+ 3 3,Croatian,WG,WG,8,16,0,1                                                    
+ 4 4,Croatian,WS,WS,16,30,0,1                                                   
+ 5 5,Danish,WG,WG,8,20,0,1                                                      
+ 6 6,Danish,WS,WS,16,36,1,0.93                                                  
+ 7 7,English (American),WG,WG,8,18,0,1                                          
+ 8 8,English (American),WS,WS,16,30,1,1                                         
+ 9 9,French (Quebecois),WG,WG,8,16,0,1                                          
+10 10,French (Quebecois),WS,WS,16,30,1,0.99                                     
+# ℹ 79 more rows
+# ℹ abbreviated name:
+#   ¹​`instrument_id,language,form,form_type,age_min,age_max,has_grammar,unilemma_coverage`</code></pre>
+</div>
+</div>
+<p>Dit moeten we herstellen voordat we verdergaan met de data-analyse. Bezuinig niet op de controle van deze stap. Je loopt anders geheid vast.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"_datasets/wordbank_datasets.csv"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 89 Columns: 8
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): language, form, form_type
+dbl (5): instrument_id, age_min, age_max, has_grammar, unilemma_coverage
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 8
+   instrument_id language            form  form_type age_min age_max has_grammar
+           &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1             1 British Sign Langu… WG    WG              8      36           0
+ 2             2 Cantonese           WS    WS             16      30           0
+ 3             3 Croatian            WG    WG              8      16           0
+ 4             4 Croatian            WS    WS             16      30           0
+ 5             5 Danish              WG    WG              8      20           0
+ 6             6 Danish              WS    WS             16      36           1
+ 7             7 English (American)  WG    WG              8      18           0
+ 8             8 English (American)  WS    WS             16      30           1
+ 9             9 French (Quebecois)  WG    WG              8      16           0
+10            10 French (Quebecois)  WS    WS             16      30           1
+# ℹ 79 more rows
+# ℹ 1 more variable: unilemma_coverage &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Waar staat je databestand?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Om databestanden te kunnen inlezen in R, moet je normaal gesproken eerst de computer vertellen waar deze te vinden zijn. Wanneer de databestanden onderdeel zijn van een R-project, weet RStudio al waar het die bestanden moet vinden. RStudio kijkt namelijk automatisch in de map van je project. Dat is een groot voordeel van werken met een R-project. Je kunt dan werken met een <em>relatief pad</em>. In bovenstaand voorbeeld staan de databestanden binnen de map van het R-project in een map <code>_datasets</code> en door dit voor de naam van het bestand te plakken <code>_datasets/wordbank_datasets.csv</code> gaat <code>R</code> in de map van het R-project zoeken naar bestanden in de map <code>_datasets</code>. Wanneer je problemen ondervindt met relatieve paden kun je ook kiezen voor een absoluut pad. Hierbij geeft je de hele naam van de locatie op je computer, bijv. <code>C://Peter/OBS/_datasets/wordbank_datasets.csv</code>.</p>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<section id="sec-variabelennamen" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="sec-variabelennamen"><span class="header-section-number">3.2.1</span> Variabelennamen aanpassen</h3>
+<p>Wanneer je het databestand goed hebt ingelezen is het eerste wat je moet doen de namen van de variabelen controleren. Zoals eerder gemeld, hanteren we voor variabelennamen <em>snake_case</em>: alleen kleine letters en scheiding van inhoudswoorden met een underscore <code>_</code>, dus bijv. <code>wordbank_datasets</code>. Dit is echter niet de enige manier waarop variabelennamen voorkomen. In de praktijk kun je echt vanalles verwachten. Zie bijvoorbeeld hieronder, waar we de namen van twee variabelen uit onze datatabel <code>wordbank_datasets</code> ter illustratie hebben aangepast. We gebruiken hier de functie <code>head()</code> om alleen een deel van de rijen zichtbaar te maken (hier maar 1):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(wordbank_datasets_slechte_namen, <span class="at">n =</span> <span class="dv">1</span>) </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 8
+  InstrumentID language            form  `form type` age_min age_max has_grammar
+         &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+1            1 British Sign Langu… WG    WG                8      36           0
+# ℹ 1 more variable: unilemma_coverage &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>We kunnen ook de functie <code>names()</code> gebruiken:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(wordbank_datasets_slechte_namen)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "InstrumentID"      "language"          "form"             
+[4] "form type"         "age_min"           "age_max"          
+[7] "has_grammar"       "unilemma_coverage"</code></pre>
+</div>
+</div>
+<p>We zien twee variabelen die een afwijkende naam hebben. <code>InstrumentID</code> gebruikt hoofdletters en geen <code>_</code> om inhoudswoorden (<em>instrument</em> en <em>id</em>) te scheiden en <code>form type</code> heeft een spatie i.p.v. een underscore. Dat laatste is zeker iets om te vermijden, want dat kan allerlei ongemak opleveren. We kunnen deze namen handmatig aanpassen met de functie <code>rename()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(<span class="at">.data =</span> wordbank_datasets_slechte_namen,</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">instrument_id =</span> InstrumentID,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">form_type =</span> <span class="st">`</span><span class="at">form type</span><span class="st">`</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 8
+   instrument_id language            form  form_type age_min age_max has_grammar
+           &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1             1 British Sign Langu… WG    WG              8      36           0
+ 2             2 Cantonese           WS    WS             16      30           0
+ 3             3 Croatian            WG    WG              8      16           0
+ 4             4 Croatian            WS    WS             16      30           0
+ 5             5 Danish              WG    WG              8      20           0
+ 6             6 Danish              WS    WS             16      36           1
+ 7             7 English (American)  WG    WG              8      18           0
+ 8             8 English (American)  WS    WS             16      30           1
+ 9             9 French (Quebecois)  WG    WG              8      16           0
+10            10 French (Quebecois)  WS    WS             16      30           1
+# ℹ 79 more rows
+# ℹ 1 more variable: unilemma_coverage &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Bij <code>rename()</code> geven we als eerste argument <code>.data</code> de naam van de datatabel mee waarin we namen willen veranderen en vervolgens, gescheiden door komma’s de namen van de variabelen die we willen hernoemen. Hierbij geef je (verwarrend genoeg) eerst de nieuwe naam van de variabele en dan de oude naam. Variabelennamen met een spatie erin moet je tussen <em>backticks</em> ` ` zetten.</p>
+<p>We zijn er nu nog niet. Met bovenstaande code hebben we de namen nog niet blijvend veranderd. Ze zijn alleen veranderd in de print out die je te zien krijgt in <code>R</code>. Dit kunnen we zien als we de datatabel nogmaals naar het scherm printen:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets_slechte_namen</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 8
+   InstrumentID language           form  `form type` age_min age_max has_grammar
+          &lt;dbl&gt; &lt;chr&gt;              &lt;chr&gt; &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1            1 British Sign Lang… WG    WG                8      36           0
+ 2            2 Cantonese          WS    WS               16      30           0
+ 3            3 Croatian           WG    WG                8      16           0
+ 4            4 Croatian           WS    WS               16      30           0
+ 5            5 Danish             WG    WG                8      20           0
+ 6            6 Danish             WS    WS               16      36           1
+ 7            7 English (American) WG    WG                8      18           0
+ 8            8 English (American) WS    WS               16      30           1
+ 9            9 French (Quebecois) WG    WG                8      16           0
+10           10 French (Quebecois) WS    WS               16      30           1
+# ℹ 79 more rows
+# ℹ 1 more variable: unilemma_coverage &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Hier zien we nog steeds de oude namen. Om de namen blijvend te veranderen moeten we de verandering toewijzen aan de datatabel zelf met de operator <code>&lt;-</code> die we eerder hebben gezien:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets_slechte_namen <span class="ot">&lt;-</span> <span class="fu">rename</span>(<span class="at">.data =</span> wordbank_datasets_slechte_namen,</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">instrument_id =</span> InstrumentID,</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">form_type =</span> <span class="st">`</span><span class="at">form type</span><span class="st">`</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(wordbank_datasets_slechte_namen)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "instrument_id"     "language"          "form"             
+[4] "form_type"         "age_min"           "age_max"          
+[7] "has_grammar"       "unilemma_coverage"</code></pre>
+</div>
+</div>
+<p>De functie <code>rename()</code> is goed te gebruiken als je maar een beperkt aantal namen moet aanpassen. Wanneer er echter veel (meer dan 3) namen moeten worden aangepast is het een beetje omslachtig. In dat geval kun je beter de functie <code>clean_names()</code> uit het package <code>janitor</code> gebruiken. Je kunt hiervoor het package als geheel laden of de functie aanroepen met <code>janitor::clean_names()</code>. Ook hier geldt dat je de output van deze functie weer moet toewijzen aan een datatabel om de verandering blijvend door te voeren. In onderstaand voorbeeld hebben we gekozen om de oorspronkelijk naam voor de datatabel (<code>wordbank_datasets</code>) weer te gebruiken, aangezien de slechte namen zijn aangepast.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(wordbank_datasets_slechte_namen)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(wordbank_datasets)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "instrument_id"     "language"          "form"             
+[4] "form_type"         "age_min"           "age_max"          
+[7] "has_grammar"       "unilemma_coverage"</code></pre>
+</div>
+</div>
+</section>
+<section id="sec-variabele-aanpassen" class="level3 page-columns page-full" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="sec-variabele-aanpassen"><span class="header-section-number">3.2.2</span> Type van variabelen aanpassen</h3>
+<p>Nu de variabelen allemaal een eigen kolom en een goede naam hebben, moeten we nog controleren of ze ook van het juiste type zijn. Bij het inlezen van de data doet <code>R</code> een <em>educated guess</em> naar het type van de variabelen op basis van de data die in de variabelen zitten. Zitten er getallen in dan zal het gaan voor <code>dbl</code> (of <code>num</code>, <code>int</code>) en wanneer er alleen tekst in zit dan voor <code>char</code>. In de meeste gevallen gaat dit goed, maar niet altijd.</p>
+<p>Er is één ding om goed op te letten en dat is het feit dat we in statistische analyse categorische variabelen doorgaans <strong>factoren</strong> noemen. Factoren zijn categorische variabelen die een beperkt aantal terugkerende waarden kunnen aannemen. Die waarden noemen we <strong>levels</strong>. In <code>R</code> krijgen factoren het datatype <code>factor</code>.</p>
+<p>Neem als voorbeeld de variabele <code>language</code> uit onze datatabel <code>wordbank_datasets</code>, die we eerder ook als vector <code>languages</code> hebben opgeslagen. In deze variabelen staan de talen van alle vragenlijsten die in de wordbank zitten opgesomd. We zien dat sommige talen meerdere keren voorkomen. Bij de eerste 10 observaties komen 4 talen 2 keer voor (Croatian, Danish, English (American) en French (Quebecois)):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 8
+   instrument_id language            form  form_type age_min age_max has_grammar
+           &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1             1 British Sign Langu… WG    WG              8      36           0
+ 2             2 Cantonese           WS    WS             16      30           0
+ 3             3 Croatian            WG    WG              8      16           0
+ 4             4 Croatian            WS    WS             16      30           0
+ 5             5 Danish              WG    WG              8      20           0
+ 6             6 Danish              WS    WS             16      36           1
+ 7             7 English (American)  WG    WG              8      18           0
+ 8             8 English (American)  WS    WS             16      30           1
+ 9             9 French (Quebecois)  WG    WG              8      16           0
+10            10 French (Quebecois)  WS    WS             16      30           1
+# ℹ 79 more rows
+# ℹ 1 more variable: unilemma_coverage &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Met de functie <code>dinstinct()</code> voor datatabellen of <code>unique</code> voor vectoren kunnen we laten zien dat er in de 89 observaties in de data 42 verschillende talen voorkomen:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(<span class="at">.data =</span> wordbank_datasets, language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 42 × 1
+   language             
+   &lt;chr&gt;                
+ 1 British Sign Language
+ 2 Cantonese            
+ 3 Croatian             
+ 4 Danish               
+ 5 English (American)   
+ 6 French (Quebecois)   
+ 7 German               
+ 8 Hebrew               
+ 9 Italian              
+10 Mandarin (Beijing)   
+# ℹ 32 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(languages)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "British Sign Language"  "Cantonese"              "Croatian"              
+ [4] "Danish"                 "English (American)"     "French (Quebecois)"    
+ [7] "German"                 "Hebrew"                 "Italian"               
+[10] "Mandarin (Beijing)"     "Norwegian"              "Russian"               
+[13] "Slovak"                 "Spanish (Mexican)"      "Swedish"               
+[16] "Turkish"                "English (British)"      "American Sign Language"
+[19] "Greek (Cypriot)"        "Kigiriama"              "Kiswahili"             
+[22] "Czech"                  "English (Australian)"   "Latvian"               
+[25] "Korean"                 "French (French)"        "Spanish (European)"    
+[28] "Portuguese (European)"  "Mandarin (Taiwanese)"   "English (Irish)"       
+[31] "Irish"                  "Finnish"                "Dutch"                 
+[34] "Hungarian"              "Spanish (Argentinian)"  "Spanish (Chilean)"     
+[37] "Spanish (Peruvian)"     "Persian"                "Arabic (Saudi)"        
+[40] "Estonian"               "Catalan"                "Japanese"              </code></pre>
+</div>
+</div>
+<p>Wanneer de variable <code>language</code> als type <code>character</code> wordt gezien dan missen we de overeenkomsten tussen deze terugkerende talen. Door er een <em>factor</em> van te maken waarin elke taal een <em>level</em> is maken we dit juist zichtbaar. Dit biedt later allerlei voordelen bij het maken van grafieken, zoals het makkelijker kunnen herordenen van levels, en het doen van statistische analyses. Het is dus verstandig om categorische variabelen om te zetten naar type <em>factor</em>.</p>
+<div class="page-columns page-full"><p>Je kunt een variabele omzetten naar een factor met de functie <code>as.factor()</code>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Deze zal de levels ordenen op alfabet. Om deze aanpassing te kunnen doen gebruiken we de veelgebruikte functie <code>mutate()</code> waarbij we weer de naam van de variabele eerst noemen en na de <code>=</code> wat we erin willen stoppen. Ook hier geldt weer: om de verandering blijvend te maken moeten we deze toewijzen aan de datatabel met <code>&lt;-</code>.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;Er bestaat ook een <code>tidyverse</code>-variant <code>as_factor()</code>. Deze functie zet variabelen ook om naar een factor, maar gebruikt de eerste observatie in de data als het eerste level.</p></li></div></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="ot">&lt;-</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">.data =</span> wordbank_datasets,</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">language =</span> <span class="fu">as.factor</span>(language))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="page-columns page-full"><p>Om een snelle blik te werpen op hoe <code>R</code> de variabelen in onze datatabel ziet, kunnen we de functie <code>str()</code> voor <em>structure</em> gebruiken (het <code>tidyverse</code>-alternatief is <code>glimpse()</code>).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;De functie <code>str()</code> gebruikt types uit base <code>R</code> (dus bijv. <code>num</code>), terwijl <code>glimpse()</code> types uit het <code>tidyverse</code> gebruikt (dus <code>&lt;dbl&gt;</code>).</p></li></div></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(wordbank_datasets)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [89 × 8] (S3: tbl_df/tbl/data.frame)
+ $ instrument_id    : num [1:89] 1 2 3 4 5 6 7 8 9 10 ...
+ $ language         : Factor w/ 42 levels "American Sign Language",..: 3 4 6 6 8 8 10 10 17 17 ...
+ $ form             : chr [1:89] "WG" "WS" "WG" "WS" ...
+ $ form_type        : chr [1:89] "WG" "WS" "WG" "WS" ...
+ $ age_min          : num [1:89] 8 16 8 16 8 16 8 16 8 16 ...
+ $ age_max          : num [1:89] 36 30 16 30 20 36 18 30 16 30 ...
+ $ has_grammar      : num [1:89] 0 0 0 0 0 1 0 1 0 1 ...
+ $ unilemma_coverage: num [1:89] 0.95 0.95 1 1 1 0.93 1 1 1 0.99 ...</code></pre>
+</div>
+</div>
+<p>We zien dat <code>language</code> nu een factor is met 42 levels (zoveel talen als we hadden geteld) en het eerste level is <em>American Sign Language</em>, de naam die als eerste in het alfabet komt. Deze omzetting naar een factor zouden we ook moeten uitvoeren voor de andere variabelen van type <code>character</code> (<code>form</code> en <code>form_type</code>). Ook de variabele <code>instrument_id</code> komt hiervoor in aanmerking, want de getallen die hier zijn gebruikt als id voor de vragenlijst moeten we niet zien als getallen, maar als namen. Deze omzettingen kunnen we in een keer doen binnen de functie <code>mutate()</code> door de variabelen te scheiden met een komma. Voor de overzichtelijkheid van de code zetten we iedere omzetting op een eigen regel.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="ot">&lt;-</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">.data =</span> wordbank_datasets,</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">form =</span> <span class="fu">as.factor</span>(form),</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">form_type =</span> <span class="fu">as.factor</span>(form_type),</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">instrument_id =</span> <span class="fu">as.factor</span>(instrument_id)</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(wordbank_datasets)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [89 × 8] (S3: tbl_df/tbl/data.frame)
+ $ instrument_id    : Factor w/ 89 levels "1","2","3","4",..: 1 2 3 4 5 6 7 8 9 10 ...
+ $ language         : Factor w/ 42 levels "American Sign Language",..: 3 4 6 6 8 8 10 10 17 17 ...
+ $ form             : Factor w/ 24 levels "CDITwo","FormA",..: 17 22 17 22 17 22 17 22 17 22 ...
+ $ form_type        : Factor w/ 2 levels "WG","WS": 1 2 1 2 1 2 1 2 1 2 ...
+ $ age_min          : num [1:89] 8 16 8 16 8 16 8 16 8 16 ...
+ $ age_max          : num [1:89] 36 30 16 30 20 36 18 30 16 30 ...
+ $ has_grammar      : num [1:89] 0 0 0 0 0 1 0 1 0 1 ...
+ $ unilemma_coverage: num [1:89] 0.95 0.95 1 1 1 0.93 1 1 1 0.99 ...</code></pre>
+</div>
+</div>
+<p>Let dus goed op: getallen zijn niet altijd getallen, maar kunnen ook als namen voor levels van een categorische variabele zijn gebruikt. Stel we maken een datatabel <code>woordfrequenties</code> aan met daarin de variabele <code>frequentie</code> van een aantal woorden. De woordfrequentie is door de onderzoeker gecodeerd als 1, 2 en 3 wat staat voor respectievelijk ‘laag frequent’, ‘midden frequent’ en ‘hoog frequent’.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>woordfrequenties <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">frequentie =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>woordfrequenties</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  frequentie
+       &lt;dbl&gt;
+1          1
+2          3
+3          1
+4          1
+5          2</code></pre>
+</div>
+</div>
+<p>Omdat de waarden van de variabele <code>frequentie</code> getallen zijn, denkt <code>R</code> dat we hier te maken hebben met een numerieke variabele. We kunnen dit weer omzetten met de functie <code>as.factor()</code>, vervolgens kunnen we met de functie <code>recode()</code> de levels van deze factor expliciete namen geven. Wanneer we de datatabel nu weer bekijken dan zien we in plaats van getallen de namen van de levels. Dat maakt het inzichtelijker voor gebruikers van de data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>woordfrequenties <span class="ot">&lt;-</span> <span class="fu">mutate</span>(woordfrequenties,</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">frequentie =</span> <span class="fu">as.factor</span>(frequentie),</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">frequentie =</span> <span class="fu">fct_recode</span>(frequentie, </span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>                                                   <span class="at">laag =</span> <span class="st">"1"</span>, </span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>                                                   <span class="at">midden =</span> <span class="st">"2"</span>, </span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>                                                   <span class="at">hoog =</span> <span class="st">"3"</span>)</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>                           )</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>woordfrequenties</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  frequentie
+  &lt;fct&gt;     
+1 laag      
+2 hoog      
+3 laag      
+4 laag      
+5 midden    </code></pre>
+</div>
+</div>
+<p>De functie <code>mutate()</code> komen we nog vaak tegen. We kunnen deze bijvoorbeeld ook gebruiken om een nieuwe variabele aan te maken uit bestaande variabelen. Zo zouden we de variabele <code>age_range</code> kunnen aanmaken die het leeftijdsbereik uitdrukt als het verschil tussen de minimumleeftijd (<code>age_min</code>) en de maximumleeftijd (<code>age_max</code>):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="ot">&lt;-</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(wordbank_datasets,</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">age_range =</span> age_max <span class="sc">-</span> age_min)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">relocate</span>(<span class="at">.data =</span> wordbank_datasets,</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>         age_range,</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">.after =</span> age_max)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 89 × 9
+   instrument_id language  form  form_type age_min age_max age_range has_grammar
+   &lt;fct&gt;         &lt;fct&gt;     &lt;fct&gt; &lt;fct&gt;       &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+ 1 1             British … WG    WG              8      36        28           0
+ 2 2             Cantonese WS    WS             16      30        14           0
+ 3 3             Croatian  WG    WG              8      16         8           0
+ 4 4             Croatian  WS    WS             16      30        14           0
+ 5 5             Danish    WG    WG              8      20        12           0
+ 6 6             Danish    WS    WS             16      36        20           1
+ 7 7             English … WG    WG              8      18        10           0
+ 8 8             English … WS    WS             16      30        14           1
+ 9 9             French (… WG    WG              8      16         8           0
+10 10            French (… WS    WS             16      30        14           1
+# ℹ 79 more rows
+# ℹ 1 more variable: unilemma_coverage &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>We maken hier met <code>relocate()</code> de nieuwe variabele zichtbaar direct achter de variabele <code>age_max</code> in de datatabel. Wanneer we dit niet doen dan zou deze achteraan komen.</p>
+</section>
+</section>
+<section id="sec-voorbeeldscript" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sec-voorbeeldscript"><span class="header-section-number">3.3</span> Voorbeeldscript</h2>
+<p>Wanneer je begint met coderen is het vooral belangrijk dat je code werkt. Hoe je code precies tot het resultaat komt is nog van ondergeschikt belang. Het kan altijd eleganter of sneller. Toch is het verstandig om je vanaf het begin af aan een aantal zaken aan te leren die je code leesbaarder maken. Hier een aantal richtlijnen:</p>
+<p>Goede code gebruikt:</p>
+<ul>
+<li><strong>duidelijke namen</strong> voor datatabellen en vectoren, waarbij we gebruik maken van <em>snake_case</em> (dus <code>age_range</code> en niet <code>AgeRange</code>);</li>
+<li><strong>spaties</strong> om operatoren, zoals <code>=</code> en <code>,</code> (dus <code>x = y</code> en <code>x, y</code> i.p.v <code>x=y</code> en <code>x,y</code>);</li>
+<li><strong>nieuwe regels</strong> om de lengte van code te beperken, bijvoorbeeld door na een <code>,</code> of <code>&lt;-</code> een return te geven;</li>
+<li><strong>inspringing</strong> om aan te geven dat code op de huidige regel nog bij een vorige regel hoort en bijvoorbeeld argumenten van een functie op hetzelfde niveau te zetten.</li>
+</ul>
+<p>Een goed script:</p>
+<ul>
+<li>heeft een <strong>heldere opbouw</strong> met eerst het aanroepen van packages, dan het inlezen van de data, het bewerken van variabelen en dan de overige dingen die je gaat doen;</li>
+<li>gebruikt <strong>witregels</strong> om codeblokjes te maken van regels code die bij elkaar horen en deze te scheiden van andere code met een andere functie;</li>
+<li>heeft een <strong>goede toelichting</strong> op de werking van een blokje code, hierbij gebruik je <code>#</code> aan het begin van de regel. Je kunt <code>#</code> ook gebruiken om op een regel commentaar toe te voegen. <code>R</code> negeert alles wat na een <code>#</code> staat en probeert dit dus niet uit te voeren.</li>
+</ul>
+<p>Hieronder een voorbeeldscript gebaseerd op de code uit dit hoofdstuk:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aanroepen benodigde packages</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Bekijken dataset</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>wordbank_datasets</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Aanpassen type van variabelen</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>wordbank_datasets <span class="ot">&lt;-</span></span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">.data =</span> wordbank_datasets,</span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">language =</span> <span class="fu">as.factor</span>(language),</span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">form =</span> <span class="fu">as.factor</span>(form),</span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">form_type =</span> <span class="fu">as.factor</span>(form_type),</span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">instrument_id =</span> <span class="fu">as.factor</span>(instrument_id)</span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Aanmaken aparte vector met alle talen in de dataset</span></span>
+<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>languages <span class="ot">&lt;-</span> <span class="fu">pull</span>(wordbank_datasets, language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="omgaan-met-errors" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="omgaan-met-errors"><span class="header-section-number">3.4</span> Omgaan met errors</h2>
+<p><code>R</code> neemt alles wat je typt heel letterlijk. Je zult dus heel precies moeten werken, anders geeft <code>R</code> je een foutmelding. In onderstaand voorbeeld zijn we bijvoorbeeld de ‘s’ vergeten aan het eind van ‘dataset’. We vragen <code>R</code> dus om <code>wordbank_dataset</code> te laten zien, terwijl we <code>wordbank_datasets</code> bedoelen. Het is een klein verschil, maar voor <code>R</code> voldoende om een error te geven.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>wordbank_dataset</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'wordbank_dataset' not found</code></pre>
+</div>
+</div>
+<p>Errors horen bij coderen. Ze kunnen ontstaan door typefouten of door het verkeerd gebruik van de regels van de taal (bijv. het vergeten van een argument dat nodig is om een functie uit te kunnen voeren). Errors kunnen heel frustrerend zijn en soms ook veel tijd kosten om op te lossen. Probeer rustig te blijven, haal diep adem en probeer uit te vinden waar <code>R</code> over klaagt. Vaak zit er in de error-melding wel een aanwijzing wat er mis is. Wanneer <code>R</code> meldt ‘object nog found’ dan gaat het meestal of om een typefout in de naam van het object dat je wilt gebruiken of om een variabele in een datatabel, terwijl je <code>R</code> nog niet hebt verteld in een specifieke datatabel te zoeken.</p>
+<p>Naast errors geeft <code>R</code> ook waarschuwingen (<em>warnings</em>). De ernst daarvan is vaak wat moeilijker te bepalen. Soms kun je die voorbij laten gaan, maar soms moet je er ook echt iets mee. Ook voor warnings geldt dat het verstandig is om ze goed te bekijken, want vaak staat er een aanwijzing in. In onderstaand voorbeeld proberen we met de functie <code>mean()</code> het gemiddelde van te berekenen van een vector die niet uit getallen bestaat. De functie <code>mean()</code> vraagt echter om getallen. <code>R</code> wijst ons hierop in de <em>warning</em> en geeft ook aan wat het resultaat hiervan is: je krijgt ontbrekende data <code>NA</code>s (voor <em>not available</em>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(languages)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(languages): argument is not numeric or logical:
+returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>Zoals gezegd, errors horen bij coderen. Je moet er simpelweg mee leren leven. Laat je niet gek maken en weet dat je niet alleen bent. De kans is groot dat iemand anders dezelfde error ook heeft gehad en er al een oplossing voor heeft gevonden. Stel dus vragen of kopieer je error-melding naar Google om uit te vinden wat het probleem nu eigenlijk is en welke oplossingen er bestaan. Websites als <em>stackoverflow</em> bieden vaak hulp.</p>
+</section>
+<section id="verder-leren" class="level2 unnumbered page-columns page-full">
+<h2 class="unnumbered anchored" data-anchor-id="verder-leren">Verder leren</h2>
+<ul>
+<li>In Hoofdstuk 1 van SfL <span class="citation" data-cites="Winter2019">(<a href="index.html#ref-Winter2019" role="doc-biblioref">Winter, 2019</a>)</span> wordt de basis van <code>R</code> (<code>base R</code>) verder uitgelegd. Ter voorbereiding op het eerste practicum is het prettig om vast wat commando’s te proberen uit dit hoofdstuk. Werk verder in het script dat je in het vorige hoofdstuk hebt aangemaakt.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Werk nu hoofdstuk 1 door t/m sectie 1.8. Typ de commando’s in de grijze vakken over en voer ze uit. In sectie 1.2 doe je dit direct in de R-console, vanaf sectie 1.3 (en in alle volgende practica!) in een script. Zie sectie 1.15 voor handige shortcuts die je hierbij kunt gebruiken. Controleer steeds weer of je dezelfde output krijgt als in het boek.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="ref-Winter2019" class="csl-entry" role="listitem">
+Winter, B. (2019). <em>Statistics for Linguists: An Introduction Using <span>R</span></em>. Routledge. <a href="https://doi.org/10.4324/9781315165547">https://doi.org/10.4324/9781315165547</a>
+</div><li id="fn5"><p><sup>5</sup>&nbsp;Je kunt eventueel ook <a href="https://rdrr.io/snippets" class="uri">https://rdrr.io/snippets</a> gebruiken voor het uitvoeren van R-code, mocht de installatie op je eigen computer niet werken. We kunnen dan tijdens een practicum proberen <code>R</code> en <code>RStudio</code> werkend te krijgen op je computer.</p></li></div><p>Nu zou je in staat moeten zijn Practicum 1 te maken.</p>
+
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./R.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./bewerken.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
