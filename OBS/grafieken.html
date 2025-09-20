@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Onderzoeksontwerp en Beschrijvende Statistiek - 5&nbsp; Grafieken maken</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./factoren.html" rel="next">
+<link href="./bewerken.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./grafieken.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Onderzoeksontwerp en Beschrijvende Statistiek</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welkom</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inleiding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bewerken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grafieken.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factoren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numeriek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Numerieke variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distributies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distributies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./practica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./_practica/practicum1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./_practica/practicum2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhoudsopgave</h2>
+   
+  <ul class="collapse">
+  <li><a href="#de-anatomie-van-een-ggplot" id="toc-de-anatomie-van-een-ggplot" class="nav-link active" data-scroll-target="#de-anatomie-van-een-ggplot"><span class="header-section-number">5.1</span> De anatomie van een <code>ggplot</code></a></li>
+  <li><a href="#soorten-grafieken" id="toc-soorten-grafieken" class="nav-link" data-scroll-target="#soorten-grafieken"><span class="header-section-number">5.2</span> Soorten grafieken</a></li>
+  <li><a href="#verder-leren" id="toc-verder-leren" class="nav-link" data-scroll-target="#verder-leren">Verder leren</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-Grafieken-Maken" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>De eerste stap in data-analyse is een indruk krijgen van de data. Dit doen we door de data te visualiseren in grafieken en/of tabellen. In dit hoofdstuk maak je kennis met het onderdeel <code>ggplot2</code> uit het <code>tidyverse</code>. Dit is een zeer krachtig package waarmee je oneindig veel grafieken kunt maken. Het is uitgegroeid tot de standaard in veel wetenschapsgebieden en daarbuiten. Het kost wel wat tijd om de logica van <code>ggplot2</code> te doorgronden. Hier zullen we de komende hoofdstukken mee bezig zijn. Let op: <code>ggplot2</code> is onderdeel van <code>tidyverse</code> je hoeft het dus niet apart te laden als je <code>tidyverse</code> hebt aangeroepen met <code>library()</code>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Na afloop van dit hoofdstuk:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>heb je overzicht hoe grafieken gemaakt worden met <code>ggplot2</code>;</li>
+<li>kun je de code aanpassen van bestaande grafieken gemaakt met <code>ggplot2</code>;</li>
+<li>kun je op basis van nieuwe data zelf een grafiek maken met <code>ggplot2</code>;</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+codeboek
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In deze cursus leer je werken met zo’n 100 veelgebruikte functies in <code>R</code>. Het is belangrijk om voor jezelf een goed overzicht te houden van deze functies. Werk hier actief aan door een eigen codeboek aan te maken. Voeg tijdens of na afloop van het bestuderen van dit hoofdstuk de codes toe aan jouw codeboek.</p>
+</div>
+</div>
+<section id="de-anatomie-van-een-ggplot" class="level2 page-columns page-full" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="de-anatomie-van-een-ggplot"><span class="header-section-number">5.1</span> De anatomie van een <code>ggplot</code></h2>
+<div class="page-columns page-full"><p>Het doel van dit hoofdstuk is om de grafiek in <a href="#fig-grafieken-doel">Figuur&nbsp;<span>5.1</span></a> na te maken.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Op deze manier leer je de logica van het maken van grafieken in <code>ggplot</code> hopelijk snel begrijpen. De doelgrafiek biedt een weergave van data van Nederlandse kinderen uit Wordbank. Het geeft voor vier woorden aan door hoeveel van de kinderen voor wie een vragenlijst is ingevuld ze gebruikt worden in de leeftijd van 8 t/m 16 maanden.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;De opzet van dit hoofdstuk is gebaseerd op hoofdstuk 1 uit <a href="https://r4ds.hadley.nz/data-visualize.html">R for Data Science</a>.</p></li></div></div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-doel" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-doel-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.1: Ons doel voor dit hoofdstuk</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="de-data" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="de-data"><span class="header-section-number">5.1.1</span> de data</h3>
+<p>De data waar we onze grafiek op baseren staan in het databestand <code>wordbank_dutch_WG_items.csv</code> in de map <code>_datasets</code> in ons R-project. We gaan dit bestand eerst inlezen en kijken of we aanpassingen moeten doen aan de namen of het type van de variabelen. Zorg voordat we beginnen dat je het package <code>tidyverse</code> hebt geladen. Dit zorgt ervoor dat het package <code>ggplot2</code> ook actief is.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#inlezen databestand</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"_datasets/wordbank_dutch_WG_items.csv"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#data bekijken</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>wordbank_dutch</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,969 × 5
+   item_id item_definition category month proportion
+     &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+ 1       1 au/ai(pijn)     sounds       8       0   
+ 2       1 au/ai(pijn)     sounds       9       0   
+ 3       1 au/ai(pijn)     sounds      10       0   
+ 4       1 au/ai(pijn)     sounds      11       0.11
+ 5       1 au/ai(pijn)     sounds      12       0.14
+ 6       1 au/ai(pijn)     sounds      13       0.17
+ 7       1 au/ai(pijn)     sounds      14       0.14
+ 8       1 au/ai(pijn)     sounds      15       0.17
+ 9       1 au/ai(pijn)     sounds      16       0.4 
+10       2 behbeh(schaap)  sounds       8       0   
+# ℹ 3,959 more rows</code></pre>
+</div>
+</div>
+<p>De data zien er goed uit: elke variabele heeft zijn eigen kolom. Het inlezen is dus goed gelukt. De namen van de variabelen voldoen aan onze standaard (<em>snake_case</em>) dus daar hoeven we niets aan aan te passen. Laten we de data eens bekijken om te zien of we misschien het type van variabelen aan moeten passen. De dataset geeft informatie over op welke leeftijd woorden (in de kolom <code>item_definition</code>) door hoeveel kinderen worden geproduceerd. De eerste variabele <code>item_id</code> bestaat uit getallen en wordt door <code>R</code> als numeriek gezien. De <code>item_id</code> moeten we echter als een naam zien en het dus beter om deze om te zetten naar een factor. Hetzelfde geldt voor de variabelen <code>item_definition</code> en <code>category</code> die nu nog van type <code>character</code> zijn. We hebben hier te maken met de specifieke woorden waarvoor gegevens verzameld zijn (<code>item_definition</code>) en de categorie waartoe de woorden volgens de vragenlijst behoren (<code>category</code>). Dit zijn beide terugkerende namen (bijv. <code>au/ai(pijn)</code> komt meerdere keren voor, net als <code>sounds</code>) en observaties willen we aan elkaar kunnen linken. Dat lukt alleen als we ze als factor behandelen. Tot slot geeft de variabelen <code>month</code> aan op welke leeftijd (in maanden) van de kinderen de vragenlijst is ingevuld en de variabele <code>proportion</code> geeft aan welke proportie kinderen (voor wie een vragenlijst is ingevuld) op die leeftijd het woord kon produceren. Het gaat hier in beide gevallen om getallen en de variabelen zijn door <code>R</code> ook als zodanig herkend (overigens is het ook mogelijk om <code>month</code> als een factor te beschouwen). Dit betekent dat de eerste drie variabelen moeten omzetten naar factoren, aangezien we hier te maken hebben met namen van levels. Omdat het hier gaat om drie kolommen maken we gebruik van de functie <code>across()</code> die het mogelijk maakt om een bewerking op meerdere kolommen tegelijk uit te voeren. Dit bespaart wat typewerk. We gebruiken <code>:</code> tussen de namen van de variabelen om aan te geven dat we ook de tussenliggende variabelen willen aanpassen. Het is hierbij natuurlijk wel belangrijk dat de volgorde van de variabelen niet is aangepast.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="ot">&lt;-</span> wordbank_dutch <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(item_id<span class="sc">:</span>category, as.factor))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>wordbank_dutch</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,969 × 5
+   item_id item_definition category month proportion
+   &lt;fct&gt;   &lt;fct&gt;           &lt;fct&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+ 1 1       au/ai(pijn)     sounds       8       0   
+ 2 1       au/ai(pijn)     sounds       9       0   
+ 3 1       au/ai(pijn)     sounds      10       0   
+ 4 1       au/ai(pijn)     sounds      11       0.11
+ 5 1       au/ai(pijn)     sounds      12       0.14
+ 6 1       au/ai(pijn)     sounds      13       0.17
+ 7 1       au/ai(pijn)     sounds      14       0.14
+ 8 1       au/ai(pijn)     sounds      15       0.17
+ 9 1       au/ai(pijn)     sounds      16       0.4 
+10 2       behbeh(schaap)  sounds       8       0   
+# ℹ 3,959 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="de-grafiek-maken" class="level3 page-columns page-full" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="de-grafiek-maken"><span class="header-section-number">5.1.2</span> De grafiek maken</h3>
+<p>De data staan er nu goed bij en we kunnen aan de slag met onze grafiek. Elke grafiek begint met een aanroep van de functie <code>ggplot()</code> waarin we moeten aangeven op basis van welke datatabel we een grafiek willen maken.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> wordbank_dutch)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-leeg" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-leeg-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.2: Een leeg canvas</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Dit levert een leeg canvas op (<a href="#fig-grafieken-leeg">Figuur&nbsp;<span>5.2</span></a>). We hebben <code>ggplot</code> namelijk nog niet verteld welke variabelen uit de dataset we op welke manier willen weergeven in de grafiek. Dit laatste noemen we een <strong>mapping</strong> van variabelen naar eigenschappen van de grafiek. Die eigenschappen worden <strong>aesthaetics</strong> genoemd (<code>aes</code> in het kort). Je moet hierbij denken aan de x-as, y-as, kleuren en vormen. Zo zien we in onze doelgrafiek dat de variabele <code>month</code> is afgebeeld op de x-as, de variabele <code>proportion</code> op de y-as en dat de variabele <code>item_definition</code> tot uitdrukking komt in de kleur en de vorm van symbolen. Laten we beginnen met de mapping van variabelen op de x-as en de y-as.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> wordbank_dutch,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-mapping" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-mapping-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.3: Mapping van variabelen op de x-as en de y-as</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Nu zien we in <a href="#fig-grafieken-mapping">Figuur&nbsp;<span>5.3</span></a> de namen van de variabelen verschijnen op de assen en zien we dat ook het bereik van beide variabelen is weergegeven, 0-1 voor <code>proportion</code> op de y-as en 8-16 voor <code>month</code> op de x-as. Voor we verder gaan, versimpelen we de code eerst met de <em>pipe</em>-operator die we in het vorige hoofdstuk hebben leren kennen. Onderstaande code geeft je het standaard begin voor elke grafiek: een dataset die naar <code>ggplot</code> wordt doorgezet en in <code>aes()</code> een specificatie van de mapping van variabelen die moeten worden afgebeeld.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We zien nu al welke variabelen er afgebeeld gaan worden, maar we zien de data zelf nog niet. Om die zichtbaar te maken moeten we een <strong>geom</strong> toevoegen als een nieuwe laag aan onze grafiek. We hebben hier de keuze uit een groot aantal mogelijke type grafieken, denk aan lijnen, punten, staven. Elke dataset vraagt om zijn eigen aanpak. Dus het is noodzakelijk om vooraf goed na te denken over wat je precies wilt laten zien. Het beste kun je eerst op papier een schets maken voor jezelf.</p>
+<p>In onze doelgrafiek wordt er gebruik gemaakt van zowel punten als lijnen. We beginnen met de punten. Hiervoor gebruiken we <code>geom_point()</code>. Let op: om een laag toe te voegen aan een grafiek gebruiken we na de aanroep van <code>ggplot()</code> een <code>+</code>. Deze <code>+</code> moet aan het eind van de regel komen, anders krijg je een error.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-point" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-point-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.4: De datapunten zijn zichtbaar geworden dankzij <code>geom_point()</code>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We hebben in <a href="#fig-grafieken-point">Figuur&nbsp;<span>5.4</span></a> veel meer stippen dan we in onze doelgrafiek zien. Dit komt, omdat we de data van alle woorden in de vragenlijst naar <code>ggplot()</code> hebben gestuurd terwijl we de gegevens van maar vier woorden willen laten zien. We moeten onze dataset dus eerst nog filteren voor we de grafiek gaan maken. We maken hiervoor eerst een vector <code>dutch_words</code> aan met de relevante woorden erin. We filteren ook proporties van 0 eruit om de data iets overzichtelijker te maken.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dutch_words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mama"</span>, <span class="st">"papa"</span>, <span class="st">"oma"</span>, <span class="st">"opa"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-doelwoorden" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-doelwoorden-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.5: Alleen de datapunten van de doelwoorden zijn zichtbaar.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We zien nu de datapunten (<a href="#fig-grafieken-doelwoorden">Figuur&nbsp;<span>5.5</span></a>), maar nog niet bij welk woord ze horen. Alle punten hebben dezelfde vorm en kleur. Als we de vorm en kleur willen laten variëren op basis van het woord waar het datapunt bijhoort, dan moeten we een nieuwe mapping maken, namelijk van de variabele <code>item_definition</code> (het woord). Zoals hierboven gezien, wordt die mapping gemaakt binnen <code>aes()</code>. We kunnen dit op twee niveaus doen: (i) op het niveau van <code>ggplot()</code> en/of (ii) op het niveau van het geom. Ter illustratie laten we het hier op beide niveaus zien: de mapping naar vorm (<code>shape</code>) maken we op het niveau van <code>ggplot()</code> en de mapping naar kleur op het niveau van <code>geom_point()</code>.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion, <span class="at">shape =</span> item_definition)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> item_definition))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-shape" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-shape-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.6: Dankzij een mapping naar <code>shape</code> en <code>color</code> is nu zichtbaar bij welke woorden de datapunten horen.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Dit lijkt er al meer op (<a href="#fig-grafieken-shape">Figuur&nbsp;<span>5.6</span></a>). De grootte van de symbolen is alleen kleiner dan in onze doelgrafiek. Dit kunnen we aanpassen door het argument <code>size</code> toe te voegen aan <code>geom_point()</code> (<a href="#fig-grafieken-size">Figuur&nbsp;<span>5.7</span></a>). Omdat het hier niet gaat om de mapping van een variabele, maar om het toekennen van een constante waarde (de waarde ‘3’), voegen we dit argument toe buiten <code>aes()</code>.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion, <span class="at">shape =</span> item_definition)) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> item_definition), <span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-size" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-size-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.7: De grootte van de datapunten is aangepast met <code>size</code>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Let op: wanneer je een variabele meegeeft als argument buiten <code>aes()</code> dan gebeuren er andere dingen dan je verwacht (je zult waarschijnlijk een error krijgen). Bedenk dus altijd goed of je een eigenschap van de grafiek wil laten variëren op basis van een variabele: zo ja, dan moet dit binnen <code>aes()</code> gebeuren, zo niet, dan moet het buiten <code>aes()</code>.</p>
+<p>Laten we nu de lijnen toevoegen, die ontbreken nog. Hiervoor gebruiken we het geom <code>geom_line()</code>. Deze voegen we met een <code>+</code> toe aan onze bestaande grafiek.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion, <span class="at">shape =</span> item_definition)) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> item_definition), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-lijnen" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-lijnen-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.8: Er zijn nu ook lijnen zichtbaar dankzij <code>geom_line()</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We zien lijnen in <a href="#fig-grafieken-lijnen">Figuur&nbsp;<span>5.8</span></a>, maar er gaan twee dingen mis: (i) de lijnen hebben niet de juiste kleur, ze zijn allemaal zwart, en (ii) als je goed kijkt, zie je dat de lijnen over de punten heenlopen, dat ziet er minder fraai uit. Dit laatste is makkelijk op te lossen door de volgorde van de geoms om te draaien (<a href="#fig-grafieken-volgordegeom">Figuur&nbsp;<span>5.9</span></a>).</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion, <span class="at">shape =</span> item_definition)) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> item_definition), <span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-volgordegeom" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-volgordegeom-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.9: Door de volgorde van geoms om te draaien komen de punten boven de lijnen te liggen.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Dit laat zien dat je het maken van grafieken in <code>ggplot</code> (tot een bepaalde hoogte) kunt vergelijken met het schilderen op een doek (canvas): wat je het laatst toevoegt is het best zichtbaar. Een <code>ggplot</code> is letterlijk opgebouwd uit lagen (<em>layers</em>).</p>
+<p>Het eerste probleem (dat de lijnen zwart zijn) laat iets heel fundamenteels zien over de mapping in <code>aes()</code>. Zoals we eerder hebben gezien, kun je deze mapping zowel op het niveau van <code>ggplot()</code> als op het niveau van het geom specificeren. Dit maakt een wezenlijk verschil. Mappings op het niveau van <code>ggplot()</code> worden overgeërfd door latere geoms, tenzij de mapping op het niveau van het geom wordt overschreven. Mappings op het niveau van een geom zijn alleen beschikbaar op dat niveau en dus niet toegankelijk voor andere geoms. Dat is waar het in onze grafiek misgaat. We hebben kleur gespecificeerd op het niveau van <code>geom_point()</code> en daardoor is deze mapping niet toegankelijk voor <code>geom_line()</code>. Wanneer we deze mapping verhuizen naar het hoogste niveau van <code>ggplot()</code> dan zien we dat de lijnen de juiste kleur krijgen (<a href="#fig-grafieken-niveau">Figuur&nbsp;<span>5.10</span></a>).</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion, <span class="at">color =</span> item_definition, <span class="at">shape =</span> item_definition)) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-niveau" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-niveau-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.10: Door de mapping van <code>color</code> op het niveau van de functie <code>ggplot()</code> te zetten, wordt deze toegankelijk voor alle volgende geoms.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Het is dus heel belangrijk om vooraf goed te bedenken waar je een mapping van een variabele naar een eigenschap van de grafiek (<em>aesthaetics</em>) allemaal terug wilt zien. Om het belang van de goede plek van de mapping te onderstrepen, laten we zien wat er gebeurt als we beide mappings (<code>color</code> en <code>shape</code>) van <code>ggplot()</code> verhuizen naar het niveau van <code>geom_point()</code>.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> item_definition, <span class="at">shape =</span> item_definition), <span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-wegkwijt" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-wegkwijt-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.11: Door verplaatsing van de mapping naar het laagste geom zijn de lijnen helemaal de weg kwijt.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>De lijn verliest niet alleen zijn kleur, maar is nu ook helemaal de weg kwijt. Dit komt doordat <code>geom_line()</code> nu niet meer weet welke punten bij elkaar horen. Eerder krijg het geom die informatie nog overgeërfd via de mapping van <code>shape</code> in <code>ggplot()</code>, maar die is nu verdwenen. Om dit op te lossen moeten we die mapping weer terugzetten of we moeten de groepering expliciet maken op het niveau van <code>ggplot()</code>. Dat laatste doen we door <code>item_definition</code> te mappen op <code>group</code> (<a href="#fig-grafieken-group">Figuur&nbsp;<span>5.12</span></a>).</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion, <span class="at">group =</span> item_definition)) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> item_definition, <span class="at">shape =</span> item_definition), <span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-group" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-group-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.12: Het herstellen van de orde door mapping van <code>group</code>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Dit laat zien dat er dus meerdere manieren zijn om tot een grafiek te komen. Stelregel is daarbij dat als je een bepaalde mapping van een variabele naar een eigenschap van de grafiek op meerdere plekken tot uitdrukking wilt laten komen, dat je die mapping dan zo hoog mogelijk moet specificeren (dus op het niveau van <code>ggplot()</code>). In ons geval is dit dus de beste oplossing:</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion, </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> item_definition, <span class="at">shape =</span> item_definition)) <span class="sc">+</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-plek" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-plek-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.13: Mappings op de beste plek voor deze grafiek</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>De data in de grafiek in <a href="#fig-grafieken-plek">Figuur&nbsp;<span>5.13</span></a> zien er nu goed uit. We moeten alleen het uiterlijk van de grafiek nog aanpassen. We veranderen eerst de achtergrondkleur. Dit doen we door de <em>theme</em> aan te passen. Er zijn binnen <code>ggplot</code> meerdere <em>themes</em> beschikbaar. We gebruiken hier <code>theme_minimal()</code> dat een witte achtergrond met lichte rasterlijnen geeft (<a href="#fig-grafieken-theme">Figuur&nbsp;<span>5.14</span></a>). Het getal (13) geeft de basisgrootte van de titels in de grafiek.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion, </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> item_definition, <span class="at">shape =</span> item_definition)) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-theme" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-theme-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.14: Met <code>theme_minimal()</code> krijgt de grafiek een witte achtergrond met lichte rasterlijnen.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>De laatste stap is om de namen van de assen en de legenda aan te passen en een titel en ondertitel toe te voegen. Dit doen we via <code>labs()</code> (<a href="#fig-grafieken-labs">Figuur&nbsp;<span>5.15</span></a>).</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion, </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> item_definition, <span class="at">shape =</span> item_definition)) <span class="sc">+</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"leeftijd in maanden"</span>,</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"proportie kinderen die woord produceert"</span>,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">"woord"</span>,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"woord"</span>,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Mama of papa?"</span>,</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"ontwikkeltrajecten van woorden voor familieleden in Nederlandse kindertaal"</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-labs" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-labs-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.15: Namen van assen en de legenda kun je aanpassen via <code>labs()</code>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Hiermee is het ons stapsgewijs gelukt om onze doelgrafiek (<a href="#fig-grafieken-doel">Figuur&nbsp;<span>5.1</span></a>) volledig na te maken. Voordat je verder leest: check of je elke regel code in het laatste codeblok voor jezelf uit kunt leggen. Zo niet, kijk dan eerst nog even terug in het hoofdstuk.</p>
+</section>
+</section>
+<section id="soorten-grafieken" class="level2 page-columns page-full" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="soorten-grafieken"><span class="header-section-number">5.2</span> Soorten grafieken</h2>
+<p>Hieronder geven we alvast een voorbeeld van de verschillende grafieken die je gaat tegenkomen en lichten we er in het voorbijgaan nog wat functionaliteiten van <code>ggplot2</code> uit. Dit gaat in vogelvlucht. Veel van de dingen die je hier ziet langskomen zullen we in latere hoofdstukken nog verder uitwerken. Probeer voor nu steeds voor jezelf helder te krijgen wat de code doet.</p>
+<section id="staafdiagrammen" class="level3 page-columns page-full" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="staafdiagrammen"><span class="header-section-number">5.2.1</span> staafdiagrammen</h3>
+<p>Voor staafdiagrammen gebruiken we de geoms <code>geom_bar()</code> of <code>geom_col()</code>. Het verschil is dat de eerste zelf tellingen uitvoert (<a href="#fig-grafieken-geombar">Figuur&nbsp;<span>5.16</span></a>) en de tweede (<a href="#fig-grafieken-geomcol">Figuur&nbsp;<span>5.17</span></a>) tellingen gebruikt die je eerst zelf hebt aangemaakt. De kleur van een staaf pas je aan via de <em>aesthaetic</em> <code>fill</code> en <code>color</code> wordt gebruikt voor de rand om de staaf heen. In onderstaande figuur hebben we deze vastgezet op een bepaalde kleur (<code>cornflowerblue</code>). Dit is een van de standaardkleuren beschikbaar in <code>R</code>, zie <code>colours()</code> voor een overzicht van kleurnamen die je kunt gebruiken.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aanmaken van subset van woordcategorieën die we willen gaan tellen</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>dutch_categories <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"animals"</span>, <span class="st">"sounds"</span>, <span class="st">"people"</span>, <span class="st">"vehicles"</span>, <span class="st">"toys"</span>, <span class="st">"food_drink"</span>, <span class="st">"body_parts"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">%in%</span> dutch_categories) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> category)) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>   <span class="at">x =</span> <span class="st">"categorie"</span>,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>   <span class="at">y =</span> <span class="st">"aantal voorkomens"</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-geombar" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-geombar-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.16: Een staafdiagram met <code>geom_bar()</code> waarbij <code>R</code> zelf de tellingen uitvoert</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">%in%</span> dutch_categories) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(category) <span class="sc">%&gt;%</span> <span class="co"># tellen hoe vaak elke categorie voorkomt in de data</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> category, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>   <span class="at">x =</span> <span class="st">"categorie"</span>,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>   <span class="at">y =</span> <span class="st">"aantal voorkomens"</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-geomcol" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-geomcol-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.17: Zelfde staafdiagram maar nu met <code>geom_col()</code> waarbij we eerst zelf moeten tellen.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Om een liggend staafdiagram te maken (<a href="#fig-grafieken-flip">Figuur&nbsp;<span>5.18</span></a>), vaak beter leesbaar, kun je de functie <code>coord_flip()</code> toevoegen.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">%in%</span> dutch_categories) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> category)) <span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="co"># omdraaien van de assen</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>   <span class="at">x =</span> <span class="st">"categorie"</span>,</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>   <span class="at">y =</span> <span class="st">"aantal voorkomens"</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-flip" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-flip-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.18: Een liggend staafdiagram gemaakt met <code>coord_flip()</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Bij <code>geom_col()</code> (en andere geoms waarbij een <code>x</code> en <code>y</code> gespecificeerd kan worden) kun je voor hetzelfde resultaat ook de mapping van variabelen naar <code>x</code> en <code>y</code> omdraaien i.p.v. <code>coord_flip()</code> te gebruiken. Dit kan nuttig zijn als je ook een andere <code>coord_</code>-functie wilt gebruiken.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">%in%</span> dutch_categories) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(category) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> category)) <span class="sc">+</span> <span class="co"># x en y zijn gewisseld t.o.v. eerder</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>   <span class="at">x =</span> <span class="st">"categorie"</span>,</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>   <span class="at">y =</span> <span class="st">"aantal voorkomens"</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-assendraaien" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-assendraaien-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.19: Een liggend staafdiagram gemaakt door de mapping naar de assen te verwisselen</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="dotplots-en-scatterplots" class="level3 page-columns page-full" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="dotplots-en-scatterplots"><span class="header-section-number">5.2.2</span> dotplots en scatterplots</h3>
+<p>Eerder in dit hoofdstuk hebben we gezien dat we <code>geom_point()</code> kunnen gebruiken om <em>dotplots</em> of <em>scatterplots</em> te maken. Hierbij geeft elk punt een observatie in de data weer. In <a href="#fig-grafieken-scatter">Figuur&nbsp;<span>5.20</span></a> is voor elk kind in de dataset <code>wordbank_dutch</code> de proportie woorden die het kind kende toen de vragenlijst werd ingevuld uitgezet tegen de leeftijd in maanden op dat moment.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"pink2"</span>) <span class="sc">+</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-scatter" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-scatter-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.20: Een scatterplot</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Wanneer er veel observaties worden afgebeeld loop je bij dit soort grafieken het risico op <em>overplotting</em>, veel datapunten worden dan over elkaar heen afgebeeld. Hierdoor is het aantal observaties niet goed zichtbaar. Je ziet namelijk geen verschil tussen bijvoorbeeld 1 obervatie of 10 observaties met dezelfde waardes. Om dit probleem (enigszins) tegen te gaan kun je doorzichtheid van punten veranderen. Wanneer je punten doorzichtiger maakt zullen plekken waar zich veel observaties ophouden uiteindelijk donkerder worden dan plekken met weinig observaties. De doorzichtigheid van geoms kun je instellen via de <em>aesthaetic</em> <code>alpha</code>. De <code>alpha</code>-waarde ligt tussen 0 en 1. In <a href="#fig-grafieken-alpha">Figuur&nbsp;<span>5.21</span></a> hebben we die ingesteld op de waarde <code>.4</code>. Vergelijk dit figuur maar eens met <a href="#fig-grafieken-scatter">Figuur&nbsp;<span>5.20</span></a>.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"pink2"</span>, <span class="at">alpha =</span> .<span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-alpha" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-alpha-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.21: Door de <code>alpha</code>-waarde van de punten aan te passen wordt duidelijker waar zich meerdere observaties bevinden.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Een alternatief om overplotting tegen te gaan is door gebruik te maken van <em>jitter</em>. Hierbij wordt er wat <em>ruis</em> toegevoegd aan elke observatie en zal deze iets van positie veranderen. Je kunt hiervoor <code>geom_jitter()</code> gebruiken waarbij je met het argument <code>width</code> aangeeft hoeveel ruis je wilt toevoegen (tussen 0 en 1). Je kunt deze functie ook gebruiken in combinatie met het toevoegen van doorzichtigheid, zoals in <a href="#fig-grafieken-jitter">Figuur&nbsp;<span>5.22</span></a>. Voorzichtheid is wel geboden bij dit geom, omdat het de data enigszins aanpast. Dat zie je bijvoorbeeld ook als je naar de assen in <a href="#fig-grafieken-jitter">Figuur&nbsp;<span>5.22</span></a> kijkt. Die geven nu continue waarden weer, terwijl de variabele <code>month</code> discreet gemeten is.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">color =</span> <span class="st">"pink2"</span>, <span class="at">alpha =</span> .<span class="dv">4</span>, <span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-jitter" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-jitter-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.22: Met <code>geom_jitter()</code> kun je de positie van de punten enigszins aanpassen. Hierdoor wordt duidelijker waar zich meerdere observaties bevinden.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Je kunt <em>dotplots</em> met <code>geom_point()</code> ook gebruiken om berekende statistieken, zoals het gemiddelde per categorie, weer te geven (<a href="#fig-grafieken-dot">Figuur&nbsp;<span>5.23</span></a>). Hiervoor zul je wel eerst zelf deze statistieken moeten berekenen, bijv. met een combinatie van de functies <code>group_by()</code> en <code>summarize()</code>. Meer hierover in <a href="numeriek.html"><span>Hoofdstuk&nbsp;7</span></a>. Met de toevoeging <code>ylim()</code> hebben we in <a href="#fig-grafieken-dot">Figuur&nbsp;<span>5.23</span></a> het bereik van de y-as ingeperkt van 0 tot 0.2.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(category <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"animals"</span>, <span class="st">"sounds"</span>, <span class="st">"toys"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(category) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_proportion =</span> <span class="fu">mean</span>(proportion)) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> category, <span class="at">y =</span> mean_proportion)) <span class="sc">+</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> category), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, .<span class="dv">2</span>) <span class="sc">+</span> <span class="co">#inperken van bereik y-as</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"mean proportion"</span>) <span class="sc">+</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-dot" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-dot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.23: Een dotplot met <code>geom_point()</code> waarbij een gemiddelde waarde per categorie wordt weergegeven</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<p>Tot slot, soms, en zeker in taalwetenschappelijk onderzoek, wil je in plaats van punten woorden zichtbaar maken. Het geom <code>geom_text()</code> geeft je die mogelijkheid. In <a href="#fig-grafieken-text">Figuur&nbsp;<span>5.24</span></a> hebben we dit toegepast op onze doelgrafiek aan het begin van het hoofdstuk. Onder <code>theme()</code> hebben we hier bovendien toegevoegd dat we de legenda willen verwijderen, want met de woorden in de grafiek is deze overbodig geworden.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> dutch_words,</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>         proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> proportion, <span class="at">color =</span> item_definition)) <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> item_definition), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"leeftijd in maanden"</span>,</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"proportie kinderen die woord produceert"</span>,</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Mama of papa?"</span>,</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"ontwikkeltrajecten van woorden voor familieleden in Nederlandse kindertaal"</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co"># legenda verwijderen</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-text" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-text-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.24: Met <code>geom_text()</code> kun je woorden zichtbaar maken.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="verdelingen-zichtbaar-maken" class="level3 page-columns page-full" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="verdelingen-zichtbaar-maken"><span class="header-section-number">5.2.3</span> verdelingen zichtbaar maken</h3>
+<p>Een verdeling van een numerieke variabele kun je zichtbaar maken met een histogram via <code>geom_histogram()</code> (<a href="#fig-grafieken-hist">Figuur&nbsp;<span>5.25</span></a>). Net als bij <code>geom_bar()</code> (en <code>geom_col()</code>) kun je hier de kleur van de staven en de rand aanpassen met respectievelijk <code>fill</code> en <code>color</code>.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"seagreen2"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-hist" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-hist-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.25: Een histogram gemaakt met <code>geom_histogram()</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Een alternatief is een <em>density plot</em> waarvoor <code>geom_density()</code> gebruikt wordt. Dit levert een wat vloeiendere variant op van een histogram (<a href="#fig-grafieken-density">Figuur&nbsp;<span>5.26</span></a>).</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"seagreen4"</span>, <span class="at">fill =</span> <span class="st">"seagreen2"</span>, <span class="at">alpha =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-density" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-density-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.26: Een density plot via <code>geom_density()</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Het laatste alternatief voor verdelingen van numerieke variabelen dat we uitgebreider zullen bespreken in <a href="numeriek.html"><span>Hoofdstuk&nbsp;7</span></a>, is het <em>boxplot</em> (<a href="#fig-grafieken-box">Figuur&nbsp;<span>5.27</span></a>). Zoals je misschien al kon raden, hebben we hiervoor <code>geom_boxplot()</code> tot onze beschikking.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(proportion <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">"seagreen4"</span>, <span class="at">fill =</span> <span class="st">"seagreen2"</span>, <span class="at">alpha =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-box" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-box-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.27: Met <code>geom_boxplot()</code> kun je een boxplot maken.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Soms wil je dezelfde grafiek maken voor verschillende levels van een andere variabele. Hiervoor kun je <code>facet_wrap()</code> gebruiken. Het resultaat is een <em>trellis plot</em> waarbij ieder level zijn eigen grafiek krijgt. In <a href="#fig-grafieken-dierengeluiden">Figuur&nbsp;<span>5.28</span></a> is dit gedaan om voor 3 verschillende dierengeluiden die kinderen zouden kunnen nadoen een boxplot te maken.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aanmaken van subset van dierengeluiden</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>animal_sounds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"behbeh(schaap)"</span>, <span class="st">"beu/boe/meu/moeh(koe)"</span>, <span class="st">"kwakkwak(eend)"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(item_definition <span class="sc">%in%</span> animal_sounds) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> item_definition) <span class="sc">+</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Dierengeluiden"</span>) <span class="sc">+</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># verwijderen getallen op de x-as</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-grafieken-dierengeluiden" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="grafieken_files/figure-html/fig-grafieken-dierengeluiden-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;5.28: De toevoeging <code>facet_wrap()</code> maakt het mogelijk om dezelfde grafiek voor verschillende levels van een variabele te produceren.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="verder-leren" class="level2 unnumbered page-columns page-full">
+<h2 class="unnumbered anchored" data-anchor-id="verder-leren">Verder leren</h2>
+<ul>
+<li>In <a href="https://r4ds.hadley.nz/data-visualize.html">hoofdstuk 1</a> van <span class="citation" data-cites="R4DS">Wickham et al. (<a href="index.html#ref-R4DS" role="doc-biblioref">2023</a>)</span> vind je een andere uitwerking van veel functies die in dit hoofdstuk aan bod zijn gekomen.</li>
+<li><a href="https://socviz.co/makeplot.html#makeplot">Hoofdstuk 3</a> van <span class="citation" data-cites="IntroDataVis">Healy (<a href="index.html#ref-IntroDataVis" role="doc-biblioref">2019</a>)</span> geeft een goede uiteenzetting van de anatomie van <code>ggplot</code>s.</li>
+<li>het <a href="https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf">ggplot2 cheatsheet</a> geeft een overzicht van de werking van <code>ggplot2</code>. Voor nu misschien nog wat overweldigend, maar later zeker de moeite waard.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="ref-R4DS" class="csl-entry" role="listitem">
+Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em><span>R</span> for Data Science</em> (2de dr.). O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>
+</div><div id="ref-IntroDataVis" class="csl-entry" role="listitem">
+Healy, K. (2019). <em>Data Visualisation: A Practical Introduction.</em> Princeton University Press. <a href="https://socviz.co/">https://socviz.co/</a>
+</div></div><p>Nu zou je in staat moeten zijn Practicum 3 te maken.</p>
+
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./bewerken.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./factoren.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
