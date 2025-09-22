@@ -83,6 +83,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../_practica/practicum3.html" rel="next">
 <link href="../_practica/practicum1.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -223,6 +224,12 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="../_practica/practicum2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Practicum 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 3</span></a>
   </div>
 </li>
       </ul>
@@ -558,7 +565,7 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
-<p>Pas de variabelen in het ingelezen databestand, indien nodig, zodanig aan dat ze overeenkomen met de meetniveaus zoals beschreven in <a href="#sec-meet"><span>Paragraaf&nbsp;1.3</span></a>. Let op: zorg ervoor dat de levels van etymologische leeftijd chronologisch geordend is (van oud naar jong): IndoEuropean, Germanic, WestGermanic DutchGerman, Dutch. Maak hier voor de veiligheid een nieuwe variabele van in je dataframe met de naam <code>ety_age</code>.</p>
+<p>Pas de variabelen in het ingelezen databestand, indien nodig, zodanig aan dat ze overeenkomen met de meetniveaus zoals je die zelf eerder beschreven hebt. Let op: zorg ervoor dat de levels van etymologische leeftijd chronologisch geordend is (van oud naar jong): IndoEuropean, Germanic, WestGermanic DutchGerman, Dutch. Maak hier voor de veiligheid een nieuwe variabele van in je dataframe met de naam <code>ety_age</code>.</p>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <p>Om een nieuwe variabele te maken gebruik je de functie <code>mutate()</code>. Zie <a href="../data.html"><span>Hoofdstuk&nbsp;3</span></a>. Zie ook practicum 1 voor het omzetten van een variabele naar een factor. Het herordenen van de levels van een factor kan met de functie <code>fct_relevel()</code>. Deze neemt als eerste argument de naam van de variabele waarvan je de levels wilt aanpassen en als tweede argument een vector met de namen van de levels in de juiste volgorde.</p>
@@ -908,13 +915,15 @@ $ ety_age        &lt;fct&gt; Germanic, Germanic, Germanic, Germanic, Germanic, W
 <section id="ordenen-van-een-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="ordenen-van-een-dataset">Ordenen van een dataset</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Hint</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-3" role="tab" aria-controls="tabset-12-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
 <p>Orden je nieuwe tibble <code>dutch_verbs</code> uit de vorige vraag op basis van de frequentie van de werkwoorden, een keer met oplopende en een keer met aflopende frequentie. Wat is de hoogste frequentie bij deze groep werkwoorden?</p>
 </div>
 <div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
-<p>Gebruik de functie <code>arrange()</code> eventueel in combinatie met <code>desc()</code>. Zie <a href="../bewerken.html#sec-tellingen">sectie&nbsp;<span>4.5</span></a>. ## Code</p>
+<p>Gebruik de functie <code>arrange()</code> eventueel in combinatie met <code>desc()</code>. Zie <a href="../bewerken.html#sec-tellingen">sectie&nbsp;<span>4.5</span></a>.</p>
+</div>
+<div id="tabset-12-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-3-tab">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordenen van data frame oplopend</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>dutch_verbs <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(frequentie)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1807,6 +1816,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../_practica/practicum3.html" class="pagination-link">
+        <span class="nav-page-text">Practicum 3</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

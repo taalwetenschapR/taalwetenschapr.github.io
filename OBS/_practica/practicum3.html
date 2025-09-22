@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Onderzoeksontwerp en Beschrijvende Statistiek - Practicum 3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../_practica/practicum2.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practica.html">Practica</a></li><li class="breadcrumb-item"><a href="../_practica/practicum3.html">Practicum 3</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Onderzoeksontwerp en Beschrijvende Statistiek</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welkom</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inleiding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bewerken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../grafieken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../factoren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numeriek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Numerieke variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distributies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../practica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Practicum 3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhoudsopgave</h2>
+   
+  <ul class="collapse">
+  <li><a href="#grafieken-maken-met-ggplot2" id="toc-grafieken-maken-met-ggplot2" class="nav-link active" data-scroll-target="#grafieken-maken-met-ggplot2">Grafieken maken met <code>ggplot2</code></a>
+  <ul class="collapse">
+  <li><a href="#leerdoelen" id="toc-leerdoelen" class="nav-link" data-scroll-target="#leerdoelen">Leerdoelen</a></li>
+  <li><a href="#voorbereiding" id="toc-voorbereiding" class="nav-link" data-scroll-target="#voorbereiding">Voorbereiding</a></li>
+  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link" data-scroll-target="#sec-intro">Introductie</a></li>
+  </ul></li>
+  <li><a href="#opdracht-1-internet-use-and-life-expectancy" id="toc-opdracht-1-internet-use-and-life-expectancy" class="nav-link" data-scroll-target="#opdracht-1-internet-use-and-life-expectancy">Opdracht 1: Internet use and life expectancy</a>
+  <ul class="collapse">
+  <li><a href="#het-inlezen-van-de-data" id="toc-het-inlezen-van-de-data" class="nav-link" data-scroll-target="#het-inlezen-van-de-data">Het inlezen van de data</a></li>
+  <li><a href="#ggplot2-code-beter-begrijpen" id="toc-ggplot2-code-beter-begrijpen" class="nav-link" data-scroll-target="#ggplot2-code-beter-begrijpen">ggplot2-code beter begrijpen</a></li>
+  <li><a href="#interpreteren-van-een-waarschuwing" id="toc-interpreteren-van-een-waarschuwing" class="nav-link" data-scroll-target="#interpreteren-van-een-waarschuwing">Interpreteren van een waarschuwing</a></li>
+  <li><a href="#kleur-van-datapunten-aanpassen" id="toc-kleur-van-datapunten-aanpassen" class="nav-link" data-scroll-target="#kleur-van-datapunten-aanpassen">Kleur van datapunten aanpassen</a></li>
+  <li><a href="#datapunten-doorzichtig-maken" id="toc-datapunten-doorzichtig-maken" class="nav-link" data-scroll-target="#datapunten-doorzichtig-maken">Datapunten doorzichtig maken</a></li>
+  <li><a href="#de-kleur-van-datapunten-variëren-op-basis-van-een-variabele" id="toc-de-kleur-van-datapunten-variëren-op-basis-van-een-variabele" class="nav-link" data-scroll-target="#de-kleur-van-datapunten-variëren-op-basis-van-een-variabele">De kleur van datapunten variëren op basis van een variabele</a></li>
+  <li><a href="#een-trendlijn-toevoegen" id="toc-een-trendlijn-toevoegen" class="nav-link" data-scroll-target="#een-trendlijn-toevoegen">Een trendlijn toevoegen</a></li>
+  </ul></li>
+  <li><a href="#opdracht-2-uk-baby-names---fiona" id="toc-opdracht-2-uk-baby-names---fiona" class="nav-link" data-scroll-target="#opdracht-2-uk-baby-names---fiona">Opdracht 2: UK baby names - Fiona</a>
+  <ul class="collapse">
+  <li><a href="#sec-zichtbaar" id="toc-sec-zichtbaar" class="nav-link" data-scroll-target="#sec-zichtbaar">Het zichtbaar maken van de datapunten</a></li>
+  <li><a href="#lijnen-toevoegen-per-groep" id="toc-lijnen-toevoegen-per-groep" class="nav-link" data-scroll-target="#lijnen-toevoegen-per-groep">Lijnen toevoegen per groep</a></li>
+  <li><a href="#de-kleur-en-lijnsoort-aanpassen-per-groep" id="toc-de-kleur-en-lijnsoort-aanpassen-per-groep" class="nav-link" data-scroll-target="#de-kleur-en-lijnsoort-aanpassen-per-groep">De kleur en lijnsoort aanpassen per groep</a></li>
+  <li><a href="#code-annoteren" id="toc-code-annoteren" class="nav-link" data-scroll-target="#code-annoteren">Code annoteren</a></li>
+  <li><a href="#sec-fiona-extra" id="toc-sec-fiona-extra" class="nav-link" data-scroll-target="#sec-fiona-extra">Meer data zichtbaar maken</a></li>
+  </ul></li>
+  <li><a href="#deel-2-my-first-quarto" id="toc-deel-2-my-first-quarto" class="nav-link" data-scroll-target="#deel-2-my-first-quarto">Deel 2: My first Quarto</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Practicum 3</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="grafieken-maken-met-ggplot2" class="level1 unnumbered page-columns page-full">
+<h1 class="unnumbered">Grafieken maken met <code>ggplot2</code></h1>
+<section id="leerdoelen" class="level2">
+<h2 class="anchored" data-anchor-id="leerdoelen">Leerdoelen</h2>
+<ul>
+<li><p>Begrijpen van de opbouw van grafieken gemaakt met <code>ggplot2</code>;</p></li>
+<li><p>Aanpassen van bestaande grafieken met <code>ggplot2</code>;</p></li>
+<li><p>Maken van nieuwe grafieken met <code>ggplot2</code>;</p></li>
+<li><p>Kennismaken met de mogelijkheden van Quarto.</p></li>
+</ul>
+</section>
+<section id="voorbereiding" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="voorbereiding">Voorbereiding</h2>
+<p>Lees <a href="../grafieken.html">hoofdstuk&nbsp;<span>5</span></a> uit het dictaat. De benodigde <code>R</code>-functies zijn te vinden in het dictaat (zie ook eerdere hoofdstukken en practica). Functies die niet in het dictaat besproken worden, worden gegeven in de opdracht. Het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2 cheatsheet</a> geeft een overzicht van de mogelijkheden die <code>ggplot2</code> biedt.</p>
+<p>De werking van Quarto zullen we toelichten in een video op Brightspace. Zie hiervoor ook <a href="https://r4ds.hadley.nz/quarto">hoofdstuk 28</a> uit <span class="citation" data-cites="R4DS">Wickham et al. (<a href="../index.html#ref-R4DS" role="doc-biblioref">2023</a>)</span>. Bekijk voor je begint ook nog een keer de <a href="https://taalwetenschapr.github.io/OBS/practica.html">algemene richtlijnen voor practica</a>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-R4DS" class="csl-entry" role="listitem">
+Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em><span>R</span> for Data Science</em> (2de dr.). O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>
+</div></div></section>
+<section id="sec-intro" class="level2">
+<h2 class="anchored" data-anchor-id="sec-intro">Introductie</h2>
+<p>In de opdrachten van dit practicum ga je een aantal grafieken uit het boek IMS aanpassen of vanaf nul proberen na te maken. Hierdoor raak je bekend met de (on)mogelijkheden van <code>ggplot2</code>. Bij elke grafiek hoort een aparte dataset. Bij elke opdracht is aangegeven of de data bijgeleverd zijn in een databestand of dat je een package moet installeren en aanroepen. Probeer bij elke dataset/grafiek eerst goed voor jezelf helder te hebben met wat voor soort data je te maken hebt (wat is het onderwerp van de dataset, welke variabelen zijn er, wat zijn de meetniveaus).</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Let op">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Let op
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sla je script regelmatig op, zodat je geen code kwijtraakt. Klik hiervoor op het floppy-disk-symbool of gebruik de sneltoetsen <code>Ctrl + S</code>/<code>cmd + S</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Probeer het eerst zelf!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Probeer het eerst zelf!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bij sommige opdrachten vind je naast een beschrijving van de vraag ook een Hint en de Code. Dit om je te helpen als je even niet verder komt. Hoe verleidelijk het ook is om meteen naar het antwoord te gaan, doe dit niet. Houd je aan de volgorde: probeer het eerst zelf, lukt dat niet gebruik de hint, mocht je dan nog vastzitten en er echt niet uitkomen ga dan pas naar het antwoord. Dit gaat je op de lange termijn ontzettend helpen.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="opdracht-1-internet-use-and-life-expectancy" class="level1 page-columns page-full">
+<h1>Opdracht 1: Internet use and life expectancy</h1>
+<p>In deze opdracht maken we de grafiek na uit opgave 11 in hoofdstuk 2 van IMS, zie <a href="#fig-life">Figuur&nbsp;<span>1.1</span></a>. Hierin is voor een groot aantal landen de levensverwachting (<em>life expectancy</em>) uitgezet tegen het percentage internetgebruikers in het land (<em>percent internet users</em>). De data zijn afkomstig uit een databestand van de CIA en zijn in het R-project bijgeleverd als <code>cia_factbook.csv</code>.</p>
+<div id="fig-life" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="IMS_H2_ex11.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.1: Grafiek bij opgave 11 in hoofdstuk 2 van IMS.</figcaption>
+</figure>
+</div>
+<section id="het-inlezen-van-de-data" class="level2">
+<h2 class="anchored" data-anchor-id="het-inlezen-van-de-data">Het inlezen van de data</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Let op">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Let op
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bij dit practicum maken we gebruik van een aantal packages. Installeer de volgende packages (als je dat niet al eerder hebt gedaan) en roep ze aan: <code>tidyverse</code>, <code>scales</code> en <code>ukbabynames</code>.</p>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Lees het databestand <code>cia_factbook.csv</code> in met de juiste <code>tidyverse</code>-functie en noem de tibble <code>cia_factbook</code>. Bekijk de variabelen en pas indien nodig hun meetniveau aan.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Dit heb je in het vorige practicum ook gedaan. Zie dus het practicum van vorige week.</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inlezen data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cia_factbook <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"datasets/cia_factbook.csv"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 234 Columns: 12
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): country, continent
+dbl (10): area, birth_rate, death_rate, infant_mortality_rate, internet_user...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># omzetten relevante variabelen naar factor</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cia_factbook <span class="ot">&lt;-</span> cia_factbook <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">as.factor</span>(country),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">continent =</span> <span class="fu">as.factor</span>(continent)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>         )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ggplot2-code-beter-begrijpen" class="level2">
+<h2 class="anchored" data-anchor-id="ggplot2-code-beter-begrijpen">ggplot2-code beter begrijpen</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Met onderstaande code kun je <a href="#fig-life">Figuur&nbsp;<span>1.1</span></a> ruwweg namaken (de kleuren zullen anders zijn). Kopieer de code naar je script en voer de code vervolgens uit. Geef in het script in eigen woorden aan wat elke stap in de code doet. Dit kun je doen door aan het eind van elke regel een comment te plaatsen, voorafgegaan door <code>#</code>. Dit is hier al voorgedaan voor regel 10 in de code. Je kunt de hashtag <code>#</code> ook gebruiken om te achterhalen wat een deel van de code precies doet. Door <code>#</code> voor code te zetten wordt deze niet uitgevoerd. N.B. zorg dan wel dat je de code t/m de laatste bijbehorende <code>+</code> uitzet, anders zal <code>R</code> gaan klagen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">#code om figuur bij opgave 11 van hoofdstuk 2 uit IMS te maken</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>cia_factbook <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> life_exp_at_birth,</span>
+<span id="cb4-4"><a href="#cb4-4"></a>             <span class="at">x =</span> internet_users<span class="sc">/</span>population</span>
+<span id="cb4-5"><a href="#cb4-5"></a>             )) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">100</span>),</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span>  <span class="co">#past de achtergrond aan naar wit met zwart raster i.p.v. grijs met wit</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-12"><a href="#cb4-12"></a>      <span class="at">x =</span> <span class="st">"Percent internet users"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13"></a>      <span class="at">y =</span> <span class="st">"Life expectancy"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14"></a>      <span class="at">title =</span> <span class="st">"Life expectancy vs. percent internet users"</span>, </span>
+<span id="cb4-15"><a href="#cb4-15"></a>      <span class="at">subtitle =</span> <span class="st">"Data from 2014 from the CIA Factbook"</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>      )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 27 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Voer eerst alle code uit en kijk naar grafiek. Schakel dan steeds een stukje code uit met <code>#</code> en kijk goed wat er verandert in hoe de grafiek eruit ziet. Zie verder <a href="../grafieken.html"><span>Hoofdstuk&nbsp;5</span></a>.</p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#code om figuur bij opgave 11 van hoofdstuk 2 uit IMS te maken</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>cia_factbook <span class="sc">%&gt;%</span>                              <span class="co">#data naar ggplot sturen</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> life_exp_at_birth,           <span class="co">#mapt variabele naar y-as</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>             <span class="at">x =</span> internet_users<span class="sc">/</span>population    <span class="co">#mapt variabele naar x-as, N.B. op basis van twee variabelen uit de data</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>         )) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>                              <span class="co">#voegt de punten in de grafiek toe</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">scale_x_continuous</span>(                         <span class="co">#met deze code wordt de x-as aangepast naar een percentage met bijbehorend %</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>      <span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">100</span>),    <span class="co">#scale =100 zorgt dat de percentagens tot 100 lopen</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>      <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span>                     <span class="co">#zorgt dat de x-as loopt van 0 t/m 100 (is 1 x 100 (scale))</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span>                              <span class="co">#past de achtergrond aan naar wit met zwart raster i.p.v. grijs met wit</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="fu">labs</span>(                                     <span class="co">#hier worden namen voor assen gegeven en (onder)titel van de grafiek</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>      <span class="at">x =</span> <span class="st">"Percent internet users"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13"></a>      <span class="at">y =</span> <span class="st">"Life expectancy"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14"></a>      <span class="at">title =</span> <span class="st">"Life expectancy vs. percent internet users"</span>, </span>
+<span id="cb6-15"><a href="#cb6-15"></a>      <span class="at">subtitle =</span> <span class="st">"Data from 2014 from the CIA Factbook"</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a>    )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 27 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="interpreteren-van-een-waarschuwing" class="level2">
+<h2 class="anchored" data-anchor-id="interpreteren-van-een-waarschuwing">Interpreteren van een waarschuwing</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Toen je de code bij de vorige vraag uitvoerde, kreeg je waarschijnlijk onderstaande waarschuwing. Leg uit wat <code>R</code> je hier vertelt en waarom deze waarschuwing ontstaat.</p>
+<p><strong>Warning message: Removed 27 rows containing missing values (geom_point).</strong></p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Bekijk de data van de drie variabelen die in de grafiek worden gebruikt eens goed. Wat valt je op?</p>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<p>Er zijn 27 landen waarvoor er geen data (<code>NA</code>) beschikbaar zijn voor minstens een van de drie variabelen die gebruikt worden om de grafiek te maken. Dat kun je nagaan met onderstaande code. Deze 27 landen worden door <code>ggplot2</code> uit de grafiek gelaten, aangezien de benodigde waarden hiervoor niet bepaald kunnen worden.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cia_factbook <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">is.na</span>(life_exp_at_birth)<span class="sc">|</span><span class="fu">is.na</span>(internet_users)<span class="sc">|</span><span class="fu">is.na</span>(population))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 51%">
+<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">country</th>
+<th style="text-align: right;">life_exp_at_birth</th>
+<th style="text-align: right;">internet_users</th>
+<th style="text-align: right;">population</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Algeria</td>
+<td style="text-align: right;">76.39</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">38813722</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Angola</td>
+<td style="text-align: right;">55.29</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">19088106</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nigeria</td>
+<td style="text-align: right;">52.62</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">177155754</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">South Sudan</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">11562695</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Western Sahara</td>
+<td style="text-align: right;">62.27</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">554795</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Korea, North</td>
+<td style="text-align: right;">69.81</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">24851627</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Benin</td>
+<td style="text-align: right;">61.07</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">10160556</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Svalbard</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">1872</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Montenegro</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">280000</td>
+<td style="text-align: right;">650036</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Falkland Islands (Islas Malvinas)</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2900</td>
+<td style="text-align: right;">3361</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Turks and Caicos Islands</td>
+<td style="text-align: right;">79.55</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">49070</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Isle of Man</td>
+<td style="text-align: right;">80.98</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">86866</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Northern Mariana Islands</td>
+<td style="text-align: right;">77.64</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">51483</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Palau</td>
+<td style="text-align: right;">72.60</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">21186</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Curacao</td>
+<td style="text-align: right;">77.98</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">146836</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Niue</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">1100</td>
+<td style="text-align: right;">1190</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Saint Pierre and Miquelon</td>
+<td style="text-align: right;">80.26</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">5716</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">American Samoa</td>
+<td style="text-align: right;">74.91</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">54517</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Christmas Island</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">464</td>
+<td style="text-align: right;">1530</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pitcairn Islands</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Norfolk Island</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2210</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sint Maarten</td>
+<td style="text-align: right;">77.61</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">39689</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nauru</td>
+<td style="text-align: right;">66.40</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">9488</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tokelau</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">1337</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Holy See (Vatican City)</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">842</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">United States Pacific Island Wildlife Refuges</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Saint Barthelemy</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">7267</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="kleur-van-datapunten-aanpassen" class="level2">
+<h2 class="anchored" data-anchor-id="kleur-van-datapunten-aanpassen">Kleur van datapunten aanpassen</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>Geef de datapunten in de grafiek een blauwe kleur. Je kunt het commando <code>colours()</code> gebruiken om te zien welke kleuren standaard beschikbaar zijn in <code>R</code>.</p>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>Zie <a href="../grafieken.html#sec-grafieken-soorten">Sectie&nbsp;<span>5.2</span></a>.</p>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">#punten blauw maken</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>cia_factbook <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> life_exp_at_birth,</span>
+<span id="cb9-4"><a href="#cb9-4"></a>             <span class="at">x =</span> internet_users<span class="sc">/</span>population  <span class="co">#N.B. je kunt NIET hier de mapping colour = "steelblue2" toevoegen</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>             )) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"steelblue2"</span>) <span class="sc">+</span> <span class="co">#kleur van de punten aangepast naar "steelblue2"</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb9-8"><a href="#cb9-8"></a>    <span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">100</span>),</span>
+<span id="cb9-9"><a href="#cb9-9"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb9-11"><a href="#cb9-11"></a>  <span class="fu">labs</span>(    </span>
+<span id="cb9-12"><a href="#cb9-12"></a>      <span class="at">x =</span> <span class="st">"Percent internet users"</span>,</span>
+<span id="cb9-13"><a href="#cb9-13"></a>      <span class="at">y =</span> <span class="st">"Life expectancy"</span>,</span>
+<span id="cb9-14"><a href="#cb9-14"></a>      <span class="at">title =</span> <span class="st">"Life expectancy vs. percent internet users"</span>, </span>
+<span id="cb9-15"><a href="#cb9-15"></a>      <span class="at">subtitle =</span> <span class="st">"Data from 2014 from the CIA Factbook"</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a>      )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 27 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="datapunten-doorzichtig-maken" class="level2">
+<h2 class="anchored" data-anchor-id="datapunten-doorzichtig-maken">Datapunten doorzichtig maken</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>Een aantal datapunten in de grafiek ligt over elkaar heen. Maak deze datapunten zichtbaar door alle datapunten enigszins transparant te maken.</p>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>Hiervoor gebruik je de setting <code>alpha</code>. Zie <a href="../grafieken.html#sec-grafieken-soorten">Sectie&nbsp;<span>5.2</span></a>.</p>
+</div>
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">#punten transparant maken</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>cia_factbook <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> life_exp_at_birth,</span>
+<span id="cb11-4"><a href="#cb11-4"></a>             <span class="at">x =</span> internet_users<span class="sc">/</span>population  </span>
+<span id="cb11-5"><a href="#cb11-5"></a>             )) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"steelblue2"</span>, </span>
+<span id="cb11-7"><a href="#cb11-7"></a>             <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span> <span class="co">#transparantie ingesteld met alpha, lager getal is meer transparant</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb11-9"><a href="#cb11-9"></a>    <span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">100</span>),</span>
+<span id="cb11-10"><a href="#cb11-10"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span>  </span>
+<span id="cb11-12"><a href="#cb11-12"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-13"><a href="#cb11-13"></a>      <span class="at">x =</span> <span class="st">"Percent internet users"</span>,</span>
+<span id="cb11-14"><a href="#cb11-14"></a>      <span class="at">y =</span> <span class="st">"Life expectancy"</span>,</span>
+<span id="cb11-15"><a href="#cb11-15"></a>      <span class="at">title =</span> <span class="st">"Life expectancy vs. percent internet users"</span>, </span>
+<span id="cb11-16"><a href="#cb11-16"></a>      <span class="at">subtitle =</span> <span class="st">"Data from 2014 from the CIA Factbook"</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a>      )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 27 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="de-kleur-van-datapunten-variëren-op-basis-van-een-variabele" class="level2">
+<h2 class="anchored" data-anchor-id="de-kleur-van-datapunten-variëren-op-basis-van-een-variabele">De kleur van datapunten variëren op basis van een variabele</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<p>Geef de datapunten nu een kleur op basis van het continent waartoe ze behoren. Zie je een patroon in de data?</p>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<p>Hiervoor zet je de kleur dus niet vast op een waarde, maar maak je een mapping aan van een variabele. Zie <a href="../grafieken.html#sec-grafieken-anatomie">Sectie&nbsp;<span>5.1</span></a>.</p>
+</div>
+<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#punten kleuren op basis van continent</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>cia_factbook <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> life_exp_at_birth,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>             <span class="at">x =</span> internet_users<span class="sc">/</span>population  <span class="co">#Je kunt eventueel ook hier de mapping colour=continent toevoegen</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>             )) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> continent), <span class="co">#Dit is een mapping naar een variabele, je moet dus aes() toevoegen.</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>             <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span> </span>
+<span id="cb13-8"><a href="#cb13-8"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb13-9"><a href="#cb13-9"></a>    <span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">100</span>),</span>
+<span id="cb13-10"><a href="#cb13-10"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span>  </span>
+<span id="cb13-12"><a href="#cb13-12"></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-13"><a href="#cb13-13"></a>      <span class="at">x =</span> <span class="st">"Percent internet users"</span>,</span>
+<span id="cb13-14"><a href="#cb13-14"></a>      <span class="at">y =</span> <span class="st">"Life expectancy"</span>,</span>
+<span id="cb13-15"><a href="#cb13-15"></a>      <span class="at">title =</span> <span class="st">"Life expectancy vs. percent internet users"</span>, </span>
+<span id="cb13-16"><a href="#cb13-16"></a>      <span class="at">subtitle =</span> <span class="st">"Data from 2014 from the CIA Factbook"</span></span>
+<span id="cb13-17"><a href="#cb13-17"></a>      )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 27 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><em>Zie je een patroon in de data?</em> De datapunten van sommige continenten clusteren heel duidelijk (bijv. Afrika en Europa). Er lijkt een lichte trend te zijn dat hoe meer internetgebruikers hoe hoger de levensverwachting.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="een-trendlijn-toevoegen" class="level2">
+<h2 class="anchored" data-anchor-id="een-trendlijn-toevoegen">Een trendlijn toevoegen</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<p>Voeg nu voor de hele dataset één zwarte trendlijn toe. Behoud voor de datapunten de kleuren per continent. Wat kun je uit deze trendlijn concluderen?</p>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<p>Gebruik hiervoor <code>geom_smooth()</code>. Zie <a href="../grafieken.html#sec-grafieken-soorten">Sectie&nbsp;<span>5.2</span></a>.</p>
+</div>
+<div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co">#een trendlijn voor hele dataset</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>cia_factbook <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> life_exp_at_birth,  </span>
+<span id="cb15-4"><a href="#cb15-4"></a>             <span class="at">x =</span> internet_users<span class="sc">/</span>population  <span class="co">#niet hier de mapping 'colour = continent' toevoegen, dan krijg je aparte lijnen per continent</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>             )) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> continent), </span>
+<span id="cb15-7"><a href="#cb15-7"></a>             <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span> </span>
+<span id="cb15-8"><a href="#cb15-8"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span>          <span class="co">#toevoegen van trendlijn met geom_smooth()</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb15-10"><a href="#cb15-10"></a>    <span class="at">labels =</span> <span class="fu">label_percent</span>(<span class="at">scale =</span> <span class="dv">100</span>),</span>
+<span id="cb15-11"><a href="#cb15-11"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span>  </span>
+<span id="cb15-13"><a href="#cb15-13"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-14"><a href="#cb15-14"></a>      <span class="at">x =</span> <span class="st">"Percent internet users"</span>,</span>
+<span id="cb15-15"><a href="#cb15-15"></a>      <span class="at">y =</span> <span class="st">"Life expectancy"</span>,</span>
+<span id="cb15-16"><a href="#cb15-16"></a>      <span class="at">title =</span> <span class="st">"Life expectancy vs. percent internet users"</span>, </span>
+<span id="cb15-17"><a href="#cb15-17"></a>      <span class="at">subtitle =</span> <span class="st">"Data from 2014 from the CIA Factbook"</span></span>
+<span id="cb15-18"><a href="#cb15-18"></a>      )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 27 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 27 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="opdracht-2-uk-baby-names---fiona" class="level1 page-columns page-full">
+<h1>Opdracht 2: UK baby names - Fiona</h1>
+<p>In deze opdracht maken we de grafiek na uit opgave 15 in hoofdstuk 1 van IMS, zie <a href="#fig-fiona">Figuur&nbsp;<span>2.1</span></a>. Hierin wordt het aantal meisjes getoond die de naam Fiona hebben gekregen. Het gaat om kinderen geboren in het Verenigd Koninkrijk sinds 2000. De data zijn afkomstig uit het package <code>ukbabynames</code>. Dit package moet je geïnstalleerd hebben en aanroepen voor je de opdrachten kunt maken.</p>
+<div id="fig-fiona" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="IMS_H1_ex15.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;2.1: Grafiek bij opgave 15 in hoofdstuk 1 van IMS.</figcaption>
+</figure>
+</div>
+<section id="sec-zichtbaar" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sec-zichtbaar">Het zichtbaar maken van de datapunten</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<p>Met onderstaande code kun je de aanzet maken voor de grafiek. Als je deze uitvoert, krijg je een lege plot (zie <a href="#fig-fiona-leeg">Figuur&nbsp;<span>2.2</span></a>). Pas de code zodanig aan dat de datapunten zichtbaar worden. De lijnen en kleuren per land voegen we later toe.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>ukbabynames <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">filter</span>(..., ..., ...) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">labs</span>(</span>
+<span id="cb19-5"><a href="#cb19-5"></a>        <span class="at">title =</span> <span class="st">"Number of baby girls named Fiona"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6"></a>        <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb19-7"><a href="#cb19-7"></a>        <span class="at">y =</span> <span class="st">"Number of babies"</span>,</span>
+<span id="cb19-8"><a href="#cb19-8"></a>        <span class="at">color =</span> <span class="st">"Nation"</span>, <span class="at">linetype =</span> <span class="st">"Nation"</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a>      ) <span class="sc">+</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb19-11"><a href="#cb19-11"></a>  <span class="fu">theme</span>(</span>
+<span id="cb19-12"><a href="#cb19-12"></a>        <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.7</span>),</span>
+<span id="cb19-13"><a href="#cb19-13"></a>        <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)</span>
+<span id="cb19-14"><a href="#cb19-14"></a>        )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<p>Let op dat je de data eerst inperkt tot meisjes met de naam Fiona die in of na 2000 geboren zijn.</p>
+</div>
+<div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1. bekijken van de data, geen aanpassingen nodig</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(ukbabynames)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+   year sex   name        n  rank nation         
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;          
+1  1996 F     SOPHIE   7087     1 England &amp; Wales
+2  1996 F     CHLOE    6824     2 England &amp; Wales
+3  1996 F     JESSICA  6711     3 England &amp; Wales
+4  1996 F     EMILY    6415     4 England &amp; Wales
+5  1996 F     LAUREN   6299     5 England &amp; Wales
+6  1996 F     HANNAH   5916     6 England &amp; Wales</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>(ukbabynames)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 565,817
+Columns: 6
+$ year   &lt;dbl&gt; 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, 1996, 199…
+$ sex    &lt;chr&gt; "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F"…
+$ name   &lt;chr&gt; "SOPHIE", "CHLOE", "JESSICA", "EMILY", "LAUREN", "HANNAH", "CHA…
+$ n      &lt;dbl&gt; 7087, 6824, 6711, 6415, 6299, 5916, 5866, 5828, 5206, 4948, 464…
+$ rank   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, …
+$ nation &lt;chr&gt; "England &amp; Wales", "England &amp; Wales", "England &amp; Wales", "Engla…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#2. datapunten filteren en zichtbaar maken: toevoegen mapping en geom_point()</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  ukbabynames <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(name <span class="sc">==</span> <span class="st">"Fiona"</span>, sex <span class="sc">==</span> <span class="st">"F"</span>, year <span class="sc">&gt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_point</span>() <span class="sc">+</span>        <span class="co">#hier worden de punten toegevoegd</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Number of baby girls named Fiona"</span>,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Number of babies"</span>,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"Nation"</span>, <span class="at">linetype =</span> <span class="st">"Nation"</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme</span>(</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.7</span>),</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>      )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2
+3.5.0.
+ℹ Please use the `legend.position.inside` argument of `theme()` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-fiona-leeg" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum3_files/figure-html/fig-fiona-leeg-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;2.2: een nog lege grafiek</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="lijnen-toevoegen-per-groep" class="level2">
+<h2 class="anchored" data-anchor-id="lijnen-toevoegen-per-groep">Lijnen toevoegen per groep</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-3" role="tab" aria-controls="tabset-9-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<p>Voeg nu de lijnen toe. Zorg dat er aparte lijnen komen voor ieder land. Hiervoor gebruik je de aes-mapping <code>group =</code>.</p>
+</div>
+<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<p>Bedenk welk <code>geom</code> je hiervoor nodig hebt. Zie eventueel het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2 cheatsheet</a> voor een overzicht.</p>
+</div>
+<div id="tabset-9-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#lijnen toevoegen via geom_line()</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  ukbabynames <span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(name <span class="sc">==</span> <span class="st">"Fiona"</span>, sex <span class="sc">==</span> <span class="st">"F"</span>, year <span class="sc">&gt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">group =</span> nation)) <span class="sc">+</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_line</span>() <span class="sc">+</span>                 <span class="co">#hier wordt een lijn toegevoegd</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Number of baby girls named Fiona"</span>,</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Number of babies"</span>,</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"Nation"</span>, <span class="at">linetype =</span> <span class="st">"Nation"</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">+</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme</span>(</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.7</span>),</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>      )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="de-kleur-en-lijnsoort-aanpassen-per-groep" class="level2">
+<h2 class="anchored" data-anchor-id="de-kleur-en-lijnsoort-aanpassen-per-groep">De kleur en lijnsoort aanpassen per groep</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-3" role="tab" aria-controls="tabset-10-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
+<p>Zorg tot slot dat de datapunten en lijnen per land een kleur krijgen en dat het type lijn per land verschilt. Wat kun je op basis van deze grafiek concluderen?</p>
+</div>
+<div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
+<p>Bedenk om welke <em>aesthetics</em> het gaat. Zie hiervoor het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2 cheatsheet</a>.</p>
+</div>
+<div id="tabset-10-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co">#lijnen en punten een kleur geven, lijntype aanpassen</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="co">#het lijntype pas je aan met de aes-mapping 'linetype'</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>  ukbabynames <span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a>    <span class="fu">filter</span>(name <span class="sc">==</span> <span class="st">"Fiona"</span>, sex <span class="sc">==</span> <span class="st">"F"</span>, year <span class="sc">&gt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">group =</span> nation, <span class="at">colour =</span> nation, <span class="at">linetype =</span> nation)) <span class="sc">+</span> <span class="co">#door toevoeging van colour en linetype is group = nation nu overbodig. Deze kun je verwijderen.</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a>    <span class="fu">labs</span>(</span>
+<span id="cb27-9"><a href="#cb27-9"></a>      <span class="at">title =</span> <span class="st">"Number of baby girls named Fiona"</span>,</span>
+<span id="cb27-10"><a href="#cb27-10"></a>      <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb27-11"><a href="#cb27-11"></a>      <span class="at">y =</span> <span class="st">"Number of babies"</span>,</span>
+<span id="cb27-12"><a href="#cb27-12"></a>      <span class="at">color =</span> <span class="st">"Nation"</span>, <span class="at">linetype =</span> <span class="st">"Nation"</span></span>
+<span id="cb27-13"><a href="#cb27-13"></a>    ) <span class="sc">+</span></span>
+<span id="cb27-14"><a href="#cb27-14"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb27-15"><a href="#cb27-15"></a>    <span class="fu">theme</span>(</span>
+<span id="cb27-16"><a href="#cb27-16"></a>      <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.7</span>),</span>
+<span id="cb27-17"><a href="#cb27-17"></a>      <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)</span>
+<span id="cb27-18"><a href="#cb27-18"></a>    )  </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><em>Wat kun je op basis van deze grafiek concluderen?</em> Aan het begin van deze eeuw was de naam <em>Fiona</em> veel populairder in Schotland dan in Noord-Ierland. De afname is in Schotland veel sterker geweest.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="code-annoteren" class="level2">
+<h2 class="anchored" data-anchor-id="code-annoteren">Code annoteren</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-3" role="tab" aria-controls="tabset-11-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
+<p>Bekijk de code in de uitwerking van de vorige opdracht en kopieer deze. Geef vervolgens in de code aan wat de bijdrage is van de code in regels 12, 16 en 17.</p>
+</div>
+<div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
+<p>Schakel steeds een stukje code uit met <code>#</code> en kijk goed wat er verandert in hoe de grafiek eruit ziet.</p>
+</div>
+<div id="tabset-11-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">#lijnen en punten een kleur geven, lijntype aanpassen</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="co">#het lijntype pas je aan met de aes-mapping 'linetype'</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>  ukbabynames <span class="sc">%&gt;%</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a>    <span class="fu">filter</span>(name <span class="sc">==</span> <span class="st">"Fiona"</span>, sex <span class="sc">==</span> <span class="st">"F"</span>, year <span class="sc">&gt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">group =</span> nation, <span class="at">colour=</span>nation, <span class="at">linetype=</span>nation)) <span class="sc">+</span> </span>
+<span id="cb28-6"><a href="#cb28-6"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a>    <span class="fu">labs</span>(</span>
+<span id="cb28-9"><a href="#cb28-9"></a>      <span class="at">title =</span> <span class="st">"Number of baby girls named Fiona"</span>,</span>
+<span id="cb28-10"><a href="#cb28-10"></a>      <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb28-11"><a href="#cb28-11"></a>      <span class="at">y =</span> <span class="st">"Number of babies"</span>, </span>
+<span id="cb28-12"><a href="#cb28-12"></a>      <span class="at">color =</span> <span class="st">"Nation"</span>, <span class="at">linetype =</span> <span class="st">"Nation"</span>               <span class="co">#zorgt dat er een legenda verschijnt met Nation als titel i.p.v. nation</span></span>
+<span id="cb28-13"><a href="#cb28-13"></a>    ) <span class="sc">+</span></span>
+<span id="cb28-14"><a href="#cb28-14"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb28-15"><a href="#cb28-15"></a>    <span class="fu">theme</span>(</span>
+<span id="cb28-16"><a href="#cb28-16"></a>      <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.7</span>),                      <span class="co">#bepaalt positionering van de legenda</span></span>
+<span id="cb28-17"><a href="#cb28-17"></a>      <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)   <span class="co">#zet achtergrondkleur legenda op wit</span></span>
+<span id="cb28-18"><a href="#cb28-18"></a>    )  </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-fiona-extra" class="level2">
+<h2 class="anchored" data-anchor-id="sec-fiona-extra">Meer data zichtbaar maken</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-3" role="tab" aria-controls="tabset-12-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
+<p>Maak tot slot ook de datapunten van voor 2000 zichtbaar. Wat valt je op?</p>
+</div>
+<div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
+<p>Kijk nog eens terug naar het begin van deze opdracht: hoe heb je toen bepaald welke datapunten zichtbaar werden?</p>
+</div>
+<div id="tabset-12-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#datapunten van voor 2000 zichtbaar maken via filter, verwijderen van 'year &gt;= 2000'</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  ukbabynames <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(name <span class="sc">==</span> <span class="st">"Fiona"</span>, sex <span class="sc">==</span> <span class="st">"F"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">group =</span> nation, <span class="at">colour =</span> nation, <span class="at">linetype =</span> nation)) <span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Number of baby girls named Fiona"</span>,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Number of babies"</span>,</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"Nation"</span>, <span class="at">linetype =</span> <span class="st">"Nation"</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.7</span>),</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    )    </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><em>Wat valt op?</em> Blijkbaar zijn er geen gegevens voor Noord-Ierland van voor 1997. Voor de Schotse data zien we dat de populariteit van de naam Fiona behoorlijk is teruggelopen sinds halverwege de jaren 70.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="deel-2-my-first-quarto" class="level1">
+<h1>Deel 2: My first Quarto</h1>
+<p>Tot nu toe hebben we <code>R</code>-code steeds in een <code>R</code>-script gemaakt. De output werd steeds zichtbaar in <code>R</code> Console of het Plots-window in <code>RStudio</code>. Hoewel dit een handige manier is om analyses uit te werken, is het wat minder handig om analyses te delen met anderen (mede-onderzoekers of je docent). Als je bijvoorbeeld de plaatjes die je hebt gemaakt wilt delen met iemand dan zul je die apart moeten opslaan of naar een ander bestand (bijv. Word) moeten kopiëren. Dit werkt op zich prima, maar het kan wat onhandig zijn wanneer je bijvoorbeeld nog kleine dingetjes wilt veranderen (bijv. de naam van de x-as toch aanpassen). In dat geval moet je het plaatje weer opnieuw kopiëren naar het andere bestand. Er is gelukkig een handiger alternatief en dat is het werken met een <code>Quarto</code> (of <code>R Markdown</code>) document. In zo’n document komt je output (bijv. een grafiek) direct onder je code te staan en kun je daarnaast ook nog gewone tekst typen, wanneer je bijvoorbeeld antwoord op een vraag wilt geven of een toelichting wilt schrijven bij wat je ziet in de data. Het document kun je vervolgens omzetten naar bijvoorbeeld een <code>html</code>-bestand of een <code>pdf</code>-bestand. De practicumopdracht die je nu leest is bijvoorbeeld op deze manier gemaakt. In het tweede deel van dit practicum ga je zelf proberen om zo’n <code>Quarto</code>-document te maken. We gebruiken hiervoor je uitwerkingen van Opdracht 2 van dit practicum over de naam <em>Fiona</em>.</p>
+<p>Op Brightspace vind je een video met een korte inleiding over het werken met <code>Quarto</code>. Je werkt vervolgens je eigen <code>Quarto</code>-document uit. Download hiervoor het bestand <code>Practicum3.qmd</code> van Brightspace en zet het in de map van je <code>R</code>-project. Open het bestand en bewerk het. Doorloop hierbij de volgende stappen:</p>
+<ol type="1">
+<li><p>Verander de titel bovenaan het document (nu <em>My first Quarto</em>) en voeg je eigen naam toe (nu <em>Mijn naam</em>).</p></li>
+<li><p>Maak een sectie <em>laden van benodigde packages</em> met daarin een blok met <code>R</code>-code waarin je de benodigde packages aanroept.</p></li>
+<li><p>Maak een sectie <em>het maken van een grafiek</em> met daarin een blok met <code>R</code>-code waarin je je uiteindelijke code voor de uieindelijke grafiek uit Opdracht 2 (met de extra data) toevoegt.</p></li>
+<li><p>Zorg dat de grafiek in je output-document (het uiteindelijke <code>html</code>-bestand dat ontstaat nadat je op Render hebt geklikt) een beschrijving (<em>caption</em>) krijgt. Om te checken of deze code nog steeds werkt kun je je cursor in het blok met code plaatsen en <code>Ctrl+Enter</code> gebruiken net als in een gewoon script.</p></li>
+<li><p>Voeg nu in gewone tekst je antwoord toe op de laatste interpretatievraag uit Opdracht 2 (Wat valt je op aan het patroon in de data?).</p></li>
+<li><p><em>Render</em> je bestand, zodat je een <code>html</code>-bestand krijgt. Open dit bestand in een browser.</p></li>
+</ol>
+<p>Gelukt? Mooi! Vanaf nu maken we uitwerkingen niet meer in een script maar in een <code>Quarto</code>-bestand.</p>
+<p>Je vindt een bestand <code>Practicum3_uitwerking.qmd</code> op Brightspace met een voorbeelduitwerking.</p>
+<hr>
+<p><em>Dat was het voor deze keer. Volgende week gaan we ons nog verder verdiepen in het maken van grafieken in R.</em></p>
+
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../_practica/practicum2.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practicum 2</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
