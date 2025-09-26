@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Onderzoeksontwerp en Beschrijvende Statistiek - 6&nbsp; Categorische variabelen</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./numeriek.html" rel="next">
+<link href="./grafieken.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./factoren.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Onderzoeksontwerp en Beschrijvende Statistiek</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welkom</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inleiding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bewerken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grafieken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factoren.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numeriek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Numerieke variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./practica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./_practica/practicum1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./_practica/practicum2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./_practica/practicum3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhoudsopgave</h2>
+   
+  <ul class="collapse">
+  <li><a href="#de-data-in-dit-hoofdstuk" id="toc-de-data-in-dit-hoofdstuk" class="nav-link active" data-scroll-target="#de-data-in-dit-hoofdstuk">De data in dit hoofdstuk</a></li>
+  <li><a href="#eigenaardigheden-van-barplots" id="toc-eigenaardigheden-van-barplots" class="nav-link" data-scroll-target="#eigenaardigheden-van-barplots"><span class="header-section-number">6.1</span> Eigenaardigheden van barplots</a></li>
+  <li><a href="#herordenen-van-levels" id="toc-herordenen-van-levels" class="nav-link" data-scroll-target="#herordenen-van-levels"><span class="header-section-number">6.2</span> Herordenen van levels</a></li>
+  <li><a href="#levels-hernoemen-of-samenvoegen" id="toc-levels-hernoemen-of-samenvoegen" class="nav-link" data-scroll-target="#levels-hernoemen-of-samenvoegen"><span class="header-section-number">6.3</span> Levels hernoemen of samenvoegen</a></li>
+  <li><a href="#meerdere-categorische-variabelen" id="toc-meerdere-categorische-variabelen" class="nav-link" data-scroll-target="#meerdere-categorische-variabelen"><span class="header-section-number">6.4</span> Meerdere categorische variabelen</a></li>
+  <li><a href="#kleuren" id="toc-kleuren" class="nav-link" data-scroll-target="#kleuren"><span class="header-section-number">6.5</span> Kleuren</a></li>
+  <li><a href="#een-level-highlighten" id="toc-een-level-highlighten" class="nav-link" data-scroll-target="#een-level-highlighten"><span class="header-section-number">6.6</span> Een level highlighten</a></li>
+  <li><a href="#verder-leren" id="toc-verder-leren" class="nav-link" data-scroll-target="#verder-leren">Verder leren</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-Factoren" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In dit hoofdstuk richten we ons op het inzichtelijk maken van data van categorische variabelen. De beschrijvende statistiek van categorische data is betrekkelijk eenvoudig: we kunnen de voorkomens van de categorieën tellen of de proportie die een categorie inneemt zichtbaar maken. Deze informatie kunnen we vervolgens zichtbaar maken in een grafiek. Uitdagingen zitten hem in het ordenen van de data in een grafiek. Hier leer je meer over de werking van factoren en hoe je die kunt manipuleren. We gebruiken dit hoofdstuk ook meteen om meer inzicht te krijgen in het gebruik van kleuren in je met <code>ggplot2</code> gemaakte grafieken.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Na afloop van dit hoofdstuk:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>kun je categorische variabelen (factoren) visualiseren met verschillende soorten barplots in <code>ggplot2</code>;</li>
+<li>kun je de levels van categorische variabelen (factoren) herordenen en van naam veranderen;</li>
+<li>kun je de kleuren van je grafieken naar wens aanpassen.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+codeboek
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In deze cursus leer je werken met zo’n 100 veelgebruikte functies in <code>R</code>. Het is belangrijk om voor jezelf een goed overzicht te houden van deze functies. Werk hier actief aan door een eigen codeboek aan te maken. Voeg tijdens of na afloop van het bestuderen van dit hoofdstuk de codes toe aan jouw codeboek.</p>
+</div>
+</div>
+<section id="de-data-in-dit-hoofdstuk" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="de-data-in-dit-hoofdstuk">De data in dit hoofdstuk</h2>
+<p>We beginnen met het inlezen van de data die we dit hoofdstuk gaan analyseren. We hebben een dataset <code>wordbank_WS_demographics.csv</code> met daarin demografische gegevens over de kinderen voor wie een vragenlijst over hun woordenschat is ingevuld. Naast welke taal ze spreken gaat het dan bijvoorbeeld om het hoeveelste kind ze in het gezin zijn en wat het opleidingsniveau van hun ouder/verzorger is. We lezen deze dataset eerst in:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"_datasets/wordbank_WS_demographics.csv"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>De belangrijkste informatie over de dataset maken we vervolgens zichtbaar met <code>glimpse()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(wordbank_demo)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 51,340
+Columns: 22
+$ downloaded           &lt;date&gt; 2025-07-14, 2025-07-14, 2025-07-14, 2025-07-14, …
+$ language             &lt;chr&gt; "Cantonese", "Cantonese", "Cantonese", "Cantonese…
+$ form                 &lt;chr&gt; "WS", "WS", "WS", "WS", "WS", "WS", "WS", "WS", "…
+$ dataset_name         &lt;chr&gt; "Tardif", "Tardif", "Tardif", "Tardif", "Tardif",…
+$ child_id             &lt;dbl&gt; 27998, 27999, 28000, 28001, 28002, 28003, 28004, …
+$ age                  &lt;dbl&gt; 17, 29, 16, 16, 16, 16, 16, 16, 16, 16, 17, 17, 1…
+$ comprehension        &lt;dbl&gt; 19, 600, 27, 29, 8, 4, 7, 36, 3, 74, 113, 61, 25,…
+$ production           &lt;dbl&gt; 19, 600, 27, 29, 8, 4, 7, 36, 3, 74, 113, 61, 25,…
+$ is_norming           &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, T…
+$ birth_order          &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ caregiver_education  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ ethnicity            &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ race                 &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ sex                  &lt;chr&gt; "Male", "Female", "Male", "Male", "Male", "Female…
+$ birth_weight         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ born_early_or_late   &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ gestational_age      &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ zygosity             &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ language_exposures   &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ health_conditions    &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ monolingual          &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, T…
+$ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, T…</code></pre>
+</div>
+</div>
+<p>De dataset heeft meer dan 50.000 observaties en telt 22 variabelen. Het overzicht laat ook meteen zien dat we voor veel variabelen missing datapunten hebben. Om het allemaal wat handzamer te maken, perken we de dataset in. We gaan alleen kijken naar de Europese Romaanse talen Frans, Italiaans, Portugees en Spaans en daarbij richten we ons op de variabelen <code>language</code> (welke taal het kind leert), <code>age</code> (leeftijd in maanden), <code>birth_order</code> (hoeveelste kind in het gezin), <code>sex</code> (geslacht van het kind) en <code>caregiver_education</code> (het opleidingsniveau van de ouder/verzorger). We zetten ook meteen alle variabelen die als type <code>character</code> hebben om naar een <code>factor</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="ot">&lt;-</span> wordbank_demo <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(language, age, birth_order, sex, caregiver_education) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(language <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"French (French)"</span>, <span class="st">" Italian"</span>, <span class="st">"Portuguese (European)"</span>, <span class="st">"Spanish (European)"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), as.factor))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Laten we nu eens tellen hoe vaak elke taal voorkomt in onze dataset:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  language                  n
+  &lt;fct&gt;                 &lt;int&gt;
+1 French (French)        1233
+2 Portuguese (European)  3012
+3 Spanish (European)      593</code></pre>
+</div>
+</div>
+<p>Wat opvalt is dat het Italiaans niet in de dataset voor lijkt te komen. Als we echter de oorspronkelijke dataset bekijken dan blijken er wel degelijk observaties voor het Italiaans te zijn (752 in totaal):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(language <span class="sc">==</span> <span class="st">"Italian"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nrow</span>()</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 752</code></pre>
+</div>
+</div>
+<p>Wat is hier fout gegaan? Als we de eerder gebruikte code goed bekijken dan zien we dat we een typefout hebben gemaakt. Er stond een extra spatie voor <em>Italian</em> <code>" Italian"</code>. Zoals we weten, neemt <code>R</code> alles letterlijk en aangezien er geen talen met de naam <code>Italian</code> bestaan krijgen we geen resultaten. Een extra herinnering dat we precies moeten blijven werken.</p>
+<p>We herstellen dit snel en krijgen nu wel de goede tellingen:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="ot">&lt;-</span> wordbank_demo <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(language, age, birth_order, sex, caregiver_education) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(language <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"French (French)"</span>, <span class="st">"Italian"</span>, <span class="st">"Portuguese (European)"</span>, <span class="st">"Spanish (European)"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), as.factor))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  language                  n
+  &lt;fct&gt;                 &lt;int&gt;
+1 French (French)        1233
+2 Italian                 752
+3 Portuguese (European)  3012
+4 Spanish (European)      593</code></pre>
+</div>
+</div>
+<p>Zoals gezegd bieden categorische variabelen niet veel opties qua beschrijvende statistiek. We kunnen de tellingen nog omzetten in proporties (en eventueel percentages). Dit doen we door voort te bouwen op onze datatabel met tellingen. Met de functie <code>sum()</code> kunnen we getallen bij elkaar optellen. In dit geval doen we dat met alle getallen in de kolom <code>n</code>. Dit levert ons het totaal aantal talen op. Wanneer we de variabele <code>n</code> nu delen door dit totaal dan krijgen we de proportie die elke taal inneemt in onze dataset. We zien in de output dat <code>R</code> met één commando <code>n/sum(n)</code> voor elke waarde van <code>n</code> de bijbehorende proportie geeft. We hoeven dit dus niet voor elke taal apart te doen. We ronden de proporties tot slot af op twee decimalen met <code>round()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>counts_romance <span class="ot">&lt;-</span> wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">proportion =</span> n<span class="sc">/</span><span class="fu">sum</span>(n),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion =</span> <span class="fu">round</span>(proportion, <span class="dv">2</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>counts_romance</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  language                  n proportion
+  &lt;fct&gt;                 &lt;int&gt;      &lt;dbl&gt;
+1 French (French)        1233       0.22
+2 Italian                 752       0.13
+3 Portuguese (European)  3012       0.54
+4 Spanish (European)      593       0.11</code></pre>
+</div>
+</div>
+</section>
+<section id="eigenaardigheden-van-barplots" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="eigenaardigheden-van-barplots"><span class="header-section-number">6.1</span> Eigenaardigheden van barplots</h2>
+<p>De beschrijvende statistieken van categorische variabelen worden traditioneel zichtbaar gemaakt met staafdiagrammen, hoewel we hier ook punten zouden kunnen gebruiken. In <code>ggplot</code> gebruiken we hiervoor het geom <code>geom_bar()</code> of <code>geom_col()</code>. Als je de tellingen door <code>R</code> wilt laten uitvoeren tijdens het maken van de grafiek kies je voor <code>geom_bar()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"wheat"</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We hebben hier alleen een variabele meegegeven voor op de x-as, <code>geom_bar</code> berekent achter de schermen zelf de aantallen per categorie voor op de y-as. De standaard is hier <code>stat(count)</code> en deze default zien we terug in de naam van de y-as. Dat <code>geom_bar()</code> puur het aantal voorkomens in de dataset telt, zien we duidelijk als we onze datatabel waarin we zelf de aantallen hebben berekend als input meegeven. We krijgen dan iets dat op het eerste gezicht mogelijk onverwacht is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>counts_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language)) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"wheat"</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Dit staafdiagram laat zien dat elke taal één keer voorkomt in de dataset. Dit klopt inderdaad, want de datatabel telt voor elke taal één regel. Er zijn twee opties om onze eigen telling te laten zien (i) de statistiek van <code>geom_bar()</code> veranderen, (ii) het geom <code>geom_col()</code> gebruiken.</p>
+<p>Zoals gezegd rekent <code>geom_bar()</code> standaard met de statistiek <code>count</code>. Deze statistiek kun je veranderen in het geom door <code>stat =</code> te specificeren als <code>identity</code>. Het geom gaat nu niet meer zelf tellen, maar gebruikt de waarden uit de variabele <code>n</code> in onze eigen telling. We moeten dan wel bij de aesthetics mapping van <code>ggplot</code> aangeven dat we deze variabele <code>n</code> willen afbeelden op de y-as:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>counts_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"wheat"</span>) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Het tweede alternatief <code>geom_col()</code> is eigenlijk een afkorting voor <code>geom_bar(stat = "identity")</code>. Om dit geom te gebruiken moet je dus altijd eerst zelf de tellingen uitvoeren. Die geef je mee als variabele. Dit geom neemt dus altijd twee variabelen als argument onder <code>aes()</code>. Het geom <code>geom_col()</code> geeft je volledige controle over welke getallen worden afgebeeld. Je moet ze alleen wel eerst zelf berekenen. We zien dat dit geom precies dezelfde grafiek oplevert. We hebben alleen de kleur aangepast om de twee varianten uit elkaar te houden.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"peachpuff2"</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Aangezien je <code>geom_col()</code> zelf de getallen die je wilt afbeelden moet meegeven is het ook meteen te gebruiken voor proporties. We veranderen hiervoor alleen de mapping van de y-variabele naar <code>y = proportion</code> in de <code>aes()</code> van <code>ggplot()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>counts_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"peachpuff2"</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="herordenen-van-levels" class="level2 page-columns page-full" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="herordenen-van-levels"><span class="header-section-number">6.2</span> Herordenen van levels</h2>
+<p>In al onze grafieken zijn de talen op de x-as in alfabetische volgorde afgebeeld. Dit komt omdat <code>R</code> bij het aanmaken van een factor met <code>as.factor()</code> de levels van de factor alfabetisch ordent. De grafiek volgt dus precies de informatie in de factor. Dit is alleen niet wat we altijd willen. Wanneer er geen logische volgorde in een factor zit (wat bijvoorbeeld wel zo is als het om een geordende factor (of ordinale variabele) gaat, zie <a href="#sec-ordered"><span>Paragraaf&nbsp;6.2.1</span></a>) is alfabetisch niet altijd de handigste optie om inzicht in de data te krijgen. Zeker wanneer er veel factorlevels zijn, kan dit ervoor zorgen dat de grafiek nogal chaotisch oogt. Om dit te verbeteren kunnen we de levels ordenen op basis van hun waarde (aantal keer dat het level voorkomt of de proportie). In andere woorden we ordenen van groot naar klein (of van klein naar groot). Om dit voor elkaar te krijgen moeten we de levels anders ordenen. Het heeft dus geen zin de data in volgorde van groot naar klein te zetten. Als we dat namelijk doen, dan krijgen we nog steeds dezelfde grafiek:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>counts_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(n)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  language                  n proportion
+  &lt;fct&gt;                 &lt;int&gt;      &lt;dbl&gt;
+1 Spanish (European)      593       0.11
+2 Italian                 752       0.13
+3 French (French)        1233       0.22
+4 Portuguese (European)  3012       0.54</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>counts_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(n) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> proportion)) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"peachpuff2"</span>) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Het package <code>forcats</code> dat onderdeel is van <code>tidyverse</code> en dus meteen wordt geladen als je <code>library(tidyverse)</code> aanroept (je hoeft het dus niet apart aan te roepen) heeft een groot aantal functies waarmee je factoren kunt manipuleren. Deze functies beginnen allemaal met <code>fct_</code>. Zo ordent de functie <code>fct_infreq</code> de levels op basis van het aantal voorkomens in de ruwe data met het level dat het meest voorkomt eerst. Om deze ordening zichtbaar te maken moeten we deze toepassen binnen een <code>mutate()</code>. Let op: in onderstaande code veranderen we de ordening niet in de oorspronkelijke datatabel <code>wordbank_demo_romance</code>, maar alleen in de tabel die door middel van <em>pipes</em> naar de functie <code>ggplot()</code> wordt gestuurd. Willen we het blijvend veranderen dan moeten we de <code>mutate</code>-stap toewijzen aan de datatabel met <code>&lt;-</code> en vervolgens deze datatabel naar <code>ggplot()</code> sturen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">language =</span> <span class="fu">fct_infreq</span>(language)) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language)) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"wheat"</span>) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Wil je de volgorde omdraaien naar van klein naar groot dan kun je <code>fct_rev()</code> gebruiken. We passen deze hier in een keer toe samen met <code>fct_infreq()</code> door de <em>pipe</em> te gebruiken binnen <code>mutate()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">language =</span> language <span class="sc">%&gt;%</span> <span class="fu">fct_infreq</span>() <span class="sc">%&gt;%</span> <span class="fu">fct_rev</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language)) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"wheat"</span>) <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Er is ook de functie <code>fct_reorder()</code> die deze twee stappen in een keer kan uitvoeren. Deze functie neemt twee argumenten: (i) de variabele waarvan je de levels wilt aanpassen en (ii) de variabele op basis waarvan je de levels wilt ordenen (hier <code>n</code>).</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language) <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">language =</span> <span class="fu">fct_reorder</span>(language, n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"peachpuff2"</span>) <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-fact-language" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="factoren_files/figure-html/fig-fact-language-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;6.1: Staafdiagram met de x-as geordend van klein naar groot met <code>fct_reorder()</code>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Ook in dit geval kunnen we het eerste argument (<code>language</code>) buiten de functie zetten met een <em>pipe</em> (in regel 3). Door de mapping van <code>x</code> en <code>y</code> om te wisselen (regel 4) maken we er meteen een liggend staafdiagram van. Deze optie maakt het vaak makkelijker om verschillen te zien, zeker als die niet erg groot zijn.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">count</span>(language) <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">mutate</span>(<span class="at">language =</span> language <span class="sc">%&gt;%</span> <span class="fu">fct_reorder</span>(n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> language)) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"peachpuff2"</span>) <span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Het draaien van de grafiek kan ook met de functie <code>coord_flip()</code>. Deze is alleen te gebruiken als je niet al een andere <code>coord_</code>-functie toepast in je grafiek. Wanneer je dat wel doet, zul je de variabelen moeten verwisselen in <code>aes()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language) <span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">language =</span> <span class="fu">fct_reorder</span>(language, n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"peachpuff2"</span>) <span class="sc">+</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<section id="sec-ordered" class="level3 page-columns page-full" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="sec-ordered"><span class="header-section-number">6.2.1</span> Een geordende factor</h3>
+<p>Bij geordende factoren kun je niet vrijelijk de levels herordenen, omdat de ordening hier een betekenis heeft. Laten we dit eens bekijken aan de hand van de variabele <code>birth_order</code>. Zoals de naam als zegt gaat het hier om een geordende factor. De variabele geeft namelijk de volgorde van geboorte in het gezin aan. We maken een eerste staafdiagram van deze variabele:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> birth_order)) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"olivedrab4"</span>) <span class="sc">+</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>De hoge staaf bij <code>NA</code> geeft aan dat deze informatie voor veel kinderen in de dataset niet geregistreerd is. Daarnaast valt vooral op dat de levels alfabetisch zijn geordend met ‘Fifth’ als eerste en niet <code>First</code>. Dit weerspiegelt de manier waarop <code>R</code> de ordening van de levels heeft geregistreerd:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(wordbank_demo_romance<span class="sc">$</span>birth_order)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Fifth"  "First"  "Fourth" "Second" "Sixth"  "Third" </code></pre>
+</div>
+</div>
+<p>Dit gaan we aanpassen. Om onze code overzichtelijk te houden, maken we eerst een vector aan met de juiste ordening:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>birth_order_levels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"First"</span>, <span class="st">"Second"</span>, <span class="st">"Third"</span>, <span class="st">"Fourth"</span>, <span class="st">"Fifth"</span>, <span class="st">"Sixth"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Met <code>fct_relevel()</code> kunnen we deze ordening nu toepassen op de variabele <code>birth_order</code>. Nadat de ordening is toegepast sturen we de datatabel naar <code>ggplot()</code>. Zie het resultaat in <a href="#fig-fact-birth_order">Figuur&nbsp;<span>6.2</span></a>.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(birth_order)) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">birth_order =</span> birth_order <span class="sc">%&gt;%</span> <span class="fu">fct_relevel</span>(birth_order_levels)) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> birth_order)) <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"olivedrab4"</span>) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"birth order"</span>) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-fact-birth_order" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="factoren_files/figure-html/fig-fact-birth_order-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;6.2: Staafdiagram met correcte ordening van een geordende factor.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="levels-hernoemen-of-samenvoegen" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="levels-hernoemen-of-samenvoegen"><span class="header-section-number">6.3</span> Levels hernoemen of samenvoegen</h2>
+<p>Soms wil je meer dan alleen de bestaand levels herordenen. Stel dat je onze eerdere grafiek <a href="#fig-fact-language">Figuur&nbsp;<span>6.1</span></a> wilt opnemen in een Nederlandstalig verslag. Je zult dan Nederlandse namen voor assen en levels willen gebruiken. Onze dataset bevat alleen Engelse namen. Het aanpassen van de namen van de assen kunnen we in <code>ggplot()</code> doen binnen <code>labs()</code> zoals we al eerder hebben gedaan. Het staat ons hier vrij om een naam te kiezen, dus dat kan ook een Nederlandse naam zijn. De namen van de levels van een variabele zullen we moeten hernoemen. Hiervoor gebruiken we <code>fct_recode()</code>, die we eerder al hebben gezien toen we namen aan numerieke levels toekenden (zie <a href="data.html#sec-variabele-aanpassen"><span>Paragraaf&nbsp;3.2.2</span></a>). We gebruiken <code>fct_recode()</code> in onderstaande code om elke taal een Nederlandse naam te geven. Let op dat de nieuwe levelnaam voor <code>=</code> komt zonder aanhalingstekens en de oude naam erachter met aanhalingstekens.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language) <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">language =</span> <span class="fu">fct_reorder</span>(language, n),</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">language =</span> language <span class="sc">%&gt;%</span> <span class="fu">fct_recode</span>(</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">Frans =</span> <span class="st">"French (French)"</span>,</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">Italiaans =</span> <span class="st">"Italian"</span>,</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">Portugees =</span> <span class="st">"Portuguese (European)"</span>,</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">Spaans =</span> <span class="st">"Spanish (European)"</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>         )) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"wheat"</span>) <span class="sc">+</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"taal"</span>,</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"aantal kinderen in dataset"</span>) <span class="sc">+</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Soms wil je het aantal levels reduceren bijvoorbeeld om je grafiek overzichtelijker te maken of omdat bepaalde levels weinig voorkomen in de data. Met <code>fct_collapse()</code> kun je meerdere levels samenvoegen tot een nieuw level (soms is <code>fct_other()</code> handiger, want minder typewerk). In onderstaand voorbeeld voegen we de levels <code>Fourth</code>, <code>Fifth</code> en <code>Sixth</code> samen tot een nieuw level <code>Fourth or later</code> dat we hier met spaties schrijven, omdat dat mooier staat in de grafiek. Om te zorgen dat <code>R</code> het als één variabele herkent, zetten we enkele aanhalingstekens (<em>backticks</em>) om deze nieuwe naam heen (dus: `Fourth or later`). De levels die we willen samenvoegen geven we mee als argumenten aan de functie <code>c()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(birth_order)) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">birth_order =</span> birth_order <span class="sc">%&gt;%</span> <span class="fu">fct_relevel</span>(birth_order_levels),</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">birth_order =</span> birth_order <span class="sc">%&gt;%</span> <span class="fu">fct_collapse</span>(<span class="st">`</span><span class="at">Fourth or later</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Fourth"</span>, <span class="st">"Fifth"</span>, <span class="st">"Sixth"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> birth_order)) <span class="sc">+</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"olivedrab4"</span>) <span class="sc">+</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"birth order"</span>) <span class="sc">+</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="meerdere-categorische-variabelen" class="level2 page-columns page-full" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="meerdere-categorische-variabelen"><span class="header-section-number">6.4</span> Meerdere categorische variabelen</h2>
+<p>We hebben ons tot nu toe gericht op grafieken met een enkele categorische variabele. De variabele geslacht is hier een voorbeeld van:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  sex        n
+  &lt;fct&gt;  &lt;int&gt;
+1 Female  2655
+2 Male    2785
+3 &lt;NA&gt;     150</code></pre>
+</div>
+</div>
+<p>Vaak willen we beschrijvende statistieken geven van meerdere categorische variabelen tegelijk. In onze dataset kunnen we bijvoorbeeld de verdeling van geslacht per taal bekijken. We halen wel eerst de missing values eruit met <code>!is.na()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language, sex)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 3
+  language              sex        n
+  &lt;fct&gt;                 &lt;fct&gt;  &lt;int&gt;
+1 French (French)       Female   558
+2 French (French)       Male     525
+3 Italian               Female   377
+4 Italian               Male     375
+5 Portuguese (European) Female  1424
+6 Portuguese (European) Male    1588
+7 Spanish (European)    Female   296
+8 Spanish (European)    Male     297</code></pre>
+</div>
+</div>
+<p>Omdat we twee levels hebben van de variabele <code>sex</code> en vier van de variabele <code>language</code> krijgen we <span class="math inline">\(2 \times 4\)</span> getallen terug. De volgorde waarin we de variabelen meegeven aan <code>count()</code> bepaalt de volgorde waarin <code>R</code> de data teruggeeft aan ons. Wanneer we eerst <code>sex</code> meegeven, dan worden de data geordend per level van die variabele, dus eerst alle waarden voor het eerste level <code>female</code> en dan voor het tweede level. Binnen elk level van <code>sex</code> worden de levels van <code>language</code> steeds getoond in de levelvolgorde van die variabele met <code>French (French)</code> als eerste.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex, language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 3
+  sex    language                  n
+  &lt;fct&gt;  &lt;fct&gt;                 &lt;int&gt;
+1 Female French (French)         558
+2 Female Italian                 377
+3 Female Portuguese (European)  1424
+4 Female Spanish (European)      296
+5 Male   French (French)         525
+6 Male   Italian                 375
+7 Male   Portuguese (European)  1588
+8 Male   Spanish (European)      297</code></pre>
+</div>
+</div>
+<p>De uitdaging ontstaat wanneer we proporties gaan berekenen. We moeten ons dan steeds de vraag stellen: proporties van wat? We hebben hier namelijk verschillende mogelijkheden en het aantal mogelijkheden wordt groter met het toenemen van het aantal variabelen. We kunnen bijvoorbeeld van elke combinatie van taal en geslacht de proportie binnen de dataset als geheel berekenen. Hiervoor bepalen we eerst het totaal aantal observaties (regel 4) en gebruiken dat als deler voor <code>n</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">count</span>(language, sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-4"><a href="#cb40-4"></a>  <span class="fu">mutate</span>(<span class="at">sum_total =</span> <span class="fu">sum</span>(n),</span>
+<span id="cb40-5"><a href="#cb40-5"></a>         <span class="at">proportion_total =</span> n<span class="sc">/</span>sum_total,</span>
+<span id="cb40-6"><a href="#cb40-6"></a>         <span class="at">proportion_total =</span> <span class="fu">round</span>(proportion_total, <span class="dv">2</span>))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 5
+  language              sex        n sum_total proportion_total
+  &lt;fct&gt;                 &lt;fct&gt;  &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt;
+1 French (French)       Female   558      5440             0.1 
+2 French (French)       Male     525      5440             0.1 
+3 Italian               Female   377      5440             0.07
+4 Italian               Male     375      5440             0.07
+5 Portuguese (European) Female  1424      5440             0.26
+6 Portuguese (European) Male    1588      5440             0.29
+7 Spanish (European)    Female   296      5440             0.05
+8 Spanish (European)    Male     297      5440             0.05</code></pre>
+</div>
+</div>
+<p>De kolom <code>proportion_total</code> laat zien dat binnen elke taal de proportie per geslacht ongeveer een gelijk aandeel van het geheel heeft.</p>
+<p>We kunnen de proporties ook per taal berekenen, dus bijvoorbeeld welk aandeel heeft het level <code>female</code> binnen het Frans? Hiervoor moeten we de totalen per taal berekenen. Dit doen we met de functie <code>group-by()</code>. Deze functie biedt de mogelijkheid om een volgende functie uit te voeren per level van een (of meerdere) variabele(n).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language, sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum_total =</span> <span class="fu">sum</span>(n),</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_total =</span> n<span class="sc">/</span>sum_total,</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_total =</span> <span class="fu">round</span>(proportion_total, <span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(language) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum_language =</span> <span class="fu">sum</span>(n))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 6
+# Groups:   language [4]
+  language              sex        n sum_total proportion_total sum_language
+  &lt;fct&gt;                 &lt;fct&gt;  &lt;int&gt;     &lt;int&gt;            &lt;dbl&gt;        &lt;int&gt;
+1 French (French)       Female   558      5440             0.1          1083
+2 French (French)       Male     525      5440             0.1          1083
+3 Italian               Female   377      5440             0.07          752
+4 Italian               Male     375      5440             0.07          752
+5 Portuguese (European) Female  1424      5440             0.26         3012
+6 Portuguese (European) Male    1588      5440             0.29         3012
+7 Spanish (European)    Female   296      5440             0.05          593
+8 Spanish (European)    Male     297      5440             0.05          593</code></pre>
+</div>
+</div>
+<p>We gebruiken die totalen per taal om vervolgens het aantal observaties erdoor te delen:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language, sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum_total =</span> <span class="fu">sum</span>(n),</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_total =</span> n<span class="sc">/</span>sum_total,</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_total =</span> <span class="fu">round</span>(proportion_total, <span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(language) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum_language =</span> <span class="fu">sum</span>(n),</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_language =</span> n<span class="sc">/</span>sum_language,</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_language =</span> <span class="fu">round</span>(proportion_language, <span class="dv">2</span>))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 10%">
+<col style="width: 18%">
+<col style="width: 13%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">language</th>
+<th style="text-align: left;">sex</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">sum_total</th>
+<th style="text-align: right;">proportion_total</th>
+<th style="text-align: right;">sum_language</th>
+<th style="text-align: right;">proportion_language</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">French (French)</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">558</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">1083</td>
+<td style="text-align: right;">0.52</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">French (French)</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">525</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">1083</td>
+<td style="text-align: right;">0.48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Italian</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">377</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">752</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Italian</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">375</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">752</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Portuguese (European)</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">1424</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.26</td>
+<td style="text-align: right;">3012</td>
+<td style="text-align: right;">0.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Portuguese (European)</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">1588</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">3012</td>
+<td style="text-align: right;">0.53</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spanish (European)</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">296</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">593</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spanish (European)</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">297</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">593</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>We zien hier dat binnen elke taal de proporties voor zowel <code>female</code> als <code>male</code> rond de .50 ligt.</p>
+<p>De laatste optie is per geslacht te berekenen welke proportie elke taal inneemt. Hiervoor berekenen we eerst het totaal aantal observaties per geslacht met <code>group_by(sex)</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>demo_romance <span class="ot">&lt;-</span> wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(sex)) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language, sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum_total =</span> <span class="fu">sum</span>(n),</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_total =</span> n<span class="sc">/</span>sum_total,</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_total =</span> <span class="fu">round</span>(proportion_total, <span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(language) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum_language =</span> <span class="fu">sum</span>(n),</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_language =</span> n<span class="sc">/</span>sum_language,</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_language =</span> <span class="fu">round</span>(proportion_language, <span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum_sex =</span> <span class="fu">sum</span>(n),</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_sex =</span> n<span class="sc">/</span>sum_sex,</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">proportion_sex =</span> <span class="fu">round</span>(proportion_sex, <span class="dv">2</span>))</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>demo_romance</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 17%">
+<col style="width: 6%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">language</th>
+<th style="text-align: left;">sex</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">sum_total</th>
+<th style="text-align: right;">proportion_total</th>
+<th style="text-align: right;">sum_language</th>
+<th style="text-align: right;">proportion_language</th>
+<th style="text-align: right;">sum_sex</th>
+<th style="text-align: right;">proportion_sex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">French (French)</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">558</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">1083</td>
+<td style="text-align: right;">0.52</td>
+<td style="text-align: right;">2655</td>
+<td style="text-align: right;">0.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">French (French)</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">525</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">1083</td>
+<td style="text-align: right;">0.48</td>
+<td style="text-align: right;">2785</td>
+<td style="text-align: right;">0.19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Italian</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">377</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">752</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">2655</td>
+<td style="text-align: right;">0.14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Italian</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">375</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">752</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">2785</td>
+<td style="text-align: right;">0.13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Portuguese (European)</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">1424</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.26</td>
+<td style="text-align: right;">3012</td>
+<td style="text-align: right;">0.47</td>
+<td style="text-align: right;">2655</td>
+<td style="text-align: right;">0.54</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Portuguese (European)</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">1588</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">3012</td>
+<td style="text-align: right;">0.53</td>
+<td style="text-align: right;">2785</td>
+<td style="text-align: right;">0.57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spanish (European)</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">296</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">593</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">2655</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spanish (European)</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">297</td>
+<td style="text-align: right;">5440</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">593</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">2785</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Dit voorbeeld laat zien dat je zelf als onderzoeker goed moet nadenken wat je wilt laten zien. Elke proportie vertelt een net wat ander verhaal.</p>
+<p>Hoewel het mogelijk is om de proporties te laten bereken door <code>geom_bar()</code> levert dit al snel complicaties op. Wij kiezen er daarom voor om zelf proporties te berekenen en deze af te beelden met <code>geom_col()</code>. Op deze manier houd je volledige controle over de data.</p>
+<p>Laten we eerst eens kijken of we de proportie geslacht per taal kunnen afbeelden.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> proportion_language)) <span class="sc">+</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion per language"</span>) <span class="sc">+</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Deze grafiek geeft nog weinig inzicht. We zullen hiervoor de staven moet kleuren op basis van de variabele <code>sex</code>. We voegen deze toe in de <code>aes()</code> van <code>ggplot()</code>, waar we een mapping maken met <code>fill</code> (N.B. <code>color</code> verandert de rand van de staaf niet de binnenkant.)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> proportion_language, <span class="at">fill =</span> sex )) <span class="sc">+</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion per language"</span>) <span class="sc">+</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Dit laat meteen een probleem zien dat ontstaat door factoren met lange namen van levels. Door het toevoegen van kleur is er een legenda bij gekomen en hierdoor is er minder ruimte voor de staven. De namen van de levels overlappen. Dit probleem geeft ons de mogelijkheid om wat meer opties van <code>ggplot()</code> te laten zien. Er zijn namelijk meerdere manieren om dit op te lossen. We kunnen de grafiek draaien of we kunnen de positie van de legenda veranderen. Dit laatste doen we binnen de functie <code>theme()</code> met de optie <code>legend.position</code>. We verplaatsen de legenda naar de onderkant van de grafiek (andere opties zijn <code>left</code>, <code>right</code>, <code>top</code> en <code>none</code> die we al eerder hebben gezien om de legenda geheel te verwijderen).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> proportion_language, <span class="at">fill =</span> sex )) <span class="sc">+</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion per language"</span>) <span class="sc">+</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We kunnen er ook voor kiezen om de labels van de x-as wat de draaien. Ook dit specificeren we binnen <code>theme()</code>. Er zijn talloze opties om hierbinnen het uiterlijk van de grafiek aan te passen, gebruik <code>?theme()</code> voor een overzicht. Hier passen we een rotatie van 45 graden (<code>angle = 45</code>) toe op de text van de x-as <code>axis.text.x</code> en we verplaatsen de tekst ook wat in de hoogte en de breedte met <code>vjust</code> en <code>hjust</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> language, <span class="at">y =</span> proportion_language, <span class="at">fill =</span> sex )) <span class="sc">+</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion per language"</span>) <span class="sc">+</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Wanneer we de proporties voor meer dan twee levels willen laten zien dan geeft een gestapeld staafdiagram niet altijd de beste optie. Het kan dan namelijk lastig worden om over staven heen gelijke levels te vergelijken, omdat die een ander beginpunt hebben.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> proportion_sex, <span class="at">fill =</span> language )) <span class="sc">+</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion per language"</span>) <span class="sc">+</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We kunnen er in dat geval voor kiezen om de elk level een eigen staaf te geven. Dat doen we binnen <code>geom_col()</code> door het argument <code>position = "dodge"</code> toe te voegen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> proportion_sex, <span class="at">fill =</span> language )) <span class="sc">+</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion per language"</span>) <span class="sc">+</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Dit is een verkorte schrijfwijze voor <code>position = position_dodge()</code> dat je kunt gebruiken om de afstand tussen de staven aan te passen:</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> proportion_sex, <span class="at">fill =</span> language )) <span class="sc">+</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">6</span>), <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion per language"</span>) <span class="sc">+</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-fact-sex-lang" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="factoren_files/figure-html/fig-fact-sex-lang-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;6.3: Staafdiagram met iets grotere afstand tussen de staven.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="kleuren" class="level2 page-columns page-full" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="kleuren"><span class="header-section-number">6.5</span> Kleuren</h2>
+<p>We hebben net kleuren gebruikt om de verschillende levels van een variabele binnen een andere variabele zichtbaar te maken. Dit biedt ons een mooie gelegenheid om wat dieper in te gaan op kleurgebruik binnen <code>R</code>. Het blijkt dat dit vaak een leuk onderdeel wordt gevonden van het maken van grafieken. Ook hier zijn de mogelijkheden eindeloos.</p>
+<p>Wanneer we een variabele via <code>aes()</code> afbeelden op een aesthetic waarin kleur een rol speelt (<code>color</code> of <code>fill</code>), dan zal <code>R</code> in principe zelf de kleuren bepalen die gebruikt worden, zoals te zien in <a href="#fig-fact-sex-lang">Figuur&nbsp;<span>6.3</span></a>. Je kunt deze kleuren echter ook handmatig aanpassen. Met het commando <code>colors()</code> krijg je een overzicht van alle in <code>R</code> gedefinieerde kleurennamen, voor een visueel overzicht zie <a href="hier">https://sites.stat.columbia.edu/tzheng/files/Rcolor.pdf</a>. Je kunt deze kleurennamen gebruiken wanneer je een vaste kleur wilt geven aan alle staven of punten in je grafiek. Dit hebben we aan het begin van het hoofdstuk steeds gedaan. In dit geval wijs je deze kleur toe binnen het geom buiten <code>aes()</code> met <code>color = "&lt;kleurnaam&gt;"</code>, zie bijvoorbeeld <a href="#fig-fact-language">Figuur&nbsp;<span>6.1</span></a> waar we <code>peachpuff2</code> als kleurnaam hebben toegepast. Wanneer je een variabele naar een kleurattribuut mapt binnen <code>aes()</code> en je wilt de kleuren handmatig aanpassen dan moet je <code>scale_fill_manual()</code> toevoegen bij een mapping naar <code>fill</code> of <code>scale_color_manual()</code> bij een mapping naar <code>color</code>. Je geeeft dan met de functie <code>c()</code> aan het argument <code>values</code> evenveel kleurennamen mee als dat er levels zijn die je wilt kleuren. De kleuren worden in volgorde gekoppeld aan de levels van de factor. Hieronder hebben we dat gedaan voor <a href="#fig-fact-sex-lang">Figuur&nbsp;<span>6.3</span></a>. Dit resulteert in <a href="#fig-fact-sex-kleur">Figuur&nbsp;<span>6.4</span></a>.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> proportion_sex, <span class="at">fill =</span> language )) <span class="sc">+</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">6</span>), <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"violetred1"</span>, <span class="st">"violetred2"</span>, <span class="st">"violetred3"</span>, <span class="st">"violetred4"</span>)) <span class="sc">+</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion per language"</span>) <span class="sc">+</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-fact-sex-kleur" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="factoren_files/figure-html/fig-fact-sex-kleur-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;6.4: Handmatig de kleuren van de staven aangepast.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Wanneer je zelf kleuren gaat kiezen is het belangrijk om te zorgen dat de levels voldoende contrast hebben. In bovenstaand voorbeeld is dat niet heel erg duidelijk gelukt. Om je hierbij te helpen, bestaan er <em>paletten</em> van kleuren met voldoende contrast, op <a href="https://r-graph-gallery.com/38-rcolorbrewers-palettes.html">deze website</a> vind je een overzicht. Deze paletten voeg je toe met <code>scale_fill_brewer(palette = "&lt;palettenaam&gt;")</code> (of <code>scale_color_brewer()</code>). Hieronder gebruiken we het palette <code>PuRd</code>. Verder is het ook raadzaam om rekening te houden met kleurenblindheid. Hiervoor bestaan speciale paletten.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> proportion_sex, <span class="at">fill =</span> language )) <span class="sc">+</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(.<span class="dv">6</span>), <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"PuRd"</span>) <span class="sc">+</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"proportion per language"</span>) <span class="sc">+</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-45-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="een-level-highlighten" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="een-level-highlighten"><span class="header-section-number">6.6</span> Een level highlighten</h2>
+<p>Onze kennis over kleuren kunnen we toepassen om een level van een variabele te <em>highlighten</em>. Stel je voor dat je een verslag schrijft waarin je speciale aandacht hebt voor het Italiaans. Je zou er dan voor kunnen kiezen om dit level van de variabele <code>language</code> een andere kleur te geven dan de overige levels. Op deze manier springt het Italiaans er echt uit in je grafiek.</p>
+<p>Aangezien we te maken hebben met een mapping van een variabele naar kleur, kun je een nieuwe variabele aanmaken. We geven deze variabele hier de naam <code>lang_color</code>. Binnen deze variabele geven we <code>Italian</code> een andere waarde dan de overige levels. We doen dat met de functie <code>fct_other()</code>. Binnen deze functie kun je aangeven van welk(e) level(s) je de naam wilt bewaren met het argument <code>keep</code> en welke je een andere naam wilt geven. Deze levels krijgen standaard de naam <code>Other</code>, maar je kunt er ook voor kiezen dit een andere naam te geven.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language) <span class="sc">%&gt;%</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">language =</span> <span class="fu">fct_reorder</span>(language, n),</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">lang_color =</span> language <span class="sc">%&gt;%</span> <span class="fu">fct_other</span>(<span class="at">keep =</span> <span class="fu">c</span>(<span class="st">"Italian"</span>))) </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  language                  n lang_color
+  &lt;fct&gt;                 &lt;int&gt; &lt;fct&gt;     
+1 French (French)        1233 Other     
+2 Italian                 752 Italian   
+3 Portuguese (European)  3012 Other     
+4 Spanish (European)      593 Other     </code></pre>
+</div>
+</div>
+<p>We gebruiken deze nieuwe variabele <code>lang_other</code> vervolgens in de mapping van <code>fill</code> op het niveau van <code>geom_col()</code> (kan ook binnen <code>ggplot()</code>) en we voegen via <code>scale_fill_manual()</code> de kleuren toe die we willen gebruiken. Aangezien <code>Italian</code> voor <code>Other</code> komt, zal het Italiaans de rode kleur krijgen en de andere levels grijs.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>wordbank_demo_romance <span class="sc">%&gt;%</span> </span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(language) <span class="sc">%&gt;%</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">language =</span> <span class="fu">fct_reorder</span>(language, n),</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">lang_color =</span> language <span class="sc">%&gt;%</span> <span class="fu">fct_other</span>(<span class="at">keep =</span> <span class="fu">c</span>(<span class="st">"Italian"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> language)) <span class="sc">+</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> lang_color), <span class="at">show.legend =</span> F) <span class="sc">+</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"grey80"</span>)) <span class="sc">+</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="factoren_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="verder-leren" class="level2 unnumbered page-columns page-full">
+<h2 class="unnumbered anchored" data-anchor-id="verder-leren">Verder leren</h2>
+<ul>
+<li>Lees <a href="https://socviz.co/groupfacettx.html">hoofdstuk 4 (t/m 4.5)</a> en <a href="https://socviz.co/workgeoms.html#workgeoms">sectie 5.1</a> van <span class="citation" data-cites="IntroDataVis">Healy (<a href="index.html#ref-IntroDataVis" role="doc-biblioref">2019</a>)</span> voor meer inzicht in de eigenaardigheden van barplots.</li>
+<li><a href="https://r4ds.hadley.nz/layers">hoofdstuk 9</a> uit <span class="citation" data-cites="R4DS">Wickham et al. (<a href="index.html#ref-R4DS" role="doc-biblioref">2023</a>)</span> geeft een goed beeld van hoe geoms en facets werken in <code>ggplot2</code>.</li>
+<li><a href="https://r4ds.hadley.nz/factors">Hoofdstuk 16</a> uit R4DS geeft daarnaast een overzicht van het werken van factoren (zoals het veranderen van de ordening van levels).</li>
+<li>Zie voor een overzicht van wat je allemaal kunt doen met factoren het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf">forcats cheat sheet</a>.</li>
+<li>Alles over kleuren in R vind je op <a href="https://r-graph-gallery.com/ggplot2-color.html" class="uri">https://r-graph-gallery.com/ggplot2-color.html</a></li>
+<li>Het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2 cheat sheet</a> geeft een overzicht van de mogelijkheden die dit package biedt.</li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="ref-IntroDataVis" class="csl-entry" role="listitem">
+Healy, K. (2019). <em>Data Visualisation: A Practical Introduction.</em> Princeton University Press. <a href="https://socviz.co/">https://socviz.co/</a>
+</div><div id="ref-R4DS" class="csl-entry" role="listitem">
+Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em><span>R</span> for Data Science</em> (2de dr.). O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>
+</div></div><p>Nu zou je in staat moeten zijn Practicum 4 te maken.</p>
+
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./grafieken.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./numeriek.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Numerieke variabelen</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
