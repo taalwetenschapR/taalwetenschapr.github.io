@@ -295,7 +295,7 @@ Let op
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Sla je script regelmatig op, zodat je geen code kwijtraakt. Klik hiervoor op het floppy-disk-symbool of gebruik de sneltoetsen <code>Ctrl + S</code>/<code>cmd + S</code>.</p>
+<p>Sla je script regelmatig op, zodat je geen code kwijtraakt. Klik hiervoor op het floppy-disk-symbool of gebruik de sneltoetsen <code>Ctrl + S</code>/<code>Cmd + S</code>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled" title="Probeer het eerst zelf!">
@@ -319,10 +319,10 @@ Probeer het eerst zelf!
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Zorg het bestand <code>Dataset.txt</code> wordt ingelezen in <code>R</code> als datatabel en beschikbaar is voor verwerking onder de naam <code>uitdrukkingen</code>. Als het goed is zul je in het venster <code>Environment</code>, rechtsboven in RStudio, nu een kopje <code>Data</code> vinden met daaronder het dataframe <code>uitdrukkingen</code>.</p>
+<p>Zorg het bestand <code>Dataset.txt</code> wordt ingelezen in <code>R</code> als datatabel en beschikbaar is voor verwerking onder de naam <code>uitdrukkingen</code>. Als het gelukt is, zul je in het venster <code>Environment</code>, rechtsboven in RStudio, nu een kopje <code>Data</code> vinden met daaronder het dataframe <code>uitdrukkingen</code>.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Gebruik de functie <code>read_delim()</code>, zie <a href="../data.html#sec-data-inlezen">sectie&nbsp;<span>3.2</span></a>. Zorg wel dat je het package <code>tidyverse</code> hebt geladen (en dat het geïnstalleerd is, zie <a href="../R.html#sec-packages">sectie&nbsp;<span>2.3</span></a>.</p>
+<p>Gebruik de functie <code>read_delim()</code>, zie <a href="../data.html#sec-data-inlezen">sectie&nbsp;<span>3.2</span></a>. Zorg wel dat je het package <code>tidyverse</code> hebt geladen (en dat het geïnstalleerd is), zie <a href="../R.html#sec-packages">sectie&nbsp;<span>2.3</span></a>.</p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
@@ -404,7 +404,7 @@ Probeer het eerst zelf!
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
-<p>Een andere manier om de dataset zichtbaar te maken is via de functie <code>View()</code>.Deze functie is echter alleen te gebruiken in <code>RStudio</code>. Maak de dataset zichtbaar met deze functie.</p>
+<p>Een andere manier om de dataset zichtbaar te maken is via de functie <code>View()</code>. Deze functie is echter alleen te gebruiken in <code>RStudio</code>. Maak de dataset zichtbaar met deze functie.</p>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
@@ -438,7 +438,7 @@ Probeer het eerst zelf!
 <p>Pas de namen van de variabelen de datatabel aan zodat ze voldoen aan onze richtlijnen.</p>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
-<p>Je kunt dit handmatig doen met de functie <code>rename()</code> of met de functie <code>clean_names()</code> uit het package <code>janitor</code>. Zie <a href="../data.html#sec-variabelennamen">Sectie&nbsp;<span>3.2.1</span></a>.</p>
+<p>Je kunt dit handmatig doen met de functie <code>rename()</code> of met de functie <code>clean_names()</code> uit het package <code>janitor</code>. Zie <a href="../data.html#sec-variabelennamen">sectie&nbsp;<span>3.2.1</span></a>.</p>
 </div>
 <div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
 <div class="cell">
@@ -463,10 +463,13 @@ Probeer het eerst zelf!
 <section id="meetniveaus-van-de-variabelen" class="level2">
 <h2 class="anchored" data-anchor-id="meetniveaus-van-de-variabelen">Meetniveaus van de variabelen</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Opdracht</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Hint</a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
-<p>Beschrijf de meetniveaus van alle variabelen in het databestand en geef kort aan waarom je voor de betreffende meetniveaus gekozen hebt.</p>
+<p>Beschrijf het type van alle variabelen in het databestand en geef kort aan waarom je voor de betreffende type gekozen hebt.</p>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<p>Zie <a href="openintro-ims-netlify.app/data-hello#sec-variable-types">sectie 2.1</a> uit IMS.</p>
 </div>
 </div>
 </div>
@@ -477,7 +480,7 @@ Probeer het eerst zelf!
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
-<p>Gebruik de functie <code>str()</code> om de details van de variabelen in het databestand op te vragen. Op deze manier kun je zien van welk type de variabelen volgens <code>R</code> zijn. Kloppen deze door <code>R</code> toegekende typen met de meetniveaus uit de vorige vraag?</p>
+<p>Gebruik de functie <code>str()</code> om de details van de variabelen in het databestand op te vragen. Op deze manier kun je zien van welk type de variabelen volgens <code>R</code> zijn. Komen deze door <code>R</code> toegekende typen overeen met je eigen antwoorden uit de vorige vraag? Zo niet, wie heeft er gelijk?</p>
 </div>
 <div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
 <p>Zie <a href="../data.html#tbl-datatypes">Tabel&nbsp;<span>3.1</span></a>. Zie ook secties 1.5-1.9 uit SfL voor de verschillende type variabelen in <code>R</code>.</p>
@@ -520,7 +523,7 @@ Probeer het eerst zelf!
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-3" role="tab" aria-controls="tabset-9-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
-<p>Verander de variabele <code>proefpersoon</code> in een <code>factor</code>, zodat het door <code>R</code> als een categoriale variabele herkend wordt. Doe hetzelfde voor de variabelen <code>groep</code> en <code>geslacht</code>.</p>
+<p>Verander de variabele <code>proefpersoon</code> in een <code>factor</code>, zodat het door <code>R</code> als een categorische variabele herkend wordt. Doe hetzelfde voor de variabelen <code>groep</code> en <code>geslacht</code>.</p>
 </div>
 <div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
 <p>Gebruik de functie <code>mutate()</code> in combinatie met <code>as.factor()</code>, zie <a href="../data.html#sec-variabele-aanpassen">sectie&nbsp;<span>3.2.2</span></a>.</p>
