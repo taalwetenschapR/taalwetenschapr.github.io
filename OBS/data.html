@@ -696,7 +696,7 @@ Waar staat je databestand?
 # ℹ 1 more variable: unilemma_coverage &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<p>Met de functie <code>dinstinct()</code> voor datatabellen of <code>unique</code> voor vectoren kunnen we laten zien dat er in de 89 observaties in de data 42 verschillende talen voorkomen:</p>
+<p>Met de functie <code>dinstinct()</code> voor datatabellen of <code>unique()</code> voor vectoren kunnen we laten zien dat er in de 89 observaties in de data 42 verschillende talen voorkomen:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">distinct</span>(<span class="at">.data =</span> wordbank_datasets, language)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -794,7 +794,7 @@ Waar staat je databestand?
 5 woord5          2</code></pre>
 </div>
 </div>
-<p>Omdat de waarden van de variabele <code>frequentie</code> getallen zijn, denkt <code>R</code> dat we hier te maken hebben met een numerieke variabele. We kunnen dit weer omzetten met de functie <code>as.factor()</code> (dit doen we ook meteen voor de variabele <code>woord</code>), vervolgens kunnen we met de functie <code>recode()</code> de levels van deze factor expliciete namen geven. Wanneer we de datatabel nu weer bekijken dan zien we in plaats van getallen de namen van de levels. Dat maakt het inzichtelijker voor gebruikers van de data.</p>
+<p>Omdat de waarden van de variabele <code>frequentie</code> getallen zijn, denkt <code>R</code> dat we hier te maken hebben met een numerieke variabele. We kunnen dit weer omzetten met de functie <code>as.factor()</code> (dit doen we ook meteen voor de variabele <code>woord</code>), vervolgens kunnen we met de functie <code>fct_recode()</code> de levels van deze factor expliciete namen geven. Wanneer we de datatabel nu weer bekijken dan zien we in plaats van getallen de namen van de levels. Dat maakt het inzichtelijker voor gebruikers van de data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>woordfrequenties <span class="ot">&lt;-</span> <span class="fu">mutate</span>(woordfrequenties,</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">woord =</span> <span class="fu">as.factor</span>(woord),</span>
