@@ -264,8 +264,8 @@ div.csl-indent {
   <li><a href="#datasets-samenvoegen-en-opslaan" id="toc-datasets-samenvoegen-en-opslaan" class="nav-link" data-scroll-target="#datasets-samenvoegen-en-opslaan">Datasets samenvoegen en opslaan</a>
   <ul class="collapse">
   <li><a href="#inlezen-van-databestand-hulpwerkwoorden.txt" id="toc-inlezen-van-databestand-hulpwerkwoorden.txt" class="nav-link" data-scroll-target="#inlezen-van-databestand-hulpwerkwoorden.txt">Inlezen van databestand <code>hulpwerkwoorden.txt</code></a></li>
-  <li><a href="#samenvoegen-van-de-datasets" id="toc-samenvoegen-van-de-datasets" class="nav-link" data-scroll-target="#samenvoegen-van-de-datasets">Samenvoegen van de datasets</a></li>
-  <li><a href="#opslaan-van-de-nieuwe-dataset" id="toc-opslaan-van-de-nieuwe-dataset" class="nav-link" data-scroll-target="#opslaan-van-de-nieuwe-dataset">Opslaan van de nieuwe dataset</a></li>
+  <li><a href="#samenvoegen-van-de-datatabellen" id="toc-samenvoegen-van-de-datatabellen" class="nav-link" data-scroll-target="#samenvoegen-van-de-datatabellen">Samenvoegen van de datatabellen</a></li>
+  <li><a href="#opslaan-van-de-nieuwe-datatabel" id="toc-opslaan-van-de-nieuwe-datatabel" class="nav-link" data-scroll-target="#opslaan-van-de-nieuwe-datatabel">Opslaan van de nieuwe datatabel</a></li>
   </ul></li>
   <li><a href="#numerieke-samenvattingen-maken" id="toc-numerieke-samenvattingen-maken" class="nav-link" data-scroll-target="#numerieke-samenvattingen-maken">Numerieke samenvattingen maken</a>
   <ul class="collapse">
@@ -309,20 +309,20 @@ div.csl-indent {
 <section id="leerdoelen" class="level2">
 <h2 class="anchored" data-anchor-id="leerdoelen">Leerdoelen</h2>
 <ul>
+<li><p>Bekend raken met de belangrijkste ‘werkwoorden’ uit het <code>tidyverse</code>: <code>filter()</code>, <code>arrange()</code>, <code>select()</code>, <code>mutate()</code>, <code>summarize()</code>, <code>group_by()</code> en de pipe operator <code>%&gt;%</code>.</p></li>
 <li><p>Filteren, splitsen en sorteren van data</p></li>
 <li><p>Samenvoegen van datatabellen</p></li>
 <li><p>Maken van simpele numerieke samenvattingen van data</p></li>
 <li><p>Aanmaken van een steekproef uit een grotere dataset</p></li>
-<li><p>Bekend raken met de belangrijkste ‘werkwoorden’ uit het <code>tidyverse</code>: <code>filter()</code>, <code>arrange()</code>, <code>select()</code>, <code>mutate()</code>, <code>summarize()</code>, <code>group_by()</code> en de pipe operator <code>%&gt;%</code>.</p></li>
 </ul>
 </section>
 <section id="voorbereiding" class="level2">
 <h2 class="anchored" data-anchor-id="voorbereiding">Voorbereiding</h2>
-<p>Lees <a href="../bewerken.html">hoofdstuk&nbsp;<span>4</span></a> uit het dictaat. De benodigde <code>R</code>-functies zijn te vinden in het dictaat (zie ook eerdere hoofdstukken en practica). Functies die niet in het dictaat besproken worden, worden gegeven in de opdracht. Het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">dplyr cheatsheet</a> geeft een overzicht van relevante functies. Lees ook de algemene richtlijnen voor practica door.</p>
+<p>Lees <a href="../bewerken.html">hoofdstuk&nbsp;<span>4</span></a> uit het dictaat. De benodigde <code>R</code>-functies zijn te vinden in het dictaat (zie ook eerdere hoofdstukken en practica). Functies die niet in het dictaat besproken worden, worden gegeven in de opdracht. Het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">dplyr cheatsheet</a> geeft een overzicht van relevante functies. Lees ook de <a href="../practica.html">algemene richtlijnen voor practica</a> door.</p>
 </section>
 <section id="sec-pr2-intro" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="sec-pr2-intro">Introductie</h2>
-<p>Een taalwetenschapper doet onderzoek naar <em>(on)regelmatigheid</em> van werkwoorden in het Nederlands. In dit onderzoek is de taalwetenschapper geïnteresseerd in de relatie met <em>etymologische leeftijd</em> (wanneer een werkwoord is ontstaan) en met <em>frequentie van voorkomen</em>. Aangezien er een tendens lijkt te zijn om taal regelmatiger te maken, vermoedt de onderzoeker dat onregelmatige werkwoorden (bijv. <em>blijken</em> – <em>bleek</em>) etymologisch gezien vaker terug te voeren zijn op oudere taalstadia. Regelmatige werkwoorden (bijv. <em>groeien – groeide</em>) daarentegen zullen vaker recentelijker ontstaan zijn. Gezien de tendens om woorden regelmatiger te maken, vermoedt de onderzoeker daarnaast dat onregelmatige werkwoorden een hogere woordfrequentie zullen hebben. Deze hebben ze nodig om onregelmatig te blijven: wanneer taalgebruikers een werkwoord vaak horen in onregelmatige vorm, dan zal het werkwoord niet zo snel worden omgezet naar een regelmatige vorm.</p>
+<p>Een taalwetenschapper doet onderzoek naar de <em>(on)regelmatigheid</em> van werkwoorden in het Nederlands. In dit onderzoek is de taalwetenschapper geïnteresseerd in de relatie met <em>etymologische leeftijd</em> (wanneer een werkwoord is ontstaan) en met <em>frequentie van voorkomen</em>. Aangezien er een tendens lijkt te zijn om taal regelmatiger te maken, vermoedt de onderzoeker dat onregelmatige werkwoorden (bijv. <em>blijken</em> – <em>bleek</em>) etymologisch gezien vaker terug te voeren zijn op oudere taalstadia. Regelmatige werkwoorden (bijv. <em>groeien – groeide</em>) zullen daarentegen vaker recentelijker ontstaan zijn. Gezien de tendens om woorden regelmatiger te maken, vermoedt de onderzoeker daarnaast dat onregelmatige werkwoorden een hogere woordfrequentie zullen hebben. Deze hebben ze nodig om onregelmatig te blijven: wanneer taalgebruikers een werkwoord vaak horen in onregelmatige vorm, dan zal het werkwoord niet zo snel worden omgezet naar een regelmatige vorm.</p>
 <div class="page-columns page-full"><p>Om deze hypothesen te onderzoeken heeft de taalwetenschapper van een grote groep Nederlandse werkwoorden informatie verzameld, waaronder de etymologische leeftijd en de woordfrequentie. Voor elk werkwoord heeft hij bepaald in welk deel van de taalgeschiedenis ze ontstaan zijn. Hiertoe maakt hij onderscheid in 5 taalstadia (van oud naar jong): IndoEuropees, Germaans, WestGermaans, Duits/Nederlands, Nederlands. Van elk woord heeft hij ook de woordfrequentie bepaald door te tellen hoe vaak ze voorkomen in een groot corpus van geschreven taal. Daarnaast heeft hij van elk werkwoord de lengte in letters geteld. Deze data heeft hij opgeslagen in het databestand <code>werkwoorden.csv</code>. De onderzoeker is vervolgens ook voor elk werkwoord nagegaan welke type hulpwerkwoord het werkwoord neemt in de voltooide tijd. Deze informatie heeft hij opgeslagen in het databestand <code>hulpwerkwoorden.txt</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;De data zijn afkomstig uit de dataset <code>etymology</code> in het package <code>languageR</code>.</p></li></div></div>
 <div class="callout callout-style-default callout-note callout-titled" title="Let op">
 <div class="callout-header d-flex align-content-center">
@@ -334,7 +334,7 @@ Let op
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Sla je script regelmatig op, zodat je geen code kwijtraakt. Klik hiervoor op het floppy-disk-symbool of gebruik de sneltoetsen <code>Ctrl + S</code>/<code>cmd + S</code>.</p>
+<p>Sla je script regelmatig op, zodat je geen code kwijtraakt. Klik hiervoor op het floppy-disk-symbool of gebruik de sneltoetsen <code>Ctrl + S</code>/<code>Cmd + S</code>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled" title="Probeer het eerst zelf!">
@@ -376,7 +376,7 @@ Let op
 <p>Lees het databestand <code>werkwoorden.csv</code> in met de bijpassende <code>tidyverse</code>-functie, geef de tibble de naam <code>ww</code> en maak de eerste zes rijen van de data zichtbaar om te kijken of het inlezen goed is gegaan.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Het databestand <code>werkwoorden.csv</code> een puntkomma als scheidingsteken (open het maar eens). Zie verder <a href="../data.html"><span>Hoofdstuk&nbsp;3</span></a>. Het zichtbaar maken van de eerste zes rijen heb je vorige week ook geoefend.</p>
+<p>Het databestand <code>werkwoorden.csv</code> gebruikt een puntkomma als scheidingsteken (open het maar eens). Zie verder <a href="../data.html"><span>Hoofdstuk&nbsp;3</span></a>. Het zichtbaar maken van de eerste zes rijen heb je vorige week ook geoefend.</p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
@@ -412,10 +412,10 @@ Let op
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>Pas de namen van de variabelen de datatabel aan zodat ze voldoen aan onze richtlijnen.</p>
+<p>Pas de namen van de variabelen in de datatabel aan zodat ze voldoen aan onze richtlijnen.</p>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Je kunt dit handmatig doen met de functie <code>rename()</code> of met de functie <code>clean_names()</code> uit het package <code>janitor</code>. Zie <a href="../data.html#sec-variabelennamen">Sectie&nbsp;<span>3.2.1</span></a>.</p>
+<p>Je kunt dit handmatig doen met de functie <code>rename()</code> of met de functie <code>clean_names()</code> uit het package <code>janitor</code>. Zie <a href="../data.html#sec-variabelennamen">sectie&nbsp;<span>3.2.1</span></a>.</p>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <div class="cell">
@@ -455,7 +455,7 @@ Let op
 <pre><code>[1] 5</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#alternatief printen van tibble naar de console: </span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   ww</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   ww <span class="co">#of:</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 285 × 5
    werkwoord frequentie regelmatigheid lengte ety_leeftijd
@@ -511,10 +511,10 @@ Let op
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<p>Van welk type zijn de variabelen in de <code>tibble</code> volgens <code>R</code>? Kloppen deze door <code>R</code> toegekende typen met de meetniveaus uit de vorige vraag?</p>
+<p>Van welk type zijn de variabelen in de <code>tibble</code> volgens <code>R</code>? Komen deze door <code>R</code> toegekende typen overeen met jouw meetniveaus uit de vorige vraag?</p>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
-<p>Om dit te achterhalen kun je bij <code>tibbles</code> de functies <code>glimpse()</code> of <code>str()</code> gebruiken. Zie <a href="../data.html#sec-variabele-aanpassen">sectie&nbsp;<span>3.2.2</span></a>.</p>
+<p>Om het door <code>R</code> toegekende type te achterhalen kun je bij <code>tibbles</code> de functies <code>glimpse()</code> of <code>str()</code> gebruiken. Zie <a href="../data.html#sec-variabele-aanpassen">sectie&nbsp;<span>3.2.2</span></a>.</p>
 </div>
 <div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
 <div class="cell">
@@ -559,10 +559,10 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
-<p>Pas de variabelen in het ingelezen databestand, indien nodig, zodanig aan dat ze overeenkomen met de meetniveaus zoals je die zelf eerder beschreven hebt. Let op: zorg ervoor dat de levels van etymologische leeftijd chronologisch geordend is (van oud naar jong): IndoEuropean, Germanic, WestGermanic DutchGerman, Dutch. Maak hier voor de veiligheid een nieuwe variabele van in je dataframe met de naam <code>ety_age</code>.</p>
+<p>Pas de variabelen in de datatabel, indien nodig, zodanig aan dat ze overeenkomen met de meetniveaus zoals je die zelf eerder beschreven hebt. Let op: zorg ervoor dat de levels van etymologische leeftijd chronologisch geordend zijn (van oud naar jong): IndoEuropean, Germanic, WestGermanic DutchGerman, Dutch. Maak hier voor de veiligheid een nieuwe variabele van in je datatabel met de naam <code>ety_age</code>.</p>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
-<p>Om een nieuwe variabele te maken gebruik je de functie <code>mutate()</code>. Zie <a href="../data.html"><span>Hoofdstuk&nbsp;3</span></a>. Zie ook practicum 1 voor het omzetten van een variabele naar een factor. Het herordenen van de levels van een factor kan met de functie <code>fct_relevel()</code>. Deze neemt als eerste argument de naam van de variabele waarvan je de levels wilt aanpassen en als tweede argument een vector met de namen van de levels in de juiste volgorde.</p>
+<p>Om een nieuwe variabele te maken gebruik je de functie <code>mutate()</code>. Zie <a href="../data.html"><span>Hoofdstuk&nbsp;3</span></a>. Zie ook practicum 1 voor het omzetten van een variabele naar een factor. Het herordenen van de levels van een factor kan met de functie <code>fct_relevel()</code>. Deze neemt als eerste argument de naam van de variabele waarvan je de levels wilt aanpassen en als tweede argument een vector met de namen van de levels in de juiste volgorde. Zet de namen van de levels tussen aanhalingstekens. Zie <code>?fct_relevel()</code> voor meer informatie.</p>
 </div>
 <div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
 <div class="cell">
@@ -579,7 +579,18 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                    )</span>
 <span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Controleren of het goed is gegaan</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a> <span class="fu">str</span>(ww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a> <span class="fu">glimpse</span>(ww) <span class="co">#of:</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 285
+Columns: 6
+$ werkwoord      &lt;fct&gt; blijken, gloeien, glimmen, rijzen, werpen, delven, snik…
+$ frequentie     &lt;dbl&gt; 9.883183, 6.908755, 7.025538, 7.373374, 8.493515, 6.173…
+$ regelmatigheid &lt;fct&gt; irregular, regular, irregular, irregular, irregular, ir…
+$ lengte         &lt;dbl&gt; 5, 5, 4, 4, 4, 4, 4, 4, 5, 6, 3, 5, 5, 6, 4, 4, 4, 4, 6…
+$ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "German…
+$ ety_age        &lt;fct&gt; Germanic, Germanic, Germanic, Germanic, Germanic, WestG…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">str</span>(ww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [285 × 6] (S3: tbl_df/tbl/data.frame)
  $ werkwoord     : Factor w/ 285 levels "barsten","bellen",..: 9 50 49 129 248 22 169 93 168 149 ...
@@ -597,7 +608,7 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 </section>
 <section id="tibbles-bewerken" class="level1">
 <h1>Tibbles bewerken</h1>
-<p>In de volgende opgaven ga je de belangrijke Tidyverse-functies <code>filter()</code>, <code>select()</code>, <code>mutate()</code> en <code>arrange()</code> uitproberen en andere handige functies beschreven in <a href="../bewerken.html"><span>Hoofdstuk&nbsp;4</span></a>. N.B. Elke opgave begint met de tibble <code>ww</code> zoals je dat aan het eind van de vorige opdracht hebt gemaakt. Zorg er dus voor dat je deze tibble niet verandert, tenzij dit nadrukkelijk wordt gevraagd. Voor de zekerheid kun je deze tibble ook nog onder een andere naam opslaan (bijv. <code>ww_backup &lt;- ww</code>). Je kunt dan altijd terug naar je oorspronkelijke dataset (via <code>ww_backup -&gt; ww</code>).</p>
+<p>In de volgende opgaven ga je de belangrijke <code>tidyverse</code>-functies <code>filter()</code>, <code>select()</code>, <code>mutate()</code> en <code>arrange()</code> uitproberen en andere handige functies beschreven in <a href="../bewerken.html"><span>Hoofdstuk&nbsp;4</span></a>. N.B. Elke opgave begint met de tibble <code>ww</code> zoals je dat aan het eind van de vorige opdracht hebt gemaakt. Zorg er dus voor dat je deze tibble niet verandert, tenzij dit nadrukkelijk wordt gevraagd. Voor de zekerheid kun je deze tibble ook nog onder een andere naam opslaan (bijv. <code>ww_backup &lt;- ww</code>). Je kunt dan altijd terug naar je oorspronkelijke dataset (via <code>ww_backup -&gt; ww</code>).</p>
 <section id="sec-filter" class="level2">
 <h2 class="anchored" data-anchor-id="sec-filter">Observaties behouden op basis van waarden</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -617,8 +628,9 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 </div>
 <div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a.</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(ww, regelmatigheid <span class="sc">==</span> <span class="st">"regular"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a.</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(ww, </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>       regelmatigheid <span class="sc">==</span> <span class="st">"regular"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 143 × 6
    werkwoord frequentie regelmatigheid lengte ety_leeftijd ety_age     
@@ -635,8 +647,10 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 10 schikken        7.61 regular             5 DutchGerman  DutchGerman 
 # ℹ 133 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#b.</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(ww, regelmatigheid <span class="sc">==</span> <span class="st">"irregular"</span>, ety_age <span class="sc">==</span> <span class="st">"Germanic"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#b.</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(ww, </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>       regelmatigheid <span class="sc">==</span> <span class="st">"irregular"</span>, </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>       ety_age <span class="sc">==</span> <span class="st">"Germanic"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 92 × 6
    werkwoord frequentie regelmatigheid lengte ety_leeftijd ety_age 
@@ -653,8 +667,9 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 10 meten           7.37 irregular           4 Germanic     Germanic
 # ℹ 82 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#c.</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(ww, frequentie <span class="sc">&lt;</span> <span class="dv">5</span> <span class="sc">|</span> frequentie <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#c.</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(ww, </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>       frequentie <span class="sc">&lt;</span> <span class="dv">5</span> <span class="sc">|</span> frequentie <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 45 × 6
    werkwoord frequentie regelmatigheid lengte ety_leeftijd ety_age     
@@ -671,8 +686,9 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 10 zwieren         4.86 regular             5 Dutch        Dutch       
 # ℹ 35 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#alternatief:</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ww, <span class="fu">xor</span>(frequentie <span class="sc">&lt;</span> <span class="dv">5</span>, frequentie <span class="sc">&gt;</span> <span class="dv">10</span>))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#alternatief:</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ww, </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">xor</span>(frequentie <span class="sc">&lt;</span> <span class="dv">5</span>, frequentie <span class="sc">&gt;</span> <span class="dv">10</span>))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 45 × 6
    werkwoord frequentie regelmatigheid lengte ety_leeftijd ety_age     
@@ -689,8 +705,9 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 10 zwieren         4.86 regular             5 Dutch        Dutch       
 # ℹ 35 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#d.</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(ww, lengte <span class="sc">&gt;</span> <span class="dv">3</span> <span class="sc">&amp;</span> lengte <span class="sc">&lt;</span> <span class="dv">7</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#d.</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(ww, </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>       lengte <span class="sc">&gt;</span> <span class="dv">3</span> <span class="sc">&amp;</span> lengte <span class="sc">&lt;</span> <span class="dv">7</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 239 × 6
    werkwoord frequentie regelmatigheid lengte ety_leeftijd ety_age     
@@ -707,8 +724,9 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 10 schrikken       8.20 irregular           6 DutchGerman  DutchGerman 
 # ℹ 229 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#alternatief:</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ww, <span class="fu">between</span>(lengte,<span class="dv">4</span>,<span class="dv">6</span>)) <span class="co">#zie cheat sheet</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">#alternatief:</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ww, </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">between</span>(lengte,<span class="dv">4</span>,<span class="dv">6</span>)) <span class="co">#zie dplyer cheat sheet</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 239 × 6
    werkwoord frequentie regelmatigheid lengte ety_leeftijd ety_age     
@@ -747,8 +765,8 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 </div>
 <div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a.</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(ww, werkwoord, ety_age, regelmatigheid)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a.</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(ww, werkwoord, ety_age, regelmatigheid)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 285 × 3
    werkwoord ety_age      regelmatigheid
@@ -765,8 +783,8 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 10 schrikken DutchGerman  irregular     
 # ℹ 275 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#b.</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(ww, <span class="sc">-</span>lengte)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#b.</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(ww, <span class="sc">-</span>lengte)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 285 × 5
    werkwoord frequentie regelmatigheid ety_leeftijd ety_age     
@@ -801,13 +819,13 @@ $ ety_leeftijd   &lt;chr&gt; "Germanic", "Germanic", "Germanic", "Germanic", "Ge
 </div>
 <div id="tabset-9-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toevoegen van nieuwe variabele met mutate()</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a> ww <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ww, </span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">freq_int =</span> <span class="fu">round</span>(frequentie),</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">.after =</span> frequentie)</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Controleren of het goed is gegaan</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">glimpse</span>(ww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toevoegen van nieuwe variabele met mutate()</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a> ww <span class="ot">&lt;-</span> <span class="fu">mutate</span>(ww, </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">freq_int =</span> <span class="fu">round</span>(frequentie),</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">.after =</span> frequentie)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Controleren of het goed is gegaan</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">glimpse</span>(ww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 285
 Columns: 7
@@ -837,10 +855,10 @@ $ ety_age        &lt;fct&gt; Germanic, Germanic, Germanic, Germanic, Germanic, W
 </div>
 <div id="tabset-10-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verwisselen van positie</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">relocate</span>(ww, </span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>         frequentie, </span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">.after =</span> regelmatigheid)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verwisselen van positie</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">relocate</span>(ww, </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>         frequentie, </span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">.after =</span> regelmatigheid)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 285 × 7
    werkwoord freq_int regelmatigheid frequentie lengte ety_leeftijd ety_age     
@@ -859,10 +877,10 @@ $ ety_age        &lt;fct&gt; Germanic, Germanic, Germanic, Germanic, Germanic, W
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># alternatief</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">relocate</span>(ww, </span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>         regelmatigheid, </span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">.before =</span> frequentie)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># alternatief</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">relocate</span>(ww, </span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>         regelmatigheid, </span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">.before =</span> frequentie)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -877,17 +895,17 @@ $ ety_age        &lt;fct&gt; Germanic, Germanic, Germanic, Germanic, Germanic, W
 <p>Maak een nieuwe tibble <code>dutch_verbs</code> met daarin alleen de werkwoorden die <code>Dutch</code> als etymologische leeftijd hebben, maar met behoud van alle andere variabelen behalve <code>ety_leeftijd</code>. Maak hierbij gebruik van de pipe operator <code>%&gt;%</code>. Hoeveel werkwoorden met deze etymologische leeftijd zijn onregelmatig?</p>
 </div>
 <div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
-<p>Dit is een combinatie van twee eerdere opgaven.</p>
+<p>Dit is een combinatie van dingen die je in twee eerdere opgaven al hebt gedaan. Je kunt ze combineren met de pipe operator <code>%&gt;%</code>.</p>
 </div>
 <div id="tabset-11-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maken van tibble op basis van ww</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>dutch_verbs <span class="ot">&lt;-</span> ww <span class="sc">%&gt;%</span> </span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ety_leeftijd <span class="sc">==</span> <span class="st">"Dutch"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ety_leeftijd)</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co">#zichtbaar maken van tibble</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">print</span>(dutch_verbs)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maken van tibble op basis van ww</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>dutch_verbs <span class="ot">&lt;-</span> ww <span class="sc">%&gt;%</span> </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ety_leeftijd <span class="sc">==</span> <span class="st">"Dutch"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>ety_leeftijd)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co">#zichtbaar maken van tibble</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">print</span>(dutch_verbs)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 6
   werkwoord frequentie freq_int regelmatigheid lengte ety_age
@@ -919,8 +937,8 @@ $ ety_age        &lt;fct&gt; Germanic, Germanic, Germanic, Germanic, Germanic, W
 </div>
 <div id="tabset-12-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordenen van data frame oplopend</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>dutch_verbs <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(frequentie)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordenen van data frame oplopend</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>dutch_verbs <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(frequentie)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 6
   werkwoord frequentie freq_int regelmatigheid lengte ety_age
@@ -934,8 +952,8 @@ $ ety_age        &lt;fct&gt; Germanic, Germanic, Germanic, Germanic, Germanic, W
 7 dreigen         7.97        8 regular             5 Dutch  
 8 duwen           8.10        8 regular             3 Dutch  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordenen van data frame aflopend</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>dutch_verbs <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(frequentie))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordenen van data frame aflopend</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>dutch_verbs <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(frequentie))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 6
   werkwoord frequentie freq_int regelmatigheid lengte ety_age
@@ -964,15 +982,15 @@ $ ety_age        &lt;fct&gt; Germanic, Germanic, Germanic, Germanic, Germanic, W
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-3" role="tab" aria-controls="tabset-13-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
-<p>Lees het databestand <code>hulpwerkwoorden.txt</code> met de juiste <code>read_</code>-functie en geef de tibble de naam <code>hww</code>. Controleer of alle variabelen goed gecodeerd zijn en pas aan indien nodig.</p>
+<p>Lees het databestand <code>hulpwerkwoorden.txt</code> in met de juiste <code>read_</code>-functie en geef de tibble de naam <code>hww</code>. Controleer of alle variabelen goed gecodeerd zijn en pas aan indien nodig.</p>
 </div>
 <div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
 <p>Open het databestand <code>hulpwerkwoorden.txt</code> om te zien hoe de data zijn opgeslagen (in dit geval gescheiden door een spatie). Bedenk welke functie daarbij hoort.</p>
 </div>
 <div id="tabset-13-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#inlezen hulpwerkwoorden.txt, delimiter spatie</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>hww <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"datasets/hulpwerkwoorden.txt"</span>, <span class="at">delim=</span><span class="st">" "</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#inlezen hulpwerkwoorden.txt, delimiter spatie</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>hww <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"datasets/hulpwerkwoorden.txt"</span>, <span class="at">delim =</span> <span class="st">" "</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 285 Columns: 2
 ── Column specification ────────────────────────────────────────────────────────
@@ -982,8 +1000,8 @@ chr (2): Werkwoord, Hulpwerkwoord
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Controleren of inlezen goed is gegaan</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Controleren of inlezen goed is gegaan</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   Werkwoord Hulpwerkwoord
@@ -995,24 +1013,24 @@ chr (2): Werkwoord, Hulpwerkwoord
 5 werpen    hebben       
 6 delven    hebben       </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(hww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(hww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 285
 Columns: 2
 $ Werkwoord     &lt;chr&gt; "blijken", "gloeien", "glimmen", "rijzen", "werpen", "de…
 $ Hulpwerkwoord &lt;chr&gt; "zijn", "hebben", "zijnheb", "zijn", "hebben", "hebben",…</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aanpassen namen</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>hww <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(hww)</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Beide variabelen omzetten naar factor</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>hww <span class="ot">&lt;-</span> hww <span class="sc">%&gt;%</span> </span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">werkwoord =</span> <span class="fu">as.factor</span>(werkwoord),</span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">hulpwerkwoord =</span> <span class="fu">as.factor</span>(hulpwerkwoord)</span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>         )</span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Controleren of het goed is gegaan</span></span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(hww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aanpassen namen</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>hww <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(hww)</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Beide variabelen omzetten naar factor</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>hww <span class="ot">&lt;-</span> hww <span class="sc">%&gt;%</span> </span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">werkwoord =</span> <span class="fu">as.factor</span>(werkwoord),</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">hulpwerkwoord =</span> <span class="fu">as.factor</span>(hulpwerkwoord)</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Controleren of het goed is gegaan</span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(hww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 285
 Columns: 2
@@ -1024,27 +1042,27 @@ $ hulpwerkwoord &lt;fct&gt; zijn, hebben, zijnheb, zijn, hebben, hebben, hebben,
 </div>
 </div>
 </section>
-<section id="samenvoegen-van-de-datasets" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="samenvoegen-van-de-datasets">Samenvoegen van de datasets</h2>
+<section id="samenvoegen-van-de-datatabellen" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="samenvoegen-van-de-datatabellen">Samenvoegen van de datatabellen</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset page-columns page-full">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-3" role="tab" aria-controls="tabset-14-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content page-columns page-full">
 <div id="tabset-14-1" class="tab-pane active page-columns page-full" role="tabpanel" aria-labelledby="tabset-14-1-tab">
-<p>We gaan de informatie uit <code>hww</code> toevoegen aan <code>ww</code> met behulp van de functie <code>left_join()</code>. Deze functie wordt in SfL <span class="citation" data-cites="Winter2019">(<a href="../index.html#ref-Winter2019" role="doc-biblioref">Winter, 2019</a>)</span> beschreven onderaan p.&nbsp;41. Meer achtergrondinformatie over ‘joins’ vind je in <a href="https://r4ds.hadley.nz/joins.html">hoofdstuk 19 van R4DS</a> of het <code>dplyr</code> cheatsheet. Geef dit nieuwe databestand de naam <code>ww_compleet</code>.</p>
+<p>We gaan de informatie uit <code>hww</code> toevoegen aan <code>ww</code> met behulp van de functie <code>left_join()</code>. Deze functie wordt in SfL <span class="citation" data-cites="Winter2019">(<a href="../index.html#ref-Winter2019" role="doc-biblioref">Winter, 2019</a>)</span> beschreven onderaan p.&nbsp;41. Meer achtergrondinformatie over ‘joins’ vind je in <a href="https://r4ds.hadley.nz/joins.html">hoofdstuk 19 van R4DS</a> of het <code>dplyr</code> cheatsheet. Geef deze nieuwe datatabel de naam <code>ww_compleet</code>.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-Winter2019" class="csl-entry" role="listitem">
 Winter, B. (2019). <em>Statistics for Linguists: An Introduction Using <span>R</span></em>. Routledge. <a href="https://doi.org/10.4324/9781315165547">https://doi.org/10.4324/9781315165547</a>
 </div></div></div>
 <div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
-<p>Het basisbestand waar je informatie aan gaat toevoegen komt eerst bij het aanroepen van <code>left_join()</code>. Om te controleren of alle informatie aanwezig is, kun je de eerste 6 rijen bekijken en kijken of het totaal aantal rijen gelijk is gebleven in verlijking met de oorspronkelijke dataset <code>ww</code>.</p>
+<p>De datatabel waar je informatie aan gaat toevoegen komt eerst bij het aanroepen van <code>left_join()</code>. Om te controleren of alle informatie aanwezig is, kun je de eerste 6 rijen bekijken en kijken of het totaal aantal rijen van de nieuwe datatabel gelijk is aan de oorspronkelijke datatabel <code>ww</code>.</p>
 </div>
 <div id="tabset-14-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Samenvoegen ww met hww en controleren of alle informatie er is</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>ww_compleet <span class="ot">&lt;-</span> <span class="fu">left_join</span>(ww, hww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Samenvoegen ww met hww en controleren of alle informatie er is</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>ww_compleet <span class="ot">&lt;-</span> <span class="fu">left_join</span>(ww, hww)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(werkwoord)`</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ww_compleet)     </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ww_compleet)     </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   werkwoord frequentie freq_int regelmatigheid lengte ety_leeftijd ety_age     
@@ -1057,7 +1075,7 @@ Winter, B. (2019). <em>Statistics for Linguists: An Introduction Using <span>R</
 6 delven          6.17        6 irregular           4 WestGermanic WestGermanic
 # ℹ 1 more variable: hulpwerkwoord &lt;fct&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(ww_compleet)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(ww_compleet)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 285</code></pre>
 </div>
@@ -1066,21 +1084,21 @@ Winter, B. (2019). <em>Statistics for Linguists: An Introduction Using <span>R</
 </div>
 </div>
 </section>
-<section id="opslaan-van-de-nieuwe-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="opslaan-van-de-nieuwe-dataset">Opslaan van de nieuwe dataset</h2>
+<section id="opslaan-van-de-nieuwe-datatabel" class="level2">
+<h2 class="anchored" data-anchor-id="opslaan-van-de-nieuwe-datatabel">Opslaan van de nieuwe datatabel</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-3" role="tab" aria-controls="tabset-15-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-15-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-15-1-tab">
-<p>Sla de data in <code>ww_compleet</code> op in een csv-bestand met de naam <code>werkwoorden_compleet.csv</code> waarbij de waardes worden gescheiden door een puntkomma.</p>
+<p>Sla de datatabel <code>ww_compleet</code> op in een csv-bestand met de naam <code>werkwoorden_compleet.csv</code> waarbij de waardes worden gescheiden door een puntkomma.</p>
 </div>
 <div id="tabset-15-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-15-2-tab">
 <p>Zie <a href="../data.html#sec-data-inlezen">sectie&nbsp;<span>3.2</span></a> voor informatie over het wegschrijven van data naar een bestand. Net zoals er voor het inlezen van csv-bestanden twee <code>read_</code>-functies bestaan, zijn er ook twee functies voor het wegschrijven naar een csv-bestand.</p>
 </div>
 <div id="tabset-15-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-15-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wegschrijven data in ww_compleet naar werkwoorden_compleet.csv</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv2</span>(ww_compleet, <span class="st">"datasets/werkwoorden_compleet.csv"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wegschrijven data in ww_compleet naar werkwoorden_compleet.csv</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv2</span>(ww_compleet, <span class="st">"datasets/werkwoorden_compleet.csv"</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1103,8 +1121,8 @@ Winter, B. (2019). <em>Statistics for Linguists: An Introduction Using <span>R</
 </div>
 <div id="tabset-16-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Telling van etymologische leeftijd</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">count</span>(ety_leeftijd) </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Telling van etymologische leeftijd</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">count</span>(ety_leeftijd) </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 2
   ety_leeftijd     n
@@ -1126,19 +1144,19 @@ Winter, B. (2019). <em>Statistics for Linguists: An Introduction Using <span>R</
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-17-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-1" role="tab" aria-controls="tabset-17-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-2" role="tab" aria-controls="tabset-17-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-17-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-17-3" role="tab" aria-controls="tabset-17-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-17-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-17-1-tab">
-<p>Maak nu een telling van de etymologische leeftijd maar weergegeven per level van de factor <code>regelmatigheid</code>. Hoe vaak komt elke categorie van <code>regelmatigheid</code> voor in de tijdscategorie <code>DutchGerman</code>? Komt het vermoeden van de onderzoeker uit dat onregelmatige werkwoorden eerder terug te voeren zijn op oudere taalstadia dan regelmatige werkwoorden?</p>
+<p>Maak nu een telling van de etymologische leeftijd maar weergegeven per level van de factor <code>regelmatigheid</code>. Hoe vaak komt elke categorie van <code>regelmatigheid</code> voor in de tijdscategorie <code>DutchGerman</code>? Komt het vermoeden van de onderzoeker uit dat onregelmatige werkwoorden vaker terug te voeren zijn op oudere taalstadia dan regelmatige werkwoorden?</p>
 </div>
 <div id="tabset-17-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-2-tab">
 <p>Combineer de functies <code>group_by()</code>, <code>summarise()</code> en <code>n()</code>. Zie <a href="../bewerken.html#sec-tellingen">sectie&nbsp;<span>4.5</span></a>.</p>
 </div>
 <div id="tabset-17-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aantal voorkomens per leeftijdscategorie per regelmatigheidstype</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> </span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid, ety_age) <span class="sc">%&gt;%</span></span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">aantal =</span> <span class="fu">n</span>()</span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aantal voorkomens per leeftijdscategorie per regelmatigheidstype</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> </span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid, ety_age) <span class="sc">%&gt;%</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">aantal =</span> <span class="fu">n</span>()</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'regelmatigheid'. You can override using
 the `.groups` argument.</code></pre>
@@ -1159,8 +1177,8 @@ the `.groups` argument.</code></pre>
  9 regular        DutchGerman      17
 10 regular        Dutch             7</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Alternatief met count()</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">count</span>(regelmatigheid, ety_age)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Alternatief met count()</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">count</span>(regelmatigheid, ety_age)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 3
    regelmatigheid ety_age          n
@@ -1194,13 +1212,13 @@ the `.groups` argument.</code></pre>
 </div>
 <div id="tabset-18-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-18-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gemiddelde frequentie per regelmatigheidstype       </span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span></span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span></span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">aantal =</span> <span class="fu">n</span>(),</span>
-<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_freq =</span> <span class="fu">mean</span>(frequentie)</span>
-<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gemiddelde frequentie per regelmatigheidstype       </span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">aantal =</span> <span class="fu">n</span>(),</span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_freq =</span> <span class="fu">mean</span>(frequentie)</span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   regelmatigheid aantal mean_freq
@@ -1223,14 +1241,14 @@ the `.groups` argument.</code></pre>
 </div>
 <div id="tabset-19-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-19-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Gemiddelde frequentie per regelmatigheidstype voor werkwoorden langer dan 5 letters    </span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span></span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(lengte <span class="sc">&gt;</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span></span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">aantal =</span> <span class="fu">n</span>(),</span>
-<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_freq =</span> <span class="fu">mean</span>(frequentie)</span>
-<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Gemiddelde frequentie per regelmatigheidstype voor werkwoorden langer dan 5 letters    </span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(lengte <span class="sc">&gt;</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span></span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">aantal =</span> <span class="fu">n</span>(),</span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_freq =</span> <span class="fu">mean</span>(frequentie)</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   regelmatigheid aantal mean_freq
@@ -1302,20 +1320,20 @@ the `.groups` argument.</code></pre>
 </table>
 </div>
 </div>
-<p>De kolom <code>prop</code> drukt hier uit hoe vaak er gekozen wordt voor een type hulpwerkwoord binnen een level van de factor <code>regelmatigheid</code>. Binnen een categorie tellen de proporties (door afronding) op tot (ongeveer) 1.</p>
+<p>De kolom <code>prop</code> drukt hier uit hoe vaak er gekozen wordt voor een type hulpwerkwoord binnen een level van de factor <code>regelmatigheid</code>. Binnen een categorie tellen de proporties (door afronding) op tot (ongeveer) 1. Om een proportie te berekenen heb je het totaal aantal voorkomens binnen een level van <code>regelmatigheid</code> nodig. Hiervoor kun je de functie <code>sum()</code> gebruiken. Deze functie telt getallen bij elkaar op (berekent de som van getallen).</p>
 </div>
 <div id="tabset-20-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-20-2-tab">
-<p>Bereken eerst hoe vaak elk type hulpwerkwoord voorkomt per categorie van <code>regelmatigheid</code>. Dit kan met <code>count()</code> of een combinatie van <code>group_by</code> en <code>summarise()</code>, zoals je hierboven al hebt gedaan. Voor proporties moet je die uitkomsten groeperen per level van <code>regelmatigheid</code> om de proporties te kunnen berekenen.</p>
+<p>Bereken eerst hoe vaak elk type hulpwerkwoord voorkomt per categorie van <code>regelmatigheid</code>. Dit kan met <code>count()</code> of een combinatie van <code>group_by</code> en <code>summarise()</code>, zoals je hierboven al hebt gedaan. Voor proporties moet je die uitkomsten groeperen per level van <code>regelmatigheid</code> om de proporties te kunnen berekenen. Proporties kun je berekenen met de functie <code>sum()</code>.</p>
 </div>
 <div id="tabset-20-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-20-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Gemiddelde frequentie per regelmatigheidstype  met count()     </span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a> ww_tabel <span class="ot">&lt;-</span> ww_compleet <span class="sc">%&gt;%</span></span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(regelmatigheid, hulpwerkwoord) <span class="sc">%&gt;%</span></span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span> </span>
-<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> <span class="fu">round</span>(n<span class="sc">/</span><span class="fu">sum</span>(n), <span class="dv">2</span>)</span>
-<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>         )</span>
-<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a> ww_tabel</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Gemiddelde frequentie per regelmatigheidstype  met count()     </span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a> ww_tabel <span class="ot">&lt;-</span> ww_compleet <span class="sc">%&gt;%</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(regelmatigheid, hulpwerkwoord) <span class="sc">%&gt;%</span></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span> </span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> <span class="fu">round</span>(n<span class="sc">/</span><span class="fu">sum</span>(n), <span class="dv">2</span>)</span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a> ww_tabel</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
 # Groups:   regelmatigheid [2]
@@ -1328,14 +1346,15 @@ the `.groups` argument.</code></pre>
 5 regular        zijn              3  0.02
 6 regular        zijnheb          22  0.15</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Alternatief: gemiddelde frequentie per regelmatigheidstype met dubbel gebruik van group_by()</span></span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>ww_compleet <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(regelmatigheid, hulpwerkwoord) <span class="sc">%&gt;%</span></span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">aantal =</span> <span class="fu">n</span>()</span>
-<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span> </span>
-<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> <span class="fu">round</span>(aantal<span class="sc">/</span><span class="fu">sum</span>(aantal), <span class="dv">2</span>)</span>
-<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>         )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Alternatief: gemiddelde frequentie per regelmatigheidstype met dubbel gebruik van group_by()</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>ww_compleet <span class="sc">%&gt;%</span> </span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid, hulpwerkwoord) <span class="sc">%&gt;%</span></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">aantal =</span> <span class="fu">n</span>()</span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span> </span>
+<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> <span class="fu">round</span>(aantal<span class="sc">/</span><span class="fu">sum</span>(aantal), <span class="dv">2</span>)</span>
+<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a>         )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'regelmatigheid'. You can override using
 the `.groups` argument.</code></pre>
@@ -1367,15 +1386,15 @@ the `.groups` argument.</code></pre>
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-21-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-21-1" role="tab" aria-controls="tabset-21-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-21-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-21-2" role="tab" aria-controls="tabset-21-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-21-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-21-3" role="tab" aria-controls="tabset-21-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-21-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-21-1-tab">
-<p>Maak rij 16 t/m 27 van de tibble <code>ww_compleet</code> zichtbaar in de console met behulp van de functie <code>slice()</code>.</p>
+<p>Maak alleen rij 16 t/m 27 van de tibble <code>ww_compleet</code> zichtbaar in de console met behulp van de functie <code>slice()</code>.</p>
 </div>
 <div id="tabset-21-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-21-2-tab">
 <p>De functie <code>slice(x, n)</code> neemt naast het databestand <code>x</code> ook een waarde of range van waarden <code>n</code> als argument. Een range geef je aan met <code>:</code>.</p>
 </div>
 <div id="tabset-21-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-21-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Zichtbaar maken van rij 16 t/m 27 uit ww_compleet</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">16</span><span class="sc">:</span><span class="dv">27</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Zichtbaar maken van rij 16 t/m 27 uit ww_compleet</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">16</span><span class="sc">:</span><span class="dv">27</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 8
    werkwoord frequentie freq_int regelmatigheid lengte ety_leeftijd ety_age     
@@ -1412,8 +1431,8 @@ the `.groups` argument.</code></pre>
 </div>
 <div id="tabset-22-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-22-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vinden van de drie werkwoorden met de hoogste frequentie</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">slice_max</span>(frequentie, <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vinden van de drie werkwoorden met de hoogste frequentie</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">slice_max</span>(frequentie, <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 8
   werkwoord frequentie freq_int regelmatigheid lengte ety_leeftijd ety_age     
@@ -1423,8 +1442,8 @@ the `.groups` argument.</code></pre>
 3 kunnen          12.3       12 irregular           3 Germanic     Germanic    
 # ℹ 1 more variable: hulpwerkwoord &lt;fct&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vinden van de drie werkwoorden met de laagste frequentie</span></span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">slice_min</span>(frequentie, <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vinden van de drie werkwoorden met de laagste frequentie</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">slice_min</span>(frequentie, <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 8
   werkwoord frequentie freq_int regelmatigheid lengte ety_leeftijd ety_age     
@@ -1452,12 +1471,12 @@ the `.groups` argument.</code></pre>
 </div>
 <div id="tabset-23-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-23-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Een random sample van 10 werkwoorden uit ww_compleet</span></span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a> ww_sample <span class="ot">&lt;-</span> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a><span class="co"># N.B. deze functie zal iedere keer een ander resultaat geven. Als je steeds hetzelfde sample wilt dan moet je vooraf een random seed aanmaken met de functie `set.seed()`. Wanneer je in deze functie steeds hetzelfde getal kiest, zul je steeds dezelfde resultaten krijgen. Handig voor de reproduceerbaarheid.</span></span>
-<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">set.seed</span>(<span class="dv">329</span>)</span>
-<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Een random sample van 10 werkwoorden uit ww_compleet</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a> ww_sample <span class="ot">&lt;-</span> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a><span class="co"># N.B. deze functie zal iedere keer een ander resultaat geven. Als je steeds hetzelfde sample wilt dan moet je vooraf een random seed aanmaken met de functie `set.seed()`. Wanneer je in deze functie steeds hetzelfde getal kiest, zul je steeds dezelfde resultaten krijgen. Handig voor de reproduceerbaarheid.</span></span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">set.seed</span>(<span class="dv">329</span>)</span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 8
    werkwoord frequentie freq_int regelmatigheid lengte ety_leeftijd ety_age     
@@ -1485,19 +1504,19 @@ the `.groups` argument.</code></pre>
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-24-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-24-1" role="tab" aria-controls="tabset-24-1" aria-selected="true">Opdracht A</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-24-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-24-2" role="tab" aria-controls="tabset-24-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-24-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-24-3" role="tab" aria-controls="tabset-24-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-24-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-24-1-tab">
-<p>Maak een stratified sample waarbij je uit elke groep van de variabele <code>regelmatigheid</code> random tien werkwoorden trekt. Rangschik de samples op basis van de frequentie van de werkwoorden.</p>
+<p>Maak een <em>stratified sample</em> waarbij je uit elke groep van de variabele <code>regelmatigheid</code> (de strata) random tien werkwoorden trekt. Rangschik de samples op basis van de frequentie van de werkwoorden.</p>
 </div>
 <div id="tabset-24-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-24-2-tab">
 <p>Je kunt de strata maken met behulp van de functie <code>group_by()</code>. Zie <a href="../bewerken.html#sec-tellingen">sectie&nbsp;<span>4.5</span></a>.</p>
 </div>
 <div id="tabset-24-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-24-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Een stratified sample maken met 10 werkwoorden per groep</span></span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">set.seed</span>(<span class="dv">18537</span>) <span class="co">#N.B. om het reproduceerbaar te maken kun je beter weer eerst een random seed aanmaken.</span></span>
-<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> </span>
-<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span> </span>
-<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(frequentie)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Een stratified sample maken met 10 werkwoorden per groep</span></span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">set.seed</span>(<span class="dv">18537</span>) <span class="co">#N.B. om het reproduceerbaar te maken kun je beter weer eerst een random seed aanmaken.</span></span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> </span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span> </span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(frequentie)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 20 × 8
 # Groups:   regelmatigheid [2]
@@ -1540,15 +1559,15 @@ the `.groups` argument.</code></pre>
 </div>
 <div id="tabset-25-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-25-3-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eerst sample maken, indien je dat nog niet had opgeslagen onder een andere naam</span></span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">set.seed</span>(<span class="dv">18537</span>)</span>
-<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> </span>
-<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span> </span>
-<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="co">#en vervolgens de gemiddelden berekenen</span></span>
-<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarise</span>(</span>
-<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">aantal =</span> <span class="fu">n</span>(),</span>
-<span id="cb86-8"><a href="#cb86-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">mean_freq =</span> <span class="fu">mean</span>(frequentie)</span>
-<span id="cb86-9"><a href="#cb86-9" aria-hidden="true" tabindex="-1"></a>     )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eerst sample maken, indien je dat nog niet had opgeslagen onder een andere naam</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">set.seed</span>(<span class="dv">18537</span>)</span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a> ww_compleet <span class="sc">%&gt;%</span> </span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(regelmatigheid) <span class="sc">%&gt;%</span> </span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="co">#en vervolgens de gemiddelden berekenen</span></span>
+<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarise</span>(</span>
+<span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">aantal =</span> <span class="fu">n</span>(),</span>
+<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">mean_freq =</span> <span class="fu">mean</span>(frequentie)</span>
+<span id="cb88-9"><a href="#cb88-9" aria-hidden="true" tabindex="-1"></a>     )</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   regelmatigheid aantal mean_freq
