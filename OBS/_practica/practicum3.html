@@ -261,6 +261,7 @@ div.csl-indent {
   <li><a href="#code-annoteren" id="toc-code-annoteren" class="nav-link" data-scroll-target="#code-annoteren">Code annoteren</a></li>
   <li><a href="#sec-fiona-extra" id="toc-sec-fiona-extra" class="nav-link" data-scroll-target="#sec-fiona-extra">Meer data zichtbaar maken</a></li>
   </ul></li>
+  <li><a href="#opdracht-3-nu-helemaal-zelf-tijden-op-de-1500m-hardlopen" id="toc-opdracht-3-nu-helemaal-zelf-tijden-op-de-1500m-hardlopen" class="nav-link" data-scroll-target="#opdracht-3-nu-helemaal-zelf-tijden-op-de-1500m-hardlopen">Opdracht 3: Nu helemaal zelf: tijden op de 1500m hardlopen</a></li>
   <li><a href="#deel-2-my-first-quarto" id="toc-deel-2-my-first-quarto" class="nav-link" data-scroll-target="#deel-2-my-first-quarto">Deel 2: My first Quarto</a></li>
   </ul>
 </nav>
@@ -316,7 +317,7 @@ Let op
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Sla je script regelmatig op, zodat je geen code kwijtraakt. Klik hiervoor op het floppy-disk-symbool of gebruik de sneltoetsen <code>Ctrl + S</code>/<code>cmd + S</code>.</p>
+<p>Sla je script regelmatig op, zodat je geen code kwijtraakt. Klik hiervoor op het floppy-disk-symbool of gebruik de sneltoetsen <code>Ctrl + S</code>/<code>Cmd + S</code>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled" title="Probeer het eerst zelf!">
@@ -355,7 +356,7 @@ Let op
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Bij dit practicum maken we gebruik van een aantal packages. Installeer de volgende packages (als je dat niet al eerder hebt gedaan) en roep ze aan: <code>tidyverse</code>, <code>scales</code> en <code>ukbabynames</code>.</p>
+<p>Bij dit practicum maken we gebruik van een aantal packages. Installeer de volgende packages (als je dat niet al eerder hebt gedaan) en roep ze aan: <code>tidyverse</code>, <code>scales</code>, <code>ukbabynames</code> en <code>openintro</code>.</p>
 </div>
 </div>
 <div class="cell">
@@ -368,7 +369,7 @@ Let op
 <p>Lees het databestand <code>cia_factbook.csv</code> in met de juiste <code>tidyverse</code>-functie en noem de tibble <code>cia_factbook</code>. Bekijk de variabelen en pas indien nodig hun meetniveau aan.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Dit heb je in het vorige practicum ook gedaan. Zie dus het practicum van vorige week.</p>
+<p>Dit heb je in het vorige practicum ook gedaan. Zie dus het practicum van vorige week en <a href="../data.html"><span>Hoofdstuk&nbsp;3</span></a>.</p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
@@ -400,7 +401,7 @@ dbl (10): area, birth_rate, death_rate, infant_mortality_rate, internet_user...
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>Met onderstaande code kun je <a href="#fig-life">Figuur&nbsp;<span>1.1</span></a> ruwweg namaken (de kleuren zullen anders zijn). Kopieer de code naar je script en voer de code vervolgens uit. Geef in het script in eigen woorden aan wat elke stap in de code doet. Dit kun je doen door aan het eind van elke regel een comment te plaatsen, voorafgegaan door <code>#</code>. Dit is hier al voorgedaan voor regel 10 in de code. Je kunt de hashtag <code>#</code> ook gebruiken om te achterhalen wat een deel van de code precies doet. Door <code>#</code> voor code te zetten wordt deze niet uitgevoerd. N.B. zorg dan wel dat je de code t/m de laatste bijbehorende <code>+</code> uitzet, anders zal <code>R</code> gaan klagen.</p>
+<p>Met onderstaande code kun je <a href="#fig-life">Figuur&nbsp;<span>1.1</span></a> ruwweg namaken (de kleuren zullen nu nog anders zijn). Kopieer de code naar je script en voer de code vervolgens uit. Geef in het script in eigen woorden aan wat elke stap in de code doet. Dit kun je doen door aan het eind van elke regel een comment te plaatsen, voorafgegaan door <code>#</code>. Dit is hier al voorgedaan voor regel 10 in de code. Je kunt de hashtag <code>#</code> ook gebruiken om te achterhalen wat een deel van de code precies doet. Door <code>#</code> voor code te zetten wordt deze niet uitgevoerd. N.B. zorg dan wel dat je de code t/m de laatste bijbehorende <code>+</code> uitzet, anders zal <code>R</code> gaan klagen.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">#code om figuur bij opgave 11 van hoofdstuk 2 uit IMS te maken</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>cia_factbook <span class="sc">%&gt;%</span> </span>
@@ -470,12 +471,12 @@ dbl (10): area, birth_rate, death_rate, infant_mortality_rate, internet_user...
 <p><strong>Warning message: Removed 27 rows containing missing values (geom_point).</strong></p>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p>Bekijk de data van de drie variabelen die in de grafiek worden gebruikt eens goed. Wat valt je op?</p>
+<p>Bekijk de data van de drie variabelen die in de grafiek worden gebruikt eens goed in de datatabel. Wat valt je op?</p>
 </div>
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <p>Er zijn 27 landen waarvoor er geen data (<code>NA</code>) beschikbaar zijn voor minstens een van de drie variabelen die gebruikt worden om de grafiek te maken. Dat kun je nagaan met onderstaande code. Deze 27 landen worden door <code>ggplot2</code> uit de grafiek gelaten, aangezien de benodigde waarden hiervoor niet bepaald kunnen worden.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cia_factbook <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">is.na</span>(life_exp_at_birth)<span class="sc">|</span><span class="fu">is.na</span>(internet_users)<span class="sc">|</span><span class="fu">is.na</span>(population))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cia_factbook <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">is.na</span>(life_exp_at_birth) <span class="sc">|</span> <span class="fu">is.na</span>(internet_users) <span class="sc">|</span> <span class="fu">is.na</span>(population))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -674,7 +675,7 @@ dbl (10): area, birth_rate, death_rate, infant_mortality_rate, internet_user...
 <p>Geef de datapunten in de grafiek een blauwe kleur. Je kunt het commando <code>colours()</code> gebruiken om te zien welke kleuren standaard beschikbaar zijn in <code>R</code>.</p>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
-<p>Zie <a href="../grafieken.html#sec-grafieken-soorten">Sectie&nbsp;<span>5.2</span></a>.</p>
+<p>Zie <a href="../grafieken.html#sec-grafieken-soorten">sectie&nbsp;<span>5.2</span></a>.</p>
 </div>
 <div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <div class="cell">
@@ -715,7 +716,7 @@ dbl (10): area, birth_rate, death_rate, infant_mortality_rate, internet_user...
 <p>Een aantal datapunten in de grafiek ligt over elkaar heen. Maak deze datapunten zichtbaar door alle datapunten enigszins transparant te maken.</p>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
-<p>Hiervoor gebruik je de setting <code>alpha</code>. Zie <a href="../grafieken.html#sec-grafieken-soorten">Sectie&nbsp;<span>5.2</span></a>.</p>
+<p>Hiervoor gebruik je de setting <code>alpha</code>. Zie <a href="../grafieken.html#sec-grafieken-soorten">sectie&nbsp;<span>5.2</span></a>.</p>
 </div>
 <div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
 <div class="cell">
@@ -757,14 +758,14 @@ dbl (10): area, birth_rate, death_rate, infant_mortality_rate, internet_user...
 <p>Geef de datapunten nu een kleur op basis van het continent waartoe ze behoren. Zie je een patroon in de data?</p>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
-<p>Hiervoor zet je de kleur dus niet vast op een waarde, maar maak je een mapping aan van een variabele. Zie <a href="../grafieken.html#sec-grafieken-anatomie">Sectie&nbsp;<span>5.1</span></a>.</p>
+<p>Hiervoor zet je de kleur dus niet vast op een waarde, maar maak je een mapping aan van een variabele. Zie <a href="../grafieken.html#sec-grafieken-anatomie">sectie&nbsp;<span>5.1</span></a>.</p>
 </div>
 <div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#punten kleuren op basis van continent</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>cia_factbook <span class="sc">%&gt;%</span> </span>
 <span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> life_exp_at_birth,</span>
-<span id="cb13-4"><a href="#cb13-4"></a>             <span class="at">x =</span> internet_users<span class="sc">/</span>population  <span class="co">#Je kunt eventueel ook hier de mapping colour=continent toevoegen</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>             <span class="at">x =</span> internet_users<span class="sc">/</span>population  <span class="co">#Je kunt eventueel ook hier de mapping colour = continent toevoegen</span></span>
 <span id="cb13-5"><a href="#cb13-5"></a>             )) <span class="sc">+</span></span>
 <span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> continent), <span class="co">#Dit is een mapping naar een variabele, je moet dus aes() toevoegen.</span></span>
 <span id="cb13-7"><a href="#cb13-7"></a>             <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span> </span>
@@ -800,7 +801,7 @@ dbl (10): area, birth_rate, death_rate, infant_mortality_rate, internet_user...
 <p>Voeg nu voor de hele dataset één zwarte trendlijn toe. Behoud voor de datapunten de kleuren per continent. Wat kun je uit deze trendlijn concluderen?</p>
 </div>
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
-<p>Gebruik hiervoor <code>geom_smooth()</code>. Zie <a href="../grafieken.html#sec-grafieken-soorten">Sectie&nbsp;<span>5.2</span></a>.</p>
+<p>Gebruik hiervoor <code>geom_smooth()</code>. Zie <a href="../grafieken.html#sec-grafieken-soorten">sectie&nbsp;<span>5.2</span></a>.</p>
 </div>
 <div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
 <div class="cell">
@@ -998,20 +999,23 @@ $ nation &lt;chr&gt; "England &amp; Wales", "England &amp; Wales", "England &amp
 <span id="cb27-2"><a href="#cb27-2"></a><span class="co">#het lijntype pas je aan met de aes-mapping 'linetype'</span></span>
 <span id="cb27-3"><a href="#cb27-3"></a>  ukbabynames <span class="sc">%&gt;%</span></span>
 <span id="cb27-4"><a href="#cb27-4"></a>    <span class="fu">filter</span>(name <span class="sc">==</span> <span class="st">"Fiona"</span>, sex <span class="sc">==</span> <span class="st">"F"</span>, year <span class="sc">&gt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb27-5"><a href="#cb27-5"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">group =</span> nation, <span class="at">colour =</span> nation, <span class="at">linetype =</span> nation)) <span class="sc">+</span> <span class="co">#door toevoeging van colour en linetype is group = nation nu overbodig. Deze kun je verwijderen.</span></span>
-<span id="cb27-6"><a href="#cb27-6"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb27-7"><a href="#cb27-7"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb27-8"><a href="#cb27-8"></a>    <span class="fu">labs</span>(</span>
-<span id="cb27-9"><a href="#cb27-9"></a>      <span class="at">title =</span> <span class="st">"Number of baby girls named Fiona"</span>,</span>
-<span id="cb27-10"><a href="#cb27-10"></a>      <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb27-11"><a href="#cb27-11"></a>      <span class="at">y =</span> <span class="st">"Number of babies"</span>,</span>
-<span id="cb27-12"><a href="#cb27-12"></a>      <span class="at">color =</span> <span class="st">"Nation"</span>, <span class="at">linetype =</span> <span class="st">"Nation"</span></span>
-<span id="cb27-13"><a href="#cb27-13"></a>    ) <span class="sc">+</span></span>
-<span id="cb27-14"><a href="#cb27-14"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb27-15"><a href="#cb27-15"></a>    <span class="fu">theme</span>(</span>
-<span id="cb27-16"><a href="#cb27-16"></a>      <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.7</span>),</span>
-<span id="cb27-17"><a href="#cb27-17"></a>      <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)</span>
-<span id="cb27-18"><a href="#cb27-18"></a>    )  </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-5"><a href="#cb27-5"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, </span>
+<span id="cb27-6"><a href="#cb27-6"></a>               <span class="at">group =</span> nation, </span>
+<span id="cb27-7"><a href="#cb27-7"></a>               <span class="at">colour =</span> nation, </span>
+<span id="cb27-8"><a href="#cb27-8"></a>               <span class="at">linetype =</span> nation)) <span class="sc">+</span> <span class="co">#door toevoeging van colour en linetype is group = nation nu overbodig. Deze kun je verwijderen.</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb27-10"><a href="#cb27-10"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb27-11"><a href="#cb27-11"></a>    <span class="fu">labs</span>(</span>
+<span id="cb27-12"><a href="#cb27-12"></a>      <span class="at">title =</span> <span class="st">"Number of baby girls named Fiona"</span>,</span>
+<span id="cb27-13"><a href="#cb27-13"></a>      <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb27-14"><a href="#cb27-14"></a>      <span class="at">y =</span> <span class="st">"Number of babies"</span>,</span>
+<span id="cb27-15"><a href="#cb27-15"></a>      <span class="at">color =</span> <span class="st">"Nation"</span>, <span class="at">linetype =</span> <span class="st">"Nation"</span></span>
+<span id="cb27-16"><a href="#cb27-16"></a>    ) <span class="sc">+</span></span>
+<span id="cb27-17"><a href="#cb27-17"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb27-18"><a href="#cb27-18"></a>    <span class="fu">theme</span>(</span>
+<span id="cb27-19"><a href="#cb27-19"></a>      <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.7</span>),</span>
+<span id="cb27-20"><a href="#cb27-20"></a>      <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)</span>
+<span id="cb27-21"><a href="#cb27-21"></a>    )  </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="practicum3_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1027,7 +1031,7 @@ $ nation &lt;chr&gt; "England &amp; Wales", "England &amp; Wales", "England &amp
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-3" role="tab" aria-controls="tabset-11-3" aria-selected="false">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
-<p>Bekijk de code in de uitwerking van de vorige opdracht en kopieer deze. Geef vervolgens in de code aan wat de bijdrage is van de code in regels 12, 16 en 17.</p>
+<p>Bekijk de code in de uitwerking van de vorige opdracht en kopieer deze. Geef vervolgens in de code aan wat de bijdrage is van de code in regels 15, 19 en 20.</p>
 </div>
 <div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
 <p>Schakel steeds een stukje code uit met <code>#</code> en kijk goed wat er verandert in hoe de grafiek eruit ziet.</p>
@@ -1038,20 +1042,23 @@ $ nation &lt;chr&gt; "England &amp; Wales", "England &amp; Wales", "England &amp
 <span id="cb28-2"><a href="#cb28-2"></a><span class="co">#het lijntype pas je aan met de aes-mapping 'linetype'</span></span>
 <span id="cb28-3"><a href="#cb28-3"></a>  ukbabynames <span class="sc">%&gt;%</span></span>
 <span id="cb28-4"><a href="#cb28-4"></a>    <span class="fu">filter</span>(name <span class="sc">==</span> <span class="st">"Fiona"</span>, sex <span class="sc">==</span> <span class="st">"F"</span>, year <span class="sc">&gt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb28-5"><a href="#cb28-5"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, <span class="at">group =</span> nation, <span class="at">colour=</span>nation, <span class="at">linetype=</span>nation)) <span class="sc">+</span> </span>
-<span id="cb28-6"><a href="#cb28-6"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb28-8"><a href="#cb28-8"></a>    <span class="fu">labs</span>(</span>
-<span id="cb28-9"><a href="#cb28-9"></a>      <span class="at">title =</span> <span class="st">"Number of baby girls named Fiona"</span>,</span>
-<span id="cb28-10"><a href="#cb28-10"></a>      <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb28-11"><a href="#cb28-11"></a>      <span class="at">y =</span> <span class="st">"Number of babies"</span>, </span>
-<span id="cb28-12"><a href="#cb28-12"></a>      <span class="at">color =</span> <span class="st">"Nation"</span>, <span class="at">linetype =</span> <span class="st">"Nation"</span>               <span class="co">#zorgt dat er een legenda verschijnt met Nation als titel i.p.v. nation</span></span>
-<span id="cb28-13"><a href="#cb28-13"></a>    ) <span class="sc">+</span></span>
-<span id="cb28-14"><a href="#cb28-14"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb28-15"><a href="#cb28-15"></a>    <span class="fu">theme</span>(</span>
-<span id="cb28-16"><a href="#cb28-16"></a>      <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.7</span>),                      <span class="co">#bepaalt positionering van de legenda</span></span>
-<span id="cb28-17"><a href="#cb28-17"></a>      <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)   <span class="co">#zet achtergrondkleur legenda op wit</span></span>
-<span id="cb28-18"><a href="#cb28-18"></a>    )  </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-5"><a href="#cb28-5"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n, </span>
+<span id="cb28-6"><a href="#cb28-6"></a>               <span class="at">group =</span> nation, </span>
+<span id="cb28-7"><a href="#cb28-7"></a>               <span class="at">colour =</span> nation, </span>
+<span id="cb28-8"><a href="#cb28-8"></a>               <span class="at">linetype =</span> nation)) <span class="sc">+</span> </span>
+<span id="cb28-9"><a href="#cb28-9"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a>    <span class="fu">labs</span>(</span>
+<span id="cb28-12"><a href="#cb28-12"></a>      <span class="at">title =</span> <span class="st">"Number of baby girls named Fiona"</span>,</span>
+<span id="cb28-13"><a href="#cb28-13"></a>      <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb28-14"><a href="#cb28-14"></a>      <span class="at">y =</span> <span class="st">"Number of babies"</span>, </span>
+<span id="cb28-15"><a href="#cb28-15"></a>      <span class="at">color =</span> <span class="st">"Nation"</span>, <span class="at">linetype =</span> <span class="st">"Nation"</span>               <span class="co">#zorgt dat er een legenda verschijnt met Nation als titel i.p.v. nation</span></span>
+<span id="cb28-16"><a href="#cb28-16"></a>    ) <span class="sc">+</span></span>
+<span id="cb28-17"><a href="#cb28-17"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb28-18"><a href="#cb28-18"></a>    <span class="fu">theme</span>(</span>
+<span id="cb28-19"><a href="#cb28-19"></a>      <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.7</span>),                      <span class="co">#bepaalt positionering van de legenda</span></span>
+<span id="cb28-20"><a href="#cb28-20"></a>      <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)   <span class="co">#zet achtergrondkleur legenda op wit</span></span>
+<span id="cb28-21"><a href="#cb28-21"></a>    )  </span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="practicum3_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1099,6 +1106,57 @@ $ nation &lt;chr&gt; "England &amp; Wales", "England &amp; Wales", "England &amp
 </div>
 </div>
 </section>
+</section>
+<section id="opdracht-3-nu-helemaal-zelf-tijden-op-de-1500m-hardlopen" class="level1 page-columns page-full">
+<h1>Opdracht 3: Nu helemaal zelf: tijden op de 1500m hardlopen</h1>
+<p>In deze opdracht ga je een variant van figuur 3.4 uit hoofdstuk 3 van IMS namaken. Je vindt de figuur in <a href="#fig-1500">Figuur&nbsp;<span>3.1</span></a>. Hierin zijn de winnende tijden (in minuten) weergegeven op de 1500 meter hardlopen op de Olympische Spelen en de Paralympische Spelen (divisie T11) voor mannen sinds 1950. Aan jou de opdracht om deze grafiek zo goed mogelijk na te maken. De benodigde data vind je in de datatabel <code>paralympic_1500</code> uit het package <code>openintro</code> (behorend bij het boek IMS). Dit package moet je geïnstalleerd hebben en aanroepen voor je de opdracht kunt maken.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-1500" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum3_files/figure-html/fig-1500-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;3.1: Variant van figuur 3.4 uit IMS.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">Opdracht</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-3" role="tab" aria-controls="tabset-13-3" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
+<p>Maak <a href="#fig-1500">Figuur&nbsp;<span>3.1</span></a> na m.b.v. <code>ggplot2</code>.</p>
+</div>
+<div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
+<p>Alle stappen die je nodig hebt, heb je al een keer toegepast in dit practicum (of anders in vorige practica). Kijk dus nog eens terug. Zorg dat je voor jezelf helder hebt welke variabele via welke mapping zichtbaar is gemaakt in de grafiek. Bouw de grafiek in stappen op: eerst de datapunten, dan de trendlijn, dan de afwerking. Zorg ervoor dat je de dataset goed ingeperkt hebt.</p>
+</div>
+<div id="tabset-13-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>paralympic_1500 <span class="sc">%&gt;%</span> </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(division <span class="sc">==</span> <span class="st">"Men"</span>, </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>         type <span class="sc">==</span> <span class="st">"Olympic"</span> <span class="sc">|</span> type <span class="sc">==</span> <span class="st">"T11"</span>,</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>         year <span class="sc">&gt;</span> <span class="dv">1950</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> time_min,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> type,</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> type)) <span class="sc">+</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, <span class="co">#alternatief: y = NULL</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Race type"</span>,</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">shape =</span> <span class="st">"Race type"</span>,</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"1500m race time, in minutes"</span>) <span class="sc">+</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="practicum3_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="deel-2-my-first-quarto" class="level1">
 <h1>Deel 2: My first Quarto</h1>
