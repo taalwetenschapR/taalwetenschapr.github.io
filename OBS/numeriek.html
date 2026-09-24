@@ -289,7 +289,7 @@ Na afloop van dit hoofdstuk:
 <ul>
 <li>kun je numerieke variabelen visualiseren met verschillende soorten plots (histogram, density, dot, box) in <code>ggplot2</code>;</li>
 <li>kun je meerdere <em>geoms</em> combineren om zowel de data zelf als patronen in de data zichtbaar te maken;</li>
-<li>kun je beschrijvende statistieken berekene met <code>tidyverse</code>;</li>
+<li>kun je beschrijvende statistieken berekenen met <code>tidyverse</code>;</li>
 <li>kun je datatabellen omzetten van <em>wide</em> naar <em>long</em> formaat.</li>
 </ul>
 </div>
@@ -309,7 +309,7 @@ codeboek
 </div>
 <section id="de-data-in-dit-hoofdstuk" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="de-data-in-dit-hoofdstuk">De data in dit hoofdstuk</h2>
-<p>We gebruiken in dit hoofdstuk de data van Nederlandse kinderen uit Workbank. We kijken naar de woordenschat bij iets oudere kinderen (ca. 1.5 tot 2.5 jaar). De data zijn te vinden in het bestand <code>wordbank_dutch_WS_child.csv</code>.</p>
+<p>We gebruiken in dit hoofdstuk de data van Nederlandse kinderen uit <em>Workbank</em>. We kijken naar de woordenschat bij iets oudere kinderen (ca. 1.5 tot 2.5 jaar). De data zijn te vinden in het bestand <code>wordbank_dutch_WS_child.csv</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"_datasets/wordbank_dutch_WS_child.csv"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -341,7 +341,7 @@ $ monolingual          &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, T…</code></pre>
 </div>
 </div>
-<p>We hebben 303 observaties en wederom 22 variabelen. We gaan de dataset inperken naar 4 variabelen en zetten de variabele <code>child_id</code> om in een factor. De overige drie variabelen <code>age</code> (leeftijd in maanden), <code>comprehension</code> (hoeveel woorden van de vragenlijst een kind begrijpt) en <code>production</code> (hoeveel woorden van de vragenlijst een kind zelf al gebruikt) zijn al numeriek.</p>
+<p>We hebben 303 observaties en wederom 22 variabelen. We gaan de dataset inperken naar 4 variabelen en zetten de variabele <code>child_id</code> om in een factor. De overige drie variabelen <code>age</code> (leeftijd in maanden), <code>comprehension</code> (hoeveel woorden van de vragenlijst een kind begrijpt) en <code>production</code> (hoeveel woorden van de vragenlijst een kind zelf al gebruikt) zijn numeriek.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="ot">&lt;-</span> wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(child_id, age, comprehension, production) <span class="sc">%&gt;%</span> </span>
@@ -350,7 +350,7 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 </section>
 <section id="distributies-zichtbaar-maken" class="level2 page-columns page-full" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="distributies-zichtbaar-maken"><span class="header-section-number">7.1</span> Distributies zichtbaar maken</h2>
-<p>We gaan de variabele <code>age</code> verder bekijken. Wat is de verdeling van leeftijden in onze dataset? We kunnen met <code>count()</code> tellen hoe vaak elke leeftijd voorkomt. We gebruiken hier het commando <code>print(n=20)</code> om meer rijen zichtbaar te maken dan de standaard 10 rijen.</p>
+<p>We gaan de variabele <code>age</code> verder bekijken. Wat is de verdeling van leeftijden in onze dataset? We kunnen met <code>count()</code> tellen hoe vaak elke leeftijd voorkomt. We gebruiken hier het commando <code>print(n = 20)</code> om meer rijen zichtbaar te maken dan de standaard 10 rijen.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(age) <span class="sc">%&gt;%</span> </span>
@@ -396,95 +396,135 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 </div>
 </div>
 </div>
-<p>Het is dus bij een histogram belangrijk om zelf te bedenken hoe je de data wilt opdelen. Met het argument <code>bins =</code> binnen <code>geom_histogram()</code> kun je aangeven in hoeveel staven je het histogram wilt opdelen. Omdat we bij het tellen hebben gezien dat er 16 verschillende leeftijden voorkomen, ligt het voor deze dataset voor de hand om een getal te nemen waar je 16 door kunt delen om een geheel getal te krijgen. We kiezen hier dus 16. Elke maand krijgt dan zijn eigen staaf.</p>
-<div class="cell">
+<p>Het is dus bij een histogram belangrijk om zelf te bedenken hoe je de data wilt opdelen. Met het argument <code>bins =</code> binnen <code>geom_histogram()</code> kun je aangeven in hoeveel staven je het histogram wilt opdelen. Omdat we bij het tellen hebben gezien dat er 16 verschillende leeftijden voorkomen, ligt het voor deze dataset voor de hand om een getal te nemen waar je 16 door kunt delen om een geheel getal te krijgen. We kiezen hier voor 16. Elke maand krijgt dan zijn eigen staaf.</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">16</span>) <span class="sc">+</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-hist-slecht" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-hist-slecht-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.2: De staven in dit histogram zijn niet goed van elkaar te onderscheiden.</figcaption>
+</figure>
 </div>
 </div>
-<p>De staven zien we alleen nog niet zo duidelijk, omdat zowel de <code>fill</code> als de <code>color</code> standaard op zwart staan ingesteld. We geven de randen van de staaf de kleur <code>white</code> zodat we de bins kunnen zien en geven de staven ook meteen een kleur:</p>
-<div class="cell">
+</div>
+<p>De staven in <a href="#fig-hist-slecht">Figuur&nbsp;<span>7.2</span></a> zien we alleen nog niet zo duidelijk, omdat zowel de <code>fill</code> als de <code>color</code> standaard op zwart staan ingesteld. We geven de randen van de staaf de kleur <code>white</code> zodat we de bins kunnen zien en geven de staven zelf ook meteen een kleur (<a href="#fig-hist-kleur">Figuur&nbsp;<span>7.3</span></a>).</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">16</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="st">"thistle3"</span>) <span class="sc">+</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-hist-kleur" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-hist-kleur-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.3: Door de toevoeging <code>color = white</code> worden de afzonderlijke staven zichtbaar.</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p>In plaats van het argument <code>bins</code> kun je ook <code>binwidth</code> gebruiken, zoals <code>R</code> zelf al suggereerde. Met <code>binwidth</code> specificeer je de de stappen waarin je wilt tellen. Aangezien we hier te maken hebben met gehele getallen kiezen we voor 1, maar je zou bijvoorbeeld ook per 2 of 3 maanden kunnen tellen.</p>
-<div class="cell">
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="st">"thistle3"</span>) <span class="sc">+</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-hist-binwidth" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-hist-binwidth-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.4: Door een logische <em>binwidth</em> te kiezen krijg je een beter beeld van de data</figcaption>
+</figure>
 </div>
 </div>
-<p>Dit histogram geeft met logische bins een goed beeld van de verdeling van de data. We zien dat een aantal leeftijden veel meer voorkomt in de data dan andere. Door de plaatsing van de getallen op de x-as is het alleen niet meteen duidelijk om welke leeftijden het gaat. Sommige streepjes staan midden in een staaf (bijv. 20 en 25), andere staan tussen staven in (bijv. 17.5). De nummering op de x-as passen we aan met <code>scale_x_continuous()</code> (voor de y-as is er <code>scale_y_continuous</code> en er zijn ook varianten voor discrete assen). Het argument <code>breaks</code> specificeert waar we getallen willen. Dit kun je volledig handmatig doen door een vector van getallen te specificeren met <code>c()</code>. Om typewerk te besparen doen we het hier met <code>seq()</code> waarbij we aangeven dat we de labels bij 16 willen laten beginnen en laten doorlopen tot en met 32 in stapjes van 2 (dus 16, 18, 20, …).</p>
-<div class="cell">
+</div>
+<p>Dit histogram in <a href="#fig-hist-binwidth">Figuur&nbsp;<span>7.4</span></a> geeft met logische bins een goed beeld van de verdeling van de data. We zien dat een aantal leeftijden veel meer voorkomt in de data dan andere. Door de plaatsing van de getallen op de x-as is het alleen niet meteen duidelijk om welke leeftijden het gaat. Sommige streepjes staan midden in een staaf (bijv. 20 en 25), andere staan tussen staven in (bijv. 17.5). De nummering op de x-as kunnen we aanpassen we met <code>scale_x_continuous()</code> (voor de y-as is er <code>scale_y_continuous</code> en er zijn ook varianten voor discrete assen). Het argument <code>breaks</code> specificeert waar we getallen willen. Dit kun je volledig handmatig doen door een vector van getallen te specificeren met <code>c()</code>. Om typewerk te besparen doen we het hier met <code>seq()</code>, bekend uit <a href="R.html"><span>Hoofdstuk&nbsp;2</span></a>, waarbij we aangeven dat we de labels bij 16 willen laten beginnen en laten doorlopen tot en met 32 in stapjes van 2 (dus 16, 18, 20, …). Zie <a href="#fig-hist-breaks">Figuur&nbsp;<span>7.5</span></a>.</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="st">"thistle3"</span>) <span class="sc">+</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">16</span>, <span class="dv">32</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-hist-breaks" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-hist-breaks-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.5: Door zelf de <em>breaks</em> te bepalen kun je de labels van de bins handmatig aanpassen.</figcaption>
+</figure>
 </div>
 </div>
-<p>Het blijft bij histogrammen opletten waar elke staaf voor staat. We hebben de getallen nu midden in de staaf staan, maar vaak zie je het ook links of juist rechts van de staaf.</p>
+</div>
+<p>Het blijft bij histogrammen opletten waar elke staaf voor staat. We hebben de waarden in <a href="#fig-hist-breaks">Figuur&nbsp;<span>7.5</span></a> midden in de staaf staan, maar vaak zie je het ook links of juist rechts van de staaf.</p>
 <section id="density" class="level3 page-columns page-full" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="density"><span class="header-section-number">7.1.1</span> Density</h3>
-<p>In plaats van een histogram kunnen we de verdeling ook zichtbaar maken met een <em>density plot</em>. We hoeven hiervoor alleen een ander geom te specificeren. We gebruiken <code>geom_density()</code> en we geven aan dat we de lijn en opvulling van de grafiek in dezelfde kleur willen, met <code>alpha = .5</code> geven we aan dat we de opvulling enigszins transparant willen maken.</p>
-<div class="cell">
+<p>In plaats van een histogram kunnen we de verdeling ook zichtbaar maken met een <em>density plot</em> (<a href="#fig-density-age">Figuur&nbsp;<span>7.6</span></a>). We hoeven hiervoor alleen een ander geom te specificeren. We gebruiken <code>geom_density()</code> en we geven aan dat we de lijn en opvulling van de grafiek in dezelfde kleur willen, met <code>alpha = .5</code> geven we aan dat we de opvulling enigszins transparant willen maken.</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"thistle3"</span>, <span class="at">fill =</span> <span class="st">"thistle3"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-density-age" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-density-age-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.6: Een density plot waarbij de lijn en de oppervlakte onder de grafiek dezelfde kleur hebben gekregen.</figcaption>
+</figure>
 </div>
 </div>
-<p>Hetzelfde kunnen we doen voor de variabele <code>comprehension</code>.</p>
-<div class="cell">
+</div>
+<p>Hetzelfde kunnen we doen voor de variabele <code>comprehension</code> (<a href="#fig-density-comprehension">Figuur&nbsp;<span>7.7</span></a>).</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> comprehension)) <span class="sc">+</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"bisque3"</span>, <span class="at">fill =</span> <span class="st">"bisque3"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-density-comprehension" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-density-comprehension-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.7: Nog een voorbeeld van een density plot.</figcaption>
+</figure>
 </div>
 </div>
-<p>De reden dat we de opvulling transparant maken is dat we dat mooier vinden, maar vooral ook dat het mogelijk maakt om meerdere variabelen in een grafiek zichtbaar te maken. We kunnen bijvoorbeeld proberen <code>production</code> toe te voegen om zo de verdelingen te vergelijken.</p>
-<p>De manier waarop onze dataset is vormgeven met een aparte kolom voor <code>comprehension</code> en een voor <code>production</code> maakt dit wel wat uitdagender. Aangezien we in <code>ggplot()</code> de variabele <code>comprehension</code> al op x hebben afgebeeld, kunnen we daar <code>production</code> niet meer toevoegen. De enige optie die we hebben is om gebruik te maken van het feit dat we binnen het geom een nieuwe mapping kunnen maken in de <code>aes()</code> van het geom. We voegen dus een nieuw <code>geom_density()</code> toe met een eigen kleur. Omdat dit geom later wordt toegevoegd, wordt het over het eerdere heen getekend. De transparantiewaarde met <code>alpha</code> komt hier dus goed van pas.</p>
-<div class="cell">
+</div>
+<p>De reden dat we de opvulling transparant maken, is dat we dit mooier vinden, maar vooral ook dat dit het mogelijk maakt om meerdere variabelen in een grafiek zichtbaar te maken. Zo kunnen we bijvoorbeeld proberen om ook <code>production</code> toe te voegen om zo de verdelingen te vergelijken.</p>
+<p>De manier waarop onze dataset is vormgeven met een aparte kolom voor <code>comprehension</code> en een voor <code>production</code> maakt dit wel wat uitdagender. Aangezien we in <code>ggplot()</code> de variabele <code>comprehension</code> al op x hebben afgebeeld, kunnen we daar <code>production</code> niet meer toevoegen. De enige optie die we hebben is om gebruik te maken van het feit dat we binnen het geom een nieuwe mapping kunnen maken in de <code>aes()</code> van het geom. We voegen dus een nieuw <code>geom_density()</code> toe met een eigen kleur (<a href="#fig-twee-densities">Figuur&nbsp;<span>7.8</span></a>. Omdat dit geom later wordt toegevoegd, wordt het over het eerdere heen getekend. De transparantiewaarde met <code>alpha</code> komt hier dus goed van pas.</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> comprehension)) <span class="sc">+</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"bisque3"</span>, <span class="at">fill =</span> <span class="st">"bisque3"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> production), <span class="at">color =</span> <span class="st">"deepskyblue4"</span>, <span class="at">fill =</span> <span class="st">"deepskyblue4"</span>, <span class="at">alpha =</span> .<span class="dv">4</span>) <span class="sc">+</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-twee-densities" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-twee-densities-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.8: Een eerste poging om twee verdelingen in een density plot zichtbaar te krijgen. Het is nu alleen niet duidelijk welke verdeling bij welke variabele hoort.</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p>Deze grafiek laat de densities van beiden variabelen zien, maar heeft zijn problemen. De x-as zegt nog steeds ‘comprehension’ en het wordt niet duidelijk welke kleur bij welke variabele hoort. Het aanpassen van het label van de x-as via <code>labs()</code> gaat dit niet volledig oplossen.</p>
-<p>We kunnen proberen om de mapping van <code>comprehension</code> naar de x-as te verschuiven van <code>ggplot()</code> naar de <code>aes()</code> van de eerste aanroep van `geom_density()’, maar ook dit verandert niets.</p>
-<div class="cell">
+<p>We kunnen proberen om de mapping van <code>comprehension</code> naar de x-as te verschuiven van <code>ggplot()</code> naar de <code>aes()</code> van de eerste aanroep van <code>geom_density()</code>, maar ook dit verandert niets (<a href="#fig-twee-densities-pg2">Figuur&nbsp;<span>7.9</span></a>).</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> comprehension), <span class="at">color =</span> <span class="st">"bisque3"</span>, <span class="at">fill =</span> <span class="st">"bisque3"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> production), <span class="at">color =</span> <span class="st">"deepskyblue4"</span>, <span class="at">fill =</span> <span class="st">"deepskyblue4"</span>, <span class="at">alpha =</span> .<span class="dv">4</span>) <span class="sc">+</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-twee-densities-pg2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-twee-densities-pg2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.9: Ook met het verschuiven van de <code>aes</code>-mapping naar het geom wordt het niet duidelijk welke variabelen bij welke verdeling horen.</figcaption>
+</figure>
 </div>
 </div>
-<p>Het probleem zit dieper. Wanneer we de kleur willen laten variëren op basis van een variabele, dan moeten de waardes van die variabele in dezelfde kolom staan. Dat is hier niet het geval. We hebben per kind een aparte kolom voor <code>comprehension</code> en een voor <code>production</code>. Het zijn twee aparte variabelen. De dataset staat in wat we noemen <em>wide format</em>.</p>
+</div>
+<p>Het probleem zit dieper. Wanneer we de kleur (of een ander attribuut) willen laten variëren op basis van een variabele, dan moeten de waardes van die variabele in dezelfde kolom staan. Dat is hier niet het geval. We hebben per kind een aparte kolom voor <code>comprehension</code> en een voor <code>production</code>. Het zijn twee aparte variabelen. De dataset staat in wat we noemen <em>wide format</em>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">2</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -497,7 +537,7 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 # ℹ 301 more rows</code></pre>
 </div>
 </div>
-<p>Dit formaat is handig als we de variabelen apart willen laten zien, maar niet als we ze eigenlijk als waardes van één variabele willen behandelen. We moeten dan dus een kolom aanmaken waarin we per kind twee rijen krijgen, een met de waarde voor <code>comprehension</code> en een voor <code>production</code>. Dit noemen we <em>long format</em>. We gaan hiervoor een nieuwe variabele aanmaken die we <code>skill</code> noemen. Dit doen we met de functie <code>pivot_longer()</code> (zoals je misschien al had geraden is er ook de tegenhanger <code>pivot_wider()</code>). In het argument <code>cols</code> geven we aan welke variabelen we willen samenvoegen tot een nieuwe variabele (de kolomnamen worden de namen van de levels). Met <code>names_to</code> geven we de naam van de nieuwe variabele aan en met <code>values_to</code> geven we aan in welke variabele de waarden de oorspronkelijke variabelen terecht gaan komen. Het eerste kind (met id 76526) scoorde 162 op <code>comprehension</code> en 37 op <code>production</code>. Deze waardes zullen op twee rijen komen in de nieuwe variabele <code>number_of_words</code>.</p>
+<p>Dit formaat is handig als we de variabelen apart willen laten zien, maar niet als we ze eigenlijk als waardes van één variabele willen behandelen. Hiervoor moeten we een kolom aanmaken waarin we per kind twee rijen krijgen, een met de waarde voor <code>comprehension</code> en een voor <code>production</code>. Dit noemen we <em>long format</em>. We gaan daarom onze datatabel iets aanpassen door een nieuwe variabele aan te maken die we <code>skill</code> noemen. Dit doen we met de functie <code>pivot_longer()</code> (zoals je misschien al had geraden is er ook de tegenhanger <code>pivot_wider()</code> voor de tegenstelde omzetting). In het argument <code>cols</code> geven we aan welke variabelen we willen samenvoegen tot een nieuwe variabele (de kolomnamen worden de namen van de levels). Met <code>names_to</code> geven we de naam van de nieuwe variabele aan en met <code>values_to</code> geven we aan in welke variabele de waarden van de oorspronkelijke variabelen terecht gaan komen. Het eerste kind (met id 76526) scoorde 162 op <code>comprehension</code> en 37 op <code>production</code>. Deze waardes zullen op twee rijen komen in de nieuwe variabele <code>number_of_words</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="ot">&lt;-</span> wordbank_dutch_child <span class="sc">%&gt;%</span> </span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(comprehension, production), </span>
@@ -522,7 +562,7 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="ot">&lt;-</span> dutch_child_long <span class="sc">%&gt;%</span> </span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">skill =</span> <span class="fu">as.factor</span>(skill))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Nu kunnen we de grafiek maken zoals we hem wilden hebben (<a href="#fig-num-density">Figuur&nbsp;<span>7.2</span></a>), waarbij we de nieuwe variabele <code>skill</code> afbeelden op de kleur en fill van de density plots. We krijgen hiermee meteen een legenda die aangeeft welke skill bij welke kleur hoort. We hebben nu ook maar één aanroep van <code>geom_density()</code> nodig.</p>
+<p>Nu kunnen we de grafiek maken zoals we hem wilden hebben (<a href="#fig-num-density">Figuur&nbsp;<span>7.10</span></a>), waarbij we de nieuwe variabele <code>skill</code> afbeelden op de kleur en fill van de density plots. We krijgen hiermee meteen een legenda die aangeeft welke skill bij welke kleur hoort. We hebben nu ook maar één aanroep van <code>geom_density()</code> nodig.</p>
 <div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span> </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> number_of_words)) <span class="sc">+</span></span>
@@ -535,14 +575,14 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <div id="fig-num-density" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="numeriek_files/figure-html/fig-num-density-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.2: Overlappende density plot op basis van data in <em>long format</em></figcaption>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.10: Overlappende density plot op basis van data in <em>long format</em>. Nu is wel duidelijk bij welke variabele de verdelingen horen.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>De grafiek laat nu duidelijk zien dat er een verschil in verdeling is tussen begrip en productie. Kinderen kennen meer woorden dan ze gebruiken.</p>
-<p>Als we geen overlap willen van de density plots, maar ze wel in één figuur willen laten zien kunnen we nu ook <code>facet_wrap()</code> gebruiken waarbij we de grafiek splitsen op <code>skill</code>. We krijgen dan een aparte grafiek voor <code>comprehension</code> en <code>production</code>. Omdat deze levels al benoemd zijn in de titels van de aparte plots, is de legenda overbodig. We halen de legenda weg met <code>show.legend = F</code> (waarbij <code>F</code> een afkorting is voor <code>FALSE</code>). De alpha-waarde verhogen we weer iets, aangezien de densities niet meer overlappen.</p>
-<div class="cell">
+<p>De grafiek laat nu duidelijk zien dat er een verschil in verdeling is tussen begrip en productie. Kinderen in deze leeftijd kennen meer woorden dan ze gebruiken.</p>
+<p>Als we geen overlap willen van de density plots, maar ze wel in één figuur willen laten zien kunnen we nu ook <code>facet_wrap()</code> gebruiken waarbij we de grafiek splitsen op basis van een variabele, in dit geval <code>skill</code>. We krijgen dan een aparte grafiek voor <code>comprehension</code> en <code>production</code> (<a href="#fig-density-facet">Figuur&nbsp;<span>7.11</span></a>). Omdat deze levels al benoemd zijn in de titels van de aparte plots, is de legenda overbodig. We halen de legenda weg met <code>show.legend = F</code> (waarbij <code>F</code> een afkorting is voor <code>FALSE</code>). De alpha-waarde verhogen we weer iets, aangezien de densities niet meer overlappen. Om voor elke density een andere kleur te krijgen, moeten we twee kleuren meegeven aan <code>scale_fill_manual()</code> en <code>scale_color_manual()</code>.</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span> </span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> number_of_words)) <span class="sc">+</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">color =</span> skill, <span class="at">fill =</span> skill), <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">show.legend =</span> F) <span class="sc">+</span></span>
@@ -551,12 +591,17 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"bisque3"</span>, <span class="st">"deepskyblue4"</span>)) <span class="sc">+</span></span>
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"number of words"</span>) <span class="sc">+</span></span>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-density-facet" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-density-facet-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.11: Door met <em>facets</em> te werken, krijg je voor ieder level van een variabele een aparte grafiek.</figcaption>
+</figure>
 </div>
 </div>
-<p>We gebruiken deze grafiek om nog wat extra opties te laten zien om het uiterlijk van grafieken naar je hand te zetten. We gaan hier de titel van de facet wat duidelijker maken door het lettertype te vergroten en dik te drukken. Deze aanpassing doen we weer binnen <code>theme()</code>. Met <code>strip.text</code> kunnen we de titel aanpassen. We verhogen de grootte naar 18 en zetten de titel in <strong>bold</strong>.</p>
-<div class="cell">
+</div>
+<p>We gebruiken deze grafiek om nog wat extra opties te laten zien om het uiterlijk van grafieken naar je hand te zetten. We gaan hier de titel van de facet wat duidelijker maken door het lettertype te vergroten en dik te drukken. Deze aanpassing doen we weer binnen <code>theme()</code>. Met <code>strip.text</code> kunnen we de titel aanpassen. We verhogen de grootte naar 18 en zetten de titel in <strong>bold</strong>. Het resultaat vind je in <a href="#fig-density-facet-titels">Figuur&nbsp;<span>7.12</span></a></p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span> </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> number_of_words)) <span class="sc">+</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">color =</span> skill, <span class="at">fill =</span> skill), <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">show.legend =</span> F) <span class="sc">+</span></span>
@@ -566,12 +611,17 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"number of words"</span>) <span class="sc">+</span></span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">face =</span> <span class="st">"bold"</span>))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-density-facet-titels" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-density-facet-titels-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.12: Met wat aanpassingen aan de titels wordt de grafiek beter leesbaar.</figcaption>
+</figure>
 </div>
 </div>
-<p>Facets kunnen handig zijn om inzicht te krijgen in hoe een variabele zich gedraagt op niveaus van een andere variabele. Aangezien <code>age</code> een discrete numerieke variabele is, kunnen we per maand een aparte density plot maken. Bij continue variabelen is dat lastiger, aangezien het dan minder duidelijk is waar je de grenzen moet leggen. We kiezen ervoor om de woordproductie per maand te laten zien. Aangezien we nu in <em>long format</em> zitten betekent dat we de data moeten filteren op <code>skill</code>. Zo zie je dat het ene formaat handig kan zijn voor de ene soort visualisatie en het andere voor een andere. Het is dus handig als je makkelijk kunt switchen tussen formaten met de <code>pivot_</code>-functies.</p>
-<div class="cell">
+</div>
+<p>Facets kunnen handig zijn om inzicht te krijgen in hoe een variabele zich gedraagt op niveaus van een andere variabele. Aangezien <code>age</code> een discrete numerieke variabele is, kunnen we per maand een aparte density plot maken. Bij continue variabelen is dat lastiger, aangezien het dan minder duidelijk is waar je de grenzen moet leggen. We kiezen ervoor om de woordproductie per maand te laten zien (<a href="#fig-facet-age">Figuur&nbsp;<span>7.13</span></a>). Aangezien we nu in <em>long format</em> zitten betekent dat we de data moeten filteren op <code>skill</code>. Zo zie je dat het ene formaat handig kan zijn voor de ene soort visualisatie en het andere voor een andere. Het is dus handig als je makkelijk kunt switchen tussen formaten met de <code>pivot_</code>-functies.</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(skill <span class="sc">==</span> <span class="st">"production"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> number_of_words)) <span class="sc">+</span></span>
@@ -581,16 +631,21 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Distribution by age"</span>) <span class="sc">+</span></span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">15</span>, <span class="at">face =</span> <span class="st">"bold"</span>))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-facet-age" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-facet-age-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.13: Een facet plot waarbij er voor elke waarde van leeftijd een aparte verdeling wordt weergegeven.</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p>We zien in de figuur een duidelijke ontwikkeling. Aan het begin en het eind zijn er duidelijk pieken en zitten de kinderen allemaal in hetzelfde gebied. Tussen de 20 en 27 maanden is er meer variatie. Sommige kinderen produceren al veel woorden terwijl anderen nog wat lagere aantallen laten zien.</p>
 </section>
-<section id="boxplots" class="level3" data-number="7.1.2">
+<section id="boxplots" class="level3 page-columns page-full" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="boxplots"><span class="header-section-number">7.1.2</span> boxplots</h3>
-<p>Een derde optie om verdelingen zichtbaar te maken zijn boxplots. We zetten onze eerdere density plot <a href="#fig-num-density">Figuur&nbsp;<span>7.2</span></a> om in een boxplot door <code>geom_density()</code> te vervangen door <code>geom_boxplot()</code>.</p>
-<div class="cell">
+<p>Een derde optie om verdelingen zichtbaar te maken, naast histogrammen en density plots, zijn <em>boxplots</em> (<a href="#fig-box-start">Figuur&nbsp;<span>7.14</span></a>). We zetten onze eerdere density plot <a href="#fig-num-density">Figuur&nbsp;<span>7.10</span></a> om in een boxplot door <code>geom_density()</code> te vervangen door <code>geom_boxplot()</code>.</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span> </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> number_of_words, <span class="at">color =</span> skill, <span class="at">fill =</span> skill)) <span class="sc">+</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
@@ -598,12 +653,17 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"bisque3"</span>, <span class="st">"deepskyblue4"</span>)) <span class="sc">+</span></span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"number of words"</span>) <span class="sc">+</span></span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-box-start" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-box-start-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.14: Een eerste versie van een boxplot waarbij de verdeling van de productie en comprehensie van woorden wordt getoond.</figcaption>
+</figure>
 </div>
 </div>
-<p>Net zoals het histogram komt het boxplot met een aantal eigenaardigheden. Zo zien we in bovenstaande figuur getallen staan op de y-as. Het lijkt erop dat de levels van de variabele <code>skill</code> ieder een waarde hebben gekregen (rond 0.2 en -0.2). Die getallen willen we weghalen, aangezien ze betekenisloos zijn. De oplossing daarvoor is simpel. We voegen <code>y = skill</code> toe aan de <code>aes()</code>-mapping (hier in <code>ggplot()</code>). Om te zorgen dat de grafiek niet redundant wordt, halen we meteen de legenda weg.</p>
-<div class="cell">
+</div>
+<p>Net zoals het histogram komt het maken van een boxplot met een aantal eigenaardigheden. Zo zien we in <a href="#fig-box-start">Figuur&nbsp;<span>7.14</span></a> getallen staan op de y-as. Het lijkt erop dat de levels van de variabele <code>skill</code> ieder een waarde hebben gekregen (rond 0.2 en -0.2). Die getallen willen we weghalen, aangezien ze betekenisloos zijn (ze zijn gekoppeld aan de gevraagde breedte van de box door het argument <code>width = .4</code>). De oplossing daarvoor is simpel. We voegen <code>y = skill</code> toe aan de <code>aes()</code>-mapping (hier in <code>ggplot()</code>). Om te zorgen dat de grafiek niet redundant wordt, halen we meteen de legenda weg (<a href="#fig-box-verbeterd">Figuur&nbsp;<span>7.15</span></a>).</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span> </span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> number_of_words, <span class="at">y =</span> skill, <span class="at">color =</span> skill, <span class="at">fill =</span> skill)) <span class="sc">+</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">4</span>, <span class="at">alpha =</span> .<span class="dv">3</span>, <span class="at">show.legend =</span> F) <span class="sc">+</span></span>
@@ -611,23 +671,33 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"bisque3"</span>, <span class="st">"deepskyblue4"</span>)) <span class="sc">+</span></span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"number of words"</span>) <span class="sc">+</span></span>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-box-verbeterd" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-box-verbeterd-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.15: Door een kleine aanpassing worden de levels van de variabele <em>skill</em> nu getoond als labels op de y-as en is de legenda overbodig geworden.</figcaption>
+</figure>
 </div>
 </div>
-<p>Het toevoegen van een y-variabele helpt ons ook als we maar één variabele willen afbeelden in de boxplot. Wanneer we dit niet doen krijgen we weer getallen op de y-as.</p>
-<div class="cell">
+</div>
+<p>Het toevoegen van een y-variabele helpt ons ook als we maar één variabele willen afbeelden in een boxplot. Wanneer we dit niet doen krijgen we weer getallen op de y-as, zie <a href="#fig-box-enkel">Figuur&nbsp;<span>7.16</span></a>.</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span> </span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(skill <span class="sc">==</span> <span class="st">"production"</span>) <span class="sc">%&gt;%</span> <span class="co">#ontdubbelen van de data, elk kind staat er nu 2 keer in</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">"thistle3"</span>, <span class="at">fill =</span> <span class="st">"thistle3"</span>, <span class="at">width =</span> .<span class="dv">4</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-box-enkel" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-box-enkel-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.16: Een boxplot van een variabele waarbij er weer ongewenste getallen verschijnen op de y-as.</figcaption>
+</figure>
 </div>
 </div>
-<p>Met een omweg kunnen we van deze getallen afkomen. We voegen een <em>dummy</em>-variabele toe op y met <code>y = factor(0)</code> en we specificeren vervolgens in <code>theme()</code> met <code>element_blank()</code> dat we geen tekst op de y-as willen.</p>
-<div class="cell">
+</div>
+<p>Met een omweg kunnen we van deze getallen afkomen (<a href="#fig-box-getalloos">Figuur&nbsp;<span>7.17</span></a>). We voegen een <em>dummy</em>-variabele toe op y met <code>y = factor(0)</code> en we specificeren vervolgens in <code>theme()</code> met <code>element_blank()</code> dat we geen tekst op de y-as willen.</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span> </span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(skill <span class="sc">==</span> <span class="st">"production"</span>) <span class="sc">%&gt;%</span> <span class="co">#ontdubbelen van de data, elk kind staat er nu 2 keer in</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> <span class="fu">factor</span>(<span class="dv">0</span>))) <span class="sc">+</span></span>
@@ -635,12 +705,17 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
 <span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_blank</span>())</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-box-getalloos" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-box-getalloos-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.17: Met een dummy variabele kunnen de ongewenste getallen op de y-as onderdrukt worden.</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p>Hiermee wordt de box in boxplot ook minder breed, in overeenstemming met de door ons gevraagde breedte met het argument <code>width</code>.</p>
-<p>Boxplots zijn ideaal om <em>outliers</em> zichtbaar te maken. Dit zijn punten die meer dan <span class="math inline">\(1.5 \times IQR\)</span> onder het eerste kwartiel of boven het derde kwartiel liggen. In de variabelen in onze dataset zitten geen outliers. Voor de oefening voegen we daarom twee outliers toe. We maken hiervoor eerst een datatabel aan met verzonnen data van twee kinderen.</p>
+<p>Boxplots zijn ideaal om <em>outliers</em> zichtbaar te maken. Dit zijn punten die meer dan <span class="math inline">\(1.5 \times IQR\)</span> onder het eerste kwartiel of boven het derde kwartiel liggen. In de variabelen in onze dataset zitten geen outliers. Voor de oefening voegen we daarom handmatig twee outliers toe. We maken hiervoor eerst een datatabel aan met verzonnen data van twee kinderen.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>outlier_cases <span class="ot">&lt;-</span> <span class="fu">tribble</span>(<span class="sc">~</span>child_id, <span class="sc">~</span>age, <span class="sc">~</span>skill, <span class="sc">~</span>number_of_words,</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>                   <span class="dv">99999</span>, <span class="dv">38</span>, <span class="st">"production"</span>, <span class="dv">999</span>,</span>
@@ -649,8 +724,8 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>outlier_cases <span class="ot">&lt;-</span> outlier_cases <span class="sc">%&gt;%</span> </span>
 <span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">child_id =</span> <span class="fu">as.factor</span>(child_id))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Met <code>add_case()</code> voegen we deze twee observaties toe aan onze datatabel. In <code>geom_boxplot()</code> specificeren we met <code>outlier.color</code> en <code>outlier.alpha</code> de kleur en transparantie van de punten waarmee de outliers worden getoond.</p>
-<div class="cell">
+<p>Met <code>add_case()</code> voegen we deze twee observaties toe aan onze datatabel. In <code>geom_boxplot()</code> specificeren we met <code>outlier.color</code> en <code>outlier.alpha</code> de kleur en transparantie van de punten waarmee de outliers worden getoond (<a href="#fig-box-outliers">Figuur&nbsp;<span>7.18</span></a>).</p>
+<div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span> </span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(skill <span class="sc">==</span> <span class="st">"production"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_case</span>(outlier_cases) <span class="sc">%&gt;%</span> </span>
@@ -664,15 +739,20 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
 <span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">13</span>) <span class="sc">+</span></span>
 <span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_blank</span>())</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="numeriek_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-box-outliers" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="numeriek_files/figure-html/fig-box-outliers-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.18: Outliers worden zichtbaar als punten. De kleur en de transparantie kunnen worden aangepast met <code>outlier.color</code> en <code>outlier.alpha</code>.</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
 </section>
 <section id="beschrijvende-statistieken-berekenen" class="level2 page-columns page-full" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="beschrijvende-statistieken-berekenen"><span class="header-section-number">7.2</span> Beschrijvende statistieken berekenen</h2>
-<p><code>R</code> bieden verschillende functies waarmee we beschrijvende statistieken kunnen berekenen. <a href="#tbl-num-functies">Tabel&nbsp;<span>7.1</span></a> geeft een overzicht van veelgebruikte functies.</p>
+<p><code>R</code> biedt verschillende functies waarmee we beschrijvende statistieken kunnen berekenen. <a href="#tbl-num-functies">Tabel&nbsp;<span>7.1</span></a> geeft een overzicht van veelgebruikte functies.</p>
 <div id="tbl-num-functies" class="anchored page-columns page-full">
 <table class="table">
 
@@ -732,7 +812,7 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <tr class="odd">
 <td><code>quantile()</code></td>
 <td>bepaalt de kwantielen van een variabele, hiervoor moet je met het argument <code>probs =</code> aangeven welke kwantielen je wilt</td>
-<td>nee (alleen wanneer er maar één kwantiel wordt opgevraagd)</td>
+<td>alleen wanneer er maar één kwantiel wordt opgevraagd</td>
 </tr>
 <tr class="even">
 <td><code>summary()</code></td>
@@ -742,7 +822,7 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 </tbody>
 </table>
 <div class="quarto-table-caption margin-caption">Tabel&nbsp;7.1: Overzicht van functies waarmee beschrijvende statistieken kunnen worden berekend</div></div>
-<p>De meeste van deze functies kunnen gecombineerd worden met <code>summarize()</code> (of <code>summarise()</code>), de <code>Tidyverse</code>-functie die je moet gebruiken om beschrijvende statistieken te berekenen. De functies die hier niet mee combineren kun je gebruiken met de <code>$</code>-notatie om er een variabele uit te lichten.</p>
+<p>De meeste van deze functies kunnen gecombineerd worden met <code>summarize()</code> (of <code>summarise()</code>), de <code>tidyverse</code>-functie die je moet gebruiken om beschrijvende statistieken te berekenen. De functies die hier niet mee combineren kun je gebruiken met de <code>base R</code> <code>$</code>-notatie om een variabele uit een datatabel te selecteren.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(wordbank_dutch_child<span class="sc">$</span>age)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -778,8 +858,9 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>wordbank_dutch_child <span class="sc">%&gt;%</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(age) <span class="sc">%&gt;%</span> </span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_comprehension =</span> <span class="fu">mean</span>(comprehension),</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_production =</span> <span class="fu">mean</span>(production)) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">4</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_production =</span> <span class="fu">mean</span>(production)) <span class="sc">%&gt;%</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">4</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 16 × 3
     age mean_comprehension mean_production
@@ -796,14 +877,14 @@ $ typically_developing &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(age, skill) <span class="sc">%&gt;%</span> </span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_number_words =</span> <span class="fu">mean</span>(number_of_words)) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">4</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">4</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'age'. You can override using the `.groups`
 argument.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 32 × 3
-# Groups:   age [16]
     age skill         mean_number_words
   &lt;dbl&gt; &lt;fct&gt;                     &lt;dbl&gt;
 1    16 comprehension             125. 
@@ -813,7 +894,7 @@ argument.</code></pre>
 # ℹ 28 more rows</code></pre>
 </div>
 </div>
-<p>Het package <code>skimr</code> biedt een functie <code>skim()</code> die je in een keer een overzicht geeft van allerlei statistieken, waaronder ook aantal observaties en missing data, gesorteerd voor categorische en numerieke variabele apart. Hiervoor moet je het package <code>skimr</code> natuurlijk wel geïnstalleerd hebben en aanroepen.</p>
+<p>Het package <code>skimr</code> biedt een functie <code>skim()</code> die je in een keer een overzicht geeft van allerlei statistieken, waaronder ook aantal observaties en missing data, gesorteerd voor categorische en numerieke variabele apart. Hiervoor moet je het package <code>skimr</code> natuurlijk wel geïnstalleerd hebben en aanroepen (aan het begin van je script waar je ook alle andere gebruikte packages aanroept).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -971,7 +1052,8 @@ argument.</code></pre>
 <div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>dutch_child_long <span class="sc">%&gt;%</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(skill) <span class="sc">%&gt;%</span> </span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>(number_of_words)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>(number_of_words) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display page-columns page-full">
 <table class="table table-sm table-striped small">
 
@@ -1082,7 +1164,8 @@ argument.</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>dutch_means <span class="ot">&lt;-</span> dutch_child_long <span class="sc">%&gt;%</span> </span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(age, skill) <span class="sc">%&gt;%</span> </span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_number_words =</span> <span class="fu">mean</span>(number_of_words))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_number_words =</span> <span class="fu">mean</span>(number_of_words)) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'age'. You can override using the `.groups`
 argument.</code></pre>
@@ -1090,7 +1173,6 @@ argument.</code></pre>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>dutch_means</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 32 × 3
-# Groups:   age [16]
      age skill         mean_number_words
    &lt;dbl&gt; &lt;fct&gt;                     &lt;dbl&gt;
  1    16 comprehension             125. 
@@ -1106,7 +1188,7 @@ argument.</code></pre>
 # ℹ 22 more rows</code></pre>
 </div>
 </div>
-<p>Vervolgens plotten we deze met behulp van <code>geom_point()</code> waarbij we de twee typen skills weer hun eigen kleur geven.</p>
+<p>Vervolgens plotten we deze gemiddelden met behulp van <code>geom_point()</code> waarbij we de twee typen skills weer hun eigen kleur geven (<a href="#fig-num-skills">Figuur&nbsp;<span>7.19</span></a>).</p>
 <div class="cell page-columns page-full">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>dutch_means <span class="sc">%&gt;%</span> </span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> mean_number_words, <span class="at">color =</span> skill)) <span class="sc">+</span></span>
@@ -1120,23 +1202,23 @@ argument.</code></pre>
 <div id="fig-num-skills" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
 <p><img src="numeriek_files/figure-html/fig-num-skills-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.3: Gemiddelde begrip en productie van woorden in een dotplot.</figcaption>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;7.19: Gemiddelde begrip en productie van woorden in een dotplot.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Bovenstaande grafiek is niet (of moeilijk) te maken met <em>wide format</em>, aangezien we een variabele (<code>skill</code>) willen afbeelden op de kleur van de punten. Het <em>wide format</em> is wel geschikt om ruwe data te plotten. Die gaan we nu toevoegen.</p>
+<p><a href="#fig-num-skills">Figuur&nbsp;<span>7.19</span></a> is niet (of moeilijk) te maken met <em>wide format</em>, aangezien we een variabele (<code>skill</code>) willen afbeelden op de kleur van de punten. Het <em>wide format</em> is wel geschikt om ruwe data te plotten. Die gaan we nu toevoegen.</p>
 </section>
 <section id="de-data-zichtbaar-maken" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="de-data-zichtbaar-maken"><span class="header-section-number">7.4</span> De data zichtbaar maken</h2>
-<p>Centrummaten geven maar een erg beperkt beeld van de data. We willen daarom naast de centrummaat (hier het gemiddelde) ook iets van de spreiding in de data laten zien. We doen dat door van elk kind de geobserveerde waarde te plotten. Op basis van deze geobserveerde waardes hebben we het gemiddelde per leeftijd berekend.</p>
-<p>We gebruiken als basis de code voor <a href="#fig-num-skills">Figuur&nbsp;<span>7.3</span></a>. Om de grafiek overzichtelijk te houden voegen we alleen de datapunten voor <code>production</code> toe. We voegen aan deze grafiek de observaties per kind toe via een tweede aanroep van <code>geom_point()</code> (regel 4 in onderstaand codeblok) waarbij we de waardes uit een andere datatabel (<code>wordbank_dutch_child</code>) halen dan waar we de gemiddelden uit halen (<code>dutch_means</code>, zie r. 1). De volgorde van de twee aanroepen van <code>geom_point()</code> is hier belangrijk. Om de gemiddelden over de individuele punten heen te plotten, gebruiken we de eerste aanroep van <code>geom_point()</code> voor de individuele punten en de tweede aanroep voor de gemiddelden. We voegen aan het tweede geom expliciet de dataset toe met het argument <code>data =</code> (anders zou de dataset van <code>ggplot()</code> worden overgenomen) en we maken ook een nieuwe <code>aes()</code> aan (regel 4) om de juiste variabelen uit de dataset zichtbaar te maken. De individuele punten willen we zichtbaar houden en daarom zetten we <code>alpha</code> wat lager en om de punten te onderscheiden van de punten die het gemiddelde weergeven maken we de observaties van individuele kinderen grijs. We lichten de betekenis van de twee typen punten toe door een <code>caption</code> toe te voegen aan de figuur onder <code>labs()</code> (regel 9).</p>
+<p>Centrummaten geven maar een erg beperkt beeld van de data. We willen daarom naast de centrummaat (hier het gemiddelde) ook iets van de spreiding in de data laten zien. We doen dat door van elk kind de geobserveerde waarde te plotten. Op basis van deze geobserveerde waardes per kind hebben we het gemiddelde per leeftijd berekend.</p>
+<p>We gebruiken als basis de code voor <a href="#fig-num-skills">Figuur&nbsp;<span>7.19</span></a>. Om de grafiek overzichtelijk te houden voegen we alleen de datapunten voor <code>production</code> toe. We voegen aan deze grafiek de observaties per kind toe via een extra aanroep van <code>geom_point()</code> (regel 4 in onderstaand codeblok) waarbij we de waardes uit een andere datatabel (<code>wordbank_dutch_child</code>) halen dan waar we de gemiddelden uit halen (<code>dutch_means</code>, zie r. 1). De volgorde van de twee aanroepen van <code>geom_point()</code> is hier belangrijk. Om de gemiddelden over de individuele punten heen te plotten, gebruiken we de eerste aanroep van <code>geom_point()</code> voor de individuele punten en de tweede aanroep voor de gemiddelden. We voegen aan het eerste <code>geom_point()</code> (r. 4) expliciet de dataset toe met het argument <code>data =</code> (anders zou de dataset van <code>ggplot()</code> worden overgenomen) en we maken ook een nieuwe <code>aes()</code> aan (regel 4) om de juiste variabelen uit de dataset zichtbaar te maken. De individuele punten willen we zichtbaar houden en daarom zetten we <code>alpha</code> wat lager. Om de punten te onderscheiden van de punten die het gemiddelde weergeven maken we de observaties van individuele kinderen grijs. We lichten de betekenis van de twee typen punten toe door een <code>caption</code> toe te voegen aan de figuur onder <code>labs()</code> (regel 9).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>dutch_means <span class="sc">%&gt;%</span></span>
 <span id="cb50-2"><a href="#cb50-2"></a>  <span class="fu">filter</span>(skill <span class="sc">==</span> <span class="st">"production"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb50-3"><a href="#cb50-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> mean_number_words )) <span class="sc">+</span></span>
-<span id="cb50-4"><a href="#cb50-4"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> wordbank_dutch_child, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> production), <span class="at">color =</span> <span class="st">"grey80"</span>, <span class="at">alpha =</span> .<span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb50-5"><a href="#cb50-5"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"deepskyblue4"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb50-4"><a href="#cb50-4"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> wordbank_dutch_child, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> production), <span class="at">color =</span> <span class="st">"grey80"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb50-5"><a href="#cb50-5"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"deepskyblue4"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> .<span class="dv">6</span>) <span class="sc">+</span></span>
 <span id="cb50-6"><a href="#cb50-6"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"mean number of words"</span>,</span>
 <span id="cb50-7"><a href="#cb50-7"></a>       <span class="at">x =</span> <span class="st">"age in months"</span>,</span>
 <span id="cb50-8"><a href="#cb50-8"></a>       <span class="at">title =</span> <span class="st">"Word production by age"</span>,</span>
@@ -1151,12 +1233,12 @@ argument.</code></pre>
 <section id="verder-leren" class="level2 unnumbered page-columns page-full">
 <h2 class="unnumbered anchored" data-anchor-id="verder-leren">Verder leren</h2>
 <ul>
-<li>Lees <a href="https://socviz.co/groupfacettx.html#histograms">sectie 4.6</a> en <a href="https://socviz.co/workgeoms.html#continuous-variables-by-group-or-category">sectie 5.2</a> van <span class="citation" data-cites="IntroDataVis">Healy (<a href="index.html#ref-IntroDataVis" role="doc-biblioref">2019</a>)</span> voor meer inzicht in het visualiseren van numerieke variabelen.</li>
+<li>Lees de secties <em>Histograms and Density Plots</em> <a href="https://socviz.co/04-group-facet-transform.html#sec-histograms">(hoofdstuk 4)</a> en <em>Continuous Variables by Group or Category</em> <a href="https://socviz.co/05-more-on-geoms.html#continuous-variables-by-group-or-category">(hoofdstuk 5)</a> van <span class="citation" data-cites="IntroDataVis2e">Healy (<a href="index.html#ref-IntroDataVis2e" role="doc-biblioref">2026</a>)</span> voor meer inzicht in het visualiseren van numerieke variabelen.</li>
 <li><a href="https://r4ds.hadley.nz/data-tidy.html">Hoofdstuk 5</a> van <span class="citation" data-cites="R4DS">Wickham et al. (<a href="index.html#ref-R4DS" role="doc-biblioref">2023</a>)</span> geeft meer informatie over het omzetten van datatabellen van en naar <em>long/wide</em> formaat.</li>
 <li>Het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2 cheat sheet</a> zou inmiddels minder geheimen voor je moeten hebben en geeft een goed overzicht van wat er tot nu besproken is.</li>
 </ul>
-<div class="no-row-height column-margin column-container"><div id="ref-IntroDataVis" class="csl-entry" role="listitem">
-Healy, K. (2019). <em>Data Visualisation: A Practical Introduction.</em> Princeton University Press. <a href="https://socviz.co/">https://socviz.co/</a>
+<div class="no-row-height column-margin column-container"><div id="ref-IntroDataVis2e" class="csl-entry" role="listitem">
+Healy, K. (2026). <em>Data Visualisation: A Practical Introduction.</em> (2de dr.). Princeton University Press. <a href="https://socviz.co/">https://socviz.co/</a>
 </div><div id="ref-R4DS" class="csl-entry" role="listitem">
 Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em><span>R</span> for Data Science</em> (2de dr.). O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>
 </div></div><p>Nu zou je in staat moeten zijn Practicum 5 te maken.</p>
