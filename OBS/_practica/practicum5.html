@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Onderzoeksontwerp en Beschrijvende Statistiek - Practicum 4</title>
+<title>Onderzoeksontwerp en Beschrijvende Statistiek - Practicum 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,8 +49,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../_practica/practicum5.html" rel="next">
-<link href="../_practica/practicum3.html" rel="prev">
+<link href="../_practica/practicum4.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -80,6 +79,8 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -92,7 +93,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practica.html">Practica</a></li><li class="breadcrumb-item"><a href="../_practica/practicum4.html">Practicum 4</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practica.html">Practica</a></li><li class="breadcrumb-item"><a href="../_practica/practicum5.html">Practicum 5</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
@@ -194,13 +195,13 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../_practica/practicum4.html" class="sidebar-item-text sidebar-link active">
+  <a href="../_practica/practicum4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Practicum 4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../_practica/practicum5.html" class="sidebar-item-text sidebar-link">
+  <a href="../_practica/practicum5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Practicum 5</span></a>
   </div>
 </li>
@@ -216,16 +217,22 @@ div.csl-indent {
     <h2 id="toc-title">Inhoudsopgave</h2>
    
   <ul class="collapse">
-  <li><a href="#grafieken-en-tabellen-voor-categorische-data" id="toc-grafieken-en-tabellen-voor-categorische-data" class="nav-link active" data-scroll-target="#grafieken-en-tabellen-voor-categorische-data">Grafieken en tabellen voor categorische data</a>
+  <li><a href="#numerieke-data-visualiseren" id="toc-numerieke-data-visualiseren" class="nav-link active" data-scroll-target="#numerieke-data-visualiseren">Numerieke data visualiseren</a>
   <ul class="collapse">
   <li><a href="#leerdoelen" id="toc-leerdoelen" class="nav-link" data-scroll-target="#leerdoelen">Leerdoelen</a></li>
   <li><a href="#voorbereiding" id="toc-voorbereiding" class="nav-link" data-scroll-target="#voorbereiding">Voorbereiding</a></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
-  <li><a href="#talen-van-de-wereld" id="toc-talen-van-de-wereld" class="nav-link" data-scroll-target="#talen-van-de-wereld">Talen van de wereld</a></li>
+  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link" data-scroll-target="#sec-intro">Introductie</a></li>
+  <li><a href="#werkwijze" id="toc-werkwijze" class="nav-link" data-scroll-target="#werkwijze">Werkwijze</a></li>
   </ul></li>
-  <li><a href="#voorbereiding-van-de-data" id="toc-voorbereiding-van-de-data" class="nav-link" data-scroll-target="#voorbereiding-van-de-data">Voorbereiding van de data</a>
+  <li><a href="#data-verkennen" id="toc-data-verkennen" class="nav-link" data-scroll-target="#data-verkennen">Data verkennen</a></li>
+  <li><a href="#intermezzo-het-interpreteren-van-boxplots" id="toc-intermezzo-het-interpreteren-van-boxplots" class="nav-link" data-scroll-target="#intermezzo-het-interpreteren-van-boxplots">Intermezzo: het interpreteren van boxplots</a></li>
+  <li><a href="#visualiseren-boxplot" id="toc-visualiseren-boxplot" class="nav-link" data-scroll-target="#visualiseren-boxplot">Visualiseren: Boxplot</a></li>
+  <li><a href="#berekenen-van-descriptieve-statistieken" id="toc-berekenen-van-descriptieve-statistieken" class="nav-link" data-scroll-target="#berekenen-van-descriptieve-statistieken">Berekenen van descriptieve statistieken</a></li>
+  <li><a href="#meerdere-geoms-in-een-grafiek" id="toc-meerdere-geoms-in-een-grafiek" class="nav-link" data-scroll-target="#meerdere-geoms-in-een-grafiek">Meerdere geoms in een grafiek</a></li>
+  <li><a href="#deel-2" id="toc-deel-2" class="nav-link" data-scroll-target="#deel-2">Deel 2</a>
   <ul class="collapse">
-  <li><a href="#opdrachten" id="toc-opdrachten" class="nav-link" data-scroll-target="#opdrachten">Opdrachten</a></li>
+  <li><a href="#rekenen-met-normaalverdelingen" id="toc-rekenen-met-normaalverdelingen" class="nav-link" data-scroll-target="#rekenen-met-normaalverdelingen">Rekenen met normaalverdelingen</a></li>
+  <li><a href="#rekenen-met-z-scores" id="toc-rekenen-met-z-scores" class="nav-link" data-scroll-target="#rekenen-met-z-scores">Rekenen met z-scores</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -235,7 +242,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Practicum 4</h1>
+<h1 class="title">Practicum 5</h1>
 </div>
 
 
@@ -250,189 +257,257 @@ div.csl-indent {
 
 </header>
 
-<section id="grafieken-en-tabellen-voor-categorische-data" class="level1 unnumbered page-columns page-full">
-<h1 class="unnumbered">Grafieken en tabellen voor categorische data</h1>
+<section id="numerieke-data-visualiseren" class="level1 unnumbered page-columns page-full">
+<h1 class="unnumbered">Numerieke data visualiseren</h1>
 <section id="leerdoelen" class="level2">
 <h2 class="anchored" data-anchor-id="leerdoelen">Leerdoelen</h2>
+<p>Deze week richten we ons op het visualiseren en analyseren van numerieke data.</p>
 <ul>
-<li>visualiseren van categorische variabelen (factoren) met tabellen en staafdiagrammen (barplots) in <code>ggplot2</code>;</li>
-<li>de levels van categorische variabelen (factoren) herordenen en van naam veranderen;</li>
-<li>naar wens aanpassen van de kleuren van je grafieken.</li>
+<li><p>visualiseren van numerieke data met verschillende plots (histogram, density, dot, box) met <code>ggplot2</code>;</p></li>
+<li><p>het berekenen van beschrijvende statistieken met <code>tidyverse</code>;</p></li>
+<li><p>het combineren van meerdere geoms in <code>ggplot2</code>;</p></li>
+<li><p>rekenen met de normaalverdeling;</p></li>
+<li><p>berekenen en interpreteren van <em>z</em>-scores.</p></li>
 </ul>
 </section>
 <section id="voorbereiding" class="level2">
 <h2 class="anchored" data-anchor-id="voorbereiding">Voorbereiding</h2>
-<p>Lees <a href="../factoren.html">hoofdstuk&nbsp;<span>6</span></a> uit het dictaat. De benodigde <code>R</code>-functies zijn te vinden in het dictaat (zie ook eerdere hoofdstukken en practica). Functies die niet in het dictaat besproken worden, worden gegeven in de opdracht. Het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2 cheatsheet</a> geeft een overzicht van de mogelijkheden die <code>ggplot2</code> biedt. Relevante <em>cheat sheets</em> vind je ook in een map op Brightspace (<code>Content &gt; Practica &gt; R cheat sheets</code>) en via de <code>help</code>-tab in <code>RStudio</code>.</p>
+<p>Lees <a href="../numeriek.html">hoofdstuk&nbsp;<span>7</span></a> uit het dictaat. De benodigde <code>R</code>-functies zijn te vinden in het dictaat (zie ook eerdere hoofdstukken en practica). Functies die niet in het dictaat besproken worden, worden gegeven in de opdracht. Het <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2 cheatsheet</a> geeft een overzicht van de mogelijkheden die <code>ggplot2</code> biedt. Relevante <em>cheat sheets</em> vind je ook in een map op Brightspace (<code>Content &gt; Practica &gt; R cheat sheets</code>) en via de <code>help</code>-tab in <code>RStudio</code>.</p>
+<p>Voor deel 2 ga je stof uit het hoorcollege toepassen. Hiervoor lees je eerst sectie <a href="https://openintro-ims.netlify.app/foundations-mathematical">13.2</a> uit IMS.</p>
 </section>
-<section id="quarto" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
-<p>Vanaf deze week maak je de uitwerkingen in Quarto. Dit betekent dat je werkt in een <code>qmd</code>-bestand dat je in <code>RStudio</code> via de knop <code>Render</code> kunt omzetten naar een <code>html</code>-bestand.</p>
+<section id="sec-intro" class="level2">
+<h2 class="anchored" data-anchor-id="sec-intro">Introductie</h2>
+<p>In deze practicumopdracht ga je verder met een databestand behorend bij het onderzoek geïntroduceerd in week 1 (<code>Dataset_idiomen.txt</code>). Dit databestand bevat de resultaten van een onderzoek naar het leren van Nederlandse idiomatische uitdrukkingen door tweedetaalleerders van het Nederlands en het effect hierop van het oefenen met een computerprogramma (groep 1) versus klassikaal oefenen (groep 2). Het databestand is wel wat uitgebreid ten opzichte van week 1: Het databestand bevat nu data van 20 proefpersonen. Daarnaast heeft de onderzoeker bij alle proefpersonen nagevraagd hoeveel uur per week ze Nederlands spreken, omdat hij het idee heeft dat dit belangrijke informatie is, die de resultaten wellicht zou kunnen beïnvloeden. Ook heeft hij nagevraagd wat het opleidingsniveau van de participanten is.</p>
+</section>
+<section id="werkwijze" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="werkwijze">Werkwijze</h2>
 <p>Kopieer om te beginnen het bestand <code>voornaam_achternaam_PracticumX.qmd</code> uit de map <code>templates_scripts_quarto</code> in je <code>Rproject</code> naar de hoofdmap. Hernoem het bestand door je eigen naam in te vullen en het juiste nummer van het practicum. Open het bestand vervolgens vanuit <code>RStudio</code>. Maak voor afzonderlijke taken steeds een nieuw codeblokje aan en test de werking door je <code>qmd</code>-bestand tussendoor te renderen.</p>
+<p>Wil je je <code>qmd</code>-bestand renderen naar <code>html</code>, zorg dan dat je zeker weet dat al je R-code werkt, anders krijg je zeker errors. Werkt een stukje code nog niet, zet dan een <code>#</code> voor de betreffende regels, of zet <code>#| eval: false</code> als eerste regel in je code-block (niet vergeten om weg te halen als de code wel weer werkt).</p>
 <p>Meer informatie over Quarto kun je vinden in <a href="https://r4ds.hadley.nz/quarto">hoofdstuk 28</a> van <span class="citation" data-cites="R4DS">Wickham et al. (<a href="../index.html#ref-R4DS" role="doc-biblioref">2023</a>)</span> en op de <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto website</a>. Zie ook deel 2 van Practicum 3.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-R4DS" class="csl-entry" role="listitem">
 Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em><span>R</span> for Data Science</em> (2de dr.). O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>
 </div></div></section>
-<section id="talen-van-de-wereld" class="level2">
-<h2 class="anchored" data-anchor-id="talen-van-de-wereld">Talen van de wereld</h2>
-<p>De Ethnologue is een database met alle talen die op dit moment gesproken worden in de wereld. In dit practicum ga je op basis van data uit de Ethnologue tellingen en grafieken maken van het aantal talen in verschillende delen van de wereld.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Let op">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Let op
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Sla je script regelmatig op, zodat je geen code kwijtraakt. Klik hiervoor op het floppy-disk-symbool of gebruik de sneltoetsen <code>Ctrl + S</code>/<code>Cmd + S</code>. Render je script regelmatig, als een extra check voor de goede werking van je code.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled" title="Probeer het eerst zelf">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Probeer het eerst zelf
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Vanaf deze week vind je geen Hint en Code meer bij de opdrachten. Het is nu aan jou om het eerst helemaal zelf te proberen. Maak hierbij gebruik van de code uit de eerdere practica. Een voorbeelduitwerking verschijnt een dag na het practicum op Brightspace.</p>
-</div>
-</div>
 </section>
-</section>
-<section id="voorbereiding-van-de-data" class="level1 page-columns page-full">
-<h1>Voorbereiding van de data</h1>
+<section id="data-verkennen" class="level1">
+<h1>Data verkennen</h1>
 <div class="cell">
 
 </div>
 <div class="cell">
 
 </div>
-<p>We gaan werken met twee databestanden die je kunt vinden op de website van de Ethnologue: <a href="https://www.ethnologue.com/codes/">https://www.ethnologue.com/codes/</a>. Het gaat om de volgende databestanden:</p>
 <ol type="1">
-<li><p><code>LanguageCodes.tab</code> Dit bestand bevat voor alle talen in de Ethnologue de volgende informatie: een identificeerder (<code>LangID</code>), code voor het land waar de taal (primair) wordt gesproken (<code>CountryID</code>), status van de taal (<code>LangStatus</code>, <code>L</code> = levend, <code>X</code> = uitgestorven), de naam van de taal (<code>Name</code>);</p></li>
-<li><p><code>CountryCodes.tab</code> Dit bestand geeft uitleg bij de codes voor landen (<code>CountryID</code>) uit het vorige bestand en bevat de volgende informatie: de code van het land (<code>CountryID</code>), de naam van het land (<code>Name</code>), en de regio waar het land in ligt (<code>Area</code>).</p></li>
-</ol>
-<p>We gaan deze bestanden inlezen en ze samenvoegen tot een datatabel (dit heb je al een keer gedaan in Practicum 2).</p>
-<ol type="1">
-<li>Download beide bestanden, voeg ze toe aan de map <code>datasets</code> in de map <code>OBS_practica</code> en lees ze vervolgens in in <code>R</code>. Dit zijn de <code>url</code>s voor beide bestanden: <a href="https://www.ethnologue.com/codes/LanguageCodes.tab">https://www.ethnologue.com/codes/LanguageCodes.tab</a>, <a href="https://www.ethnologue.com/codes/CountryCodes.tab">https://www.ethnologue.com/codes/CountryCodes.tab</a></li>
+<li>Lees het databestand <code>Dataset_idiomen.txt</code> in. Bekijk de variabelen en pas indien nodig hun meetniveau aan. N.B. de levels 1 en 2 van de variabele <code>Groep</code> staan voor instructie respectievelijk met de computer en klassikaal. Uit hoeveel rijen bestaat het databestand en van hoeveel participanten zijn er data beschikbaar? Bedenk goed wat dit betekent voor de databeschrijvingen die je gaat maken bij de volgende opdrachten (<em>hint</em>: zijn de datapunten onafhankelijk?).</li>
 </ol>
 <div class="cell">
 
 </div>
 <div class="cell">
 
+</div>
+<div class="answer">
+<div class="cell">
+
+</div>
 </div>
 <ol start="2" type="1">
-<li>Bekijk de variabelen in beide datatabellen, pas hun namen aan aan onze richtlijnen en pas indien nodig hun meetniveau/type aan. <em>Let op</em>: zorg dat de variabele <code>Name</code> uit het bestand <code>CountryCodes.tab</code> uiteindelijk de naam <code>country_name</code> krijgt. Dit om dubbele namen te voorkomen.</li>
+<li>Maak een visualisatie van de verdeling van de variabele <code>opleidingsniveau</code>.</li>
 </ol>
 <div class="cell">
 
 </div>
 <ol start="3" type="1">
-<li>Voeg de twee datatabellen samen tot een datatabel met de naam <code>ethnologue</code></li>
+<li>Maak een histogram van de verdeling van de variabele <code>uren_nederlands_per_week</code>. Zorg voor een logische verdeling van de <em>bins</em>.</li>
 </ol>
 <div class="cell">
 
 </div>
 <ol start="4" type="1">
-<li>Sla de nieuwe datatabel <code>ethnologue</code> op als een databestand met de naam <code>ethnologue.txt</code>.</li>
+<li>Maak een density plot van de verdeling van de variabele <code>uren_nederlands_per_week</code> uitgesplits per <code>groep</code>.</li>
 </ol>
 <div class="cell">
 
 </div>
-<section id="opdrachten" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="opdrachten">Opdrachten</h2>
-<p>Beantwoord op basis van de datatabel <code>ethnologue</code> onderstaande vragen. Onderbouw elk antwoord met R-code. Probeer er bij de eerste 4 opdrachten voor te zorgen dat de output van je code het antwoord geeft op de vraag en dus zo min mogelijk informatie bevat die irrelevant is voor de beantwoording van de vraag.</p>
+</section>
+<section id="intermezzo-het-interpreteren-van-boxplots" class="level1">
+<h1>Intermezzo: het interpreteren van boxplots</h1>
+<div class="cell">
+
+</div>
+<p>Het vergt wat oefening om uit boxplots de distributie te kunnen aflezen. In de volgende opdrachten ga je hiermee oefenen door boxplots om te zetten in histogrammen/density plots en andersom. Je gebruikt hiervoor de data uit het databestand <code>verdeling_variabelen.csv</code> in de map <code>datasets</code>. Hierin vind je de gesimuleerde data van 5 variabelen <code>A</code> t/m <code>E</code>.</p>
 <ol type="1">
-<li>Hoeveel talen worden er volgens Ethnologue gesproken in Nederland?</li>
+<li>Lees het databestand <code>verdeling_variabelen.csv</code> in in <code>R</code>. Controleer dat je een datatabel hebt met meerdere variabelen (kolommen). Je mag de namen van de variabelen als hoofdletters laten staan.</li>
 </ol>
 <div class="cell">
 
 </div>
-<ol start="2" type="1">
-<li>Om welke talen gaat het?</li>
+<ol type="1">
+<li><p>Maak van ieder van de variabelen <code>A</code>, <code>B</code> en <code>C</code> een boxplot in <code>R</code>. Schets vervolgens op basis van deze boxplots op papier een tekening van de verdeling van iedere variabele als een histogram of density plot. Vergelijk je tekening tot slot met een door <code>R</code> gegenereerd histogram of density plot.</p></li>
+<li><p>Voor variabele <code>D</code> en <code>E</code> werken we andersom. Maak van deze variabelen eerst een histogram of density plot in <code>R</code>. Schets vervolgens op papier hoe het bijbehorende boxplot eruitziet en controleer dit door in <code>R</code> een boxplot te maken van iedere variabele.</p></li>
+</ol>
+<div class="cell">
+
+</div>
+</section>
+<section id="visualiseren-boxplot" class="level1">
+<h1>Visualiseren: Boxplot</h1>
+<p>We keren nu terug naar onze dataset over idiomen.</p>
+<ol type="1">
+<li><p>Schets op basis van het histogram dat je eerder hebt gemaakt van de variabele <code>uren_nederlands_per_week</code> hoe het bijbehorende boxplot eruitziet.</p></li>
+<li><p>Maak nu in <code>R</code> een boxplot van de variabele <code>uren_nederlands_per_week</code>.</p></li>
 </ol>
 <div class="cell">
 
 </div>
 <ol start="3" type="1">
-<li>Hoeveel verschillende talen worden er gesproken in Europa?</li>
+<li>In de boxplot zie je (een) outlier(s). Om welke participant(en) gaat het, in welke groep zit(ten) die, hoeveel uur Nederlands spreekt/spreken die per week en wat was de score op de voormeting en nameting?</li>
 </ol>
 <div class="cell">
 
 </div>
 <ol start="4" type="1">
-<li>In welk land in Azië worden de meeste talen gesproken?</li>
+<li><p>Geef op basis van de boxplot antwoord op de volgende vragen (een schatting volstaat):</p>
+<ol type="a">
+<li><p>Wat is de range?</p></li>
+<li><p>Wat is de interquartile range (IQR)?</p></li>
+<li><p>Wat is de mediaan?</p></li>
+</ol></li>
+<li><p>Bereken nu met <code>R</code> de exacte waarden van de range, het 1e en 3e kwartiel, IQR, en de mediaan.</p></li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="6" type="1">
+<li><p>Schets op basis van het density plot dat je eerder hebt gemaakt van de variabele <code>uren_nederlands_per_week</code> per <code>groep</code> hoe de bijbehorende boxplots eruitzien.</p></li>
+<li><p>Maak nu een boxplot van de variabele <code>uren_nederlands_per_week</code>, uitgesplitst per <code>groep</code>.</p></li>
+</ol>
+<div class="cell">
+
+</div>
+</section>
+<section id="berekenen-van-descriptieve-statistieken" class="level1">
+<h1>Berekenen van descriptieve statistieken</h1>
+<ol type="1">
+<li>We gaan nu werken met de percentages correct van de voormeting en de nameting. Bereken het gemiddelde <code>percentage_correct</code> van de voormeting en nameting en de bijbehorende standaarddeviatie met behulp van <code>R</code>. Heeft het oefenen met Nederlandse uitdrukkingen op het oog effect gehad?</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="2" type="1">
+<li>De vraag van de onderzoeker was of er een verschil zou zitten tussen de groep die geoefend heeft met het computerprogramma (groep 1) en de groep die klassikaal geoefend heeft (groep 2). Bereken de gemiddelden en standaarddeviaties van het <code>percentage_correct</code> van de voormeting en nameting voor beide groepen apart. Zit er op het oog een verschil tussen de groepen?</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="1">
+<li>Maak op basis van de resultaten nu een grafiek met daarin het gemiddelde percentage correct per meting per groep. Doe dit een keer met en een keer zonder gebruik van facets. Welke versie vind je beter?</li>
+</ol>
+<div class="cell">
+
+</div>
+</section>
+<section id="meerdere-geoms-in-een-grafiek" class="level1">
+<h1>Meerdere geoms in een grafiek</h1>
+<ol type="1">
+<li>Voeg aan de grafiek uit de vorige opdracht de individuele datapunten van de participanten toe. Maak deze datapunten enigszins transparant.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="2" type="1">
+<li>Maak een boxplot van de variabele <code>percentage_correct</code> per <code>meting</code> per <code>groep</code>. Voeg aan dit boxplot ook de daadwerkelijke datapunten toe. Maak de datapunten enigszins transparant.</li>
+</ol>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="deel-2" class="level1 page-columns page-full">
+<h1>Deel 2</h1>
+<section id="rekenen-met-normaalverdelingen" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="rekenen-met-normaalverdelingen">Rekenen met normaalverdelingen</h2>
+<div class="page-columns page-full"><p><a href="https://openintro-ims.netlify.app/foundations-mathematical#normal-probability-calculations">Sectie 13.2.3</a> in IMS bespreekt de <code>R</code>-functies <code>pnorm()</code> en <code>qnorm()</code> en ook de functie <code>normTail()</code> uit het package <code>openintro</code>. Met de functie <code>pnorm()</code> kun je <code>R</code> laten berekenen wat de kans is op een bepaalde waarde of lager in een normaalverdeling. De functie <code>qnorm()</code> geeft je het omgekeerde: bij een ingevoerde kanswaarde <span class="math inline">\(p\)</span> de bijbehorende (kwantiel)waarde in de normaalverdeling. Dit is de kritieke waarde waarvoor geldt dat de oppervlakte onder de curve links ervan de proportie <em>p</em> heeft. Zoals je weet, is de totale oppervlakte onder elke distributie steeds 1. Dus bij een ingevoerde kanswaarde van .9, geeft <code>qnorm()</code> de kwantielwaarde zodanig dat een proportie van .9 (of 90%) van de oppervlakte onder de curve links van die waarde ligt.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Deze functies en hun uitkomsten zijn soms best lastig te vatten. Daarom is het goed om er even mee te oefenen om het onder de knie te krijgen. Hiertoe dienen onderstaande opgaven. Je kunt natuurlijk ook zelf nog variaties bedenken om verder te oefenen. Bij de vragen kun je ook de functie <code>normTail()</code> uit <code>openintro</code> gebruiken om het eerst visueel te maken. Bereken het juiste antwoord steeds met behulp van de relevante functie in <code>R</code>. Nogmaals: de oppervlakte onder elke distributie (de kans op de waardes in de distributie) is steeds 1.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Vergelijkbare functies bestaan voor andere theoretische relevante distributies zoals de <em>t</em>-distributie (<code>pt()</code> en <code>qt()</code>), de <em>chi2</em>-distributie (<code>pchisq()</code> en <code>qchisq()</code>) en de <em>f</em>-distributie (<code>pf()</code> en <code>qf()</code>).</p></li></div></div>
+<p>Zorg dat je voor onderstaande opgaven het package <code>openintro</code> hebt geladen om de functie <code>normTail()</code> te kunnen gebruiken.</p>
+<ol type="1">
+<li>Wat is de kans op een waarde van 0 of kleiner in een standaardnormaalverdeling?</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="2" type="1">
+<li>Wat is de kans op een waarde van 0 of groter in een standaardnormaalverdeling?</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="1">
+<li>Wat is de kans op een waarde van 1 of groter in een standaardnormaalverdeling?</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="4" type="1">
+<li>Wat is de kans op een waarde van 45 of kleiner in een normaalverdeling met <em>M</em> = 30 en <em>sd</em> = 15?</li>
 </ol>
 <div class="cell">
 
 </div>
 <ol start="5" type="1">
-<li>In <a href="#fig-top10">Figuur&nbsp;<span>1.1</span></a> zie je een grafiek met daarin de top 10 van landen in de wereld waar de meeste talen worden gesproken. Maak deze grafiek zo goed mogelijk na. Het kan hierbij helpen om de taak in stukjes op te delen: eerst de juiste data weergeven , dan in de juiste volgorde en tot slot alle afwerking (zoals kleuren en namen van assen).</li>
+<li>Wat is de kans op een waarde van 10 of groter in een normaalverdeling met <em>M</em> = 12 en <em>sd</em> = 1,64?</li>
 </ol>
 <div class="cell">
 
 </div>
-<div class="cell page-columns page-full">
-<div class="cell-output-display page-columns page-full">
-<div id="fig-top10" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="practicum4_files/figure-html/fig-top10-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.1: Top 10 landen van de wereld met de meeste talen</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-
-</div>
 <ol start="6" type="1">
-<li>Maak voor een regio (<code>area</code>) naar keuze een tabel waarin je voor elk land aangeeft wat het aandeel (proportie) is van dat land in het totaal aantal talen gesproken in die regio (afronden op 2 decimalen). Dus bijv. Brazilië is verantwoordelijk voor een proportie van 0.17 van de talen gesproken in de regio <em>Americas</em>.</li>
+<li>Wat is de kritieke waarde behorend bij een kans van <span class="math inline">\(p\)</span> = .95 in een standaardnormaalverdeling?</li>
 </ol>
 <div class="cell">
 
 </div>
 <ol start="7" type="1">
-<li>Maak nu een liggend staafdiagram van de data uit de vorige opdracht. Zorg ervoor dat je landen met een proportie van 0 niet weergeeft. Geef de staaf van een land naar keuze een andere kleur dan de rest. Zorg dat je ergens in de grafiek ook het totaal aantal talen gesproken in de regio vermeldt net als de bron van de data.</li>
+<li>Wat zijn de kritieke waardes behorend bij de middelste 95% van de data in een standaardnormaalverdeling?</li>
 </ol>
-<div class="cell">
-
-</div>
 <div class="cell">
 
 </div>
 <ol start="8" type="1">
-<li>Bereken per regio het percentage talen met een status <code>L</code> en <code>X</code> (afronden op gehele getallen).</li>
+<li>Hoe groot is de kans op een waarde tussen de 20 en 40 in een normaalverdeling met <em>M</em> = 30 en <em>sd</em> = 15?</li>
 </ol>
 <div class="cell">
 
 </div>
-<ol start="9" type="1">
-<li>Maak een grafiek van de data uit de vorige vraag waarmee je laat zien hoe het percentage uitgestorven talen verschilt per werelddeel. Zorg voor een logische ordening van de data.</li>
+</section>
+<section id="rekenen-met-z-scores" class="level2">
+<h2 class="anchored" data-anchor-id="rekenen-met-z-scores">Rekenen met z-scores</h2>
+<p>Je gaat nu werken met <em>z</em>-scores. We richten ons op de variabele <code>uren_nederlands_per_week</code>. We vragen ons af (i) hoe groot de kans is dat een participant 4 uur of minder per week Nederlands spreekt en (ii) hoe groot de kans is dat een participant 40 uur of langer per week Nederlands spreekt. Je mag hierbij uitgaan van normaalverdeelde data. Doorloop de volgende stappen om deze vragen te beantwoorden :</p>
+<ol type="I">
+<li>Bereken met behulp van <code>R</code> de <span class="math inline">\(z\)</span>-score die hoort bij 4 uur per week, resp. 40 uur per week. Maak hierbij gebruik van de volgende formule: <span class="math inline">\(z = (X_i - \bar{X}) / s\)</span></li>
 </ol>
 <div class="cell">
 
 </div>
+<ol start="2" type="I">
+<li>Bereken de kans op deze <span class="math inline">\(z\)</span>-waarde met de bijbehorende R-functie (zie vorige sectie).</li>
+</ol>
 <div class="cell">
 
 </div>
-<ol start="10" type="1">
-<li>Pas de grafiek uit de vorige vraag aan, zodat deze opgenomen kan worden in een Nederlandstalig verslag. Zorg ervoor dat de status van de talen voluit wordt geschreven als ‘levend’ en ‘uitgestorven’.</li>
+<ol start="3" type="I">
+<li>Gebruik vervolgens de tabel in het bestand <code>Z-tabel.pdf</code> (dat je op Brightspace kunt vinden onder <code>Practica</code>) om handmatig de kans behorende bij de <span class="math inline">\(z\)</span>-waardes te bepalen. Vergelijk je antwoorden met die bij de vorige stap.</li>
 </ol>
 <div class="cell">
 
 </div>
 <hr>
-<p><em>Dit is het einde van practicum 4.</em></p>
+<p><em>Dit is het einde van practicum 5.</em></p>
 
 
 
 </section>
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -670,14 +745,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../_practica/practicum3.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practicum 3</span>
+      <a href="../_practica/practicum4.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practicum 4</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../_practica/practicum5.html" class="pagination-link">
-        <span class="nav-page-text">Practicum 5</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
