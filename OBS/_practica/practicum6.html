@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Onderzoeksontwerp en Beschrijvende Statistiek - Practicum 6</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../_practica/practicum5.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practica.html">Practica</a></li><li class="breadcrumb-item"><a href="../_practica/practicum6.html">Practicum 6</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalk in" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Onderzoeksontwerp en Beschrijvende Statistiek</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welkom</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inleiding</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R en RStudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bewerken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Bewerken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../grafieken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Grafieken maken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../factoren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Categorische variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../numeriek.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Numerieke variabelen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../practica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practicum 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../_practica/practicum6.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Practicum 6</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhoudsopgave</h2>
+   
+  <ul class="collapse">
+  <li><a href="#variatie-en-onzekerheid" id="toc-variatie-en-onzekerheid" class="nav-link active" data-scroll-target="#variatie-en-onzekerheid">Variatie en onzekerheid</a>
+  <ul class="collapse">
+  <li><a href="#leerdoelen" id="toc-leerdoelen" class="nav-link" data-scroll-target="#leerdoelen">Leerdoelen</a></li>
+  <li><a href="#voorbereiding" id="toc-voorbereiding" class="nav-link" data-scroll-target="#voorbereiding">Voorbereiding</a></li>
+  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link" data-scroll-target="#sec-intro">Introductie</a></li>
+  <li><a href="#werkwijze" id="toc-werkwijze" class="nav-link" data-scroll-target="#werkwijze">Werkwijze</a></li>
+  </ul></li>
+  <li><a href="#sec-simulatie" id="toc-sec-simulatie" class="nav-link" data-scroll-target="#sec-simulatie">Deel 1 | Datasimulatie: variatie tussen steekproeven</a>
+  <ul class="collapse">
+  <li><a href="#sec-dataset-genereren" id="toc-sec-dataset-genereren" class="nav-link" data-scroll-target="#sec-dataset-genereren">Een dataset genereren in <code>R</code></a></li>
+  <li><a href="#een-populatie-genereren" id="toc-een-populatie-genereren" class="nav-link" data-scroll-target="#een-populatie-genereren">Een populatie genereren</a></li>
+  <li><a href="#sec-steekproeven" id="toc-sec-steekproeven" class="nav-link" data-scroll-target="#sec-steekproeven">Steekproeven uit de populatie trekken</a></li>
+  <li><a href="#een-steekproevenverdeling-maken" id="toc-een-steekproevenverdeling-maken" class="nav-link" data-scroll-target="#een-steekproevenverdeling-maken">Een steekproevenverdeling maken</a></li>
+  <li><a href="#bootstrapping" id="toc-bootstrapping" class="nav-link" data-scroll-target="#bootstrapping">Bootstrapping</a></li>
+  </ul></li>
+  <li><a href="#sec-ethnologue-steekproeven" id="toc-sec-ethnologue-steekproeven" class="nav-link" data-scroll-target="#sec-ethnologue-steekproeven">Deel 2 | Echte data: variatie tussen steekproeven</a></li>
+  <li><a href="#deel-3-betrouwbaarheidsintervallen-in-r" id="toc-deel-3-betrouwbaarheidsintervallen-in-r" class="nav-link" data-scroll-target="#deel-3-betrouwbaarheidsintervallen-in-r">Deel 3 | Betrouwbaarheidsintervallen in <code>R</code></a>
+  <ul class="collapse">
+  <li><a href="#handmatig-berekenen" id="toc-handmatig-berekenen" class="nav-link" data-scroll-target="#handmatig-berekenen">Handmatig berekenen</a></li>
+  <li><a href="#bestaande-functies" id="toc-bestaande-functies" class="nav-link" data-scroll-target="#bestaande-functies">Bestaande functies</a></li>
+  <li><a href="#zelf-aan-de-slag" id="toc-zelf-aan-de-slag" class="nav-link" data-scroll-target="#zelf-aan-de-slag">Zelf aan de slag</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Practicum 6</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="variatie-en-onzekerheid" class="level1 unnumbered page-columns page-full">
+<h1 class="unnumbered">Variatie en onzekerheid</h1>
+<section id="leerdoelen" class="level2">
+<h2 class="anchored" data-anchor-id="leerdoelen">Leerdoelen</h2>
+<ul>
+<li><p>Begrijpen van variatie tussen steekproeven d.m.v. datasimulatie;</p></li>
+<li><p>Begrijpen van de steekproevenverdeling d.m.v. datasimulatie;</p></li>
+<li><p>Berekenen en plotten van betrouwbaarheidsintervallen.</p></li>
+</ul>
+</section>
+<section id="voorbereiding" class="level2">
+<h2 class="anchored" data-anchor-id="voorbereiding">Voorbereiding</h2>
+<p>Lees <a href="https://openintro-ims.netlify.app/foundations-bootstrapping#foundations-bootstrapping">hoofdstuk 12</a>, <a href="https://openintro-ims.netlify.app/foundations-mathematical">hoofdstuk 13 t/m sectie 13.3</a> en <a href="https://openintro-ims.netlify.app/inference-one-mean#inference-one-mean">hoofdstuk 19 t/m sectie 19.2.4</a> uit IMS. Voor het weergeven van betrouwbaarheidsintervallen in grafieken lees <a href="https://clauswilke.com/dataviz/visualizing-uncertainty.html#visualizing-the-uncertainty-of-point-estimates">sectie 16.2</a> t/m Figuur 16.11 uit Wilke (2019).</p>
+<p>De benodigde <code>R</code>-functies zijn te vinden in het dictaat (zie ook eerdere hoofdstukken en practica). Functies die niet in het dictaat besproken worden, worden gegeven in de opdracht.</p>
+</section>
+<section id="sec-intro" class="level2">
+<h2 class="anchored" data-anchor-id="sec-intro">Introductie</h2>
+<p>In het eerste deel van dit practicum (<a href="#sec-simulatie">sectie&nbsp;<span>1</span></a>) gaan we werken met datasimulatie om een beter begrip te krijgen van variatie tussen steekproeven, de theoretische notie <em>steekproevenverdeling</em> en de factoren die hierbij een rol spelen. Bij datasimulatie genereren we de data zelf, met behulp van functies in <code>R</code>. In dit eerste deel zal de <code>R</code>-code worden gegeven en is het aan jou om de uitkomsten de interpreteren. In het tweede deel van het practicum ga je deze kennis vervolgens toepassen op de data uit de Ethnologue waar we in Practicum 4 ook al mee gewerkt hebben. In het laatste deel van het practicum ga je betrouwbaarheidsintervallen berekenen en plotten met behulp van <code>ggplot2</code>.</p>
+</section>
+<section id="werkwijze" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="werkwijze">Werkwijze</h2>
+<p>Kopieer om te beginnen het bestand <code>voornaam_achternaam_PracticumX.qmd</code> uit de map <code>templates_scripts_quarto</code> in je <code>Rproject</code> naar de hoofdmap. Hernoem het bestand door je eigen naam in te vullen en het juiste nummer van het practicum. Open het bestand vervolgens vanuit <code>RStudio</code>. Maak voor afzonderlijke taken steeds een nieuw codeblokje aan en test de werking door je <code>qmd</code>-bestand tussendoor te renderen.</p>
+<p>Wil je je <code>qmd</code>-bestand renderen naar <code>html</code>, zorg dan dat je zeker weet dat al je R-code werkt, anders krijg je zeker errors. Werkt een stukje code nog niet, zet dan een <code>#</code> voor de betreffende regels, of zet <code>#| eval: false</code> als eerste regel in je code-block (niet vergeten om weg te halen als de code wel weer werkt).</p>
+<p>Meer informatie over Quarto kun je vinden in <a href="https://r4ds.hadley.nz/quarto">hoofdstuk 28</a> van <span class="citation" data-cites="R4DS">Wickham et al. (<a href="../index.html#ref-R4DS" role="doc-biblioref">2023</a>)</span> en op de <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto website</a>. Zie ook deel 2 van Practicum 3.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-R4DS" class="csl-entry" role="listitem">
+Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em><span>R</span> for Data Science</em> (2de dr.). O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>
+</div></div><p>Om de code in dit practicum na te kunnen doen moet je de packages <code>tidyverse</code> en <code>infer</code> laden. Dat laatste package moet je waarschijnlijk eerst nog installeren.</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="sec-simulatie" class="level1 page-columns page-full">
+<h1>Deel 1 | Datasimulatie: variatie tussen steekproeven</h1>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Opmerking
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In dit eerste deel hoef je niet zelf <code>R</code>-code te schrijven. Je krijgt de code gepresenteerd en tussendoor zijn er interpretatievragen die je helpen om te reflecteren op wat er wordt geïllustreerd. Er is ook steeds een modelantwoord, zoals je dat kent van de eerste drie practica van de cursus. Probeer de werking van de code in deze sectie wel goed te doorgronden. In het tweede deel ga je de code namelijk zelf toepassen op data uit de Ethnologue.</p>
+</div>
+</div>
+<section id="sec-dataset-genereren" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sec-dataset-genereren">Een dataset genereren in <code>R</code></h2>
+<div class="page-columns page-full"><p>Datasimulatie is een krachtige techniek die gebruikt kan worden om theoretische begrippen of de werking van statistische modellen beter te begrijpen.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> N.B. het spreekt voor zich dat we datasimulatie niet mogen gebruiken om daadwerkelijke onderzoeksdata te genereren! Bij datasimulatie vragen we de computer om random data te genereren op basis van een distributie met bepaalde eigenschappen, bijv. een normaalverdeling met een bepaald gemiddelde en standaarddeviatie. <code>R</code> heeft hiervoor verschillende ingebouwde functies waarvan de naam begint met <code>r</code> (voor <em>random</em>) gevolgd door een aanduiding van de distributie waaruit gesampled wordt. Zo geeft <code>rnorm()</code> een random sample uit een normaalverdeling en <code>rt()</code> uit een <em>t</em>-verdeling. Wij richten ons hier op de normaalverdeling met <code>rnorm()</code>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;De code in deze opdracht is deels geïnspireerd door <a href="https://ubcecon.github.io/comet-open/docs/2_Beginner/beginner_sampling_distributions/beginner_sampling_distributions.html">dit voorbeeld</a> van <span class="citation" data-cites="comet">Adshade et al. (<a href="../index.html#ref-comet" role="doc-biblioref">2023</a>)</span>.</p><div id="ref-comet" class="csl-entry" role="listitem">
+Adshade, M., Graves, J., Hasan, H., &amp; other COMET Contributors. (2023). <em>The <span>COMET</span> Project: Creating Online Materials for Econometric Teachings</em>. <a href="https://ubcecon.github.io/comet-open/">https://ubcecon.github.io/comet-open/</a>
+</div></li></div></div>
+<p>De functie <code>rnorm()</code> neemt drie argumenten in de volgende volgorde <code>rnorm(n, mean, sd)</code>: (i) <code>n</code>: aantal random datapunten dat gegenereerd moet worden, (ii) <code>mean</code>: het gemiddelde van de verdeling waaruit gesampled wordt, (iii) <code>sd</code>: de standaarddeviatie van de verdeling waaruit gesampled wordt. Dus <code>rnorm(n = 23, mean = 34, sd = 6.5)</code> (korte versie: <code>rnorm(23, 34, 6.5)</code>) genereert 23 random datapunten uit een normaalverdeling met een gemiddelde van 34 en standaarddeviatie van 6,5. Wanneer je gemiddelde en standaarddeviatie niet specificeert wordt uitgegaan van een standaardnormaalverdeling met gemiddelde 0 en standaarddeviatie 1.</p>
+<ol type="1">
+<li>We genereren 10 datapunten uit een normaalverdeling naar keuze.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 57.82628 40.12197 44.71373 45.76987 57.03115 32.62796 48.92320 11.28180
+ [9] 64.64169 35.52393</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>We genereren nu nog twee keer 10 datapunten uit dezelfde normaalverdeling als die we in 1 hebben gekozen.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">16</span>); <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 57.02728 61.17262 41.10411 54.15253 16.52987 60.48631 31.10549 54.11673
+ [9] 41.39210 68.70293</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 32.83999 26.17214 36.54164 18.63344 54.50505 30.74581 65.97317 55.36531
+ [9] 40.46888 56.74697</code></pre>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Wat valt je op als je deze getallen vergelijkt met die bij 1 zijn gegenereerd?</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>In alle drie de gevallen worden er 10 datapunten gegenereerd, maar het zijn wel steeds 10 andere datapunten. De samples zijn dus niet identiek.</p>
+</div>
+</div>
+</div>
+<p>Functies als <code>rnorm()</code> genereren random getallen. Dat is precies wat we willen, maar voor de reproduceerbaarheid van de analyse is het lastig als dit steeds verschillende getallen zijn. Gelukkig kunnen we dit voorkomen door een zogenaamde <em>random seed</em> in te stellen, zoals we eerder hebben gezien in <a href="../bewerken.html"><span>Hoofdstuk&nbsp;4</span></a>. Dit doen we in <code>R</code> met de functie <code>set.seed()</code> waarbij je tussen haakjes een getal naar keuze invult. Wanneer je deze <em>random seed</em> bij elke nieuwe sessie op dezelfde manier definieert, zul je steeds dezelfde random (!) getallen krijgen, ook wanneer je steeds een nieuwe versie van je Quarto-document rendert. Ook andere gebruikers die jouw code gebruiken zullen met die <em>random seed</em> dezelfde uitkomsten krijgen. Dit maakt je analyse dus volledig reproduceerbaar. N.B. je definieert je <em>random seed</em> (in principe) maar een keer per script.</p>
+<ol start="3" type="1">
+<li>We stellen een <em>random seed</em> in met de waarde <code>1234</code> en genereren drie keer 10 datapunten uit onze gekozen normaalverdeling.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">16</span>); <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">16</span>); <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 25.686948 49.438868 62.351059  7.468837 51.865995 53.096894 35.804161
+ [8] 36.253890 35.968768 30.759395</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 37.36492 29.02582 32.57994 46.03134 60.35190 43.23543 36.82385 30.42087
+ [9] 31.60525 83.65336</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 47.14541 37.14903 37.95123 52.35343 33.90048 21.82872 54.19609 28.62151
+ [9] 44.75779 30.02482</code></pre>
+</div>
+</div>
+<p>Dit hele proces herhalen we vervolgens nog een keer.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">16</span>); <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">16</span>); <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 25.686948 49.438868 62.351059  7.468837 51.865995 53.096894 35.804161
+ [8] 36.253890 35.968768 30.759395</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 37.36492 29.02582 32.57994 46.03134 60.35190 43.23543 36.82385 30.42087
+ [9] 31.60525 83.65336</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 47.14541 37.14903 37.95123 52.35343 33.90048 21.82872 54.19609 28.62151
+ [9] 44.75779 30.02482</code></pre>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Wat valt je op als je de sets gegenereerde getallen met elkaar vergelijkt?</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Na het vaststellen van de <em>random seed</em> worden er drie keer 10 datapunten gegenereerd, maar het zijn wel steeds 10 andere datapunten. Na het opnieuw vaststellen van de <em>random seed</em> worden dezelfde drie samples gegenereerd als de eerste keer. De <em>random seed</em> maakt het simulatieproces dus reproduceerbaar.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="een-populatie-genereren" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="een-populatie-genereren">Een populatie genereren</h2>
+<p>We gaan nu met behulp van <code>rnorm()</code> een populatie genereren waar we vervolgens steekproeven uit kunnen trekken. Voor de overzichtelijkheid is het vaak handig om de parameters die je in de simulatie stopt (de argumenten van <code>rnorm()</code>) eerst apart te definiëren en vervolgens terug te verwijzen naar deze waarden bij het aanroepen van <code>rnorm()</code>. Dit is hieronder weergegeven (waarbij je voor … de relevante getallen moet invullen).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1. vaststellen parameters</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#N.B. op de ... moet je je eigen getallen invullen</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(...) <span class="co"># random seed definiëren (kies een getal), dit is de enige plek waarop je dit nog doet in je document, hierna niet meer</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> ... <span class="co"># steekproefgrootte: aantal datapunten dat je wilt samplen</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>gem <span class="ot">&lt;-</span> ... <span class="co"># gemiddelde van de verdeling waaruit je gaat samplen</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>stdev <span class="ot">&lt;-</span> ... <span class="co"># standaarddeviatie van de verdeling waaruit je gaat samplen</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#2. genereren van populatie</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>populatie <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, gem, stdev)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#3. data omzetten naar tibble</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>populatie <span class="ot">&lt;-</span> <span class="fu">tibble</span>(populatie)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>We genereren nu op bovenstaande manier een populatie van 10000 datapunten met een gemiddelde van 70 en een standaarddeviatie van 8,3. Je kunt je dit voorstellen als de scores op een taaltoets die door een populatie zijn behaald.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  vaststellen parameters</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>) <span class="co"># random seed definiëren, dit is de enige plek waarop we dit nog doen in dit document, hierna niet meer</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="co"># steekproefgrootte: aantal datapunten dat je wilt samplen</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>gem <span class="ot">&lt;-</span> <span class="dv">70</span> <span class="co"># gemiddelde van de verdeling waaruit je gaat samplen</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>stdev <span class="ot">&lt;-</span> <span class="fl">8.3</span> <span class="co"># standaarddeviatie van de verdeling waaruit je gaat samplen</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">#2. genereren van populatie</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>populatie <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, gem, stdev)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">#3. data omzetten naar tibble</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>populatie <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">waarde =</span> populatie)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>We bekijken de gegenereerde dataset en berekenen vervolgens het gemiddelde en de standaarddeviatie van de populatie.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#head(populatie)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>populatie <span class="sc">%&gt;%</span> <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">6</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10,000 × 1
+  waarde
+   &lt;dbl&gt;
+1   60.0
+2   72.3
+3   79.0
+4   50.5
+5   73.6
+6   74.2
+# ℹ 9,994 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">gemiddelde =</span> <span class="fu">mean</span>(waarde), </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">st_dev =</span> <span class="fu">sd</span>(waarde))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde st_dev
+       &lt;dbl&gt;  &lt;dbl&gt;
+1       70.1   8.20</code></pre>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Wat valt je op aan de waarde van het gemiddelde en de standaarddeviatie van de populatie?</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Het valt op dat het gemiddelde (70,1) en de standaardeviatie (8,2) van de populatie heel dicht liggen bij (maar niet identiek zijn aan) de opgegeven waarden van 70 en 8,3. De kleine afwijkingen komen doordat we te maken hebben met een randomproces.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>We maken nu een grafiek van de verdeling van de populatie. We voegen hierbij een verticale lijn toe die het populatiegemiddelde weergeeft met de functie <code>geom_vline()</code>. Deze functie neemt als argument <code>xintercept =</code> die de plek op de x-as aangeeft waar de lijn moet komen. De kleur van de lijn kun je aanpassen met <code>color =</code>, het lijntype met <code>linetype =</code> (bijv. <code>'dashed'</code> voor een stippellijn) en de dikte als getal met <code>lwd =</code>. De grafiek is te zien in <a href="#fig-populatie">Figuur&nbsp;<span>1.1</span></a> (de vorm van de grafiek zal verschillen afhankelijk van de gekozen <code>random seed</code>).</li>
+</ol>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> waarde)) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(populatie<span class="sc">$</span>waarde), </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"steelblue2"</span>, </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">linetype =</span> <span class="st">"dashed"</span>, </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-populatie" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-populatie-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.1: Een grafiek van de verdeling van onze gesimuleerde populatie. De verticale blauwe lijn geeft het gemiddelde van de populatie aan.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>Wat valt je op aan de verdeling in <a href="#fig-populatie">Figuur&nbsp;<span>1.1</span></a>?</p>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>De verdeling lijkt heel erg op een normaalverdeling, maar is niet perfect.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-steekproeven" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sec-steekproeven">Steekproeven uit de populatie trekken</h2>
+<p>Nu we een gesimuleerde populatie hebben, kunnen we hier steekproeven uit gaan trekken. In <a href="../bewerken.html"><span>Hoofdstuk&nbsp;4</span></a> en <a href="../_practica/practicum2.html#sec-steekproeven-samplen">Practicum 2</a> heb je al kennisgemaakt met <code>R</code>-functies die hierbij gebruikt kunnen worden.</p>
+<ol type="1">
+<li>We trekken eerst een <em>simple random sample</em> van 10 datapunten uit de populatie. We berekenen het gemiddelde en de standaarddeviatie van de steekproef en maken een grafiek van de verdeling, waarbij we het gemiddelde weergeven met een rode verticale lijn (<a href="#fig-sample-10">Figuur&nbsp;<span>1.2</span></a>).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sample_10 <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>sample_10 <span class="sc">%&gt;%</span>   </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">gemiddelde =</span> <span class="fu">mean</span>(waarde), </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">st_dev =</span> <span class="fu">sd</span>(waarde))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde st_dev
+       &lt;dbl&gt;  &lt;dbl&gt;
+1       71.8   12.0</code></pre>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>sample_10 <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> waarde)) <span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(sample_10<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproefgrootte = 10"</span>) <span class="sc">+</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-sample-10" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-sample-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.2: Verdeling van een random steekproef van 10 observaties uit de gesimuleerde populatie. De rode verticale lijn geeft het gemiddelde weer.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>Wat valt je op aan de verdeling in <a href="#fig-sample-10">Figuur&nbsp;<span>1.2</span></a> in vergelijking met de populatie?</p>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>Het gemiddelde komt redelijk in de buurt van de populatie, maar de standaarddeviatie is flink hoger. De verdeling lijkt helemaal niet op die van de populatie.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>We trekken nu nog een keer een <em>simple random sample</em> van 10 datapunten uit de populatie (<a href="#fig-sample-10-2">Figuur&nbsp;<span>1.3</span></a>).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sample_10_2 <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>sample_10_2 <span class="sc">%&gt;%</span>   </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">gemiddelde =</span> <span class="fu">mean</span>(waarde), </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">st_dev =</span> <span class="fu">sd</span>(waarde))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde st_dev
+       &lt;dbl&gt;  &lt;dbl&gt;
+1       68.5   5.36</code></pre>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sample_10_2 <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> waarde)) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(sample_10_2<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproefgrootte = 10"</span>) <span class="sc">+</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-sample-10-2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-sample-10-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.3: Verdeling van een tweede random steekproef van 10 observaties uit de gesimuleerde populatie. De rode verticale lijn geeft het gemiddelde weer.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<p>Wat valt je op aan de verdeling in <a href="#fig-sample-10-2">Figuur&nbsp;<span>1.3</span></a> in vergelijking met de populatie?</p>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<p>Het gemiddelde en de standaarddeviatie liggen deze keer onder die van de populatie; de verdeling in deze steekproef is anders maar lijkt er weer helemaal niet op.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>We trekken nu een <em>simple random sample</em> van 50 datapunten uit de populatie. We berekenen weer het gemiddelde en de standaarddeviatie van de steekproef en maken een grafiek van de verdeling (<a href="#fig-sample-50">Figuur&nbsp;<span>1.4</span></a>).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>sample_50 <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">50</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>sample_50 <span class="sc">%&gt;%</span>   </span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">gemiddelde =</span> <span class="fu">mean</span>(waarde), </span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">st_dev =</span> <span class="fu">sd</span>(waarde))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde st_dev
+       &lt;dbl&gt;  &lt;dbl&gt;
+1       69.0   7.31</code></pre>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>sample_50 <span class="sc">%&gt;%</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> waarde)) <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(sample_50<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproefgrootte = 50"</span>) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-sample-50" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-sample-50-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.4: Verdeling van een random steekproef van 50 observaties uit de gesimuleerde populatie. De rode verticale lijn geeft het gemiddelde weer.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<p>Wat valt je op aan de verdeling in <a href="#fig-sample-50">Figuur&nbsp;<span>1.4</span></a> in vergelijking met de populatie?</p>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<p>Het gemiddelde en de standaarddeviatie liggen onder die van de populatie, maar komen redelijk in de buurt; de verdeling lijkt er aan de linkerhelft wel op, maar het rechterdeel veel minder.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Ook deze steekproeftrekking herhalen we nog een keer (<a href="#fig-sample-50-2">Figuur&nbsp;<span>1.5</span></a>).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sample_50_2 <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">50</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>sample_50_2 <span class="sc">%&gt;%</span>   </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">gemiddelde =</span> <span class="fu">mean</span>(waarde), </span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">st_dev =</span> <span class="fu">sd</span>(waarde))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde st_dev
+       &lt;dbl&gt;  &lt;dbl&gt;
+1       70.7   8.82</code></pre>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>sample_50_2 <span class="sc">%&gt;%</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> waarde)) <span class="sc">+</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(sample_50_2<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproefgrootte = 50"</span>) <span class="sc">+</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-sample-50-2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-sample-50-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.5: Verdeling van een tweede random steekproef van 50 observaties uit de gesimuleerde populatie. De rode verticale lijn geeft het gemiddelde weer.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
+<p>Wat valt je op aan de verdeling van deze tweede steekproef van 50 (<a href="#fig-sample-50-2">Figuur&nbsp;<span>1.5</span></a>) in vergelijking met de populatie?</p>
+</div>
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
+<p>Het gemiddelde en de standaarddeviatie liggen deze keer iets boven die van de populatie; de verdeling in deze steekproef is vergelijkbaar met de vorige, hoewel er duidelijke verschillen zijn. Ook hier lijkt de verdeling aan de linkerkant van het gemiddelde meer op die van de populatie.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Tot slot, trekken we ook nog een <em>simple random sample</em> van 500 datapunten uit de populatie, berekenen het gemiddelde en de standaarddeviatie van de steekproef en maken een grafiek van de verdeling (<a href="#fig-sample-500">Figuur&nbsp;<span>1.6</span></a>).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sample_500 <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">500</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>sample_500 <span class="sc">%&gt;%</span>   </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">gemiddelde =</span> <span class="fu">mean</span>(waarde), </span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">st_dev =</span> <span class="fu">sd</span>(waarde))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde st_dev
+       &lt;dbl&gt;  &lt;dbl&gt;
+1       70.1   7.98</code></pre>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sample_500 <span class="sc">%&gt;%</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> waarde)) <span class="sc">+</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(sample_500<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproefgrootte = 500"</span>) <span class="sc">+</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-sample-500" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-sample-500-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.6: Verdeling van een random steekproef van 500 observaties uit de gesimuleerde populatie. De rode verticale lijn geeft het gemiddelde weer.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
+<p>Wat valt je op aan de verdeling van deze steekproef van 500 (<a href="#fig-sample-500">Figuur&nbsp;<span>1.6</span></a>) in vergelijking met de populatie?</p>
+</div>
+<div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
+<p>Het gemiddelde is identiek en de standaarddeviatie komt dicht in de buurt van de populatie; de verdeling lijkt er ook best goed op.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Ook deze steekproeftrekking herhalen we nog een keer (<a href="#fig-sample-500-2">Figuur&nbsp;<span>1.7</span></a>).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>sample_500_2 <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">500</span>)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>sample_500_2 <span class="sc">%&gt;%</span>   </span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">gemiddelde =</span> <span class="fu">mean</span>(waarde), </span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">st_dev =</span> <span class="fu">sd</span>(waarde))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde st_dev
+       &lt;dbl&gt;  &lt;dbl&gt;
+1       70.1   8.38</code></pre>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>sample_500_2 <span class="sc">%&gt;%</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> waarde)) <span class="sc">+</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(sample_500_2<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproefgrootte = 500"</span>) <span class="sc">+</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-sample-500-2" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-sample-500-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.7: Verdeling van een tweede random steekproef van 500 observaties uit de gesimuleerde populatie. De rode verticale lijn geeft het gemiddelde weer.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
+<p>Wat valt je op aan de verdeling van deze tweede steekproef van 500 (<a href="#fig-sample-500-2">Figuur&nbsp;<span>1.7</span></a>) in vergelijking met de populatie?</p>
+</div>
+<div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
+<p>Het gemiddelde is weer identiek aan de dat van de populatie en de standaarddeviatie komt weer erg dicht in de buurt. Deze steekproef lijkt behoorlijk op de vorige steekproef; Ook de verdelingen lijken op elkaar en op die van de populatie.</p>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
+<p>Welke conclusie kun je trekken op basis van bovenstaande vragen?</p>
+</div>
+<div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
+<p>In kleinere steekproeven is er meer variatie dan in grotere steekproeven. De kans dat je steekproef lijkt op de populatie is dan ook kleiner.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="een-steekproevenverdeling-maken" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="een-steekproevenverdeling-maken">Een steekproevenverdeling maken</h2>
+<p>In de vorige opdracht heb je handmatig twee keer een steekproef van een bepaalde omvang getrokken uit de gesimuleerde populatie. Met twee steekproeven is dat nog wel te doen, maar dit wordt wel erg veel werk wanneer we dit veel vaker willen doen. Gelukkig is er een functie <code>rep_sample_n()</code> beschikbaar uit het package <code>infer</code> die dit een stuk gemakkelijker maakt voor ons. Deze functie neemt twee argumenten <code>rep_sample_n(size = , reps = )</code>: (i) <code>size</code> geeft de grootte van de steekproef aan (wat we hierboven hebben gedefinieerd als <code>n</code>), (ii) <code>reps</code> geeft aan hoeveel steekproeven je wilt trekken uit de populatie. Ook hier loont het voor het overzicht weer om deze parameters buiten de functie te definiëren.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  vaststellen parameters</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#N.B. op de ... moet je je eigen getallen invullen</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> ... <span class="co"># steekproefgrootte: aantal datapunten dat je wilt samplen</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>rep <span class="ot">&lt;-</span> ... <span class="co"># aantal steekproeven dat je in totaal wilt trekken</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co">#2. genereren van steekproeven</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>steekproeven_n_rep <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> <span class="co"># vul voor n en rep de bijbehorende getallen in om de naam uniek te houden</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> n, <span class="at">reps =</span> rep)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>We genereren met behulp van deze functie een steekproevenverdeling van 1000 steekproeven uit onze gesimuleerde populatie ieder met een steekproefgrootte van 10.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  vaststellen parameters</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># steekproefgrootte: aantal datapunten dat je wilt samplen</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>rep <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># aantal steekproeven dat je in totaal wilt trekken</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co">#2. genereren van steekproeven</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>steekproeven_10_1000 <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> n, <span class="at">reps =</span> rep)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>De output van deze functie levert een tibble op waarbij de waardes van de steekproeven onder elkaar worden getoond. De kolom <code>replicate</code> geeft aan om welke steekproef het gaat.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>steekproeven_10_1000 <span class="sc">%&gt;%</span> <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">15</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10,000 × 2
+# Groups:   replicate [1,000]
+   replicate waarde
+       &lt;int&gt;  &lt;dbl&gt;
+ 1         1   70.4
+ 2         1   65.2
+ 3         1   70.6
+ 4         1   67.7
+ 5         1   84.8
+ 6         1   72.0
+ 7         1   60.7
+ 8         1   86.0
+ 9         1   68.3
+10         1   79.8
+11         2   73.2
+12         2   54.8
+13         2   68.4
+14         2   55.4
+15         2   69.5
+# ℹ 9,985 more rows</code></pre>
+</div>
+</div>
+<p>De kolom <code>replicate</code> stelt ons in staat om per steekproef een gemiddelde te berekenen.</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_10_1000 <span class="ot">&lt;-</span> steekproeven_10_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(replicate) <span class="sc">%&gt;%</span> <span class="co"># deze stap kun je weglaten aangezien de output van rep_sample_n() al gegroepeerd is per replicate</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">gemiddelde_steekproef =</span> <span class="fu">mean</span>(waarde))</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_10_1000 <span class="sc">%&gt;%</span> <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 2
+   replicate gemiddelde_steekproef
+       &lt;int&gt;                 &lt;dbl&gt;
+ 1         1                  72.6
+ 2         2                  70.2
+ 3         3                  65.8
+ 4         4                  69.2
+ 5         5                  67.9
+ 6         6                  71.9
+ 7         7                  69.4
+ 8         8                  69.9
+ 9         9                  64.8
+10        10                  71.2
+# ℹ 990 more rows</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Deze gemiddelden samen vormen de steekproevenverdeling van het gemiddelde. We kunnen ook van deze verdeling het gemiddelde en de standaarddeviatie berekenen. De standaarddeviatie van de steekproevenverdeling noemen we de <em>standard error</em>.</li>
+</ol>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_10_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">gemiddelde_verdeling =</span> <span class="fu">mean</span>(gemiddelde_steekproef), </span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">st_error =</span> <span class="fu">sd</span>(gemiddelde_steekproef))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde_verdeling st_error
+                 &lt;dbl&gt;    &lt;dbl&gt;
+1                 70.1     2.58</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>We maken vervolgens een grafiek van de verdeling de steekproevenverdeling en voegen hier een verticale rode lijn aan toe met het gemiddelde van de steekproevenverdeling en een gestippelde blauwe verticale lijn met het gemiddelde van de populatie (<a href="#fig-sample-distr">Figuur&nbsp;<span>1.8</span></a>).</li>
+</ol>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># grafiek maken van de steekproevenverdeling</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_10_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gemiddelde_steekproef)) <span class="sc">+</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(steekproevenverdeling_10_1000<span class="sc">$</span>gemiddelde_steekproef), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(populatie<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"steelblue2"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"gemiddelde van de steekproef"</span>,</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproevenverdeling"</span>,</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"steekproefgrootte = 10, aantal replicaties = 1000"</span></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-sample-distr" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-sample-distr-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.8: Verdeling van de steekproevenverdeling op basis van 1000 steekproeven van 10 observaties uit onze gesimuleerde populatie. De rode verticale lijn geeft het gemiddelde weer van de steekproevenverdeling, de gestippelde blauwe verticale lijn het gemiddelde van de populatie.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
+<p>Wat valt je op aan de verdeling van de steekproevenverdeling in <a href="#fig-sample-distr">Figuur&nbsp;<span>1.8</span></a>?</p>
+</div>
+<div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
+<p>De verdeling lijkt behoorlijk op een normaalverdeling. Het gemiddelde van de steekproevenverdeling is praktisch identiek aan die van de populatie.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>We maken nu ook een figuur van de steekproevenverdeling op basis van 1000 steekproeven met een steekproefgrootte van 50 (<a href="#fig-sample-distr-50">Figuur&nbsp;<span>1.9</span></a>) en voor voor 1000 steekproeven met een steekproefgrootte van 500 (<a href="#fig-sample-distr-500">Figuur&nbsp;<span>1.10</span></a>).</li>
+</ol>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voor steekproefgrootte 50</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  vaststellen parameters</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span> <span class="co"># steekproefgrootte: aantal datapunten dat je wilt samplen</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>rep <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># aantal steekproeven dat je in totaal wilt trekken</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="co">#2. genereren van steekproeven</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>steekproeven_50_1000 <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> n, <span class="at">reps =</span> rep)</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="co">#3. gemiddelden van elke steekproef berekenen om zo de steekproevenverdeling te verkrijgen</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_50_1000 <span class="ot">&lt;-</span> steekproeven_50_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  group_by(replicate) %&gt;% # deze stap kun je weglaten aangezien de output van rep_sample_n() al gegroepeerd is per replicate</span></span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">gemiddelde_steekproef =</span> <span class="fu">mean</span>(waarde))</span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a><span class="co">#4. gemiddelde en standaarddeviatie (st. error) van de steekproevenverdeling berekenen</span></span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_50_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarise</span>(<span class="at">gemiddelde_verdeling =</span> <span class="fu">mean</span>(gemiddelde_steekproef), </span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">st_error =</span> <span class="fu">sd</span>(gemiddelde_steekproef))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde_verdeling st_error
+                 &lt;dbl&gt;    &lt;dbl&gt;
+1                 70.0     1.15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co">#5. grafiek maken van de steekproevenverdeling</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_50_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gemiddelde_steekproef)) <span class="sc">+</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(steekproevenverdeling_50_1000<span class="sc">$</span>gemiddelde_steekproef), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(populatie<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"steelblue2"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"gemiddelde van de steekproef"</span>,</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproevenverdeling"</span>,</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"steekproefgrootte = 50, aantal replicaties = 1000"</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-sample-distr-50" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-sample-distr-50-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.9: Verdeling van de steekproevenverdeling op basis van 1000 steekproeven van 50 observaties uit onze gesimuleerde populatie. De rode verticale lijn geeft het gemiddelde weer van de steekproevenverdeling, de gestippelde blauwe verticale lijn het gemiddelde van de populatie.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voor steekproefgrootte 500</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  vaststellen parameters</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">500</span> <span class="co"># steekproefgrootte: aantal datapunten dat je wilt samplen</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>rep <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># aantal steekproeven dat je in totaal wilt trekken</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="co">#2. genereren van steekproeven</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>steekproeven_500_1000 <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> n, <span class="at">reps =</span> rep)</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="co">#3. gemiddelden van elke steekproef berekenen om zo de steekproevenverdeling te verkrijgen</span></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_500_1000 <span class="ot">&lt;-</span> steekproeven_500_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  group_by(replicate) %&gt;% # deze stap kun je weglaten aangezien de output van rep_sample_n() al gegroepeerd is per replicate</span></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">gemiddelde_steekproef =</span> <span class="fu">mean</span>(waarde))</span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a><span class="co">#4. gemiddelde en standaarddeviatie (st. error) van de steekproevenverdeling berekenen</span></span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_500_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarise</span>(<span class="at">gemiddelde_verdeling =</span> <span class="fu">mean</span>(gemiddelde_steekproef), </span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">st_error =</span> <span class="fu">sd</span>(gemiddelde_steekproef))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde_verdeling st_error
+                 &lt;dbl&gt;    &lt;dbl&gt;
+1                 70.1    0.367</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#5. grafiek maken van de steekproevenverdeling</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_500_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gemiddelde_steekproef)) <span class="sc">+</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(steekproevenverdeling_500_1000<span class="sc">$</span>gemiddelde_steekproef), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(populatie<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"steelblue2"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"gemiddelde van de steekproef"</span>,</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproevenverdeling"</span>,</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"steekproefgrootte = 500, aantal replicaties = 1000"</span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-sample-distr-500" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-sample-distr-500-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.10: Verdeling van de steekproevenverdeling op basis van 1000 steekproeven van 500 observaties uit onze gesimuleerde populatie. De rode verticale lijn geeft het gemiddelde weer van de steekproevenverdeling, de gestippelde blauwe verticale lijn het gemiddelde van de populatie.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
+<p>Wat valt je op als je de drie steekproevenverdelingen die we hebben gemaakt met elkaar vergelijkt (<a href="#fig-sample-distr">Figuur&nbsp;<span>1.8</span></a> - <a href="#fig-sample-distr-500">Figuur&nbsp;<span>1.10</span></a>)?</p>
+</div>
+<div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
+<p>In alledrie de steekproevenverdelingen ligt het gemiddelde van de steekproevenverdeling heel dicht op het gemiddelde van de populatie. We zien wel dat de variatie in de steekproevenverdeling steeds kleiner wordt (d.w.z. de <em>standard error</em> neemt af) als de steekproefgrootte toeneemt. Dit zagen we ook al toen we eerder losse steekproeven trokken: hoe groter de steekproef, des te dichter ligt het gemiddelde bij dat van de populatie. Meerdere grote steekproeven zullen dus vaker een gemiddelde geven dat dicht bij het populuatiegemiddelde ligt. Dit in tegenstelling tot de kleinere steekproeven waarbij het gemiddelde meer zal variëren.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="bootstrapping" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="bootstrapping">Bootstrapping</h2>
+<p>In de vorige opdracht hebben we steekproevenverdelingen gemaakt op basis van herhaalde steekproeven uit de populatie. In de praktijk hebben we (doorgaans) niet de mogelijkheid om dit te doen en zouden we bovendien liever één groter sample nemen dan meerdere kleine (zie <a href="https://openintro-ims.netlify.app/foundations-bootstrapping#foundations-bootstrapping">hoofdstuk 12</a> en <a href="https://openintro-ims.netlify.app/inference-one-mean#boot1mean">sectie 19.1</a> uit IMS). <em>Bootstrapping</em> biedt een manier om op basis van één enkel sample toch een steekproevenverdeling te genereren. Dit gebeurt door meerdere malen een steekproef van dezelfde grootte te trekken uit de beschikbare steekproef. Dit doen we met teruglegging (<em>replacement</em>). Dit betekent dat eenzelfde datapunt uit het sample meerdere keren kan worden geselecteerd in een bootstrap-sample. Op deze manier kunnen we verschillende steekproeven genereren op basis van hetzelfde sample. Ook hier kunnen we in <code>R</code> de functie <code>rep_sample_n()</code> uit het <code>infer</code> package gebruiken. We moeten dan alleen de optie <code>replace = TRUE</code> toevoegen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># genereren van bootstrap-steekproeven</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>bootstrap_n_rep <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> <span class="co"># vul voor n en rep de bijbehorende getallen in om de naam uniek te houden</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> n, <span class="at">reps =</span> rep, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>We genereren eerst een nieuwe steekproef van 50 observaties uit onze gesimuleerde populatie.</li>
+</ol>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>sample_bs_50 <span class="ot">&lt;-</span> populatie <span class="sc">%&gt;%</span> </span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">50</span>)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>sample_bs_50 <span class="sc">%&gt;%</span>   </span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">gemiddelde =</span> <span class="fu">mean</span>(waarde), </span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">st_dev =</span> <span class="fu">sd</span>(waarde))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde st_dev
+       &lt;dbl&gt;  &lt;dbl&gt;
+1       70.0   7.68</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>sample_bs_50 <span class="sc">%&gt;%</span> </span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> waarde)) <span class="sc">+</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(sample_bs_50<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproefgrootte = 50"</span>) <span class="sc">+</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-bootstrap-50" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-bootstrap-50-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.11: Verdeling van een random steekproef van 50 observaties uit onze gesimuleerde populatie. De rode verticale lijn geeft het gemiddelde weer van de steekproef.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
+<p>Wat valt je op aan de verdeling van deze steekproef (<a href="#fig-bootstrap-50">Figuur&nbsp;<span>1.11</span></a>)?</p>
+</div>
+<div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
+<p>Het gemiddelde en de standaarddeviatie liggen net als bij de eerdere opdrachten met steekproefgrootte van 50 behoorlijk in de buurt of zelfs op die van de populatie. De verdeling is redelijk gelijk verdeeld rondom het gemiddelde, maar niet helemaal normaal.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Vervolgens genereren we 1000 bootstrap-samples uit deze steekproef van 50. We berekenen voor iedere bootstrap-sample het gemiddelde. Dit is de steekproevenverdeling. We berekenen vervolgens het gemiddelde en de standaarddeviatie (<em>standard error</em>) van de steekproevenverdeling en maken weer een grafiek van de steekproevenverdeling (<a href="#fig-bootstrap-sample-distr">Figuur&nbsp;<span>1.12</span></a>).</li>
+</ol>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voor bootstrapsamples met steekproefgrootte 50</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co">#1.  vaststellen parameters</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span> <span class="co"># steekproefgrootte: aantal datapunten dat je wilt samplen</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>rep <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># aantal steekproeven dat je in totaal wilt trekken</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="co">#2. genereren van steekproeven</span></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>bootstrap_50_1000 <span class="ot">&lt;-</span> sample_bs_50 <span class="sc">%&gt;%</span> </span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> n, <span class="at">reps =</span> rep, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="co">#3. gemiddelden van elke steekproef berekenen om zo de steekproevenverdeling te verkrijgen</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_bs_50_1000 <span class="ot">&lt;-</span> bootstrap_50_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  group_by(replicate) %&gt;% # deze stap kun je weglaten aangezien de output van rep_sample_n() al gegroepeerd is per replicate</span></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">gemiddelde_steekproef =</span> <span class="fu">mean</span>(waarde))</span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a><span class="co">#4. gemiddelde en standaarddeviatie (st. error) van de steekproevenverdeling berekenen</span></span>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_bs_50_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">gemiddelde_verdeling =</span> <span class="fu">mean</span>(gemiddelde_steekproef), </span>
+<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">st_error =</span> <span class="fu">sd</span>(gemiddelde_steekproef))</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  gemiddelde_verdeling st_error
+                 &lt;dbl&gt;    &lt;dbl&gt;
+1                 69.9     1.15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#5. grafiek maken van de steekproevenverdeling</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>steekproevenverdeling_bs_50_1000 <span class="sc">%&gt;%</span> </span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gemiddelde_steekproef)) <span class="sc">+</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(steekproevenverdeling_bs_50_1000<span class="sc">$</span>gemiddelde_steekproef), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(populatie<span class="sc">$</span>waarde), <span class="at">color =</span> <span class="st">"steelblue2"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">lwd =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"gemiddelde van de steekproef"</span>,</span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Steekproevenverdeling op basis van bootstrapping"</span>,</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"steekproefgrootte = 50, aantal replicaties = 1000"</span></span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">16</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-bootstrap-sample-distr" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-bootstrap-sample-distr-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;1.12: Verdeling van de steekproevenverdeling op basis van 1000 <em>bootstrap</em>-steekproeven van 50 observaties. De rode verticale lijn geeft het gemiddelde weer van de steekproevenverdeling, de gestippelde blauwe verticale lijn het gemiddelde van de populatie.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true">Vraag</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false">Modelantwoord</a></li></ul>
+<div class="tab-content">
+<div id="tabset-15-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-15-1-tab">
+<p>Wat valt je op aan de verdeling van de steekproevenverdeling in <a href="#fig-bootstrap-sample-distr">Figuur&nbsp;<span>1.12</span></a>?</p>
+</div>
+<div id="tabset-15-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-15-2-tab">
+<p>Het gemiddelde van de steekproevenverdeling ligt net iets verder af van het populatiegemiddelde dan we eerder zagen bij de herhaalde steekproeven uit de populatie. Dit komt waarschijnlijk omdat het gemiddelde van het oorspronkelijk sample waar bootstrapping op is toegepast ook net iets lager lag. De verdeling lijkt iets linksscheef, waarschijnlijk omdat het oorspronkelijke sample dit ook is. De <em>standard error</em> is vergelijkbaar met wat we eerder zagen.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-ethnologue-steekproeven" class="level1">
+<h1>Deel 2 | Echte data: variatie tussen steekproeven</h1>
+<p>In het eerste deel hebben we gewerkt met fictieve data. We hebben toen onze eigen populatie gemaakt met behulp van datasimulatie. In dit deel gaan we werken met echte data waarbij je de code uit het eerste deel kunt hergebruiken. We gaan werken met de data uit de Ethnologue, die we ook in <a href="../_practica/practicum4.html">Practicum 4</a> gebruikt hebben. Doorgaans hebben we geen toegang tot een hele populatie. In dit geval wel. De databestanden van de Ethnologue bevatten namelijk gegevens over het aantal talen in alle landen in de wereld.</p>
+<ol type="1">
+<li>We gaan eerst de data uit Practicum 4 inlezen. Je hebt toen op basis van twee databestanden <code>LanguageCodes.tab</code> en <code>CountryCodes.tab</code> een gecombineerd databestand <code>ethnologue.txt</code> gemaakt en opgeslagen. Lees dit databestand in. Mocht je dit databestand niet hebben dan kun je de code voor de eerste 3 stappen uit Practicum 4 opnieuw uitvoeren om het gecombineerde bestand opnieuw aan te maken. Het databestand geeft je per rij de informatie over één taal met daarbij het land waarin het wordt gesproken:</li>
+</ol>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  lang_id lang_name           lang_status country_id country_name     area   
+  &lt;fct&gt;   &lt;fct&gt;               &lt;fct&gt;       &lt;fct&gt;      &lt;fct&gt;            &lt;fct&gt;  
+1 aaa     Ghotuo              L           NG         Nigeria          Africa 
+2 aab     Arum                L           NG         Nigeria          Africa 
+3 aac     Ari                 L           PG         Papua New Guinea Pacific
+4 aad     Amal                L           PG         Papua New Guinea Pacific
+5 aae     Albanian, Arbëreshë L           IT         Italy            Europe 
+6 aaf     Aranadan            L           IN         India            Asia   </code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Maak op basis van het een databestand <code>ethnologue.txt</code> een datatabel met daarin per land het aantal talen dat er wordt gesproken. Dit is onze populatie. Geef deze datatabel dan ook de naam <code>ethnologue_populatie</code>. De datatabel zou er zo uit moeten zien:</li>
+</ol>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  country_name        aantal_talen
+  &lt;fct&gt;                      &lt;int&gt;
+1 Afghanistan                   30
+2 Albania                        3
+3 Algeria                       13
+4 Angola                        27
+5 Antigua and Barbuda            1
+6 Argentina                     14</code></pre>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<ol start="3" type="1">
+<li>Bereken het gemiddelde en de standaarddeviatie van deze populatie en maak een grafiek van de verdeling. Wat valt je op?</li>
+</ol>
+<div class="cell">
+
+</div>
+<div class="answer">
+<div class="cell">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Let op">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Let op
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Je gaat in de volgende opdrachten random steekproeven trekken. Voor de reproduceerbaarheid is het van belang dat je nu eenmalig een <code>random seed</code> instelt met de functie <code>set.seed()</code> waarbij je een willekeurig getal meegeeft als argument (zie de eerdere sectie <a href="../_practica/practicum6.html#sec-dataset-genereren">Een dataset genereren in <code>R</code></a>). Maak nu dus eerst een apart codeblok aan in je Quarto-document waarin je deze functie uitvoert.</p>
+<p>Het is van belang om je bestand steeds eerst te renderen naar <code>html</code> voordat je een interpretatie geeft van de data in een grafiek. Doe dit elke keer als je een grafiek klaar hebt. Baseer je interpretatie op de grafiek in het gerenderde <code>html</code>-document en niet op basis van de output in je <code>qmd</code>-bestand. Op deze manier weet je zeker dat je interpretatie overeenkomt met de grafiek die getoond wordt in je uiteindelijke document.</p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Trek achtereenvolgens een steekproef van 10, 50 en 100 landen uit de populatie. Bereken van elke steekproef het gemiddelde en de standaarddeviatie. Hoe goed weerspiegelt elke steekproef de populatie?</li>
+</ol>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="answer">
+<div class="cell">
+
+</div>
+</div>
+<ol start="5" type="1">
+<li>Maak nu een steekproevenverdeling voor een steekproef van 50 landen. Maak de steekproevenverdeling op basis van 10000 steekproeven. Maak een grafiek van de verdeling van de steekproevenverdeling. Geef het gemiddelde van de steekproevenverdeling en van de populatie weer met een verticale lijn. Wat valt je op?</li>
+</ol>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="answer">
+<div class="cell">
+
+</div>
+</div>
+</section>
+<section id="deel-3-betrouwbaarheidsintervallen-in-r" class="level1 page-columns page-full">
+<h1>Deel 3 | Betrouwbaarheidsintervallen in <code>R</code></h1>
+<p>In de vorige opdrachten heb je gezien dat er behoorlijk wat variatie kan zitten in hoe goed het gemiddelde van een steekproef het gemiddelde van de populatie weergeeft. Ook heb je gezien dat uiteindelijk de steekproevenverdeling van het gemiddelde een normaalverdeling wordt (bij voldoende steekproefgrootte en herhaalde samples). Dit vormt de basis voor het vaststellen van het betrouwbaarheidsinterval dat ons informatie geeft over hoe betrouwbaar we het gemiddelde van de steekproef mogen zien als een schatter van het gemiddelde van de populatie. In het laatste deel van dit practicum ga je betrouwbaarheidsintervallen berekenen met <code>R</code> en vervolgens plotten in een grafiek. Hieronder volgt eerst een uitleg van twee manieren waarop betrouwbaarheidsintervallen kunnen worden verkregen in <code>R</code>. Vervolgens ga je die manieren toepassen op variabelen uit de Ethnologue-dataset die we in de vorige opdracht ook hebben gebruikt.</p>
+<section id="handmatig-berekenen" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="handmatig-berekenen">Handmatig berekenen</h2>
+<p>Om een betrouwbaarheidsinterval te kunnen plotten in een grafiek, hebben we de waarden van de ondergrens en bovengrens van het interval nodig. Zoals we in het hoorcollege hebben gezien kunnen we betrouwbaarheidsintervallen redelijk eenvoudig zelf berekenen. Hiervoor hebben we bepaalde informatie nodig van een variabele:</p>
+<ol type="1">
+<li>het gemiddelde waarvoor een interval willen berekenen;</li>
+<li>de standaarddeviatie op basis waarvan we de standard error berekenen;</li>
+<li>het aantal observaties op basis waarvan we de standard error berekenen;</li>
+<li>de standard error, op basis van 2 en 3;</li>
+<li>het aantal vrijheidsgraden (<em>n</em> - 1), om de kritieke waarden te berekenen;</li>
+<li>de kritieke waarde uit de <em>t</em>-distributie, op basis van de breedte van het betrouwbaarheidsinterval en de vrijheidsgraden;</li>
+<li>de ondergrens van het interval (de onderste MOE);</li>
+<li>de bovengrens van het interval (de bovenste MOE).</li>
+</ol>
+<p>Met onderstaande <code>R</code>-code kunnen we deze informatie verkrijgen voor een 95%-betrouwbaarheidsinterval. Dit is toegepast op de variabele <code>Petal.Length</code> uit de dataset <code>iris</code> die standaard in <code>R</code> wordt geladen. Deze variabele geeft de lengte weer van de bloemblaadjes van bepaalde soorten planten uit het plantengeslacht Iris.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>ci.sum <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Petal.Length),</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(Petal.Length),</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">length</span>(Petal.Length),</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">se =</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(n),</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">df =</span> n <span class="sc">-</span> <span class="dv">1</span>,</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">t =</span> <span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> df), <span class="co">#kwantiel voor middelste 95% is 97.5 (of 2.5)</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci.min =</span> mean <span class="sc">-</span> t <span class="sc">*</span> se,</span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci.max =</span> mean <span class="sc">+</span> t <span class="sc">*</span> se</span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">%&gt;%</span> </span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>) <span class="co">#afronden op twee decimalen</span></span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>De output van deze code ziet er zo uit:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  mean   sd   n   se  df    t ci.min ci.max
+1 3.76 1.77 150 0.14 149 1.98   3.47   4.04</code></pre>
+</div>
+</div>
+<p>Op basis van deze informatie zien we dat het gemiddelde 3.76 is en de ondergrens van het betrouwbaarheidsinterval 3.47 en de bovengrens 4.04.</p>
+<p>We kunnen deze informatie vervolgens omzetten in een grafiek (<a href="#fig-iris-ci">Figuur&nbsp;<span>3.1</span></a>). In <a href="#fig-iris-ci">Figuur&nbsp;<span>3.1</span></a> plotten we alleen het gemiddelde met het bijbehorende interval. We gebruiken hiervoor <code>geom_pointrange()</code>, dat 3 waardes nodig heeft: het gemiddelde, de ondergrens van het interval en de bovengrens. Andere opties om betrouwbaarheidsintervallen weert te geven zijn bijv. <code>geom_errorbar()</code> of <code>geom_errobarh()</code>. Deze geoms kun je combineren met andere geoms om een vollediger beeld te geven van de data, zie hiervoor <a href="#fig-interval-data">Figuur&nbsp;<span>3.2</span></a>. Dit ga je zo oefenen in de opdrachten.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>ci.sum <span class="sc">%&gt;%</span> </span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(<span class="dv">0</span>), <span class="at">y =</span> mean)) <span class="sc">+</span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> ci.min, <span class="at">ymax =</span> ci.max)) <span class="sc">+</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Mean Petal Length"</span>, </span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"error bars indicate 95% CI"</span></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">3</span>, <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-iris-ci" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-iris-ci-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;3.1: Het gemiddelde met het bijbehorende 95%-betrouwbaarheidsinterval</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-interval-data" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="practicum6_files/figure-html/fig-interval-data-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption margin-caption">Figuur&nbsp;3.2: Het gemiddelde met het bijbehorende 95%-betrouwbaarheidsinterval, maar nu met de onderliggende datapunten.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Met deze handmatige manier heb je volledige controle over wat er wordt berekend en hoe je het vervolgens omzet in een grafiek. Je kunt deze code ook combineren met andere <code>tidyverse</code> commando’s om bijvoorbeeld het betrouwbaarheidsinterval te berekenen voor twee aparte groepen. Dit ga je in de opdrachten toepassen.</p>
+</section>
+<section id="bestaande-functies" class="level2">
+<h2 class="anchored" data-anchor-id="bestaande-functies">Bestaande functies</h2>
+<p>Naast de handmatige manier zijn er ook bestaande functies in <code>tidyverse</code> die je kunt gebruiken om betrouwbaarheidsintervallen te berekenen. We bespreken er hier twee: <code>mean_cl_normal()</code> en <code>mean_cl_boot()</code>. De eerste functie berekent de intervallen op basis van de <em>t</em>-distributie, vergelijkbaar met onze handmatige versie hierboven:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>ci.normal <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">mean_cl_normal</span>(Petal.Length)</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>            ) </span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(ci.normal, <span class="dv">2</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     y ymin ymax
+1 3.76 3.47 4.04</code></pre>
+</div>
+</div>
+<p>Zoals je ziet komen hier precies dezelfde waarden uit als we net handmatig hebben berekend.</p>
+<p>Je kunt ook de breedte van het interval aanpassen met het argument <code>conf.int</code>. De standaardwaarde van dit argument is <code>.95</code>. Hieronder passen we het aan naar <code>.99</code> om een 99%-betrouwbaarheidsinterval te berekenen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>ci.normal <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">mean_cl_normal</span>(Petal.Length, <span class="at">conf.int =</span> .<span class="dv">99</span>)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(ci.normal, <span class="dv">2</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     y ymin ymax
+1 3.76 3.38 4.13</code></pre>
+</div>
+</div>
+<p>De functie <code>mean_cl_boot</code> berekent het 95%-betrouwbaarheidsinterval op basis van bootstrapping. Ook hier kun je de breedte van het interval aanpassen met het argument <code>conf.int</code>. Ook kun je het aantal <em>bootstrap runs</em> aanpassen met het argument <code>boot</code> (standaard ingesteld op 1000).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>ci.boot <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">mean_cl_boot</span>(Petal.Length)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(ci.normal, <span class="dv">2</span>)</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     y ymin ymax
+1 3.76 3.38 4.13</code></pre>
+</div>
+</div>
+<p>Je ziet dat dit 95%-interval wijder is dan dat berekend met de <em>t</em>-distributie (het is even wijd als het 99%-interval hierboven). Dit heeft te maken met de structuur van de data, zoals je kunt zien in <a href="#fig-interval-data">Figuur&nbsp;<span>3.2</span></a>. Als er bijvoorbeeld veel datapunten uit de rode groep worden geselecteerd dan zal de ondergrens lager uitvallen.</p>
+<p>We kunnen deze twee functies ook direct aanroepen wanneer we een grafiek maken met <code>ggplot2</code>. Dit doe je door het toevoegen van de functie <code>stat_summary()</code> (zie coderegel 3). Hierin specificeer je met het argument <code>fun.data</code> op welke manier je de intervallen berekend wilt hebben (in het voorbeeld is bootstrapping gebruikt) en met <code>fun.args</code> welk betrouwbaarheidsniveau je wilt hanteren (hier: 95%). We kunnen dan meteen het oorspronkelijke databestand invoeren en hoeven niet apart de waardes van het interval te berekenen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>iris <span class="sc">%&gt;%</span> </span>
+<span id="cb72-2"><a href="#cb72-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(<span class="dv">0</span>), <span class="at">y =</span> Petal.Length)) <span class="sc">+</span></span>
+<span id="cb72-3"><a href="#cb72-3"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> <span class="st">"mean_cl_boot"</span>, <span class="at">fun.args =</span> <span class="fu">list</span>(<span class="at">conf.int =</span> .<span class="dv">95</span>)) <span class="sc">+</span></span>
+<span id="cb72-4"><a href="#cb72-4"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Mean Petal Length"</span>, </span>
+<span id="cb72-5"><a href="#cb72-5"></a>       <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb72-6"><a href="#cb72-6"></a>       <span class="at">caption =</span> <span class="st">"error bars indicate 95% CI"</span>) <span class="sc">+</span></span>
+<span id="cb72-7"><a href="#cb72-7"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb72-8"><a href="#cb72-8"></a>  <span class="fu">theme_minimal</span>(<span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb72-9"><a href="#cb72-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span></code><button title="Kopieer naar klembord" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="zelf-aan-de-slag" class="level2">
+<h2 class="anchored" data-anchor-id="zelf-aan-de-slag">Zelf aan de slag</h2>
+<p>Je gaat nu zelf betrouwbaarheidsintervallen berekenen voor het gemiddelde aantal talen in een steekproef uit de data van de Ethnologue.</p>
+<ol type="1">
+<li>Trek een steekproef van 40 landen uit de datatabel <code>ethnologue_populatie</code> van de vorige opdracht.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="2" type="1">
+<li>Bereken het gemiddelde aantal talen per land in de steekproef. Bereken ook het 95%-betrouwbaarheidsinterval rondom dit gemiddelde. Doe dit zowel op de handmatige manier als met behulp van de ingebouwde functies. Vergelijk je resultaten. Welk interval lijkt je in dit geval het beste om te nemen?</li>
+</ol>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="answer">
+<div class="cell">
+
+</div>
+</div>
+<ol start="3" type="1">
+<li>Maak nu een grafiek van data. Plot hierbij naast het gemiddelde en het betrouwbaarheidsinterval ook de oorspronkelijke datapunten (aantal talen per land). Geef bij je figuur duidelijk aan wat het betrouwbaarheidsinterval uitbeeldt.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="4" type="1">
+<li>Herhaal vraag 2 maar nu voor een 99%-betrouwbaarheidsinterval. Verklaar het verschil in waardes met die gevonden bij vraag 2.</li>
+</ol>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="answer">
+<div class="cell">
+
+</div>
+</div>
+<hr>
+<p><em>Dit is het einde van practicum 6.</em></p>
+
+
+
+</section>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../_practica/practicum5.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practicum 5</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
